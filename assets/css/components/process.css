@@ -1,0 +1,287 @@
+/* ===== Ultra-Modern Process Section ===== */
+.process-section {
+  background: linear-gradient(135deg, var(--surface-color) 0%, var(--bg-color) 100%);
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-20) 0;
+}
+
+.process-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
+  opacity: 0.7;
+}
+
+.process-section .floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.process-section .particle {
+  position: absolute;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 50%;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+.process-section .particle:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.process-section .particle:nth-child(2) {
+  width: 6px;
+  height: 6px;
+  top: 60%;
+  right: 20%;
+  animation-delay: 2s;
+}
+
+.process-section .particle:nth-child(3) {
+  width: 3px;
+  height: 3px;
+  bottom: 30%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+.process-content {
+  position: relative;
+  z-index: 2;
+}
+
+.process-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-8) 0;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  border-radius: var(--radius-full);
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.process-step {
+  position: relative;
+  margin-bottom: var(--spacing-12);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.process-step:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.process-step:nth-child(even) .process-step-content {
+  text-align: right;
+}
+
+.process-step-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--bg-color);
+  z-index: 3;
+  border: 4px solid var(--surface-color);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.process-step:hover .process-step-number {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 12px 35px rgba(56, 189, 248, 0.4);
+}
+
+.process-step-content {
+  flex: 1;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-8);
+  position: relative;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+}
+
+.process-step-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  z-index: 2;
+}
+
+.process-step:nth-child(odd) .process-step-content::before {
+  right: -30px;
+  border-left-color: var(--border-color);
+  transform: translateY(-50%);
+}
+
+.process-step:nth-child(even) .process-step-content::before {
+  left: -30px;
+  border-right-color: var(--border-color);
+  transform: translateY(-50%);
+}
+
+.process-step:hover .process-step-content {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.process-step-title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+  font-family: var(--font-family-title);
+}
+
+.process-step-duration {
+  font-size: var(--font-size-sm);
+  color: var(--primary-color);
+  font-weight: var(--font-weight-bold);
+  background: rgba(56, 189, 248, 0.1);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: var(--spacing-4);
+}
+
+.process-step-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-4);
+}
+
+.process-step-features {
+  list-style: none;
+  padding: 0;
+}
+
+.process-step-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-sm);
+}
+
+.process-step-features li::before {
+  content: '✓';
+  color: var(--success-color);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+/* Mobile Process Timeline */
+@media (max-width: 768px) {
+  .process-timeline::before {
+    left: 30px;
+    transform: none;
+  }
+  
+  .process-step {
+    flex-direction: column !important;
+    align-items: flex-start;
+    margin-left: 60px;
+  }
+  
+  .process-step:nth-child(even) .process-step-content {
+    text-align: left;
+  }
+  
+  .process-step-number {
+    left: 30px;
+    transform: translateX(-50%);
+  }
+  
+  .process-step:hover .process-step-number {
+    transform: translateX(-50%) scale(1.1);
+  }
+  
+  .process-step-content {
+    width: 100%;
+    margin-top: var(--spacing-6);
+    padding: var(--spacing-6);
+  }
+  
+  .process-step-content::before {
+    top: -15px;
+    left: 50px !important;
+    right: auto !important;
+    border: 15px solid transparent;
+    border-bottom-color: var(--border-color) !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .process-step {
+    margin-left: 40px;
+  }
+  
+  .process-timeline::before {
+    left: 20px;
+  }
+  
+  .process-step-number {
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-base);
+  }
+  
+  .process-step-content::before {
+    left: 30px !important;
+  }
+}

@@ -1,0 +1,137 @@
+/* ===== Back to Top Button ===== */
+.back-to-top {
+  position: fixed;
+  bottom: var(--spacing-6);
+  right: var(--spacing-6);
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  color: var(--bg-color);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  z-index: var(--z-fixed);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+  background: var(--secondary-color);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+/* Pulse animation when first appearing */
+.back-to-top.pulse {
+  animation: backToTopPulse 2s ease-in-out;
+}
+
+@keyframes backToTopPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Alternative styles */
+.back-to-top--minimal {
+  background: var(--surface-color);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top--minimal:hover {
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
+}
+
+.back-to-top--large {
+  width: 60px;
+  height: 60px;
+  font-size: var(--font-size-xl);
+}
+
+.back-to-top--small {
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-base);
+}
+
+/* Progress indicator variant */
+.back-to-top--progress {
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-top--progress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 0deg, var(--primary-color) 0deg, var(--primary-color) var(--scroll-progress, 0deg), transparent var(--scroll-progress, 0deg));
+  border-radius: var(--radius-full);
+  opacity: 0.3;
+}
+
+.back-to-top--progress::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  background: var(--surface-color);
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+.back-to-top--progress i {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 45px;
+    height: 45px;
+    font-size: var(--font-size-base);
+  }
+  
+  .back-to-top--large {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-size-lg);
+  }
+  
+  .back-to-top--small {
+    width: 35px;
+    height: 35px;
+    font-size: var(--font-size-sm);
+  }
+}

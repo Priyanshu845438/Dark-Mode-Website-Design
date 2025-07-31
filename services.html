@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Services in India | Web Development, Cloud Solutions, Cybersecurity | TechVision IT Solutions</title>
+    <meta name="description" content="Comprehensive IT services in India including web development, cloud solutions, cybersecurity, mobile app development, digital marketing, and IT consulting. Transform your business with our expert technology solutions.">
+    <meta name="keywords" content="IT services India, web development, cloud solutions, cybersecurity, mobile app development, digital marketing, IT consulting, software development, technology solutions">
+    <meta name="author" content="TechVision IT Solutions">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="IT Services in India | Web Development, Cloud Solutions, Cybersecurity | TechVision IT Solutions">
+    <meta property="og:description" content="Comprehensive IT services in India including web development, cloud solutions, cybersecurity, mobile app development, digital marketing, and IT consulting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techvision.replit.app/services.html">
+    <meta property="og:site_name" content="TechVision IT Solutions">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IT Services in India | TechVision IT Solutions">
+    <meta name="twitter:description" content="Comprehensive IT services including web development, cloud solutions, cybersecurity, and mobile app development.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lato:wght@300;400;500;600;700&family=Vollkorn:wght@300;400;500;600;700&family=Orbitron:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Page-specific Styles -->
+    <style>
+        /* Modern Hero Section */
+        .services-hero {
+            background: linear-gradient(135deg, var(--color-dark) 0%, #1a1a2e 50%, var(--color-dark) 100%);
+            padding: 8rem 0 6rem 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(215, 38, 30, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(7, 7, 74, 0.1) 0%, transparent 50%);
+        }
+        
+        .services-hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .services-hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: floatParticle 8s infinite ease-in-out;
+        }
+        
+        .services-hero-particle--1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .services-hero-particle--2 {
+            top: 60%;
+            left: 80%;
+            animation-delay: 2s;
+        }
+        
+        .services-hero-particle--3 {
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        .services-hero-particle--4 {
+            top: 30%;
+            left: 90%;
+            animation-delay: 6s;
+        }
+        
+        .services-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .services-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .services-hero-badge i {
+            color: var(--color-primary);
+        }
+        
+        .services-hero-title {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .services-hero-description {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .services-hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .services-hero-stat {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .services-hero-stat:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .services-hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .services-hero-stat-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Modern Services Grid */
+        .modern-services-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 50%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modern-services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(215, 38, 30, 0.02) 0%, transparent 70%),
+                radial-gradient(circle at 80% 20%, rgba(7, 7, 74, 0.02) 0%, transparent 70%);
+        }
+        
+        .services-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card-modern {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        }
+        
+        .service-card-modern:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-color: var(--color-primary);
+        }
+        
+        .service-card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 40px rgba(215, 38, 30, 0.3);
+        }
+        
+        .service-card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+        }
+        
+        .service-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+        
+        .service-card-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+        }
+        
+        .service-card-features li i {
+            color: var(--color-primary);
+            font-size: 0.75rem;
+        }
+        
+        .service-card-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tech-tag-modern {
+            padding: 0.375rem 0.75rem;
+            background: #f3f4f6;
+            color: var(--color-text-primary);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag-modern:hover {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        .service-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #f3f4f6;
+        }
+        
+        .service-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(215, 38, 30, 0.3);
+        }
+        
+        .service-card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(215, 38, 30, 0.4);
+        }
+        
+        .service-card-price {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            font-weight: 600;
+        }
+        
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .services-hero {
+                padding: 6rem 0 4rem 0;
+            }
+            
+            .modern-services-section {
+                padding: 4rem 0;
+            }
+            
+            .services-grid-modern {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .service-card-modern {
+                padding: 2rem;
+            }
+            
+            .services-hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Modern Services Hero Section -->
+    <section class="services-hero">
+        <div class="services-hero-particles">
+            <div class="services-hero-particle services-hero-particle--1"></div>
+            <div class="services-hero-particle services-hero-particle--2"></div>
+            <div class="services-hero-particle services-hero-particle--3"></div>
+            <div class="services-hero-particle services-hero-particle--4"></div>
+        </div>
+        
+        <div class="container">
+            <div class="services-hero-content">
+                <div class="services-hero-badge">
+                    <i class="fas fa-cogs"></i>
+                    <span>Complete IT Solutions</span>
+                </div>
+                <h1 class="services-hero-title">
+                    Transform Your Business with Our Expert IT Services
+                </h1>
+                <p class="services-hero-description">
+                    From web development to cloud solutions, we provide comprehensive technology services that drive growth, enhance efficiency, and secure your digital future. Partner with India's leading IT solutions provider.
+                </p>
+                
+                <div class="services-hero-stats">
+                    <div class="services-hero-stat">
+                        <div class="services-hero-stat-number">10+</div>
+                        <div class="services-hero-stat-label">Service Categories</div>
+                    </div>
+                    <div class="services-hero-stat">
+                        <div class="services-hero-stat-number">500+</div>
+                        <div class="services-hero-stat-label">Projects Completed</div>
+                    </div>
+                    <div class="services-hero-stat">
+                        <div class="services-hero-stat-number">50+</div>
+                        <div class="services-hero-stat-label">Technologies Mastered</div>
+                    </div>
+                    <div class="services-hero-stat">
+                        <div class="services-hero-stat-number">24/7</div>
+                        <div class="services-hero-stat-label">Expert Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Modern Services Section -->
+        <section class="modern-services-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">What We Offer</span>
+                    <h2 class="section-title">Comprehensive Technology Solutions</h2>
+                    <p class="section-description">
+                        We provide end-to-end IT services designed to help your business thrive in the digital landscape. Our expert team delivers cutting-edge solutions tailored to your specific needs.
+                    </p>
+                </div>
+                
+                <div class="services-grid-modern">
+                    <!-- Web Development -->
+                    <div class="service-card-modern" data-aos="fade-up">
+                        <div class="service-card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="service-card-title">Web Development</h3>
+                        <p class="service-card-description">
+                            Custom web applications built with modern frameworks and responsive design principles for exceptional user experiences.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Responsive Web Design</li>
+                            <li><i class="fas fa-check"></i> E-commerce Solutions</li>
+                            <li><i class="fas fa-check"></i> Content Management Systems</li>
+                            <li><i class="fas fa-check"></i> Progressive Web Apps</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">React</span>
+                            <span class="tech-tag-modern">Node.js</span>
+                            <span class="tech-tag-modern">Laravel</span>
+                            <span class="tech-tag-modern">WordPress</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/web-development.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹25,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Solutions -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="service-card-title">Cloud Solutions</h3>
+                        <p class="service-card-description">
+                            Scalable cloud infrastructure and migration services for enhanced performance, flexibility, and cost optimization.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Cloud Migration</li>
+                            <li><i class="fas fa-check"></i> Infrastructure as a Service</li>
+                            <li><i class="fas fa-check"></i> Cloud Security</li>
+                            <li><i class="fas fa-check"></i> Disaster Recovery</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">AWS</span>
+                            <span class="tech-tag-modern">Azure</span>
+                            <span class="tech-tag-modern">Google Cloud</span>
+                            <span class="tech-tag-modern">Docker</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/cloud-solutions.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹15,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Cybersecurity -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-card-title">Cybersecurity</h3>
+                        <p class="service-card-description">
+                            Comprehensive security solutions to protect your digital assets from evolving threats and cyber attacks.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Security Audits</li>
+                            <li><i class="fas fa-check"></i> Penetration Testing</li>
+                            <li><i class="fas fa-check"></i> Security Monitoring</li>
+                            <li><i class="fas fa-check"></i> Compliance Management</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">Firewall</span>
+                            <span class="tech-tag-modern">VPN</span>
+                            <span class="tech-tag-modern">SIEM</span>
+                            <span class="tech-tag-modern">Encryption</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/cybersecurity.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹20,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Mobile App Development -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-card-title">Mobile App Development</h3>
+                        <p class="service-card-description">
+                            Native and cross-platform mobile applications for iOS and Android platforms with exceptional user experiences.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Native iOS Apps</li>
+                            <li><i class="fas fa-check"></i> Android Applications</li>
+                            <li><i class="fas fa-check"></i> Cross-platform Solutions</li>
+                            <li><i class="fas fa-check"></i> App Store Optimization</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">React Native</span>
+                            <span class="tech-tag-modern">Flutter</span>
+                            <span class="tech-tag-modern">Swift</span>
+                            <span class="tech-tag-modern">Kotlin</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/mobile-app-development.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹35,000</span>
+                        </div>
+                    </div>
+
+                    <!-- IT Consulting -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-card-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-card-title">IT Consulting</h3>
+                        <p class="service-card-description">
+                            Strategic technology consulting to optimize your business operations and accelerate digital transformation.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Digital Transformation</li>
+                            <li><i class="fas fa-check"></i> Technology Strategy</li>
+                            <li><i class="fas fa-check"></i> Process Optimization</li>
+                            <li><i class="fas fa-check"></i> System Integration</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">Analysis</span>
+                            <span class="tech-tag-modern">Strategy</span>
+                            <span class="tech-tag-modern">Planning</span>
+                            <span class="tech-tag-modern">Implementation</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/it-consulting.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹12,000</span>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-card-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3 class="service-card-title">Digital Marketing</h3>
+                        <p class="service-card-description">
+                            Comprehensive digital marketing strategies including SEO, PPC, social media, and content marketing.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> Search Engine Optimization</li>
+                            <li><i class="fas fa-check"></i> Pay-Per-Click Advertising</li>
+                            <li><i class="fas fa-check"></i> Social Media Marketing</li>
+                            <li><i class="fas fa-check"></i> Content Marketing</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">Google Ads</span>
+                            <span class="tech-tag-modern">Facebook Ads</span>
+                            <span class="tech-tag-modern">SEMrush</span>
+                            <span class="tech-tag-modern">Analytics</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/digital-marketing.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹18,000</span>
+                        </div>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="service-card-modern" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-card-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="service-card-title">UI/UX Design</h3>
+                        <p class="service-card-description">
+                            User-centered design solutions that create intuitive and engaging digital experiences for your customers.
+                        </p>
+                        <ul class="service-card-features">
+                            <li><i class="fas fa-check"></i> User Experience Design</li>
+                            <li><i class="fas fa-check"></i> User Interface Design</li>
+                            <li><i class="fas fa-check"></i> Prototyping & Wireframing</li>
+                            <li><i class="fas fa-check"></i> Usability Testing</li>
+                        </ul>
+                        <div class="service-card-tech">
+                            <span class="tech-tag-modern">Figma</span>
+                            <span class="tech-tag-modern">Adobe XD</span>
+                            <span class="tech-tag-modern">Sketch</span>
+                            <span class="tech-tag-modern">InVision</span>
+                        </div>
+                        <div class="service-card-footer">
+                            <a href="services/ui-ux-design.html" class="service-card-link">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <span class="service-card-price">Starting ₹22,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Include CTA Premium -->
+        <div id="cta-premium-placeholder"></div>
+    </main>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Load header and footer components
+        function loadComponent(url, placeholderId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(placeholderId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        // Load all components
+        loadComponent('components/header.html', 'header-placeholder');
+        loadComponent('components/cta-premium.html', 'cta-premium-placeholder');
+        loadComponent('components/footer.html', 'footer-placeholder');
+    </script>
+</body>
+</html>

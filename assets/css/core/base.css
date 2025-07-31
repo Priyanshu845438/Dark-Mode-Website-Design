@@ -1,0 +1,56 @@
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-normal);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  transition: var(--transition-normal);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(56, 189, 248, 0.3);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
