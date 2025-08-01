@@ -13,6 +13,7 @@ class NewNavbarComponent {
 
     async init() {
         await this.loadNavbar();
+        await this.loadMobileNavigation();
         this.setupEventListeners();
         this.setupScrollHandling();
         this.setupDropdowns();
@@ -22,7 +23,7 @@ class NewNavbarComponent {
     async loadNavbar() {
         try {
             console.log('Loading new navbar with all 18 services...');
-            const response = await fetch('src/components/header/header-new.html?v=2');
+            const response = await fetch('src/components/header/header-new.html?v=' + Date.now());
             const navbarHTML = await response.text();
             
             // Remove any existing navbar first
@@ -35,7 +36,6 @@ class NewNavbarComponent {
             document.body.insertAdjacentHTML('afterbegin', navbarHTML);
             this.navbar = document.getElementById('navbar');
             this.navToggle = document.getElementById('nav-toggle');
-            this.mobileNav = document.getElementById('mobile-nav');
             
             console.log('New navbar loaded successfully with', document.querySelectorAll('.dropdown-link').length, 'service links');
         } catch (error) {
@@ -126,6 +126,24 @@ class NewNavbarComponent {
                 this.closeAllDropdowns();
             }
         });
+    }
+
+    async loadMobileNavigation() {
+        try {
+            const response = await fetch('src/components/navigation/mobile-nav/mobile-nav.html');
+            const mobileNavHTML = await response.text();
+            
+            let mobileNavContainer = document.getElementById('mobile-nav-component');
+            if (!mobileNavContainer) {
+                document.body.insertAdjacentHTML('afterbegin', '<div id="mobile-nav-component"></div>');
+                mobileNavContainer = document.getElementById('mobile-nav-component');
+            }
+            mobileNavContainer.innerHTML = mobileNavHTML;
+            
+            this.mobileNav = document.getElementById('mobile-nav');
+        } catch (error) {
+            console.error('Error loading mobile navigation:', error);
+        }
     }
 
     setupMobileNavigation() {

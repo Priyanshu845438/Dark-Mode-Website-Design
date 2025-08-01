@@ -1,5 +1,14 @@
 /* Footer Component Styles */
 
+/* Force consistent footer sizing on all pages */
+body .footer {
+    font-size: 1rem !important;
+}
+
+body .footer * {
+    font-size: inherit !important;
+}
+
 .footer {
     background: var(--bg-primary);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -38,7 +47,7 @@
 
 .footer-title {
     color: var(--text-primary);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-lg) !important;
     font-weight: 600;
     margin-bottom: var(--spacing-lg);
     position: relative;

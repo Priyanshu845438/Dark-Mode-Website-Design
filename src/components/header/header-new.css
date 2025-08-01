@@ -1,5 +1,14 @@
 /* Navbar Component Styles - Completely Rewritten */
 
+/* Force consistent sizing on all pages */
+body .navbar {
+    font-size: 1rem !important;
+}
+
+body .navbar * {
+    font-size: inherit !important;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -75,7 +84,7 @@
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1rem !important;
     transition: all 0.3s ease;
     position: relative;
     padding: 0.75rem 1rem;
@@ -115,7 +124,7 @@
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1rem !important;
     transition: all 0.3s ease;
     position: relative;
     padding: 0.75rem 1rem;
@@ -156,9 +165,9 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 1.5rem;
-    min-width: 1000px;
-    max-width: 1200px;
-    width: max-content;
+    min-width: 850px;
+    max-width: 900px;
+    width: auto;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
     opacity: 0;
     visibility: hidden;
@@ -189,21 +198,56 @@
 .dropdown-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    max-width: 1000px;
+    gap: 1.25rem;
+    max-width: 900px;
     width: 100%;
 }
 
+/* Adjust grid for Industries (2 columns) */
+.nav-dropdown:nth-child(3) .dropdown-content {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 350px;
+    gap: 1rem;
+}
+
+/* Adjust dropdown menu width for Industries */
+.nav-dropdown:nth-child(3) .dropdown-menu {
+    min-width: 350px;
+    max-width: 350px;
+    padding: 1rem;
+}
+
+/* Adjust grid for Products (2 columns) */  
+.nav-dropdown:nth-child(4) .dropdown-content {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 450px;
+    gap: 1.5rem;
+}
+
+/* Adjust dropdown menu width for Products */
+.nav-dropdown:nth-child(4) .dropdown-menu {
+    min-width: 450px;
+    max-width: 500px;
+    padding: 1rem;
+}
+
 .dropdown-section {
-    min-height: 300px;
+    min-height: auto;
+}
+
+/* Reduce height for Industries and Products sections */
+.nav-dropdown:nth-child(3) .dropdown-section,
+.nav-dropdown:nth-child(4) .dropdown-section {
+    min-height: auto;
+    padding-bottom: 0;
 }
 
 .dropdown-section h4 {
     color: #00BFFF;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
     border-bottom: 2px solid #00BFFF;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -212,45 +256,38 @@
 
 .dropdown-link {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
     text-decoration: none;
     color: #ffffff;
-    border-radius: 10px;
+    border-radius: 8px;
     transition: all 0.3s ease;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
     border: 1px solid rgba(255, 255, 255, 0.05);
     background: rgba(255, 255, 255, 0.02);
+    white-space: nowrap;
 }
 
 .dropdown-link:hover {
     background: rgba(0, 191, 255, 0.1);
     color: #00BFFF;
-    transform: translateX(8px);
+    transform: translateX(4px);
 }
 
 .dropdown-link i {
     color: #00BFFF;
-    font-size: 1rem;
+    font-size: 0.9rem;
     flex-shrink: 0;
-}
-
-.dropdown-link div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    width: 16px;
+    text-align: center;
 }
 
 .dropdown-link span {
     font-weight: 500;
     color: #ffffff;
     transition: color 0.3s ease;
-}
-
-.dropdown-link small {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
 }
 
 .dropdown-link:hover span {
@@ -396,7 +433,7 @@
 /* Prevent dropdown overflow on smaller screens */
 @media (max-width: 1200px) {
     .dropdown-menu {
-        min-width: 500px;
+        min-width: 700px;
         max-width: 90vw;
     }
     
