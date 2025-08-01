@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="src/components/header/header-new.css?v=7">
     <link rel="stylesheet" href="src/components/footer/footer.css?v=3">
     <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5">
-    <link rel="stylesheet" href="src/components/hero/hero.css">
+    <link rel="stylesheet" href="src/components/hero/hero.css?v=2">
     <link rel="stylesheet" href="src/components/services/services.css">
     <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css">
     <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
@@ -71,35 +71,98 @@
     
     <!-- Scripts -->
     <script src="src/components/header/header-new.js?v=13"></script>
-    <script src="src/components/footer/footer.js"></script>
     <script src="src/scripts/main.js"></script>
     
-    <!-- Component Loading Script -->
+    <!-- Simplified Component Loading Script -->
     <script>
-        // Load components dynamically
         async function loadComponent(componentId, componentPath) {
             try {
+                console.log(`Loading ${componentId}...`);
                 const response = await fetch(componentPath);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
                 const html = await response.text();
-                document.getElementById(componentId).innerHTML = html;
+                const element = document.getElementById(componentId);
+                if (element) {
+                    element.innerHTML = html;
+                    console.log(`✓ ${componentId} loaded`);
+                    return true;
+                } else {
+                    console.error(`Element #${componentId} not found`);
+                    return false;
+                }
             } catch (error) {
-                console.error(`Error loading component ${componentId}:`, error);
+                console.error(`Failed to load ${componentId}:`, error);
+                return false;
             }
         }
 
-        // Load all components
-        document.addEventListener('DOMContentLoaded', async () => {
-            await Promise.all([
-                // New header component is loaded by header-new.js
-                loadComponent('mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'),
-                loadComponent('hero-component', 'src/components/hero/hero.html'),
-                loadComponent('services-component', 'src/components/services/services.html'),
-                loadComponent('tech-stack-component', 'src/components/tech-stack/tech-stack.html'),
-                loadComponent('testimonials-component', 'src/components/testimonials/testimonials.html'),
-                loadComponent('contact-form-component', 'src/components/forms/contact/contact-form.html'),
-                loadComponent('footer-component', 'src/components/footer/footer.html')
-            ]);
+        // Main initialization
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('🚀 Initializing Acadify Solution...');
+            
+            // Load components one by one with verification
+            const components = [
+                ['mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'],
+                ['hero-component', 'src/components/hero/hero.html'],
+                ['services-component', 'src/components/services/services.html'],
+                ['tech-stack-component', 'src/components/tech-stack/tech-stack.html'],
+                ['testimonials-component', 'src/components/testimonials/testimonials.html'],
+                ['contact-form-component', 'src/components/forms/contact/contact-form.html'],
+                ['footer-component', 'src/components/footer/footer.html']
+            ];
+            
+            let loadedCount = 0;
+            for (const [id, path] of components) {
+                const success = await loadComponent(id, path);
+                if (success) loadedCount++;
+            }
+            
+            console.log(`Components loaded: ${loadedCount}/${components.length}`);
+            
+            // Wait a moment then verify content
+            setTimeout(() => {
+                console.log('🔍 Verifying components...');
+                
+                // Check for critical sections
+                const checks = [
+                    ['.services-section', 'Services section'],
+                    ['.tech-stack-section', 'Tech Stack section'],
+                    ['.testimonials-section', 'Testimonials section'],
+                    ['.code-title', 'Innovation.js code'],
+                    ['.hero-title', 'Hero title']
+                ];
+                
+                checks.forEach(([selector, name]) => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        console.log(`✓ ${name} found and visible`);
+                        element.style.opacity = '1';
+                        element.style.visibility = 'visible';
+                    } else {
+                        console.error(`✗ ${name} missing`);
+                    }
+                });
+                
+                // Initialize JavaScript functionality
+                if (window.FooterComponent) {
+                    new FooterComponent();
+                }
+                
+                if (window.AcadifyApp) {
+                    new AcadifyApp();
+                }
+                
+                console.log('✅ Acadify Solution fully loaded');
+            }, 500);
         });
     </script>
+    
+    <!-- Footer Component Script (loaded after footer HTML) -->
+    <script src="src/components/footer/footer.js"></script>
+    
+    <!-- Link Validation Script (development only) -->
+    <script src="link-validation.js"></script>
 </body>
 </html>

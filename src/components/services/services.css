@@ -1,7 +1,7 @@
 /* Services Section Component Styles */
 
 .services-section {
-    padding: var(--spacing-6xl) 0;
+    padding: var(--spacing-5xl) 0;
     background: var(--bg-primary);
     position: relative;
     overflow: hidden;

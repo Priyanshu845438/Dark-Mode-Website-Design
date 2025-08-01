@@ -523,6 +523,99 @@ select:focus-visible {
     outline-offset: 2px;
 }
 
+/* Force visibility for critical sections - Component Loading Fix */
+.services-section,
+.tech-stack-section,
+.testimonials-section,
+.hero-section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure component containers are always visible */
+#services-component,
+#tech-stack-component,
+#testimonials-component,
+#hero-component {
+    min-height: 10px;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Section Spacing - Consistent padding for all sections */
+section {
+    padding: var(--spacing-5xl) 0;
+    margin: 0;
+}
+
+/* Hero section gets extra top padding for header clearance */
+.hero-section {
+    padding-top: calc(var(--spacing-5xl) + var(--spacing-3xl));
+}
+
+/* Specific section spacing adjustments */
+.services-section,
+.tech-stack-section,
+.testimonials-section {
+    padding: var(--spacing-5xl) 0;
+}
+
+/* Contact form section spacing */
+.contact-section {
+    padding: var(--spacing-5xl) 0;
+}
+
+/* Footer spacing */
+footer {
+    margin-top: var(--spacing-4xl);
+}
+
+/* Mobile responsive section spacing */
+@media (max-width: 768px) {
+    section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    .hero-section {
+        padding-top: calc(var(--spacing-4xl) + var(--spacing-2xl));
+        padding-bottom: var(--spacing-4xl);
+    }
+    
+    .services-section,
+    .tech-stack-section,
+    .testimonials-section,
+    .contact-form-section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    footer {
+        margin-top: var(--spacing-3xl);
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .hero-section {
+        padding-top: calc(var(--spacing-3xl) + var(--spacing-xl));
+        padding-bottom: var(--spacing-3xl);
+    }
+    
+    .services-section,
+    .tech-stack-section,
+    .testimonials-section,
+    .contact-form-section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    footer {
+        margin-top: var(--spacing-2xl);
+    }
+}
+
 /* Print Styles */
 @media print {
     * {

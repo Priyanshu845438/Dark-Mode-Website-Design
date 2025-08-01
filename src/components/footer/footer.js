@@ -10,13 +10,9 @@ class FooterComponent {
     }
 
     async loadFooter() {
-        try {
-            const response = await fetch('src/components/footer/footer.html');
-            const footerHtml = await response.text();
-            document.getElementById('footer-container').innerHTML = footerHtml;
-        } catch (error) {
-            console.error('Failed to load footer:', error);
-        }
+        // Footer HTML is now loaded by the main component loader
+        // This method just sets up interactions
+        console.log('Footer component initialized');
     }
 
     setupFooterInteractions() {

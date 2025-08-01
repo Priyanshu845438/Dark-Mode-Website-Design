@@ -4,15 +4,42 @@ class AcadifyApp {
     constructor() {
         this.currentSlide = 0;
         this.isAutoPlaying = true;
+        this.componentsLoaded = false;
         this.init();
     }
 
     init() {
-        this.initializeComponents();
-        this.setupEventListeners();
-        this.initializeAnimations();
-        this.setupForms();
-        this.startAutoSlider();
+        // Wait for components to be available
+        this.waitForComponents().then(() => {
+            this.initializeComponents();
+            this.setupEventListeners();
+            this.initializeAnimations();
+            this.setupForms();
+            this.startAutoSlider();
+            console.log('✓ AcadifyApp fully initialized');
+        });
+    }
+    
+    async waitForComponents() {
+        let attempts = 0;
+        const maxAttempts = 20;
+        
+        while (attempts < maxAttempts) {
+            const servicesSection = document.querySelector('.services-section');
+            const techStackSection = document.querySelector('.tech-stack-section');
+            const testimonialsSection = document.querySelector('.testimonials-section');
+            
+            if (servicesSection && techStackSection && testimonialsSection) {
+                console.log('✓ All critical components found');
+                this.componentsLoaded = true;
+                return;
+            }
+            
+            attempts++;
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        
+        console.warn('⚠️ Some components may not have loaded properly');
     }
 
     initializeComponents() {
@@ -32,13 +59,40 @@ class AcadifyApp {
     }
 
     setupEventListeners() {
-        // Smooth scrolling for anchor links
+        // Enhanced smooth scrolling for anchor links
         document.addEventListener('click', (e) => {
-            if (e.target.matches('[data-scroll-to]')) {
+            // Handle data-scroll-to attributes
+            if (e.target.matches('[data-scroll-to]') || e.target.closest('[data-scroll-to]')) {
                 e.preventDefault();
-                const target = document.getElementById(e.target.dataset.scrollTo);
+                const element = e.target.matches('[data-scroll-to]') ? e.target : e.target.closest('[data-scroll-to]');
+                const targetId = element.dataset.scrollTo;
+                const target = document.getElementById(targetId);
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    console.warn(`Target element #${targetId} not found`);
+                }
+            }
+            
+            // Handle regular anchor links (#services, #contact, etc.)
+            if (e.target.matches('a[href^="#"]') || e.target.closest('a[href^="#"]')) {
+                const link = e.target.matches('a[href^="#"]') ? e.target : e.target.closest('a[href^="#"]');
+                const href = link.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else {
+                        console.warn(`Target element #${targetId} not found`);
+                    }
                 }
             }
         });
