@@ -76,6 +76,7 @@
     <!-- Scripts -->
     <script src="src/components/header/header-new.js?v=13"></script>
     <script src="src/components/about/about.js"></script>
+    <script src="src/components/tech-stack/tech-stack.js"></script>
     <script src="src/scripts/main.js"></script>
     
     <!-- Simplified Component Loading Script -->
@@ -171,15 +172,29 @@
                         console.log(`✓ ${name} found and visible`);
                         element.style.opacity = '1';
                         element.style.visibility = 'visible';
+                        element.style.display = 'block';
                     } else {
                         console.error(`✗ ${name} missing`);
                     }
                 });
                 
+                // Force testimonials section visibility
+                const testimonialsSection = document.querySelector('.testimonials-section');
+                if (testimonialsSection) {
+                    testimonialsSection.style.display = 'block';
+                    testimonialsSection.style.visibility = 'visible';
+                    testimonialsSection.style.opacity = '1';
+                    testimonialsSection.style.position = 'relative';
+                    testimonialsSection.style.zIndex = '1';
+                    console.log('✓ Testimonials section forced visible');
+                }
+                
                 // Initialize JavaScript functionality
                 if (window.FooterComponent) {
                     new FooterComponent();
                 }
+                
+                // Tech Stack filtering is now handled by its own script
                 
                 if (window.AcadifyApp) {
                     new AcadifyApp();
