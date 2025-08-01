@@ -4,7 +4,18 @@
     padding: var(--spacing-5xl) 0;
     background: var(--bg-primary);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 600px;
+    width: 100%;
+    z-index: 1;
+}
+
+.testimonials-section * {
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .testimonials-section::before {
@@ -79,14 +90,23 @@
     margin-bottom: var(--spacing-4xl);
     overflow: hidden;
     border-radius: var(--border-radius-xl);
+    width: 100%;
+    min-height: 350px;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
 }
 
 .testimonials-track {
-    display: flex;
-    width: 800%; /* 8 testimonials for seamless loop (4 original + 4 duplicate) */
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(0);
-    animation: testimonialLoop 25s linear infinite;
+    display: flex !important;
+    width: 4000%; /* 40 testimonials for seamless loop (20 original + 20 duplicate) */
+    animation: testimonialLoop 60s linear infinite;
+    height: 100%;
+    align-items: stretch;
+    will-change: transform;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .testimonials-slider:hover .testimonials-track {
@@ -99,10 +119,11 @@
 }
 
 .testimonial-card {
-    flex: 0 0 25%; /* Each card takes 25% of track width to show 4 cards (3 visible + 1 partial) */
+    flex: 0 0 2.5%; /* Each card takes 2.5% of track width to show multiple cards */
     padding: 0 var(--spacing-md);
     box-sizing: border-box;
     max-width: 350px; /* Limit maximum width similar to service cards */
+    min-width: 300px;
 }
 
 /* Navigation Arrows */
@@ -143,10 +164,10 @@
 
 /* Testimonial Card - Services-style design */
 .testimonial-card {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-xl);
     padding: var(--spacing-xl) var(--spacing-lg);
     position: relative;
@@ -158,7 +179,9 @@
     justify-content: space-between;
     margin: 0 var(--spacing-md);
     width: 100%;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    visibility: visible;
 }
 
 .testimonial-card::before {
@@ -345,15 +368,15 @@
     }
     
     .testimonials-track {
-        flex-direction: column;
-        width: 100%;
-        animation: none;
+        /* Keep animation on mobile for continuous scrolling */
+        animation: testimonialLoop 35s linear infinite;
     }
     
     .testimonial-card {
-        flex: none;
-        margin-bottom: var(--spacing-lg);
-        max-width: none;
+        /* Keep horizontal scrolling even on mobile for seamless experience */
+        flex: 0 0 80%;  /* Make cards slightly smaller on mobile */
+        margin-bottom: 0;
+        max-width: 300px;
     }
     
     .slider-arrow {

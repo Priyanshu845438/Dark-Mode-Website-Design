@@ -142,118 +142,64 @@ class AcadifyApp {
 
     initTestimonialsSlider() {
         const track = document.querySelector('.testimonials-track');
-        const prevBtn = document.getElementById('prev-testimonial');
-        const nextBtn = document.getElementById('next-testimonial');
-        const dots = document.querySelectorAll('.slider-dot');
-
-        if (!track || !prevBtn || !nextBtn) return;
-
-        const totalSlides = 4;
-        let isPaused = false;
-
-        // Remove CSS animation for manual control
-        const pauseAnimation = () => {
-            track.style.animationPlayState = 'paused';
-            isPaused = true;
-        };
-
-        const resumeAnimation = () => {
-            if (!isPaused) {
-                track.style.animationPlayState = 'running';
-            }
-        };
-
-        let buttonTimeout = null;
-
-        prevBtn.addEventListener('click', () => {
-            isPaused = true;
-            pauseAnimation();
-            this.currentSlide = this.currentSlide > 0 ? this.currentSlide - 1 : totalSlides - 1;
-            this.updateSliderManual();
-            
-            if (buttonTimeout) clearTimeout(buttonTimeout);
-            buttonTimeout = setTimeout(() => {
-                isPaused = false;
-                resumeAnimation();
-            }, 3000);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            isPaused = true;
-            pauseAnimation();
-            this.currentSlide = this.currentSlide < totalSlides - 1 ? this.currentSlide + 1 : 0;
-            this.updateSliderManual();
-            
-            if (buttonTimeout) clearTimeout(buttonTimeout);
-            buttonTimeout = setTimeout(() => {
-                isPaused = false;
-                resumeAnimation();
-            }, 3000);
-        });
-
-        // Dots functionality removed as requested
-
-        // Robust hover handling
         const slider = document.querySelector('.testimonials-slider');
-        if (slider) {
-            let hoverTimeout = null;
-            let isHovering = false;
-            
-            slider.addEventListener('mouseenter', () => {
-                isHovering = true;
-                if (hoverTimeout) {
-                    clearTimeout(hoverTimeout);
-                    hoverTimeout = null;
-                }
-                track.style.animationPlayState = 'paused';
-            });
 
-            slider.addEventListener('mouseleave', () => {
-                isHovering = false;
-                // Small delay to prevent flicker and ensure smooth transition
-                hoverTimeout = setTimeout(() => {
-                    if (!isHovering && !isPaused) {
-                        track.style.animationPlayState = 'running';
-                    }
-                    hoverTimeout = null;
-                }, 150);
-            });
+        if (!track || !slider) return;
 
-            // Additional robust handling for edge cases
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    track.style.animationPlayState = 'paused';
-                } else if (!isHovering && !isPaused) {
+        // Ensure no conflicting styles and CSS animation runs continuously
+        track.style.transform = '';
+        track.style.transition = '';
+        track.style.animationPlayState = 'running';
+        
+        // Only handle hover pause/resume for user experience
+        let hoverTimeout = null;
+        let isHovering = false;
+        
+        slider.addEventListener('mouseenter', () => {
+            isHovering = true;
+            if (hoverTimeout) {
+                clearTimeout(hoverTimeout);
+                hoverTimeout = null;
+            }
+            track.style.animationPlayState = 'paused';
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isHovering = false;
+            // Small delay to prevent flicker and ensure smooth transition
+            hoverTimeout = setTimeout(() => {
+                if (!isHovering) {
                     track.style.animationPlayState = 'running';
                 }
-            });
-        }
+                hoverTimeout = null;
+            }, 150);
+        });
+
+        // Handle visibility change to pause when tab is not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                track.style.animationPlayState = 'paused';
+            } else if (!isHovering) {
+                track.style.animationPlayState = 'running';
+            }
+        });
+
+        console.log('✓ Testimonials continuous scroll initialized - never ending loop');
     }
 
     updateSlider() {
-        // This method is kept for compatibility but not used for auto-scroll
-        // No dots functionality needed
+        // Not needed - CSS animation handles continuous scrolling
     }
 
     updateSliderManual() {
-        const track = document.querySelector('.testimonials-track');
-
-        if (track) {
-            // Calculate the transform percentage for manual navigation
-            const translateX = -this.currentSlide * 25; // Each slide is 25% of the track width
-            track.style.transform = `translateX(${translateX}%)`;
-            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            track.dataset.slide = this.currentSlide;
-        }
+        // Not needed - CSS animation handles continuous scrolling
     }
 
     startAutoSlider() {
-        setInterval(() => {
-            if (this.isAutoPlaying) {
-                this.currentSlide = this.currentSlide < 3 ? this.currentSlide + 1 : 0;
-                this.updateSlider();
-            }
-        }, 5000);
+        // The testimonials use CSS animation for continuous scrolling
+        // This method is kept for compatibility but auto-scroll is handled by CSS
+        // The CSS animation creates a seamless loop without JavaScript intervention
+        console.log('✓ Testimonials using CSS continuous scroll animation');
     }
 
     initCounterAnimation() {

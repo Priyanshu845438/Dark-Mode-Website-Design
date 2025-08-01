@@ -1,5 +1,5 @@
 modules = ["web", "nodejs-20", "python-3.11"]
-run = "node index.js"
+run = "node src/scripts/main.js"
 
 [nix]
 channel = "stable-25_05"
@@ -37,4 +37,4 @@ externalPort = 8000
 expertMode = true
 
 [deployment]
-run = ["sh", "-c", "node index.js"]
+run = ["sh", "-c", "node src/scripts/main.js"]
