@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="src/styles/utilities.css">
     <link rel="stylesheet" href="src/styles/pages/home.css">
     <link rel="stylesheet" href="src/components/header/header-new.css?v=7">
-    <link rel="stylesheet" href="src/components/footer/footer.css?v=3">
+    <link rel="stylesheet" href="src/components/footer/footer.css?v=5">
     <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5">
-    <link rel="stylesheet" href="src/components/hero/hero.css?v=5">
+    <link rel="stylesheet" href="src/components/hero/hero.css?v=6">
     <link rel="stylesheet" href="src/components/services/services.css">
-    <link rel="stylesheet" href="src/components/about/about.css?v=8">
-    <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=2">
+    <link rel="stylesheet" href="src/components/about/about.css?v=12">
+    <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=5">
     <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
     <link rel="stylesheet" href="src/components/forms/contact/contact-form.css">
     
@@ -75,6 +75,7 @@
     
     <!-- Scripts -->
     <script src="src/components/header/header-new.js?v=13"></script>
+    <script src="src/components/about/about.js"></script>
     <script src="src/scripts/main.js"></script>
     
     <!-- Simplified Component Loading Script -->
@@ -136,9 +137,33 @@
                     ['.about-section', 'About section'],
                     ['.tech-stack-section', 'Tech Stack section'],
                     ['.testimonials-section', 'Testimonials section'],
-                    ['.code-title', 'Innovation.js code'],
+                    ['.window-title', 'Innovation.js code'],
                     ['.hero-title', 'Hero title']
                 ];
+                
+                // Force About section visibility
+                const aboutSection = document.querySelector('.about-section');
+                const aboutContent = document.querySelector('.about-content');
+                const aboutVisual = document.querySelector('.about-visual');
+                
+                if (aboutSection) {
+                    aboutSection.style.display = 'flex';
+                    aboutSection.style.opacity = '1';
+                    aboutSection.style.visibility = 'visible';
+                    aboutSection.style.background = '#000000';
+                }
+                
+                if (aboutContent) {
+                    aboutContent.style.opacity = '1';
+                    aboutContent.style.visibility = 'visible';
+                    aboutContent.style.transform = 'translateX(0)';
+                }
+                
+                if (aboutVisual) {
+                    aboutVisual.style.opacity = '1';
+                    aboutVisual.style.visibility = 'visible';
+                    aboutVisual.style.transform = 'translateX(0)';
+                }
                 
                 checks.forEach(([selector, name]) => {
                     const element = document.querySelector(selector);

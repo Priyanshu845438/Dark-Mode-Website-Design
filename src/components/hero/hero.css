@@ -773,6 +773,8 @@
     .hero-section {
         padding-top: 60px;
         min-height: 100vh;
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
     }
     
     .hero-title {
@@ -797,6 +799,92 @@
     .hero-code-preview {
         max-width: 100%;
         margin: 0 var(--spacing-md);
+    }
+    
+    /* Code Workspace Mobile Responsive */
+    .code-workspace {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        transform: scale(0.8);
+        transform-origin: center;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .code-window {
+        max-width: 280px;
+        width: 280px;
+        min-height: 250px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .main-window {
+        position: relative;
+        top: 20px;
+        left: 10px;
+        z-index: 10;
+        width: 280px;
+        height: 300px;
+    }
+    
+    .terminal-window {
+        position: absolute;
+        top: 40px;
+        right: 5px;
+        width: 240px;
+        height: 200px;
+        z-index: 8;
+    }
+    
+    .browser-window {
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        width: 220px;
+        height: 180px;
+        z-index: 6;
+        opacity: 0.9;
+    }
+    
+    /* Reduce font sizes for mobile */
+    .window-title {
+        font-size: 11px;
+    }
+    
+    .code-area {
+        padding: 12px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+    
+    .line-numbers {
+        padding: 12px 6px;
+        font-size: 10px;
+        min-width: 30px;
+    }
+    
+    .terminal-content {
+        padding: 12px;
+        font-size: 10px;
+        line-height: 1.4;
+    }
+    
+    .browser-content {
+        padding: 8px;
+        font-size: 9px;
+    }
+    
+    /* Hide some floating particles on mobile for performance */
+    .tech-particles .particle:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* Adjust floating tech icons for mobile */
+    .tech-icon {
+        font-size: 16px;
     }
 }
 
