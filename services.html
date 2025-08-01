@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Acadify Solution</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <link rel="stylesheet" href="src/styles/pages/services.css">
+    <link rel="stylesheet" href="src/components/header/header-new.css">
+    <link rel="stylesheet" href="src/components/footer/footer.css">
+    <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css">
+</head>
+<body>
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="services-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive technology solutions for your business</p>
+            </div>
+        </section>
+        
+        <section class="services-grid">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>Modern, responsive websites and web applications</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>Native and cross-platform mobile applications</p>
+                    </div>
+                    <div class="service-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered design for exceptional experiences</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
+    <!-- Scripts -->
+    <script src="src/components/header/header-new.js"></script>
+    <script src="src/components/footer/footer.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'),
+                loadComponent('footer-component', 'src/components/footer/footer.html')
+            ]);
+        });
+    </script>
+</body>
+</html>

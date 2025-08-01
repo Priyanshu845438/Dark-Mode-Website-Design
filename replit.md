@@ -5,6 +5,7 @@ Acadify Solution is a professional technology services company website showcasin
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
+Navigation preference: Responsive mega menu for desktop only, mobile sidebar navigation with Schedule Meeting button included.
 
 ## System Architecture
 

@@ -16,8 +16,7 @@ class AcadifyApp {
     }
 
     initializeComponents() {
-        // Initialize Header/Navigation
-        this.initNavigation();
+        // Navigation is now handled by the new header component
         
         // Initialize Testimonials Slider
         this.initTestimonialsSlider();
@@ -44,39 +43,7 @@ class AcadifyApp {
             }
         });
 
-        // Mobile navigation toggle
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-        const mobileNavClose = document.getElementById('mobile-nav-close');
-
-        if (hamburgerBtn && mobileNav) {
-            hamburgerBtn.addEventListener('click', () => {
-                mobileNav.classList.add('active');
-                hamburgerBtn.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (mobileNavClose && mobileNav) {
-            mobileNavClose.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                const hamburgerBtn = document.getElementById('hamburger-btn');
-                if (hamburgerBtn) hamburgerBtn.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Close mobile nav on overlay click
-        if (mobileNav) {
-            mobileNav.addEventListener('click', (e) => {
-                if (e.target.classList.contains('mobile-nav-overlay')) {
-                    mobileNav.classList.remove('active');
-                    const hamburgerBtn = document.getElementById('hamburger-btn');
-                    if (hamburgerBtn) hamburgerBtn.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-        }
+        // Mobile navigation is now handled by the new header component
 
         // Mobile dropdown toggles
         document.addEventListener('click', (e) => {
@@ -117,41 +84,7 @@ class AcadifyApp {
         });
     }
 
-    initNavigation() {
-        // Mega menu functionality
-        const servicesLink = document.querySelector('[data-mega-menu="services"]');
-        const megaMenu = document.getElementById('mega-menu');
-
-        if (servicesLink && megaMenu) {
-            let megaMenuTimeout;
-
-            servicesLink.addEventListener('mouseenter', () => {
-                clearTimeout(megaMenuTimeout);
-                megaMenu.classList.add('active');
-            });
-
-            servicesLink.addEventListener('mouseleave', () => {
-                megaMenuTimeout = setTimeout(() => {
-                    megaMenu.classList.remove('active');
-                }, 150);
-            });
-
-            megaMenu.addEventListener('mouseenter', () => {
-                clearTimeout(megaMenuTimeout);
-            });
-
-            megaMenu.addEventListener('mouseleave', () => {
-                megaMenu.classList.remove('active');
-            });
-
-            // Close mega menu on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    megaMenu.classList.remove('active');
-                }
-            });
-        }
-    }
+    // Navigation functionality moved to header-new.js
 
     initTestimonialsSlider() {
         const track = document.querySelector('.testimonials-track');
@@ -342,9 +275,13 @@ class AcadifyApp {
         // Handle responsive navigation
         if (window.innerWidth > 1023) {
             const mobileNav = document.getElementById('mobile-nav');
+            const navToggle = document.getElementById('nav-toggle');
             if (mobileNav) {
                 mobileNav.classList.remove('active');
                 document.body.style.overflow = '';
+            }
+            if (navToggle) {
+                navToggle.classList.remove('active');
             }
         }
     }

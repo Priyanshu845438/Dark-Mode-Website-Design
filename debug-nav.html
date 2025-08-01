@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { margin: 0; padding: 20px; background: #000; color: white; font-family: Arial; }
+        .nav { display: flex; gap: 0; }
+        .nav-item { padding: 10px 20px; border: 1px solid red; margin: 5px; }
+        .nav-item:hover { background: blue; }
+        .dropdown { position: relative; }
+        .dropdown-menu { 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: green; 
+            padding: 20px; 
+            display: none; 
+            width: 200px;
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-item">Home</div>
+        <div class="nav-item dropdown">
+            Services
+            <div class="dropdown-menu">Services Menu</div>
+        </div>
+        <div class="nav-item dropdown">
+            Industries
+            <div class="dropdown-menu">Industries Menu</div>
+        </div>
+        <div class="nav-item">About</div>
+    </div>
+    <p>Test: Hover on Home should only highlight Home. Hover on Services should only show Services dropdown.</p>
+</body>
+</html>

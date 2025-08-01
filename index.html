@@ -19,9 +19,8 @@
     <link rel="stylesheet" href="src/styles/global.css">
     <link rel="stylesheet" href="src/styles/utilities.css">
     <link rel="stylesheet" href="src/styles/pages/home.css">
-    <link rel="stylesheet" href="src/components/header/header.css">
+    <link rel="stylesheet" href="src/components/header/header-new.css?v=2">
     <link rel="stylesheet" href="src/components/footer/footer.css">
-    <link rel="stylesheet" href="src/components/navigation/mega-menu/mega-menu.css">
     <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css">
     <link rel="stylesheet" href="src/components/hero/hero.css">
     <link rel="stylesheet" href="src/components/services/services.css">
@@ -46,12 +45,6 @@
     <meta name="twitter:description" content="Professional web development, mobile apps, and digital solutions.">
 </head>
 <body>
-    <!-- Header Component -->
-    <div id="header-component"></div>
-    
-    <!-- Mega Menu Component -->
-    <div id="mega-menu-component"></div>
-    
     <!-- Mobile Navigation Component -->
     <div id="mobile-nav-component"></div>
     
@@ -77,7 +70,7 @@
     <div id="footer-component"></div>
     
     <!-- Scripts -->
-    <script src="src/components/header/header.js"></script>
+    <script src="src/components/header/header-new.js?v=2"></script>
     <script src="src/components/footer/footer.js"></script>
     <script src="src/scripts/main.js"></script>
     
@@ -97,8 +90,7 @@
         // Load all components
         document.addEventListener('DOMContentLoaded', async () => {
             await Promise.all([
-                loadComponent('header-component', 'src/components/header/header.html'),
-                loadComponent('mega-menu-component', 'src/components/navigation/mega-menu/mega-menu.html'),
+                // New header component is loaded by header-new.js
                 loadComponent('mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'),
                 loadComponent('hero-component', 'src/components/hero/hero.html'),
                 loadComponent('services-component', 'src/components/services/services.html'),
