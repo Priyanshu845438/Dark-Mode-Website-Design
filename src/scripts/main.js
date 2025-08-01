@@ -149,48 +149,102 @@ class AcadifyApp {
         if (!track || !prevBtn || !nextBtn) return;
 
         const totalSlides = 4;
+        let isPaused = false;
+
+        // Remove CSS animation for manual control
+        const pauseAnimation = () => {
+            track.style.animationPlayState = 'paused';
+            isPaused = true;
+        };
+
+        const resumeAnimation = () => {
+            if (!isPaused) {
+                track.style.animationPlayState = 'running';
+            }
+        };
+
+        let buttonTimeout = null;
 
         prevBtn.addEventListener('click', () => {
+            isPaused = true;
+            pauseAnimation();
             this.currentSlide = this.currentSlide > 0 ? this.currentSlide - 1 : totalSlides - 1;
-            this.updateSlider();
+            this.updateSliderManual();
+            
+            if (buttonTimeout) clearTimeout(buttonTimeout);
+            buttonTimeout = setTimeout(() => {
+                isPaused = false;
+                resumeAnimation();
+            }, 3000);
         });
 
         nextBtn.addEventListener('click', () => {
+            isPaused = true;
+            pauseAnimation();
             this.currentSlide = this.currentSlide < totalSlides - 1 ? this.currentSlide + 1 : 0;
-            this.updateSlider();
+            this.updateSliderManual();
+            
+            if (buttonTimeout) clearTimeout(buttonTimeout);
+            buttonTimeout = setTimeout(() => {
+                isPaused = false;
+                resumeAnimation();
+            }, 3000);
         });
 
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                this.currentSlide = index;
-                this.updateSlider();
-            });
-        });
+        // Dots functionality removed as requested
 
-        // Pause auto-play on hover
+        // Robust hover handling
         const slider = document.querySelector('.testimonials-slider');
         if (slider) {
+            let hoverTimeout = null;
+            let isHovering = false;
+            
             slider.addEventListener('mouseenter', () => {
-                this.isAutoPlaying = false;
+                isHovering = true;
+                if (hoverTimeout) {
+                    clearTimeout(hoverTimeout);
+                    hoverTimeout = null;
+                }
+                track.style.animationPlayState = 'paused';
             });
 
             slider.addEventListener('mouseleave', () => {
-                this.isAutoPlaying = true;
+                isHovering = false;
+                // Small delay to prevent flicker and ensure smooth transition
+                hoverTimeout = setTimeout(() => {
+                    if (!isHovering && !isPaused) {
+                        track.style.animationPlayState = 'running';
+                    }
+                    hoverTimeout = null;
+                }, 150);
+            });
+
+            // Additional robust handling for edge cases
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    track.style.animationPlayState = 'paused';
+                } else if (!isHovering && !isPaused) {
+                    track.style.animationPlayState = 'running';
+                }
             });
         }
     }
 
     updateSlider() {
+        // This method is kept for compatibility but not used for auto-scroll
+        // No dots functionality needed
+    }
+
+    updateSliderManual() {
         const track = document.querySelector('.testimonials-track');
-        const dots = document.querySelectorAll('.slider-dot');
 
         if (track) {
+            // Calculate the transform percentage for manual navigation
+            const translateX = -this.currentSlide * 25; // Each slide is 25% of the track width
+            track.style.transform = `translateX(${translateX}%)`;
+            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
             track.dataset.slide = this.currentSlide;
         }
-
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentSlide);
-        });
     }
 
     startAutoSlider() {
