@@ -11,7 +11,7 @@ class FooterComponent {
 
     async loadFooter() {
         try {
-            const response = await fetch('components/footer.html');
+            const response = await fetch('src/components/footer/footer.html');
             const footerHtml = await response.text();
             document.getElementById('footer-container').innerHTML = footerHtml;
         } catch (error) {

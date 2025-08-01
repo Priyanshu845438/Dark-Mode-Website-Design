@@ -4,335 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acadify Solution - Professional Technology Services</title>
-    <meta name="description" content="Acadify Solution provides cutting-edge technology services with modern, user-friendly web solutions. Innovation, reliability, and professionalism.">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/global.css" as="style">
-    <link rel="preload" href="styles/utilities.css" as="style">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/utilities.css">
-    <link rel="stylesheet" href="styles/pages.css">
-    <link rel="stylesheet" href="components/navbar.module.css">
-    <link rel="stylesheet" href="components/footer.module.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <link rel="stylesheet" href="src/styles/pages/home.css">
+    <link rel="stylesheet" href="src/components/header/header.css">
+    <link rel="stylesheet" href="src/components/footer/footer.css">
+    <link rel="stylesheet" href="src/components/navigation/mega-menu/mega-menu.css">
+    <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css">
+    <link rel="stylesheet" href="src/components/hero/hero.css">
+    <link rel="stylesheet" href="src/components/services/services.css">
+    <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css">
+    <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
+    <link rel="stylesheet" href="src/components/forms/contact/contact-form.css">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Professional technology services including web development, mobile apps, UI/UX design, and digital solutions. Transform your business with cutting-edge technology.">
+    <meta name="keywords" content="web development, mobile apps, UI/UX design, technology services, digital transformation">
+    <meta name="author" content="Acadify Solution">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Acadify Solution - Professional Technology Services">
+    <meta property="og:description" content="Transform your business with cutting-edge technology solutions. Web development, mobile apps, and digital innovation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acadifysolution.com">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Acadify Solution - Technology Services">
+    <meta name="twitter:description" content="Professional web development, mobile apps, and digital solutions.">
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navbar-container"></div>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <img src="assets/hero-bg.svg" alt="" class="hero-bg-image">
-        </div>
-        <div class="hero-content">
-            <div class="container">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="title-line animate-text">Cutting-Edge</span>
-                        <span class="title-line animate-text">Technology Solutions</span>
-                    </h1>
-                    <p class="hero-subtitle animate-text">
-                        Professional web development services that combine innovation, 
-                        reliability, and modern design to deliver exceptional digital experiences.
-                    </p>
-                    <div class="hero-actions animate-text">
-                        <button class="btn btn-primary" data-scroll-to="services">
-                            <span>Explore Services</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </button>
-                        <button class="btn btn-secondary" data-scroll-to="contact">
-                            <span>Get In Touch</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title animate-on-scroll">Our Services</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Comprehensive technology solutions tailored to your business needs
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">
-                        Custom web applications built with modern frameworks and technologies, 
-                        ensuring scalability, performance, and user experience.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">React</span>
-                        <span class="feature-tag">Node.js</span>
-                        <span class="feature-tag">TypeScript</span>
-                    </div>
-                </div>
-
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="service-title">Mobile Solutions</h3>
-                    <p class="service-description">
-                        Native and cross-platform mobile applications that deliver 
-                        seamless experiences across iOS and Android devices.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">React Native</span>
-                        <span class="feature-tag">Flutter</span>
-                        <span class="feature-tag">PWA</span>
-                    </div>
-                </div>
-
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="service-title">Cloud Infrastructure</h3>
-                    <p class="service-description">
-                        Scalable cloud solutions and DevOps practices that ensure 
-                        reliable deployment, monitoring, and maintenance of your applications.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">AWS</span>
-                        <span class="feature-tag">Docker</span>
-                        <span class="feature-tag">Kubernetes</span>
-                    </div>
-                </div>
-
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">
-                        User-centered design approaches that create intuitive interfaces 
-                        and exceptional user experiences for your digital products.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Figma</span>
-                        <span class="feature-tag">Prototyping</span>
-                        <span class="feature-tag">User Research</span>
-                    </div>
-                </div>
-
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Analytics & SEO</h3>
-                    <p class="service-description">
-                        Data-driven optimization strategies and search engine optimization 
-                        to maximize your digital presence and performance.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Google Analytics</span>
-                        <span class="feature-tag">SEO</span>
-                        <span class="feature-tag">Performance</span>
-                    </div>
-                </div>
-
-                <div class="service-card animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="service-title">Security Solutions</h3>
-                    <p class="service-description">
-                        Comprehensive security implementations including authentication, 
-                        data protection, and compliance with industry standards.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">OAuth</span>
-                        <span class="feature-tag">Encryption</span>
-                        <span class="feature-tag">GDPR</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title animate-on-scroll">About Acadify Solution</h2>
-                    <p class="about-description animate-on-scroll">
-                        We are a team of passionate technologists dedicated to delivering 
-                        exceptional digital solutions. With years of experience in modern 
-                        web development, we combine technical expertise with creative vision 
-                        to build applications that drive business success.
-                    </p>
-                    
-                    <div class="about-features animate-on-scroll">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Innovation First</h4>
-                                <p>We leverage cutting-edge technologies and methodologies to deliver modern solutions.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Client Focused</h4>
-                                <p>Your success is our priority. We work closely with you throughout the entire process.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Quality Driven</h4>
-                                <p>We maintain the highest standards in code quality, testing, and performance optimization.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-stats animate-on-scroll">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="5">0</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="30">0</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="99">0</div>
-                        <div class="stat-label">% Satisfaction</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-                <p class="section-subtitle animate-on-scroll">
-                    Ready to start your next project? Let's discuss how we can help you achieve your goals.
-                </p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-info animate-on-scroll">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>hello@acadifysolution.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>San Francisco, CA</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <form class="contact-form animate-on-scroll" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Full Name</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email Address</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required>
-                        <label for="subject">Subject</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
-
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Mega Menu Component -->
+    <div id="mega-menu-component"></div>
+    
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <div id="hero-component"></div>
+        
+        <!-- Services Section -->
+        <div id="services-component"></div>
+        
+        <!-- Tech Stack Section -->
+        <div id="tech-stack-component"></div>
+        
+        <!-- Testimonials Section -->
+        <div id="testimonials-component"></div>
+        
+        <!-- Contact Form Section -->
+        <div id="contact-form-component"></div>
+    </main>
+    
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
     <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="src/components/header/header.js"></script>
+    <script src="src/components/footer/footer.js"></script>
+    <script src="src/scripts/main.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        // Load components dynamically
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        // Load all components
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('header-component', 'src/components/header/header.html'),
+                loadComponent('mega-menu-component', 'src/components/navigation/mega-menu/mega-menu.html'),
+                loadComponent('mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'),
+                loadComponent('hero-component', 'src/components/hero/hero.html'),
+                loadComponent('services-component', 'src/components/services/services.html'),
+                loadComponent('tech-stack-component', 'src/components/tech-stack/tech-stack.html'),
+                loadComponent('testimonials-component', 'src/components/testimonials/testimonials.html'),
+                loadComponent('contact-form-component', 'src/components/forms/contact/contact-form.html'),
+                loadComponent('footer-component', 'src/components/footer/footer.html')
+            ]);
+        });
+    </script>
 </body>
 </html>

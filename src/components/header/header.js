@@ -14,7 +14,7 @@ class NavbarComponent {
 
     async loadNavbar() {
         try {
-            const response = await fetch('components/navbar.html');
+            const response = await fetch('src/components/header/header.html');
             const navbarHTML = await response.text();
             
             // Insert navbar at the beginning of body
