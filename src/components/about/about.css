@@ -1,0 +1,230 @@
+/* About Section Component Styles - Mobile First Responsive Design */
+
+.about-section {
+    padding: var(--spacing-4xl) 0;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(57, 255, 20, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Container */
+.about-container {
+    width: 100%;
+    margin: 0;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 2;
+}
+
+/* Section Header */
+.about-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(57, 255, 20, 0.1));
+    border: 1px solid rgba(0, 191, 255, 0.3);
+    color: var(--electric-blue);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, var(--electric-blue), var(--neon-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Main Content */
+.about-main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+    align-items: center;
+}
+
+/* Visual Section */
+.about-visual {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visual-wrapper {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+.tech-animation {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.3));
+}
+
+/* Content Section */
+.about-content {
+    width: 100%;
+    max-width: none;
+}
+
+.about-text {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.lead-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    font-size: var(--font-size-md);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+
+/* Tablet Responsive - 768px and up */
+@media (min-width: 768px) {
+    .about-section {
+        padding: var(--spacing-5xl) 0;
+    }
+
+    .about-container {
+        padding: 0 var(--spacing-2xl);
+    }
+
+    .about-header {
+        margin-bottom: var(--spacing-4xl);
+    }
+
+    .about-main {
+        gap: var(--spacing-4xl);
+    }
+
+    .visual-wrapper {
+        max-width: 350px;
+    }
+}
+
+/* Desktop Responsive - 1024px and up */
+@media (min-width: 1024px) {
+    .about-container {
+        padding: 0 var(--spacing-3xl);
+    }
+
+    .about-header {
+        text-align: left;
+        margin-bottom: var(--spacing-4xl);
+    }
+
+    .about-main {
+        flex-direction: row;
+        gap: var(--spacing-6xl);
+        align-items: flex-start;
+    }
+
+    .about-visual {
+        flex: 0 0 45%;
+        order: 1;
+    }
+
+    .about-content {
+        flex: 0 0 55%;
+        order: 2;
+        max-width: none;
+    }
+
+    .visual-wrapper {
+        max-width: 450px;
+    }
+}
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {
+    .about-container {
+        padding: 0 var(--spacing-4xl);
+    }
+
+    .about-main {
+        gap: var(--spacing-6xl);
+    }
+
+    .visual-wrapper {
+        max-width: 500px;
+    }
+}
+
+/* Extra Large Desktop - 1400px and up */
+@media (min-width: 1400px) {
+    .about-container {
+        padding: 0 var(--spacing-5xl);
+    }
+
+    .about-main {
+        gap: var(--spacing-6xl);
+    }
+}
+
+/* Extra Small Mobile - 480px and down */
+@media (max-width: 480px) {
+    .about-container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .about-section {
+        padding: var(--spacing-3xl) 0;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .visual-wrapper {
+        max-width: 220px;
+    }
+
+
+
+
+}

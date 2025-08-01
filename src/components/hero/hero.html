@@ -117,63 +117,161 @@
             </div>
             
             <div class="hero-visual">
-                <div class="hero-code-preview">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                <!-- Multiple Overlapping Code Windows -->
+                <div class="code-workspace">
+                    <!-- Main Innovation.js Window -->
+                    <div class="code-window main-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="window-title">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16,18 22,12 16,6"></polyline>
+                                    <polyline points="8,6 2,12 8,18"></polyline>
+                                </svg>
+                                innovation.js
+                            </div>
+                            <div class="window-actions">
+                                <span class="status-indicator"></span>
+                            </div>
                         </div>
-                        <span class="code-title">innovation.js</span>
+                        <div class="window-content">
+                            <div class="line-numbers">
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
+                            </div>
+                            <div class="code-area">
+                                <div class="code-line">
+                                    <span class="keyword">import</span> 
+                                    <span class="variable">{ AI, Cloud, React }</span> 
+                                    <span class="keyword">from</span> 
+                                    <span class="string">'@acadify/stack'</span>;
+                                </div>
+                                <div class="code-line blank"></div>
+                                <div class="code-line">
+                                    <span class="keyword">const</span> 
+                                    <span class="function">buildInnovation</span> = 
+                                    <span class="keyword">async</span> 
+                                    <span class="bracket">(</span><span class="variable">vision</span><span class="bracket">) => {</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="keyword">const</span> 
+                                    <span class="variable">analysis</span> = 
+                                    <span class="keyword">await</span> 
+                                    <span class="function">AI.understand</span><span class="bracket">(</span><span class="variable">vision</span><span class="bracket">);</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="keyword">const</span> 
+                                    <span class="variable">solution</span> = 
+                                    <span class="function">React.craft</span><span class="bracket">(</span><span class="variable">analysis</span><span class="bracket">);</span>
+                                </div>
+                                <div class="code-line indent">
+                                    <span class="keyword">return</span> 
+                                    <span class="variable">solution</span><span class="operator">.</span><span class="function">deploy</span><span class="bracket">(</span><span class="variable">Cloud</span><span class="bracket">);</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="bracket">};</span>
+                                </div>
+                                <div class="code-line blank"></div>
+                                <div class="code-line">
+                                    <span class="comment">// Magic happens here ✨</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="code-content">
-                        <div class="code-line">
-                            <span class="code-keyword">import</span> 
-                            <span class="code-variable">{ AI, Cloud, React }</span> 
-                            <span class="code-keyword">from</span> 
-                            <span class="code-string">'@acadify/stack'</span>;
+
+                    <!-- Secondary Terminal Window -->
+                    <div class="code-window terminal-window">
+                        <div class="window-header terminal-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="window-title">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                                Terminal
+                            </div>
                         </div>
-                        <div class="code-line">
-                            <span class="code-keyword">const</span> 
-                            <span class="code-function">buildAmazingApp</span> = 
-                            <span class="code-keyword">async</span> () => {
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span> 
+                                <span class="command">npm run innovation</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="success">✓ Building the future...</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="success">✓ AI modules loaded</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="success">✓ Innovation deployed</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="cursor">_</span>
+                            </div>
                         </div>
-                        <div class="code-line code-indent">
-                            <span class="code-keyword">const</span> 
-                            <span class="code-variable">solution</span> = 
-                            <span class="code-keyword">await</span> 
-                            <span class="code-function">AI.analyze</span>(<span class="code-variable">requirements</span>);
+                    </div>
+
+                    <!-- Background Browser Window -->
+                    <div class="code-window browser-window">
+                        <div class="window-header browser-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                            <div class="browser-bar">
+                                <div class="url-bar">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"></path>
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                    </svg>
+                                    https://app.acadify.com
+                                </div>
+                            </div>
                         </div>
-                        <div class="code-line code-indent">
-                            <span class="code-keyword">return</span> 
-                            <span class="code-function">React.create</span>(<span class="code-variable">solution</span>)
-                            <span class="code-operator">.</span><span class="code-function">deploy</span>(<span class="code-variable">Cloud</span>);
-                        </div>
-                        <div class="code-line">};</div>
-                        <div class="code-line">
-                            <span class="code-comment">// Innovation delivered ⚡</span>
+                        <div class="browser-content">
+                            <div class="preview-header">
+                                <div class="preview-nav">
+                                    <span class="nav-item active">Dashboard</span>
+                                    <span class="nav-item">Analytics</span>
+                                    <span class="nav-item">Deploy</span>
+                                </div>
+                            </div>
+                            <div class="preview-body">
+                                <div class="chart-placeholder">
+                                    <div class="chart-bar" style="height: 60%"></div>
+                                    <div class="chart-bar" style="height: 80%"></div>
+                                    <div class="chart-bar" style="height: 45%"></div>
+                                    <div class="chart-bar" style="height: 90%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Floating Tech Icons -->
-                <div class="floating-icons">
-                    <div class="tech-icon" data-tech="react">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <circle cx="12" cy="12" r="1"/>
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
-                        </svg>
-                    </div>
-                    <div class="tech-icon" data-tech="node">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 1L21 6V18L12 23L3 18V6L12 1Z"/>
-                        </svg>
-                    </div>
-                    <div class="tech-icon" data-tech="ai">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V19.5A2.5 2.5 0 0 1 9.5 22H9.5A2.5 2.5 0 0 1 7 19.5V4.5A2.5 2.5 0 0 1 9.5 2Z"/>
-                        </svg>
-                    </div>
+
+                <!-- Floating Tech Particles -->
+                <div class="tech-particles">
+                    <div class="particle" data-tech="react">⚛️</div>
+                    <div class="particle" data-tech="ai">🤖</div>
+                    <div class="particle" data-tech="cloud">☁️</div>
+                    <div class="particle" data-tech="lightning">⚡</div>
+                    <div class="particle" data-tech="rocket">🚀</div>
                 </div>
             </div>
         </div>

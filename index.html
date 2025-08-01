@@ -22,8 +22,9 @@
     <link rel="stylesheet" href="src/components/header/header-new.css?v=7">
     <link rel="stylesheet" href="src/components/footer/footer.css?v=3">
     <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5">
-    <link rel="stylesheet" href="src/components/hero/hero.css?v=2">
+    <link rel="stylesheet" href="src/components/hero/hero.css?v=5">
     <link rel="stylesheet" href="src/components/services/services.css">
+    <link rel="stylesheet" href="src/components/about/about.css?v=8">
     <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=2">
     <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
     <link rel="stylesheet" href="src/components/forms/contact/contact-form.css">
@@ -55,6 +56,9 @@
         
         <!-- Services Section -->
         <div id="services-component"></div>
+        
+        <!-- About Section -->
+        <div id="about-component"></div>
         
         <!-- Tech Stack Section -->
         <div id="tech-stack-component"></div>
@@ -107,6 +111,7 @@
                 ['mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'],
                 ['hero-component', 'src/components/hero/hero.html'],
                 ['services-component', 'src/components/services/services.html'],
+                ['about-component', 'src/components/about/about.html'],
                 ['tech-stack-component', 'src/components/tech-stack/tech-stack.html?v=' + Date.now()],
                 ['testimonials-component', 'src/components/testimonials/testimonials.html?v=' + Date.now()],
                 ['contact-form-component', 'src/components/forms/contact/contact-form.html'],
@@ -128,6 +133,7 @@
                 // Check for critical sections
                 const checks = [
                     ['.services-section', 'Services section'],
+                    ['.about-section', 'About section'],
                     ['.tech-stack-section', 'Tech Stack section'],
                     ['.testimonials-section', 'Testimonials section'],
                     ['.code-title', 'Innovation.js code'],

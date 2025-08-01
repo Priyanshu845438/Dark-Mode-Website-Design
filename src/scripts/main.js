@@ -26,10 +26,11 @@ class AcadifyApp {
         
         while (attempts < maxAttempts) {
             const servicesSection = document.querySelector('.services-section');
+            const aboutSection = document.querySelector('.about-section');
             const techStackSection = document.querySelector('.tech-stack-section');
             const testimonialsSection = document.querySelector('.testimonials-section');
             
-            if (servicesSection && techStackSection && testimonialsSection) {
+            if (servicesSection && aboutSection && techStackSection && testimonialsSection) {
                 console.log('✓ All critical components found');
                 this.componentsLoaded = true;
                 return;

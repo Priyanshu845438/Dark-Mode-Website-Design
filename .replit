@@ -1,5 +1,5 @@
 modules = ["web", "nodejs-20", "python-3.11"]
-run = "node src/scripts/main.js"
+run = "node src/scripts/src/scripts/main.js"
 
 [nix]
 channel = "stable-25_05"
@@ -29,12 +29,8 @@ waitForPort = 5000
 localPort = 5000
 externalPort = 80
 
-[[ports]]
-localPort = 8000
-externalPort = 8000
-
 [agent]
 expertMode = true
 
 [deployment]
-run = ["sh", "-c", "node src/scripts/main.js"]
+run = ["sh", "-c", "node src/scripts/src/scripts/main.js"]
