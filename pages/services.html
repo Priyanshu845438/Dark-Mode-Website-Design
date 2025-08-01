@@ -4,216 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services - Acadify Solution</title>
-    <meta name="description" content="Comprehensive technology services including web development, mobile apps, UI/UX design, and more.">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/global.css" as="style">
-    <link rel="preload" href="styles/utilities.css" as="style">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/utilities.css">
-    <link rel="stylesheet" href="styles/pages.css">
-    <link rel="stylesheet" href="components/navbar.module.css">
-    <link rel="stylesheet" href="components/footer.module.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <link rel="stylesheet" href="src/styles/pages/services.css">
+    <link rel="stylesheet" href="src/components/header/header-new.css">
+    <link rel="stylesheet" href="src/components/footer/footer.css">
+    <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=3">
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navbar-container"></div>
-
-    <!-- Services Hero Section -->
-    <section class="services-hero">
-        <div class="container">
-            <div class="services-hero-content">
-                <h1 class="hero-title">Our Services</h1>
-                <p class="hero-subtitle">
-                    Comprehensive technology solutions tailored to your business needs
-                </p>
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="services-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive technology solutions for your business</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section class="services-section">
-        <div class="container">
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+        </section>
+        
+        <section class="services-grid">
+            <div class="container">
+                <h2>What We Offer</h2>
+                <div class="services-list">
+                    <div class="service-item">
                         <i class="fas fa-code"></i>
+                        <h3>Web Development</h3>
+                        <p>Modern, responsive websites and web applications</p>
                     </div>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">
-                        Custom web applications built with modern frameworks and technologies, 
-                        ensuring scalability, performance, and exceptional user experience.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">React</span>
-                        <span class="feature-tag">Node.js</span>
-                        <span class="feature-tag">TypeScript</span>
-                        <span class="feature-tag">Next.js</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
+                    <div class="service-item">
                         <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Development</h3>
+                        <p>Native and cross-platform mobile applications</p>
                     </div>
-                    <h3 class="service-title">Mobile App Development</h3>
-                    <p class="service-description">
-                        Native and cross-platform mobile applications that deliver 
-                        seamless experiences across iOS and Android devices.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">React Native</span>
-                        <span class="feature-tag">Flutter</span>
-                        <span class="feature-tag">iOS</span>
-                        <span class="feature-tag">Android</span>
+                    <div class="service-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>UI/UX Design</h3>
+                        <p>User-centered design for exceptional experiences</p>
                     </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="service-title">UI/UX Design</h3>
-                    <p class="service-description">
-                        User-centered design approaches that create intuitive interfaces 
-                        and exceptional user experiences for your digital products.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Figma</span>
-                        <span class="feature-tag">Prototyping</span>
-                        <span class="feature-tag">User Research</span>
-                        <span class="feature-tag">Design Systems</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="service-title">Software Development</h3>
-                    <p class="service-description">
-                        Custom software solutions designed to streamline your business 
-                        processes and enhance operational efficiency.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Python</span>
-                        <span class="feature-tag">Java</span>
-                        <span class="feature-tag">C#</span>
-                        <span class="feature-tag">APIs</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3 class="service-title">Digital Marketing</h3>
-                    <p class="service-description">
-                        Comprehensive digital marketing strategies that boost your online 
-                        presence and drive meaningful engagement with your audience.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">SEO</span>
-                        <span class="feature-tag">Social Media</span>
-                        <span class="feature-tag">Content Marketing</span>
-                        <span class="feature-tag">Analytics</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3 class="service-title">Cloud Services</h3>
-                    <p class="service-description">
-                        Scalable cloud solutions and DevOps practices that ensure 
-                        reliable deployment, monitoring, and maintenance of your applications.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">AWS</span>
-                        <span class="feature-tag">Azure</span>
-                        <span class="feature-tag">Docker</span>
-                        <span class="feature-tag">Kubernetes</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="service-title">Artificial Intelligence</h3>
-                    <p class="service-description">
-                        AI and machine learning solutions that automate processes, 
-                        provide intelligent insights, and enhance decision-making capabilities.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Machine Learning</span>
-                        <span class="feature-tag">NLP</span>
-                        <span class="feature-tag">Computer Vision</span>
-                        <span class="feature-tag">ChatBots</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">Data Analytics</h3>
-                    <p class="service-description">
-                        Advanced data analytics and business intelligence solutions 
-                        that turn your data into actionable insights and competitive advantages.
-                    </p>
-                    <div class="service-features">
-                        <span class="feature-tag">Business Intelligence</span>
-                        <span class="feature-tag">Data Visualization</span>
-                        <span class="feature-tag">Reporting</span>
-                        <span class="feature-tag">Predictive Analytics</span>
-                    </div>
-                    <a href="contact.html" class="service-cta">Learn More</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Get Started?</h2>
-                <p class="cta-description">
-                    Let's discuss how our services can help transform your business
-                </p>
-                <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
-                    <a href="schedule-meeting.html" class="btn btn-secondary">Schedule Meeting</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-container"></div>
-
+        </section>
+    </main>
+    
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
     <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="src/components/header/header-new.js"></script>
+    <script src="src/components/footer/footer.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadComponent('mobile-nav-component', 'src/components/navigation/mobile-nav/mobile-nav.html'),
+                loadComponent('footer-component', 'src/components/footer/footer.html')
+            ]);
+        });
+    </script>
 </body>
 </html>

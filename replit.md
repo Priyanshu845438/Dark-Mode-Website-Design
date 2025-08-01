@@ -6,6 +6,10 @@ Acadify Solution is a professional technology services company website showcasin
 ## User Preferences
 Preferred communication style: Simple, everyday language.
 Navigation preference: Responsive mega menu for desktop only, mobile sidebar navigation with Schedule Meeting button included.
+Mobile navigation structure: Must exactly match desktop menu format with organized sections and working dropdowns.
+Content overlap: Mobile navigation must not overlap with page content (resolved with z-index: 99999).
+Navigation consistency: All pages must use consistent navigation system with correct path references to avoid 404 errors.
+Cache-busting approach: Mobile navigation embedded directly in JavaScript to eliminate browser cache conflicts.
 
 ## System Architecture
 

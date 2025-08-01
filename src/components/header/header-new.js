@@ -13,7 +13,7 @@ class NewNavbarComponent {
 
     async init() {
         await this.loadNavbar();
-        await this.loadMobileNavigation();
+        this.loadMobileNavigation(); // Make synchronous
         this.setupEventListeners();
         this.setupScrollHandling();
         this.setupDropdowns();
@@ -46,12 +46,8 @@ class NewNavbarComponent {
     setupEventListeners() {
         if (!this.navbar) return;
 
-        // Mobile toggle functionality
-        if (this.navToggle && this.mobileNav) {
-            this.navToggle.addEventListener('click', () => {
-                this.toggleMobileNav();
-            });
-        }
+        // Mobile toggle functionality - setup after mobile nav is loaded
+        this.setupMobileToggle();
 
         // Close mobile nav when clicking outside
         document.addEventListener('click', (e) => {
@@ -128,21 +124,385 @@ class NewNavbarComponent {
         });
     }
 
-    async loadMobileNavigation() {
+    loadMobileNavigation() {
         try {
-            const response = await fetch('src/components/navigation/mobile-nav/mobile-nav.html');
-            const mobileNavHTML = await response.text();
-            
-            let mobileNavContainer = document.getElementById('mobile-nav-component');
-            if (!mobileNavContainer) {
-                document.body.insertAdjacentHTML('afterbegin', '<div id="mobile-nav-component"></div>');
-                mobileNavContainer = document.getElementById('mobile-nav-component');
+            // Remove existing mobile navigation completely
+            const existingMobileNav = document.getElementById('mobile-nav-component');
+            if (existingMobileNav) {
+                existingMobileNav.remove();
             }
-            mobileNavContainer.innerHTML = mobileNavHTML;
+            
+            // Create mobile navigation with correct structure inline
+            const mobileNavHTML = `
+<!-- Mobile Navigation Component -->
+<div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav-content">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-logo">
+                <img src="assets/logos/logo.svg" alt="Acadify Solution" class="nav-logo">
+                <span class="nav-brand-text">Acadify Solution</span>
+            </div>
+            <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close Navigation">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="mobile-nav-menu">
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item">
+                    <a href="index.html" class="mobile-nav-link">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            Home
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="mobile-nav-item has-dropdown">
+                    <button class="mobile-nav-link dropdown-toggle" data-target="services-dropdown">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Services
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="services-dropdown">
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Development Services</h5>
+                            <a href="pages/services/web-development.html" class="mobile-dropdown-link">
+                                <i class="fas fa-code"></i>
+                                Web Development
+                            </a>
+                            <a href="pages/services/mobile-development.html" class="mobile-dropdown-link">
+                                <i class="fas fa-mobile-alt"></i>
+                                Mobile Development
+                            </a>
+                            <a href="pages/services/custom-software.html" class="mobile-dropdown-link">
+                                <i class="fas fa-cogs"></i>
+                                Custom Software
+                            </a>
+                            <a href="pages/services/ui-ux-design.html" class="mobile-dropdown-link">
+                                <i class="fas fa-paint-brush"></i>
+                                UI/UX Design
+                            </a>
+                            <a href="pages/services/qa-testing.html" class="mobile-dropdown-link">
+                                <i class="fas fa-bug"></i>
+                                QA & Testing
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Cloud & AI</h5>
+                            <a href="pages/services/cloud-services.html" class="mobile-dropdown-link">
+                                <i class="fas fa-cloud"></i>
+                                Cloud Services
+                            </a>
+                            <a href="pages/services/ai-solutions.html" class="mobile-dropdown-link">
+                                <i class="fas fa-robot"></i>
+                                AI Solutions
+                            </a>
+                            <a href="pages/services/data-analytics.html" class="mobile-dropdown-link">
+                                <i class="fas fa-chart-line"></i>
+                                Data Analytics
+                            </a>
+                            <a href="pages/services/consulting.html" class="mobile-dropdown-link">
+                                <i class="fas fa-lightbulb"></i>
+                                Consulting
+                            </a>
+                            <a href="pages/services/maintenance-support.html" class="mobile-dropdown-link">
+                                <i class="fas fa-tools"></i>
+                                IT Support
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Digital Marketing</h5>
+                            <a href="pages/services/digital-marketing.html" class="mobile-dropdown-link">
+                                <i class="fas fa-bullhorn"></i>
+                                Digital Marketing
+                            </a>
+                            <a href="pages/services/seo.html" class="mobile-dropdown-link">
+                                <i class="fas fa-search"></i>
+                                SEO Services
+                            </a>
+                            <a href="pages/services/smm.html" class="mobile-dropdown-link">
+                                <i class="fas fa-share-alt"></i>
+                                Social Media
+                            </a>
+                            <a href="pages/services/google-ads.html" class="mobile-dropdown-link">
+                                <i class="fab fa-google"></i>
+                                Google Ads
+                            </a>
+                            <a href="pages/services/email-marketing.html" class="mobile-dropdown-link">
+                                <i class="fas fa-envelope"></i>
+                                Email Marketing
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Branding & Design</h5>
+                            <a href="pages/services/logo-design.html" class="mobile-dropdown-link">
+                                <i class="fas fa-palette"></i>
+                                Logo Design
+                            </a>
+                            <a href="pages/services/brand-strategy.html" class="mobile-dropdown-link">
+                                <i class="fas fa-star"></i>
+                                Brand Strategy
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="mobile-nav-item has-dropdown">
+                    <button class="mobile-nav-link dropdown-toggle" data-target="industries-dropdown">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            Industries
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="industries-dropdown">
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Core Industries</h5>
+                            <a href="pages/industries/education-elearning.html" class="mobile-dropdown-link">
+                                <i class="fas fa-graduation-cap"></i>
+                                Education
+                            </a>
+                            <a href="pages/industries/healthcare.html" class="mobile-dropdown-link">
+                                <i class="fas fa-heartbeat"></i>
+                                Healthcare
+                            </a>
+                            <a href="pages/industries/ecommerce-retail.html" class="mobile-dropdown-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                E-commerce
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Technology</h5>
+                            <a href="pages/industries/fintech-legal.html" class="mobile-dropdown-link">
+                                <i class="fas fa-university"></i>
+                                FinTech
+                            </a>
+                            <a href="pages/industries/real-estate-construction.html" class="mobile-dropdown-link">
+                                <i class="fas fa-building"></i>
+                                Real Estate
+                            </a>
+                            <a href="pages/industries/travel-hospitality-food.html" class="mobile-dropdown-link">
+                                <i class="fas fa-plane"></i>
+                                Travel
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="mobile-nav-item has-dropdown">
+                    <button class="mobile-nav-link dropdown-toggle" data-target="products-dropdown">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                            </svg>
+                            Products
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="products-dropdown">
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Business Solutions</h5>
+                            <a href="pages/products/acadify-erp.html" class="mobile-dropdown-link">
+                                <i class="fas fa-building"></i>
+                                Acadify ERP
+                            </a>
+                            <a href="pages/products/acadify-crm.html" class="mobile-dropdown-link">
+                                <i class="fas fa-users"></i>
+                                Acadify CRM
+                            </a>
+                            <a href="pages/products/acadify-inventory.html" class="mobile-dropdown-link">
+                                <i class="fas fa-boxes"></i>
+                                Acadify Inventory
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <h5 class="mobile-section-title">Tools</h5>
+                            <a href="pages/products/acadify-pos.html" class="mobile-dropdown-link">
+                                <i class="fas fa-cash-register"></i>
+                                Acadify POS
+                            </a>
+                            <a href="pages/products/acadify-lms.html" class="mobile-dropdown-link">
+                                <i class="fas fa-book"></i>
+                                Acadify LMS
+                            </a>
+                            <a href="pages/products/acadify-task.html" class="mobile-dropdown-link">
+                                <i class="fas fa-tasks"></i>
+                                Acadify Task
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="mobile-nav-item has-dropdown">
+                    <button class="mobile-nav-link dropdown-toggle" data-target="company-dropdown">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            Company
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="company-dropdown">
+                        <div class="mobile-dropdown-section">
+                            <a href="about.html" class="mobile-dropdown-link">
+                                <i class="fas fa-info-circle"></i>
+                                About Us
+                            </a>
+                            <a href="portfolio.html" class="mobile-dropdown-link">
+                                <i class="fas fa-briefcase"></i>
+                                Portfolio
+                            </a>
+                            <a href="contact.html" class="mobile-dropdown-link">
+                                <i class="fas fa-envelope"></i>
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="mobile-nav-item has-dropdown">
+                    <button class="mobile-nav-link dropdown-toggle" data-target="insights-dropdown">
+                        <div class="nav-link-content">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                            Insights
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="mobile-dropdown" id="insights-dropdown">
+                        <div class="mobile-dropdown-section">
+                            <a href="blog.html" class="mobile-dropdown-link">
+                                <i class="fas fa-blog"></i>
+                                Blog
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="mobile-nav-cta">
+            <a href="pages/schedule-meeting.html" class="mobile-cta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Schedule Meeting
+            </a>
+        </div>
+        
+        <div class="mobile-nav-footer">
+            <div class="mobile-social-links">
+                <a href="#" class="mobile-social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="mobile-social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="mobile-social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <div class="mobile-nav-copyright">
+                <p>&copy; 2025 Acadify Solution</p>
+            </div>
+        </div>
+    </div>
+</div>`;
+            
+            // Create fresh mobile navigation container
+            document.body.insertAdjacentHTML('afterbegin', `<div id="mobile-nav-component">${mobileNavHTML}</div>`);
             
             this.mobileNav = document.getElementById('mobile-nav');
+            this.initializeMobileDropdowns();
+            this.setupMobileToggle(); // Setup hamburger button after mobile nav is loaded
+            console.log('Mobile navigation loaded with inline structure');
         } catch (error) {
             console.error('Error loading mobile navigation:', error);
+        }
+    }
+
+    initializeMobileDropdowns() {
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = toggle.getAttribute('data-target');
+                const dropdown = document.getElementById(targetId);
+                const arrow = toggle.querySelector('.dropdown-arrow');
+                
+                if (dropdown) {
+                    const isOpen = dropdown.classList.contains('show');
+                    
+                    // Close all other dropdowns
+                    document.querySelectorAll('.mobile-dropdown.show').forEach(dd => {
+                        dd.classList.remove('show');
+                    });
+                    document.querySelectorAll('.dropdown-arrow.rotated').forEach(arr => {
+                        arr.classList.remove('rotated');
+                    });
+                    
+                    // Toggle current dropdown
+                    if (!isOpen) {
+                        dropdown.classList.add('show');
+                        arrow.classList.add('rotated');
+                    }
+                }
+            });
+        });
+    }
+
+    setupMobileToggle() {
+        // Setup hamburger button click handler
+        if (this.navToggle) {
+            // Remove any existing listeners
+            this.navToggle.replaceWith(this.navToggle.cloneNode(true));
+            this.navToggle = document.getElementById('nav-toggle');
+            
+            this.navToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Hamburger clicked, toggling mobile nav');
+                this.toggleMobileNav();
+            });
         }
     }
 
@@ -156,30 +516,57 @@ class NewNavbarComponent {
                 this.closeMobileNav();
             });
         }
+        
+        // Setup overlay click to close
+        const overlay = document.querySelector('.mobile-nav-overlay');
+        if (overlay) {
+            overlay.addEventListener('click', () => {
+                this.closeMobileNav();
+            });
+        }
 
-        // Handle mobile dropdown toggles
+        // Handle mobile dropdown toggles with improved functionality
         document.addEventListener('click', (e) => {
-            if (e.target.matches('.dropdown-toggle') || e.target.closest('.dropdown-toggle')) {
+            const button = e.target.closest('.dropdown-toggle');
+            if (button) {
                 e.preventDefault();
-                const button = e.target.matches('.dropdown-toggle') ? e.target : e.target.closest('.dropdown-toggle');
+                console.log('Mobile dropdown toggle clicked:', button.dataset.target);
+                
                 const targetId = button.dataset.target;
                 const dropdown = document.getElementById(targetId);
                 
                 if (dropdown) {
                     const isActive = dropdown.classList.contains('active');
                     
-                    // Close all mobile dropdowns
+                    // Close all OTHER mobile dropdowns (not the current one)
                     document.querySelectorAll('.mobile-dropdown').forEach(dd => {
-                        dd.classList.remove('active');
+                        if (dd !== dropdown) {
+                            dd.classList.remove('active');
+                        }
                     });
                     document.querySelectorAll('.dropdown-toggle').forEach(btn => {
-                        btn.classList.remove('active');
+                        if (btn !== button) {
+                            btn.classList.remove('active');
+                        }
                     });
                     
                     // Toggle current dropdown
                     if (!isActive) {
                         dropdown.classList.add('active');
                         button.classList.add('active');
+                        console.log('Dropdown activated:', targetId);
+                        
+                        // Scroll dropdown into view if needed
+                        setTimeout(() => {
+                            dropdown.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'nearest' 
+                            });
+                        }, 100);
+                    } else {
+                        dropdown.classList.remove('active');
+                        button.classList.remove('active');
+                        console.log('Dropdown closed:', targetId);
                     }
                 }
             }
