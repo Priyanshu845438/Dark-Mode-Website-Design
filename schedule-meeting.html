@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Meeting - Acadify Solution</title>
+    <meta name="description" content="Schedule a consultation meeting with Acadify Solution to discuss your project requirements.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/global.css" as="style">
+    <link rel="preload" href="styles/utilities.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="components/navbar.module.css">
+    <link rel="stylesheet" href="components/footer.module.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+
+    <!-- Meeting Hero Section -->
+    <section class="meeting-hero">
+        <div class="container">
+            <div class="meeting-hero-content">
+                <h1 class="hero-title">Schedule a Consultation</h1>
+                <p class="hero-subtitle">
+                    Book a free consultation to discuss your project requirements and explore how we can help
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meeting Scheduler Section -->
+    <section class="scheduler-section">
+        <div class="container">
+            <div class="scheduler-content">
+                <div class="scheduler-info">
+                    <h2 class="section-title">What to Expect</h2>
+                    
+                    <div class="meeting-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Project Discussion</h4>
+                                <p>We'll discuss your project goals, requirements, and vision in detail.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Technical Consultation</h4>
+                                <p>Get expert advice on technology choices and implementation strategies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Timeline & Budget</h4>
+                                <p>Receive a preliminary timeline and budget estimate for your project.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Next Steps</h4>
+                                <p>Clear roadmap for moving forward with your project development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="meeting-types">
+                        <h3>Meeting Options</h3>
+                        <div class="meeting-type">
+                            <div class="type-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="type-info">
+                                <h4>Video Call</h4>
+                                <p>30-60 minutes via Zoom, Google Meet, or Teams</p>
+                            </div>
+                        </div>
+                        
+                        <div class="meeting-type">
+                            <div class="type-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="type-info">
+                                <h4>Phone Call</h4>
+                                <p>30-45 minutes phone consultation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="meeting-type">
+                            <div class="type-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="type-info">
+                                <h4>In-Person</h4>
+                                <p>60-90 minutes at our San Francisco or New York office</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scheduler-form">
+                    <form class="meeting-form" id="meeting-form">
+                        <h3>Schedule Your Meeting</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" id="firstName" name="firstName" required>
+                                <label for="firstName">First Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="lastName" name="lastName" required>
+                                <label for="lastName">Last Name</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="company" name="company">
+                            <label for="company">Company Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="meetingType" name="meetingType" required>
+                                <option value="">Select Meeting Type</option>
+                                <option value="video">Video Call</option>
+                                <option value="phone">Phone Call</option>
+                                <option value="in-person-sf">In-Person (San Francisco)</option>
+                                <option value="in-person-ny">In-Person (New York)</option>
+                            </select>
+                            <label for="meetingType">Preferred Meeting Type</label>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                                <label for="preferredDate">Preferred Date</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <select id="preferredTime" name="preferredTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                </select>
+                                <label for="preferredTime">Preferred Time</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="serviceInterest" name="serviceInterest" required>
+                                <option value="">Select Service Interest</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="mobile-development">Mobile App Development</option>
+                                <option value="ui-ux-design">UI/UX Design</option>
+                                <option value="software-development">Software Development</option>
+                                <option value="digital-marketing">Digital Marketing</option>
+                                <option value="cloud-services">Cloud Services</option>
+                                <option value="artificial-intelligence">Artificial Intelligence</option>
+                                <option value="data-analytics">Data Analytics</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="consultation">General Consultation</option>
+                            </select>
+                            <label for="serviceInterest">Primary Service Interest</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="projectDetails" name="projectDetails" rows="4"></textarea>
+                            <label for="projectDetails">Brief Project Description (Optional)</label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter" class="checkbox-label">
+                                Subscribe to our newsletter for industry insights and updates
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span>Schedule Meeting</span>
+                            <i class="fas fa-calendar-plus"></i>
+                        </button>
+                        
+                        <p class="form-note">
+                            We'll confirm your meeting within 24 hours and send you a calendar invitation.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="scripts/main.js"></script>
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('preferredDate');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        });
+    </script>
+</body>
+</html>

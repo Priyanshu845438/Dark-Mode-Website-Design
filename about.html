@@ -3,301 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - TechVision IT Solutions</title>
-    <meta name="description" content="Learn about TechVision's mission, vision, and our journey in providing cutting-edge IT solutions.">
+    <title>About Us - Acadify Solution</title>
+    <meta name="description" content="Learn about Acadify Solution's mission, team, and commitment to delivering cutting-edge technology solutions.">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles/global.css" as="style">
+    <link rel="preload" href="styles/utilities.css" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/pages.css">
+    <link rel="stylesheet" href="components/navbar.module.css">
+    <link rel="stylesheet" href="components/footer.module.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lato:wght@300;400;500;600;700&family=Vollkorn:wght@300;400;500;600;700&family=Orbitron:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Include Header -->
-    <div id="header-placeholder"></div>
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
 
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- About Hero Section -->
+    <section class="about-hero">
         <div class="container">
-            <div class="page-header__content">
-                <h1 class="page-header__title">About TechVision</h1>
-                <p class="page-header__subtitle">Pioneering the Future of Technology</p>
-                <nav class="breadcrumb">
-                    <a href="index.html" class="breadcrumb__link">Home</a>
-                    <span class="breadcrumb__separator">/</span>
-                    <span class="breadcrumb__current">About</span>
-                </nav>
+            <div class="about-hero-content">
+                <h1 class="hero-title">About Acadify Solution</h1>
+                <p class="hero-subtitle">
+                    We are passionate technologists dedicated to delivering exceptional digital solutions 
+                    that drive business success and innovation.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="main">
-        <!-- Company Overview -->
-        <section class="company-overview section">
-            <div class="container">
-                <div class="company-overview__content">
-                    <div class="company-overview__text" data-aos="fade-right">
-                        <span class="section__subtitle">Our Story</span>
-                        <h2 class="section__title">Building Tomorrow's Technology Today</h2>
-                        <p class="company-overview__description">
-                            Founded in 2013, TechVision has grown from a small startup to a leading 
-                            technology company, serving clients across the globe. Our passion for 
-                            innovation and commitment to excellence has driven us to become a trusted 
-                            partner for businesses seeking digital transformation.
-                        </p>
-                        <p class="company-overview__description">
-                            We believe that technology should empower businesses, not complicate them. 
-                            Our team of expert developers, consultants, and designers work tirelessly 
-                            to create solutions that are not only cutting-edge but also practical and 
-                            user-friendly.
-                        </p>
+    <!-- About Content -->
+    <section class="about-content-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="about-description">
+                        Founded with a vision to bridge the gap between cutting-edge technology and business needs, 
+                        Acadify Solution has grown into a trusted partner for companies seeking digital transformation. 
+                        Our team combines deep technical expertise with creative problem-solving to deliver solutions 
+                        that not only meet current requirements but also anticipate future challenges.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Innovation First</h4>
+                                <p>We leverage cutting-edge technologies and methodologies to deliver modern solutions that keep you ahead of the competition.</p>
+                            </div>
+                        </div>
                         
-                        <div class="company-stats">
-                            <div class="stat-item">
-                                <h3 class="stat-item__number" data-target="10">0</h3>
-                                <p class="stat-item__label">Years Experience</p>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
                             </div>
-                            <div class="stat-item">
-                                <h3 class="stat-item__number" data-target="500">0</h3>
-                                <p class="stat-item__label">Projects Completed</p>
+                            <div class="feature-content">
+                                <h4>Client Focused</h4>
+                                <p>Your success is our priority. We work closely with you throughout the entire process to ensure exceptional results.</p>
                             </div>
-                            <div class="stat-item">
-                                <h3 class="stat-item__number" data-target="150">0</h3>
-                                <p class="stat-item__label">Happy Clients</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
                             </div>
-                            <div class="stat-item">
-                                <h3 class="stat-item__number" data-target="50">0</h3>
-                                <p class="stat-item__label">Team Members</p>
+                            <div class="feature-content">
+                                <h4>Quality Driven</h4>
+                                <p>We maintain the highest standards in code quality, testing, and performance optimization.</p>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="company-overview__image" data-aos="fade-left">
-                        <img src="https://pixabay.com/get/ge22b9075f4a7957eb5849a1ee11400dffe66052e42388e82d553bdf2c89ec4063b72c2c5dd7ecebd5ff21c2fbca21d11ed9194e88e82e58adce76954af69b2a2_1280.jpg" alt="Modern office workspace" class="company-overview__img">
-                        <div class="achievement-badge">
-                            <i class="fas fa-award"></i>
-                            <div class="achievement-badge__content">
-                                <span class="achievement-badge__title">Award Winner</span>
-                                <span class="achievement-badge__subtitle">Best IT Company 2023</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mission & Vision -->
-        <section class="mission-vision section">
-            <div class="container">
-                <div class="mission-vision__grid">
-                    <div class="mission-card" data-aos="fade-up">
-                        <div class="mission-card__icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3 class="mission-card__title">Our Mission</h3>
-                        <p class="mission-card__description">
-                            To empower businesses through innovative technology solutions that drive 
-                            growth, efficiency, and competitive advantage in the digital age.
-                        </p>
-                    </div>
-                    
-                    <div class="vision-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="vision-card__icon">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3 class="vision-card__title">Our Vision</h3>
-                        <p class="vision-card__description">
-                            To be the global leader in technology consulting, recognized for our 
-                            innovation, quality, and commitment to client success.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Company Timeline -->
-        <section class="timeline section">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__subtitle">Our Journey</span>
-                    <h2 class="section__title">Company Timeline</h2>
-                    <p class="section__description">
-                        Key milestones in our journey to becoming a leading technology company
-                    </p>
                 </div>
                 
-                <div class="timeline__container">
-                    <div class="timeline__item" data-aos="fade-right">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2013</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">Company Founded</h4>
-                            <p class="timeline__description">
-                                TechVision was established with a vision to provide innovative 
-                                IT solutions to small and medium businesses.
-                            </p>
-                        </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Projects Delivered</div>
                     </div>
-                    
-                    <div class="timeline__item" data-aos="fade-left">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2015</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">First Major Client</h4>
-                            <p class="timeline__description">
-                                Secured our first enterprise client and expanded our team to 
-                                15 professionals across multiple disciplines.
-                            </p>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    
-                    <div class="timeline__item" data-aos="fade-right">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2018</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">Cloud Specialization</h4>
-                            <p class="timeline__description">
-                                Became certified cloud solution partners with major providers 
-                                and launched our cloud migration services.
-                            </p>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="30">0</div>
+                        <div class="stat-label">Happy Clients</div>
                     </div>
-                    
-                    <div class="timeline__item" data-aos="fade-left">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2020</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">Global Expansion</h4>
-                            <p class="timeline__description">
-                                Opened international offices and began serving clients 
-                                across North America and Europe.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item" data-aos="fade-right">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2022</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">AI & Machine Learning</h4>
-                            <p class="timeline__description">
-                                Launched AI and machine learning services, helping clients 
-                                leverage data for intelligent business decisions.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item" data-aos="fade-left">
-                        <div class="timeline__marker">
-                            <span class="timeline__year">2024</span>
-                        </div>
-                        <div class="timeline__content">
-                            <h4 class="timeline__title">Industry Recognition</h4>
-                            <p class="timeline__description">
-                                Received multiple industry awards and recognition for 
-                                excellence in technology innovation and client service.
-                            </p>
-                        </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="99">0</div>
+                        <div class="stat-label">% Satisfaction</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Values -->
-        <section class="values section">
-            <div class="container">
-                <div class="section__header">
-                    <span class="section__subtitle">Our Values</span>
-                    <h2 class="section__title">What Drives Us</h2>
-                    <p class="section__description">
-                        The core principles that guide our work and define our company culture
-                    </p>
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">
+                    Meet the talented professionals who make Acadify Solution's success possible
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="member-name">John Smith</h3>
+                    <p class="member-role">Chief Technology Officer</p>
+                    <p class="member-bio">10+ years in software architecture and team leadership</p>
                 </div>
                 
-                <div class="values__grid">
-                    <div class="value-card" data-aos="zoom-in">
-                        <div class="value-card__icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h4 class="value-card__title">Innovation</h4>
-                        <p class="value-card__description">
-                            We constantly explore new technologies and methodologies to 
-                            deliver cutting-edge solutions.
-                        </p>
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
                     </div>
-                    
-                    <div class="value-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="value-card__icon">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4 class="value-card__title">Excellence</h4>
-                        <p class="value-card__description">
-                            We strive for perfection in every project, ensuring the highest 
-                            quality standards.
-                        </p>
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-role">Lead UI/UX Designer</p>
+                    <p class="member-bio">Expert in user-centered design and digital experiences</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <i class="fas fa-user"></i>
                     </div>
-                    
-                    <div class="value-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="value-card__icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h4 class="value-card__title">Integrity</h4>
-                        <p class="value-card__description">
-                            We conduct business with honesty, transparency, and ethical 
-                            practices at all times.
-                        </p>
-                    </div>
-                    
-                    <div class="value-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="value-card__icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4 class="value-card__title">Collaboration</h4>
-                        <p class="value-card__description">
-                            We believe in the power of teamwork and close collaboration 
-                            with our clients.
-                        </p>
-                    </div>
+                    <h3 class="member-name">Mike Chen</h3>
+                    <p class="member-role">Senior Full-Stack Developer</p>
+                    <p class="member-bio">Specialist in modern web technologies and cloud solutions</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA Section -->
-        <section class="cta section">
-            <div class="container">
-                <div class="cta__content" data-aos="fade-up">
-                    <h2 class="cta__title">Ready to Work with Us?</h2>
-                    <p class="cta__description">
-                        Join hundreds of satisfied clients who trust TechVision for their technology needs
-                    </p>
-                    <div class="cta__buttons">
-                        <a href="contact.html" class="btn btn--primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Get Started Today
-                        </a>
-                        <a href="team.html" class="btn btn--outline">
-                            <i class="fas fa-users"></i>
-                            Meet Our Team
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
-    <!-- Include Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Custom JavaScript -->
-    <script src="assets/js/script.js"></script>
+    <!-- Scripts -->
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
