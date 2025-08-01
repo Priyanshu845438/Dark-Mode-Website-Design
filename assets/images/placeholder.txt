@@ -1,0 +1,2 @@
+This folder contains image files for the website.
+Add .jpg, .png, .webp files here for website images.

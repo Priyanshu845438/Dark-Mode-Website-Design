@@ -1,0 +1,2 @@
+This folder contains icon files for the website.
+Add .svg, .png, or .ico files here for website icons.

@@ -130,18 +130,6 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-xl);
-    min-width: 600px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-50%) translateY(-10px);
-    transition: all var(--transition-normal);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-lg);
     padding: var(--spacing-xl);
     min-width: 600px;
@@ -151,8 +139,11 @@
     transition: all var(--transition-normal);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     margin-top: var(--spacing-sm);
+    z-index: 1000;
 }
 
+.nav-dropdown:hover .mega-menu,
+.nav-dropdown.active .mega-menu,
 .mega-menu.active {
     opacity: 1;
     visibility: visible;
