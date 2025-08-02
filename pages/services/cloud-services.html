@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Services - Acadify Solution</title>
-    <meta name="description" content="Comprehensive cloud solutions including AWS, Azure, and Google Cloud services for scalable business infrastructure.">
+    <title>Cloud Services & Infrastructure - Acadify Solution</title>
+    <meta name="description" content="Professional cloud services including migration, infrastructure management, DevOps, and cloud-native application development.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=9">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,99 +24,294 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>Cloud Services</span>
             </div>
-            <h1 class="page-title">Cloud Services</h1>
-            <p class="page-subtitle">Scalable cloud infrastructure and solutions</p>
+            <div class="service-hero">
+                <h1 class="service-title">Cloud Services & Infrastructure</h1>
+                <p class="service-subtitle">Scalable cloud solutions that optimize performance, reduce costs, and enable digital transformation</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Comprehensive Cloud Solutions</h2>
-                    <p>Transform your business with our cloud services. We provide end-to-end cloud solutions including migration, deployment, and management across major cloud platforms.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Professional Cloud Services</h2>
+                    <p>We help businesses leverage the power of cloud computing through strategic planning, seamless migration, and ongoing optimization. Our cloud experts ensure your infrastructure is secure, scalable, and cost-effective.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
-                            <i class="fab fa-aws"></i>
+                            <i class="fas fa-cloud-upload-alt"></i>
                             <div>
-                                <h4>AWS Services</h4>
-                                <p>Complete Amazon Web Services solutions</p>
+                                <h4>Cloud Migration</h4>
+                                <p>Seamless migration of your applications and data to cloud platforms with minimal downtime</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fab fa-microsoft"></i>
+                            <i class="fas fa-server"></i>
                             <div>
-                                <h4>Azure Platform</h4>
-                                <p>Microsoft Azure cloud infrastructure</p>
+                                <h4>Infrastructure Management</h4>
+                                <p>24/7 monitoring, maintenance, and optimization of your cloud infrastructure</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fab fa-google"></i>
+                            <i class="fas fa-infinity"></i>
                             <div>
-                                <h4>Google Cloud</h4>
-                                <p>Google Cloud Platform services</p>
+                                <h4>DevOps & CI/CD</h4>
+                                <p>Automated deployment pipelines and DevOps practices for faster, reliable releases</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Security & Compliance</h4>
+                                <p>Robust security measures and compliance frameworks to protect your data</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
+                <div class="about-visual">
+                    <div class="service-image">
                         <i class="fas fa-cloud"></i>
-                        <p>Cloud Services Illustration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cloud Solutions -->
-    <section class="cloud-solutions">
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
         <div class="container">
-            <h2 class="section-title">Our Cloud Solutions</h2>
-            <div class="solutions-grid">
-                <div class="solution-card">
-                    <i class="fas fa-server"></i>
-                    <h3>Infrastructure as a Service</h3>
-                    <p>Scalable computing resources and virtual servers</p>
+            <div class="section-header">
+                <h2>Where We Use Cloud Services</h2>
+                <p>Our cloud expertise transforms businesses across various industries and use cases</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Startup Scaling</h3>
+                    <p>Help startups build scalable infrastructure that grows with their business needs.</p>
                 </div>
-                <div class="solution-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Platform as a Service</h3>
-                    <p>Complete development and deployment platforms</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-building"></i>
+                    <h3>Enterprise Migration</h3>
+                    <p>Large-scale enterprise cloud migrations with minimal business disruption.</p>
                 </div>
-                <div class="solution-card">
-                    <i class="fas fa-desktop"></i>
-                    <h3>Software as a Service</h3>
-                    <p>Ready-to-use software applications in the cloud</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Cost Optimization</h3>
+                    <p>Reduce infrastructure costs through cloud optimization and right-sizing strategies.</p>
                 </div>
-                <div class="solution-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Security & Compliance</h3>
-                    <p>Enterprise-grade security and regulatory compliance</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Deployment</h3>
+                    <p>Multi-region deployments for global reach and improved performance.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-database"></i>
+                    <h3>Data Management</h3>
+                    <p>Cloud-based data warehousing, analytics, and backup solutions.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Disaster Recovery</h3>
+                    <p>Robust disaster recovery and business continuity planning in the cloud.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cloud Technologies We Use</h2>
+                <p>We work with leading cloud platforms and technologies to deliver optimal solutions</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">AWS</div>
+                    <h4>AWS</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Azure</div>
+                    <h4>Azure</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">GCP</div>
+                    <h4>Google Cloud</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Docker</div>
+                    <h4>Docker</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">K8s</div>
+                    <h4>Kubernetes</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">TF</div>
+                    <h4>Terraform</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Jenkins</div>
+                    <h4>Jenkins</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Ansible</div>
+                    <h4>Ansible</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">GitLab</div>
+                    <h4>GitLab CI</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Monitor</div>
+                    <h4>CloudWatch</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Grafana</div>
+                    <h4>Grafana</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Helm</div>
+                    <h4>Helm</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We deliver comprehensive cloud services that combine strategic planning with technical excellence to ensure your cloud journey is successful and cost-effective.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>Cloud Certified Experts</h4>
+                                <p>Our team holds multiple cloud certifications from AWS, Azure, and Google Cloud.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>Zero Downtime Migration</h4>
+                                <p>We ensure business continuity during cloud migrations with proven methodologies.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>Cost Optimization</h4>
+                                <p>Ongoing monitoring and optimization to reduce cloud costs by up to 40%.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock monitoring and support for your cloud infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">99.9%</div>
+                            <div>Uptime Guaranteed</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">40%</div>
+                            <div>Cost Reduction</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">75+</div>
+                            <div>Cloud Projects</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">2-4w</div>
+                            <div>Migration Timeline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Move to the Cloud?</h2>
+                <p>Let's discuss your cloud strategy and transform your infrastructure for the future</p>
+                <a href="../contact.html" class="cta-button">Start Cloud Journey</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=14"></script>
     <script src="../../src/components/footer/footer.js"></script>
-    <script src="../../src/scripts/main.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                const element = document.getElementById(componentId);
+                if (element) {
+                    element.innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Failed to load ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            // Initialize header after components are loaded
+            if (typeof NewNavbarComponent !== 'undefined') {
+                new NewNavbarComponent();
+            }
+        });
+    </script>
 </body>
 </html>

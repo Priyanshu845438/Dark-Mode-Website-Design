@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance & Support Services | Acadify Solution</title>
-    <meta name="description" content="Comprehensive maintenance and support services to keep your applications running smoothly with 24/7 monitoring, updates, and technical support.">
+    <title>Maintenance & Support Services - Acadify Solution</title>
+    <meta name="description" content="Comprehensive website and application maintenance services including security updates, performance optimization, bug fixes, and 24/7 technical support.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=9">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,94 +24,294 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>Maintenance & Support</span>
             </div>
-            <h1 class="page-title">Maintenance & Support</h1>
-            <p class="page-subtitle">Keep your applications running smoothly</p>
+            <div class="service-hero">
+                <h1 class="service-title">Maintenance & Support Services</h1>
+                <p class="service-subtitle">Keep your websites and applications running smoothly with our comprehensive maintenance and support services</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Ongoing Maintenance & Support</h2>
-                    <p>Ensure your applications and systems run smoothly with our comprehensive maintenance and support services. We provide proactive monitoring, regular updates, and responsive technical support.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Professional Maintenance & Support</h2>
+                    <p>We provide ongoing maintenance and support services to ensure your digital assets remain secure, up-to-date, and performing at their best. Our proactive approach prevents issues before they impact your business.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-shield-alt"></i>
                             <div>
-                                <h4>24/7 Monitoring</h4>
-                                <p>Round-the-clock system monitoring and alerts</p>
+                                <h4>Security Updates</h4>
+                                <p>Regular security patches and vulnerability fixes to protect your applications</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-sync-alt"></i>
+                            <i class="fas fa-tachometer-alt"></i>
                             <div>
-                                <h4>Regular Updates</h4>
-                                <p>Security patches and feature updates</p>
+                                <h4>Performance Optimization</h4>
+                                <p>Continuous monitoring and optimization to maintain fast loading speeds</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bug"></i>
+                            <div>
+                                <h4>Bug Fixes</h4>
+                                <p>Quick resolution of bugs and issues to minimize downtime and user frustration</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-headset"></i>
                             <div>
-                                <h4>Technical Support</h4>
-                                <p>Expert support when you need it most</p>
+                                <h4>24/7 Support</h4>
+                                <p>Round-the-clock technical support and monitoring for critical applications</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
+                <div class="about-visual">
+                    <div class="service-image">
                         <i class="fas fa-tools"></i>
-                        <p>Maintenance Dashboard</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Support Plans -->
-    <section class="support-plans">
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
         <div class="container">
-            <h2 class="section-title">Support Plans</h2>
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Basic Support</h3>
-                    <p>Essential maintenance and bug fixes</p>
+            <div class="section-header">
+                <h2>Where We Provide Maintenance</h2>
+                <p>Our maintenance services cover all types of digital platforms and applications</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-globe"></i>
+                    <h3>Website Maintenance</h3>
+                    <p>Regular updates, security patches, and content management for business websites.</p>
                 </div>
-                <div class="plan-card">
-                    <i class="fas fa-star"></i>
-                    <h3>Premium Support</h3>
-                    <p>Priority support with faster response times</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerce Platforms</h3>
+                    <p>Maintenance for online stores including payment gateway updates and inventory management.</p>
                 </div>
-                <div class="plan-card">
-                    <i class="fas fa-crown"></i>
-                    <h3>Enterprise Support</h3>
-                    <p>Dedicated support team and SLA guarantees</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Applications</h3>
+                    <p>App store updates, bug fixes, and compatibility updates for mobile apps.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Server maintenance, backup management, and cloud infrastructure optimization.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Custom Software</h3>
+                    <p>Ongoing support and updates for custom business applications and enterprise software.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Management</h3>
+                    <p>Database optimization, backup management, and data integrity maintenance.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Maintenance Tools We Use</h2>
+                <p>We use industry-leading tools to monitor, maintain, and optimize your digital assets</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">Pingdom</div>
+                    <h4>Pingdom</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">NewRelic</div>
+                    <h4>New Relic</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Datadog</div>
+                    <h4>Datadog</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">GitLab</div>
+                    <h4>GitLab CI/CD</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Docker</div>
+                    <h4>Docker</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Jenkins</div>
+                    <h4>Jenkins</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Sentry</div>
+                    <h4>Sentry</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Grafana</div>
+                    <h4>Grafana</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Slack</div>
+                    <h4>Slack</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">JIRA</div>
+                    <h4>JIRA</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AWS</div>
+                    <h4>AWS CloudWatch</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Zendesk</div>
+                    <h4>Zendesk</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We provide reliable, proactive maintenance services that keep your digital assets secure, fast, and always available for your users and customers.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>Proactive Monitoring</h4>
+                                <p>24/7 monitoring to detect and resolve issues before they affect your users.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>Fast Response Time</h4>
+                                <p>Quick issue resolution with guaranteed response times for critical problems.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>Preventive Maintenance</h4>
+                                <p>Regular updates and optimizations to prevent issues before they occur.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>Comprehensive Coverage</h4>
+                                <p>Full-stack maintenance covering frontend, backend, database, and infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">99.9%</div>
+                            <div>Uptime Guarantee</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">2hr</div>
+                            <div>Response Time</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">200+</div>
+                            <div>Sites Maintained</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">24/7</div>
+                            <div>Support Available</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for Reliable Maintenance?</h2>
+                <p>Let's keep your digital assets running smoothly with our comprehensive maintenance services</p>
+                <a href="../contact.html" class="cta-button">Start Maintenance Plan</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=14"></script>
     <script src="../../src/components/footer/footer.js"></script>
-    <script src="../../src/scripts/main.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                const element = document.getElementById(componentId);
+                if (element) {
+                    element.innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Failed to load ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            // Initialize header after components are loaded
+            if (typeof NewNavbarComponent !== 'undefined') {
+                new NewNavbarComponent();
+            }
+        });
+    </script>
 </body>
 </html>

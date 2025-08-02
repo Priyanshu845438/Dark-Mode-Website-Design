@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analytics Services - Acadify Solution</title>
-    <meta name="description" content="Advanced data analytics and business intelligence services to transform raw data into actionable insights for informed decision-making.">
+    <title>Data Analytics & Business Intelligence - Acadify Solution</title>
+    <meta name="description" content="Advanced data analytics and business intelligence services to transform your data into actionable insights and strategic business decisions.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=9">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,70 +24,294 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>Data Analytics</span>
             </div>
-            <h1 class="page-title">Data Analytics Services</h1>
-            <p class="page-subtitle">Transform data into actionable insights</p>
+            <div class="service-hero">
+                <h1 class="service-title">Data Analytics & Business Intelligence</h1>
+                <p class="service-subtitle">Transform your data into actionable insights that drive strategic decisions and business growth</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Advanced Data Analytics</h2>
-                    <p>Unlock the power of your data with our comprehensive analytics services. We help businesses make data-driven decisions through advanced analytics, reporting, and business intelligence solutions.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Advanced Data Analytics Solutions</h2>
+                    <p>We help organizations unlock the power of their data through advanced analytics, machine learning, and business intelligence solutions. Our data experts transform raw data into meaningful insights that guide strategic decision-making.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
-                            <i class="fas fa-chart-pie"></i>
+                            <i class="fas fa-chart-bar"></i>
                             <div>
                                 <h4>Business Intelligence</h4>
-                                <p>Interactive dashboards and executive reporting</p>
+                                <p>Comprehensive BI dashboards and reports for real-time business insights</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Predictive Analytics</h4>
+                                <p>Forecasting models to predict trends, customer behavior, and business outcomes</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-database"></i>
                             <div>
                                 <h4>Data Warehousing</h4>
-                                <p>Centralized data storage and management systems</p>
+                                <p>Scalable data infrastructure for efficient storage and processing of large datasets</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-chart-pie"></i>
                             <div>
-                                <h4>Predictive Analytics</h4>
-                                <p>Machine learning models for forecasting trends</p>
+                                <h4>Data Visualization</h4>
+                                <p>Interactive dashboards and visualizations that make complex data easy to understand</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-chart-bar"></i>
-                        <p>Data Analytics Dashboard</p>
+                <div class="about-visual">
+                    <div class="service-image">
+                        <i class="fas fa-chart-line"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Where We Use Data Analytics</h2>
+                <p>Our analytics expertise drives insights across various business functions and industries</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-users"></i>
+                    <h3>Customer Analytics</h3>
+                    <p>Understand customer behavior, preferences, and lifetime value to improve retention and acquisition.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Financial Analysis</h3>
+                    <p>Revenue forecasting, cost optimization, and financial performance monitoring and reporting.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Operations Analytics</h3>
+                    <p>Process optimization, supply chain analytics, and operational efficiency improvements.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Marketing Analytics</h3>
+                    <p>Campaign performance analysis, attribution modeling, and marketing ROI optimization.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Risk Analytics</h3>
+                    <p>Risk assessment, fraud detection, and compliance monitoring through advanced analytics.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-area"></i>
+                    <h3>Performance Monitoring</h3>
+                    <p>KPI tracking, performance benchmarking, and strategic goal monitoring dashboards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Analytics Technologies We Use</h2>
+                <p>We leverage cutting-edge analytics tools and platforms to deliver powerful insights</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">Python</div>
+                    <h4>Python</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">R</div>
+                    <h4>R</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">SQL</div>
+                    <h4>SQL</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Tableau</div>
+                    <h4>Tableau</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Power BI</div>
+                    <h4>Power BI</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Looker</div>
+                    <h4>Looker</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Spark</div>
+                    <h4>Apache Spark</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Hadoop</div>
+                    <h4>Hadoop</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AWS</div>
+                    <h4>AWS Analytics</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Snowflake</div>
+                    <h4>Snowflake</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Databricks</div>
+                    <h4>Databricks</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">GA</div>
+                    <h4>Google Analytics</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We deliver comprehensive data analytics solutions that combine technical expertise with business acumen to provide insights that truly drive business value.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>Data Science Expertise</h4>
+                                <p>Our team includes certified data scientists and analytics experts with proven track records.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>Business-Focused Insights</h4>
+                                <p>We translate complex data into actionable business insights and strategic recommendations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>Scalable Solutions</h4>
+                                <p>Our analytics solutions are designed to grow with your business and data volume.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>End-to-End Service</h4>
+                                <p>From data collection to insights delivery, we handle the entire analytics pipeline.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">300%</div>
+                            <div>Faster Insights</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">90+</div>
+                            <div>Analytics Projects</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">95%</div>
+                            <div>Accuracy Rate</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">50%</div>
+                            <div>Cost Reduction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Unlock Your Data's Potential?</h2>
+                <p>Let's transform your data into strategic insights that drive business growth</p>
+                <a href="../contact.html" class="cta-button">Start Analytics Project</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=14"></script>
     <script src="../../src/components/footer/footer.js"></script>
-    <script src="../../src/scripts/main.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                const element = document.getElementById(componentId);
+                if (element) {
+                    element.innerHTML = html;
+                }
+            } catch (error) {
+                console.error(`Failed to load ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            // Initialize header after components are loaded
+            if (typeof NewNavbarComponent !== 'undefined') {
+                new NewNavbarComponent();
+            }
+        });
+    </script>
 </body>
 </html>

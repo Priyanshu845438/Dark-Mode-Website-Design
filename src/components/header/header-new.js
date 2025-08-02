@@ -155,39 +155,31 @@ class NewNavbarComponent {
                 if (trigger && menu) {
                     console.log('Setting up dropdown for:', trigger.textContent.trim());
                     
-                    // Show on hover for desktop
-                    trigger.addEventListener('mouseenter', () => {
-                        if (window.innerWidth >= 1024) {
-                            menu.classList.add('show');
-                        }
-                    });
-                    
-                    // Hide when leaving the dropdown container
-                    dropdown.addEventListener('mouseleave', () => {
-                        if (window.innerWidth >= 1024) {
-                            menu.classList.remove('show');
-                        }
-                    });
-                    
-                    // Handle click behavior
+                    // Handle click behavior for both desktop and mobile
                     trigger.addEventListener('click', (e) => {
-                        // Don't prevent default if it's a regular link
+                        // Don't prevent default if it's a regular link that should navigate
                         if (!trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
                             e.preventDefault();
                         }
                         
-                        // Handle mobile dropdown toggle
-                        if (window.innerWidth < 1024) {
-                            if (menu.classList.contains('show')) {
-                                menu.classList.remove('show');
-                            } else {
-                                // Close other dropdowns first
-                                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-                                    otherMenu.classList.remove('show');
-                                });
-                                menu.classList.add('show');
-                            }
+                        // Stop event from bubbling to document click handler
+                        e.stopPropagation();
+                        
+                        // Toggle dropdown for both desktop and mobile
+                        if (menu.classList.contains('show')) {
+                            menu.classList.remove('show');
+                        } else {
+                            // Close other dropdowns first
+                            document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                                otherMenu.classList.remove('show');
+                            });
+                            menu.classList.add('show');
                         }
+                    });
+                    
+                    // Prevent dropdown from closing when clicking inside the menu
+                    menu.addEventListener('click', (e) => {
+                        e.stopPropagation();
                     });
                 }
             });
@@ -201,7 +193,7 @@ class NewNavbarComponent {
                 }
             });
             
-            console.log('✓ Navigation dropdowns setup complete');
+            console.log('✓ Navigation dropdowns setup complete (click-based behavior)');
         }, 100);
     }
 
