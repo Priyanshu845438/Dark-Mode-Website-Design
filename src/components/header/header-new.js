@@ -16,7 +16,10 @@ class NewNavbarComponent {
         this.loadMobileNavigation(); // Make synchronous
         this.setupEventListeners();
         this.setupScrollHandling();
-        this.setupDropdowns();
+        // Setup dropdowns after a delay to ensure DOM is ready
+        setTimeout(() => {
+            this.setupDropdowns();
+        }, 500);
         this.setupMobileNavigation();
     }
 
@@ -51,7 +54,9 @@ class NewNavbarComponent {
     getBasePath() {
         // Determine if we're in a subdirectory
         const path = window.location.pathname;
-        if (path.includes('/pages/') || path.includes('pages/')) {
+        if (path.includes('/pages/services/') || path.includes('pages/services/')) {
+            return '../../';
+        } else if (path.includes('/pages/') || path.includes('pages/')) {
             return '../';
         }
         return '';
@@ -136,54 +141,68 @@ class NewNavbarComponent {
     }
 
     setupDropdowns() {
-        if (!this.navbar) return;
-
-        const dropdowns = this.navbar.querySelectorAll('.nav-dropdown');
-        this.dropdowns = Array.from(dropdowns);
-        this.dropdownTimers = new Map(); // Store timers for each dropdown
-
-        dropdowns.forEach(dropdown => {
-            const trigger = dropdown.querySelector('.dropdown-trigger');
-            const menu = dropdown.querySelector('.dropdown-menu');
-            if (!trigger || !menu) return;
-
-            // Remove any existing event listeners and hover classes
-            dropdown.classList.remove('active');
+        console.log('Setting up navigation dropdowns...');
+        
+        // Use a delay to ensure DOM is fully ready
+        setTimeout(() => {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            console.log('Found dropdowns:', dropdowns.length);
             
-            // Desktop hover behavior with delays
-            if (window.innerWidth >= 1024) {
-                this.setupDesktopHover(dropdown, trigger, menu);
-            }
-            
-            // Mobile click behavior
-            trigger.addEventListener('click', (e) => {
-                if (window.innerWidth < 1024) {
-                    e.preventDefault();
-                    this.closeAllDropdowns();
-                    dropdown.classList.add('active');
+            dropdowns.forEach(dropdown => {
+                const trigger = dropdown.querySelector('.dropdown-trigger');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                if (trigger && menu) {
+                    console.log('Setting up dropdown for:', trigger.textContent.trim());
+                    
+                    // Show on hover for desktop
+                    trigger.addEventListener('mouseenter', () => {
+                        if (window.innerWidth >= 1024) {
+                            menu.classList.add('show');
+                        }
+                    });
+                    
+                    // Hide when leaving the dropdown container
+                    dropdown.addEventListener('mouseleave', () => {
+                        if (window.innerWidth >= 1024) {
+                            menu.classList.remove('show');
+                        }
+                    });
+                    
+                    // Handle click behavior
+                    trigger.addEventListener('click', (e) => {
+                        // Don't prevent default if it's a regular link
+                        if (!trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
+                            e.preventDefault();
+                        }
+                        
+                        // Handle mobile dropdown toggle
+                        if (window.innerWidth < 1024) {
+                            if (menu.classList.contains('show')) {
+                                menu.classList.remove('show');
+                            } else {
+                                // Close other dropdowns first
+                                document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                                    otherMenu.classList.remove('show');
+                                });
+                                menu.classList.add('show');
+                            }
+                        }
+                    });
                 }
             });
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-dropdown')) {
-                this.closeAllDropdowns();
-            }
-        });
-
-        // Update hover behavior on window resize
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
-                dropdowns.forEach(dropdown => {
-                    const trigger = dropdown.querySelector('.dropdown-trigger');
-                    const menu = dropdown.querySelector('.dropdown-menu');
-                    if (trigger && menu) {
-                        this.setupDesktopHover(dropdown, trigger, menu);
-                    }
-                });
-            }
-        });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-dropdown')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.classList.remove('show');
+                    });
+                }
+            });
+            
+            console.log('✓ Navigation dropdowns setup complete');
+        }, 100);
     }
 
     setupDesktopHover(dropdown, trigger, menu) {

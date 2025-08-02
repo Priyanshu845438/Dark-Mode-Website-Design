@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile App Development - Acadify Solution</title>
-    <meta name="description" content="Native and cross-platform mobile app development for iOS and Android. Custom mobile solutions for your business.">
+    <title>Mobile App Development Services - Acadify Solution</title>
+    <meta name="description" content="Professional mobile app development services for iOS and Android platforms with native and cross-platform solutions.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=8">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,99 +24,310 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>Mobile Development</span>
             </div>
-            <h1 class="page-title">Mobile App Development</h1>
-            <p class="page-subtitle">Native and cross-platform mobile solutions</p>
+            <div class="service-hero">
+                <h1 class="service-title">Mobile App Development</h1>
+                <p class="service-subtitle">Native and cross-platform mobile applications that deliver exceptional user experiences on iOS and Android</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Mobile App Development Services</h2>
-                    <p>We develop high-performance mobile applications for iOS and Android platforms. Our team creates intuitive, feature-rich apps that engage users and drive business growth.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Professional Mobile App Development</h2>
+                    <p>We create innovative mobile applications that engage users and drive business success. Our experienced team develops both native and cross-platform apps using the latest technologies and design principles to deliver outstanding mobile experiences.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
                             <i class="fab fa-apple"></i>
                             <div>
                                 <h4>iOS Development</h4>
-                                <p>Native iOS apps using Swift and Objective-C</p>
+                                <p>Native iOS apps using Swift and Objective-C for optimal performance and user experience</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fab fa-android"></i>
                             <div>
                                 <h4>Android Development</h4>
-                                <p>Native Android apps using Kotlin and Java</p>
+                                <p>Native Android apps with Java and Kotlin for seamless Google Play Store deployment</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-mobile-alt"></i>
                             <div>
-                                <h4>Cross-Platform</h4>
-                                <p>React Native and Flutter solutions</p>
+                                <h4>Cross-Platform Apps</h4>
+                                <p>Hybrid apps using React Native and Flutter for cost-effective multi-platform reach</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-cogs"></i>
+                            <div>
+                                <h4>App Store Optimization</h4>
+                                <p>Complete deployment and optimization for App Store and Google Play Store visibility</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
+                <div class="about-visual">
+                    <div class="service-image">
                         <i class="fas fa-mobile-alt"></i>
-                        <p>Mobile Development Illustration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- App Features -->
-    <section class="app-features">
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
         <div class="container">
-            <h2 class="section-title">App Development Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>User Authentication</h3>
-                    <p>Secure login and user management systems</p>
+            <div class="section-header">
+                <h2>Where We Use Mobile Development</h2>
+                <p>Our mobile app development expertise serves various industries and business needs</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>E-commerce Apps</h3>
+                    <p>Mobile shopping applications with secure payments, product catalogs, and seamless checkout experiences.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Payment Integration</h3>
-                    <p>Seamless payment processing and e-commerce</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-heart"></i>
+                    <h3>Healthcare Apps</h3>
+                    <p>Medical and wellness applications for patient management, telemedicine, and health tracking.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-bell"></i>
-                    <h3>Push Notifications</h3>
-                    <p>Real-time notifications and messaging</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Apps</h3>
+                    <p>Learning management systems and educational games for enhanced mobile learning experiences.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Location Services</h3>
-                    <p>GPS integration and location-based features</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food Delivery Apps</h3>
+                    <p>Restaurant and food delivery platforms with real-time tracking and integrated payment systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Business Apps</h3>
+                    <p>Enterprise mobile applications for productivity, CRM, and internal business processes.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming Apps</h3>
+                    <p>Mobile games and entertainment applications with engaging gameplay and social features.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technologies We Use</h2>
+                <p>We utilize cutting-edge mobile development technologies and frameworks</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">Swift</div>
+                    <h4>Swift</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Kotlin</div>
+                    <h4>Kotlin</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">RN</div>
+                    <h4>React Native</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Flutter</div>
+                    <h4>Flutter</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Xamarin</div>
+                    <h4>Xamarin</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Ionic</div>
+                    <h4>Ionic</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Java</div>
+                    <h4>Java</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Obj-C</div>
+                    <h4>Objective-C</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Fire</div>
+                    <h4>Firebase</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AWS</div>
+                    <h4>AWS Mobile</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">SQLite</div>
+                    <h4>SQLite</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">API</div>
+                    <h4>REST APIs</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We deliver exceptional mobile app development services that combine technical expertise with user-centric design to create apps that users love and businesses rely on.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>Expert Mobile Developers</h4>
+                                <p>Our team has extensive experience in both native and cross-platform mobile development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>User-Centric Design</h4>
+                                <p>We focus on creating intuitive and engaging user experiences that drive app adoption.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>Platform Optimization</h4>
+                                <p>Apps optimized for both iOS and Android platforms with platform-specific features.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>App Store Success</h4>
+                                <p>Complete support from development to App Store approval and marketing optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">99%</div>
+                            <div>App Approval Rate</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">150+</div>
+                            <div>Apps Launched</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">4.8★</div>
+                            <div>Average Rating</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">90%</div>
+                            <div>Client Retention</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Mobile App?</h2>
+                <p>Let's discuss your mobile app development needs and create a solution that engages users and drives growth.</p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="cta-btn cta-btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                    <a href="../schedule-meeting.html" class="cta-btn cta-btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Meeting
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
+    <script src="../../link-validation.js"></script>
+    <script src="../../src/components/header/header-new.js?v=16"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const timestamp = Date.now();
+                const response = await fetch(`${componentPath}?v=${timestamp}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded from ${componentPath}`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId} from ${componentPath}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading Mobile Development service page components...');
+            
+            // Load components sequentially to ensure proper initialization
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            console.log('✅ All components loaded successfully');
+            
+            // Navigation dropdowns will be initialized by the header component
+            console.log('✓ Mobile Development page loaded - dropdowns handled by header component');
+        });
+    </script>
 </body>
 </html>

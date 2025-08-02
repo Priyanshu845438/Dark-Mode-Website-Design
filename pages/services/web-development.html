@@ -9,8 +9,10 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=8">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,103 +24,310 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>Web Development</span>
             </div>
-            <h1 class="page-title">Web Development Services</h1>
-            <p class="page-subtitle">Custom web solutions built with cutting-edge technologies</p>
+            <div class="service-hero">
+                <h1 class="service-title">Web Development Services</h1>
+                <p class="service-subtitle">Custom web solutions built with cutting-edge technologies for exceptional user experiences</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
+            <div class="about-content">
+                <div class="about-text">
                     <h2>Professional Web Development</h2>
-                    <p>We create modern, responsive websites and web applications that deliver exceptional user experiences. Our full-stack development team uses the latest technologies to build scalable, secure, and performant web solutions.</p>
+                    <p>We create modern, responsive websites and web applications that deliver exceptional user experiences. Our full-stack development team uses the latest technologies to build scalable, secure, and performant web solutions that drive business growth.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
                             <i class="fas fa-code"></i>
                             <div>
                                 <h4>Full-Stack Development</h4>
-                                <p>Complete web solutions from frontend to backend</p>
+                                <p>Complete web solutions from frontend to backend with modern frameworks and technologies</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-mobile-alt"></i>
                             <div>
                                 <h4>Responsive Design</h4>
-                                <p>Perfect experience across all devices</p>
+                                <p>Perfect experience across all devices - desktop, tablet, and mobile</p>
                             </div>
                         </div>
                         <div class="feature-item">
                             <i class="fas fa-rocket"></i>
                             <div>
                                 <h4>Performance Optimized</h4>
-                                <p>Fast loading and optimized for search engines</p>
+                                <p>Fast loading websites optimized for search engines and user experience</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure & Scalable</h4>
+                                <p>Built with security best practices and designed to scale with your business</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
+                <div class="about-visual">
+                    <div class="service-image">
                         <i class="fas fa-laptop-code"></i>
-                        <p>Web Development Illustration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technologies -->
-    <section class="technologies">
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
         <div class="container">
-            <h2 class="section-title">Technologies We Use</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML5</span>
+            <div class="section-header">
+                <h2>Where We Use Web Development</h2>
+                <p>Our web development expertise spans across various industries and business applications</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerce Platforms</h3>
+                    <p>Build powerful online stores with secure payment processing, inventory management, and seamless customer experiences.</p>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS3</span>
+                
+                <div class="use-case">
+                    <i class="fas fa-building"></i>
+                    <h3>Business Websites</h3>
+                    <p>Professional corporate websites that establish your brand presence and drive business growth online.</p>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-js-square"></i>
-                    <span>JavaScript</span>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Web Applications</h3>
+                    <p>Custom web applications for business processes, data management, and workflow automation.</p>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-react"></i>
-                    <span>React</span>
+                
+                <div class="use-case">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Content Management</h3>
+                    <p>Dynamic websites with easy-to-use content management systems for blogs, news, and media sites.</p>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Node.js</span>
+                
+                <div class="use-case">
+                    <i class="fas fa-users"></i>
+                    <h3>Social Platforms</h3>
+                    <p>Community platforms and social networks with user management and interactive features.</p>
                 </div>
-                <div class="tech-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
+                
+                <div class="use-case">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Portals</h3>
+                    <p>Learning management systems and educational platforms for online courses and training.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technologies We Use</h2>
+                <p>We leverage the latest and most reliable technologies to build robust web solutions</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">HTML</div>
+                    <h4>HTML5</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">CSS</div>
+                    <h4>CSS3</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">JS</div>
+                    <h4>JavaScript</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">React</div>
+                    <h4>React.js</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Vue</div>
+                    <h4>Vue.js</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Node</div>
+                    <h4>Node.js</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">PHP</div>
+                    <h4>PHP</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Python</div>
+                    <h4>Python</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">MySQL</div>
+                    <h4>MySQL</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Mongo</div>
+                    <h4>MongoDB</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AWS</div>
+                    <h4>AWS</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Git</div>
+                    <h4>Git</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We deliver exceptional web development services that combine technical expertise with creative innovation to build websites that truly make a difference for your business.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>Expert Development Team</h4>
+                                <p>Our skilled developers have years of experience in modern web technologies and best practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>Custom Solutions</h4>
+                                <p>Every project is tailored to your specific business needs and requirements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>On-Time Delivery</h4>
+                                <p>We respect deadlines and deliver projects on time without compromising quality.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>24/7 Support</h4>
+                                <p>Ongoing maintenance and support to keep your website running smoothly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">98%</div>
+                            <div>Client Satisfaction</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">200+</div>
+                            <div>Projects Delivered</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">24/7</div>
+                            <div>Support Available</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">5+</div>
+                            <div>Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Website?</h2>
+                <p>Let's discuss your web development needs and create a solution that drives your business forward.</p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="cta-btn cta-btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                    <a href="../schedule-meeting.html" class="cta-btn cta-btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Meeting
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
+    <script src="../../link-validation.js"></script>
+    <script src="../../src/components/header/header-new.js?v=16"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const timestamp = Date.now();
+                const response = await fetch(`${componentPath}?v=${timestamp}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded from ${componentPath}`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId} from ${componentPath}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading Web Development service page components...');
+            
+            // Load components sequentially to ensure proper initialization
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            console.log('✅ All components loaded successfully');
+            
+            // Navigation dropdowns will be initialized by the header component
+            console.log('✓ Web Development page loaded - dropdowns handled by header component');
+        });
+    </script>
 </body>
 </html>

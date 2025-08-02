@@ -155,6 +155,7 @@ body .navbar * {
 }
 
 .dropdown-menu {
+    display: none !important;
     position: absolute;
     top: 100%;
     left: 50%;
@@ -175,6 +176,14 @@ body .navbar * {
     transition: all 0.2s ease;
     margin-top: 1rem;
     z-index: 1000;
+}
+
+.dropdown-menu.show {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* Remove bridge area to prevent overlap */

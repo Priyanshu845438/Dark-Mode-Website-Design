@@ -5,6 +5,9 @@
     background: var(--bg-primary);
     padding: 2rem 0 1rem;
     border-bottom: 1px solid var(--border-primary);
+    position: relative;
+    z-index: 10;
+    margin-top: 80px; /* Account for fixed header */
 }
 
 .breadcrumb {

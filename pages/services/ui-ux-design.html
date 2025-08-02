@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI/UX Design Services - Acadify Solution</title>
-    <meta name="description" content="Professional UI/UX design services creating user-centered digital experiences that drive engagement and conversion.">
+    <meta name="description" content="Professional UI/UX design services that create intuitive and engaging digital experiences for web and mobile applications.">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=8">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,99 +24,310 @@
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+
+    <!-- 1. Breadcrumb Section -->
+    <section class="breadcrumb-section">
         <div class="container">
             <div class="breadcrumb">
-                <a href="../index.html">Home</a>
+                <a href="../../index.html">Home</a>
                 <span>/</span>
                 <a href="../services.html">Services</a>
                 <span>/</span>
                 <span>UI/UX Design</span>
             </div>
-            <h1 class="page-title">UI/UX Design Services</h1>
-            <p class="page-subtitle">User-centered design that converts</p>
+            <div class="service-hero">
+                <h1 class="service-title">UI/UX Design Services</h1>
+                <p class="service-subtitle">Creating intuitive and engaging digital experiences that delight users and drive business success</p>
+            </div>
         </div>
     </section>
 
-    <!-- Service Overview -->
-    <section class="service-overview">
+    <!-- 2. About Service Section -->
+    <section class="about-service">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Creative UI/UX Design</h2>
-                    <p>We craft intuitive and engaging user experiences that balance aesthetics with functionality. Our design process focuses on understanding your users and creating interfaces that drive engagement and conversions.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Professional UI/UX Design</h2>
+                    <p>We craft exceptional user interfaces and experiences that combine aesthetic appeal with functional excellence. Our design team creates digital products that not only look stunning but also provide seamless and intuitive user journeys.</p>
                     
                     <div class="service-features">
                         <div class="feature-item">
-                            <i class="fas fa-pencil-ruler"></i>
+                            <i class="fas fa-paint-brush"></i>
                             <div>
-                                <h4>User Research</h4>
-                                <p>In-depth analysis of user behavior and needs</p>
+                                <h4>User Interface Design</h4>
+                                <p>Beautiful and responsive interface designs that captivate users and enhance engagement</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-palette"></i>
+                            <i class="fas fa-user-friends"></i>
                             <div>
-                                <h4>Visual Design</h4>
-                                <p>Beautiful, modern interfaces that engage users</p>
+                                <h4>User Experience Research</h4>
+                                <p>In-depth user research and testing to create optimal user experiences and workflows</p>
                             </div>
                         </div>
                         <div class="feature-item">
-                            <i class="fas fa-mouse-pointer"></i>
+                            <i class="fas fa-mobile-alt"></i>
                             <div>
-                                <h4>Interactive Prototypes</h4>
-                                <p>Clickable prototypes for testing and validation</p>
+                                <h4>Responsive Design</h4>
+                                <p>Designs that work flawlessly across all devices and screen sizes for consistent experiences</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-sitemap"></i>
+                            <div>
+                                <h4>Wireframing & Prototyping</h4>
+                                <p>Detailed wireframes and interactive prototypes to visualize and test design concepts</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="service-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-paint-brush"></i>
-                        <p>UI/UX Design Illustration</p>
+                <div class="about-visual">
+                    <div class="service-image">
+                        <i class="fas fa-palette"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Design Process -->
-    <section class="design-process">
+    <!-- 3. Where We Use Section -->
+    <section class="where-we-use">
         <div class="container">
-            <h2 class="section-title">Our Design Process</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Research</h3>
-                    <p>Understanding users, market, and requirements</p>
+            <div class="section-header">
+                <h2>Where We Use UI/UX Design</h2>
+                <p>Our UI/UX design expertise enhances digital experiences across various platforms and industries</p>
+            </div>
+            
+            <div class="use-cases">
+                <div class="use-case">
+                    <i class="fas fa-globe"></i>
+                    <h3>Website Design</h3>
+                    <p>Modern and responsive website designs that provide exceptional user experiences and drive conversions.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Strategy</h3>
-                    <p>Defining user journeys and information architecture</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile App Design</h3>
+                    <p>Intuitive mobile app interfaces designed for iOS and Android platforms with native look and feel.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Design</h3>
-                    <p>Creating wireframes, mockups, and prototypes</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-commerce Platforms</h3>
+                    <p>User-centric e-commerce designs that simplify shopping processes and increase sales conversions.</p>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Test</h3>
-                    <p>User testing and iterative improvements</p>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Dashboard Design</h3>
+                    <p>Clean and functional dashboard interfaces for analytics, admin panels, and business management tools.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educational Platforms</h3>
+                    <p>Engaging learning management system designs that enhance educational experiences and student engagement.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Enterprise Software</h3>
+                    <p>Professional interface designs for complex enterprise applications with focus on usability and efficiency.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- 4. Tech We Use Section -->
+    <section class="tech-we-use">
+        <div class="container">
+            <div class="section-header">
+                <h2>Design Tools We Use</h2>
+                <p>We utilize industry-leading design tools and technologies to create exceptional user experiences</p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-icon">Figma</div>
+                    <h4>Figma</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Sketch</div>
+                    <h4>Sketch</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">XD</div>
+                    <h4>Adobe XD</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">PS</div>
+                    <h4>Photoshop</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AI</div>
+                    <h4>Illustrator</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">AE</div>
+                    <h4>After Effects</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Inv</div>
+                    <h4>InVision</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Marvel</div>
+                    <h4>Marvel</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Zep</div>
+                    <h4>Zeplin</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Maze</div>
+                    <h4>Maze</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Hot</div>
+                    <h4>Hotjar</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">Prin</div>
+                    <h4>Principle</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Why Us Section -->
+    <section class="why-us">
+        <div class="container">
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <h2>Why Choose Acadify Solution?</h2>
+                    <p>We deliver exceptional UI/UX design services that combine creative excellence with user-centered design principles to create digital experiences that truly make a difference.</p>
+                    
+                    <div class="why-us-points">
+                        <div class="why-point">
+                            <div class="point-number">1</div>
+                            <div class="why-point-content">
+                                <h4>User-Centered Approach</h4>
+                                <p>We prioritize user needs and behaviors in every design decision to create meaningful experiences.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">2</div>
+                            <div class="why-point-content">
+                                <h4>Design System Expertise</h4>
+                                <p>We create comprehensive design systems that ensure consistency and scalability across all touchpoints.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">3</div>
+                            <div class="why-point-content">
+                                <h4>Iterative Design Process</h4>
+                                <p>We follow an iterative approach with continuous testing and refinement to achieve optimal results.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-point">
+                            <div class="point-number">4</div>
+                            <div class="why-point-content">
+                                <h4>Cross-Platform Expertise</h4>
+                                <p>Our designs work seamlessly across web, mobile, and desktop platforms with native experiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="why-us-visual">
+                    <div class="why-us-chart">
+                        <div class="chart-item">
+                            <div class="percentage">97%</div>
+                            <div>User Satisfaction</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">300+</div>
+                            <div>Designs Created</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">45%</div>
+                            <div>Conversion Increase</div>
+                        </div>
+                        <div class="chart-item">
+                            <div class="percentage">15+</div>
+                            <div>Design Awards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Digital Experience?</h2>
+                <p>Let's collaborate to create exceptional UI/UX designs that captivate your users and drive business growth.</p>
+                <div class="cta-buttons">
+                    <a href="../contact.html" class="cta-btn cta-btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Project
+                    </a>
+                    <a href="../schedule-meeting.html" class="cta-btn cta-btn-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule Meeting
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
+    <script src="../../link-validation.js"></script>
+    <script src="../../src/components/header/header-new.js?v=16"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const timestamp = Date.now();
+                const response = await fetch(`${componentPath}?v=${timestamp}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded from ${componentPath}`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId} from ${componentPath}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading UI/UX Design service page components...');
+            
+            // Load components sequentially to ensure proper initialization
+            await loadComponent('header-component', '../../src/components/header/header-new.html');
+            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
+            await loadComponent('footer-component', '../../src/components/footer/footer.html');
+            
+            console.log('✅ All components loaded successfully');
+            
+            // Navigation dropdowns will be initialized by the header component
+            console.log('✓ UI/UX Design page loaded - dropdowns handled by header component');
+        });
+    </script>
 </body>
 </html>
