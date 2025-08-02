@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Acadify Solution | Showcasing Our Best Work</title>
+    <meta name="description" content="Explore our comprehensive portfolio of successful web development, mobile app, AI solutions, and digital transformation projects across various industries.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/components/header/header-new.css">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
+    <link rel="stylesheet" href="../src/components/footer/footer.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Portfolio Page Specific Styles */
+        
+        /* Main Container */
+        .portfolio-page {
+            min-height: 100vh;
+            background: #000000;
+            color: #ffffff;
+            padding-top: 70px;
+        }
+        
+        /* Breadcrumb Section */
+        .breadcrumb-section {
+            padding: 2rem 0;
+            background: rgba(0, 191, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        }
+        
+        .breadcrumb-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .breadcrumb a {
+            color: #00BFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #39FF14;
+        }
+        
+        .breadcrumb-separator {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 0.25rem;
+        }
+        
+        .breadcrumb-current {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .portfolio-hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(57, 255, 20, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(57, 255, 20, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: #00BFFF;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00BFFF 50%, #39FF14 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .portfolio-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            background: rgba(0, 191, 255, 0.1);
+            border-color: rgba(0, 191, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00BFFF;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        
+        /* Categories Filter Section */
+        .categories-section {
+            padding: 4rem 0;
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .categories-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+        
+        .filter-tab {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .filter-tab:hover::before {
+            left: 100%;
+        }
+        
+        .filter-tab:hover,
+        .filter-tab.active {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(57, 255, 20, 0.1));
+            border-color: rgba(0, 191, 255, 0.4);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+        }
+        
+        .filter-tab.active {
+            background: linear-gradient(135deg, #00BFFF, #39FF14);
+            color: #000000;
+            font-weight: 600;
+        }
+        
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 191, 255, 0.3);
+        }
+        
+        .portfolio-image {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(57, 255, 20, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .portfolio-placeholder {
+            font-size: 4rem;
+            color: rgba(0, 191, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-placeholder {
+            transform: scale(1.1);
+            color: #00BFFF;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .portfolio-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00BFFF, #39FF14);
+            color: #000000;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .portfolio-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-content {
+            padding: 2rem;
+        }
+        
+        .portfolio-category {
+            display: inline-block;
+            background: rgba(0, 191, 255, 0.1);
+            color: #00BFFF;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .portfolio-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: rgba(57, 255, 20, 0.1);
+            color: #39FF14;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(57, 255, 20, 0.3);
+        }
+        
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.05) 0%, rgba(57, 255, 20, 0.03) 100%);
+            position: relative;
+        }
+        
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 2rem;
+            font-size: 4rem;
+            color: rgba(0, 191, 255, 0.3);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-card:hover {
+            background: rgba(0, 191, 255, 0.05);
+            border-color: rgba(0, 191, 255, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-text {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00BFFF, #39FF14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000000;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .author-info h4 {
+            color: #ffffff;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-rating {
+            display: flex;
+            gap: 0.25rem;
+            margin-top: 1rem;
+        }
+        
+        .star {
+            color: #FFA500;
+            font-size: 1.2rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .cta-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00BFFF 50%, #39FF14 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .cta-actions {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-btn-primary {
+            background: linear-gradient(135deg, #00BFFF, #39FF14);
+            color: #000000;
+        }
+        
+        .cta-btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portfolio-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .filter-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .breadcrumb {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body class="portfolio-page">
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section">
+        <div class="breadcrumb-container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Portfolio</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="portfolio-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-on-scroll">
+                    <i class="fas fa-briefcase"></i>
+                    Our Work Showcase
+                </div>
+                <h1 class="hero-title animate-on-scroll">Portfolio Excellence</h1>
+                <p class="hero-subtitle animate-on-scroll">
+                    Discover our comprehensive collection of innovative projects that have transformed businesses across diverse industries through cutting-edge technology solutions.
+                </p>
+                <div class="portfolio-stats animate-on-scroll">
+                    <div class="stat-card">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">30+</span>
+                        <span class="stat-label">Industries Served</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">5+ Years</span>
+                        <span class="stat-label">Excellence Track Record</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Categories Filter Section -->
+    <section class="categories-section">
+        <div class="categories-container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Explore Our Work</h2>
+                <p class="section-subtitle">
+                    Browse through our diverse portfolio organized by technology and industry focus areas. Each project represents our commitment to innovation and excellence.
+                </p>
+            </div>
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">
+                    <i class="fas fa-th"></i>
+                    All Projects
+                </button>
+                <button class="filter-tab" data-filter="web">
+                    <i class="fas fa-globe"></i>
+                    Web Development
+                </button>
+                <button class="filter-tab" data-filter="mobile">
+                    <i class="fas fa-mobile-alt"></i>
+                    Mobile Apps
+                </button>
+                <button class="filter-tab" data-filter="uiux">
+                    <i class="fas fa-paint-brush"></i>
+                    UI/UX Design
+                </button>
+                <button class="filter-tab" data-filter="ai">
+                    <i class="fas fa-robot"></i>
+                    AI Solutions
+                </button>
+                <button class="filter-tab" data-filter="cloud">
+                    <i class="fas fa-cloud"></i>
+                    Cloud Services
+                </button>
+                <button class="filter-tab" data-filter="ecommerce">
+                    <i class="fas fa-shopping-cart"></i>
+                    E-Commerce
+                </button>
+                <button class="filter-tab" data-filter="enterprise">
+                    <i class="fas fa-building"></i>
+                    Enterprise
+                </button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Web Development Projects -->
+                <div class="portfolio-card" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/edutech-learning-platform.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Development</div>
+                        <h3 class="portfolio-title">EduTech Learning Platform</h3>
+                        <p class="portfolio-description">Comprehensive online learning management system with real-time collaboration, video conferencing, and advanced analytics for educational institutions.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">WebRTC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/multi-vendor-marketplace.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">E-Commerce</div>
+                        <h3 class="portfolio-title">Multi-Vendor Marketplace</h3>
+                        <p class="portfolio-description">Advanced e-commerce platform with multi-vendor support, real-time inventory management, and integrated payment gateway solutions.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Projects -->
+                <div class="portfolio-card" data-category="mobile">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/healthtracker-pro.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Mobile App</div>
+                        <h3 class="portfolio-title">HealthTracker Pro</h3>
+                        <p class="portfolio-description">Comprehensive health monitoring app with AI-powered insights, wearable device integration, and personalized wellness recommendations.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">HealthKit</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" data-category="mobile">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/rideshare-connect.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Mobile App</div>
+                        <h3 class="portfolio-title">RideShare Connect</h3>
+                        <p class="portfolio-description">On-demand transportation app with real-time GPS tracking, dynamic pricing, and seamless payment integration for riders and drivers.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Google Maps</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Stripe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design Projects -->
+                <div class="portfolio-card" data-category="uiux">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/fintech-analytics-dashboard.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">UI/UX Design</div>
+                        <h3 class="portfolio-title">FinTech Analytics Dashboard</h3>
+                        <p class="portfolio-description">Modern financial dashboard with advanced data visualization, real-time market data, and intuitive user experience design.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Design System</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">User Research</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Solutions -->
+                <div class="portfolio-card" data-category="ai">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/ai-customer-support.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">AI Solutions</div>
+                        <h3 class="portfolio-title">AI Customer Support</h3>
+                        <p class="portfolio-description">Intelligent customer support system with natural language processing, sentiment analysis, and automated ticket routing capabilities.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud Services -->
+                <div class="portfolio-card" data-category="cloud">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/scalable-microservices.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Cloud Services</div>
+                        <h3 class="portfolio-title">Scalable Microservices Architecture</h3>
+                        <p class="portfolio-description">Cloud-native microservices architecture with auto-scaling, load balancing, and comprehensive monitoring for enterprise applications.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Terraform</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enterprise Solutions -->
+                <div class="portfolio-card" data-category="enterprise">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/enterprise-resource-planning.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Enterprise</div>
+                        <h3 class="portfolio-title">Enterprise Resource Planning</h3>
+                        <p class="portfolio-description">Comprehensive ERP solution for large enterprises with modules for HR, finance, inventory, and customer relationship management.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">.NET Core</span>
+                            <span class="tech-tag">SQL Server</span>
+                            <span class="tech-tag">Azure</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Web Development Project -->
+                <div class="portfolio-card" data-category="web">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-actions">
+                                <a href="portfolio/healthcare-management-system.html" class="portfolio-btn btn-primary">View Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Development</div>
+                        <h3 class="portfolio-title">Healthcare Management System</h3>
+                        <p class="portfolio-description">Complete hospital management solution with patient records, appointment scheduling, billing, and telemedicine capabilities.</p>
+                        <div class="portfolio-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">WebRTC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">
+                    Hear from our satisfied clients about their experience working with us and the results we've delivered together.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "Acadify Solution transformed our business with their innovative ERP system. The team's expertise and dedication resulted in a 40% increase in operational efficiency and streamlined our entire workflow."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>CEO, TechCorp Industries</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "The mobile app developed by Acadify exceeded our expectations. User engagement increased by 320% within the first quarter, and the intuitive design has received outstanding feedback from our customers."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RJ</div>
+                        <div class="author-info">
+                            <h4>Robert Johnson</h4>
+                            <p>Founder, HealthSync Pro</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "Working with Acadify on our AI customer support system was exceptional. The solution reduced response times by 85% and achieved 96.8% accuracy in query resolution. Outstanding technical expertise!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EC</div>
+                        <div class="author-info">
+                            <h4>Emma Chen</h4>
+                            <p>CTO, Digital Solutions Inc</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "The cloud migration project was flawless. Zero downtime during the transition, and our system performance improved significantly. Acadify's team handled everything professionally and efficiently."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Rodriguez</h4>
+                            <p>IT Director, Global Finance Corp</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "The e-commerce platform built by Acadify revolutionized our online business. Sales increased by 240% in six months, and the admin panel makes inventory management incredibly simple and efficient."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LT</div>
+                        <div class="author-info">
+                            <h4>Lisa Thompson</h4>
+                            <p>Owner, Fashion Forward</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">
+                        "Acadify's UI/UX design expertise is remarkable. Our new dashboard improved user satisfaction by 75%, and the design system they created has become the foundation for all our digital products."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>Product Manager, FinTech Solutions</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../src/components/header/header-new.js"></script>
+    <script src="../src/components/footer/footer.js"></script>
+    <script src="../src/scripts/main.js"></script>
+    <script>
+        // Portfolio functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load navigation components
+            loadNavbar();
+            loadFooter();
+            
+            // Initialize portfolio filtering
+            initPortfolioFilter();
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+        });
+
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../src/components/header/header-new.html');
+                const navbarHTML = await response.text();
+                document.getElementById('navbar-container').innerHTML = navbarHTML;
+                
+                // Initialize navbar functionality
+                if (window.NewNavbarComponent) {
+                    new NewNavbarComponent();
+                }
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+
+        async function loadFooter() {
+            try {
+                const response = await fetch('../src/components/footer/footer.html');
+                const footerHTML = await response.text();
+                document.getElementById('footer-container').innerHTML = footerHTML;
+                
+                // Initialize footer functionality
+                if (window.FooterComponent) {
+                    new FooterComponent();
+                }
+            } catch (error) {
+                console.error('Error loading footer:', error);
+            }
+        }
+
+        function initPortfolioFilter() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+
+                    const filter = tab.getAttribute('data-filter');
+
+                    portfolioCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.classList.remove('hidden');
+                            // Add animation delay for staggered effect
+                            setTimeout(() => {
+                                card.classList.add('animate-on-scroll', 'animated');
+                            }, Math.random() * 200);
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.add('hidden');
+                            card.classList.remove('animated');
+                        }
+                    });
+                });
+            });
+        }
+
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animate-on-scroll class
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Portfolio card interactions
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('portfolio-btn')) {
+                e.preventDefault();
+                const btnText = e.target.textContent.trim();
+                
+                // Simulate button actions
+                if (btnText.includes('Demo') || btnText.includes('Live')) {
+                    console.log('Demo/Live link clicked');
+                    // Add your demo/live link logic here
+                } else if (btnText.includes('Details')) {
+                    console.log('View Details clicked');
+                    // Add your details modal/page logic here
+                } else if (btnText.includes('Case Study')) {
+                    console.log('Case Study clicked');
+                    // Add your case study logic here
+                }
+            }
+        });
+
+        // Stats counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+                const increment = target / 100;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, target);
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = counter.textContent.replace(/[0-9]+/, Math.floor(current));
+                    }
+                }, 20);
+            });
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        // Observe stats section when DOM is loaded
+        setTimeout(() => {
+            const statsSection = document.querySelector('.portfolio-stats');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        }, 100);
+    </script>
+</body>
+</html>

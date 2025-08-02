@@ -1,8 +1,20 @@
 /* About Page Styles */
 
+/* Main Content Container */
+.main-content {
+    margin-top: 80px; /* Space for fixed header */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-top: 70px; /* Smaller space for mobile header */
+    }
+}
+
 /* Breadcrumb Section */
 .breadcrumb-section {
-    padding: 2rem 0 1rem;
+    padding: 1rem 0;
     background: rgba(0, 191, 255, 0.05);
     border-bottom: 1px solid rgba(0, 191, 255, 0.1);
 }

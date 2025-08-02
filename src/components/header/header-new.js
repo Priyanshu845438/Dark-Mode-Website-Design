@@ -23,7 +23,9 @@ class NewNavbarComponent {
     async loadNavbar() {
         try {
             console.log('Loading new navbar with all 18 services...');
-            const response = await fetch('src/components/header/header-new.html?v=' + Date.now());
+            // Determine the correct path based on current location
+            const basePath = this.getBasePath();
+            const response = await fetch(`${basePath}src/components/header/header-new.html?v=` + Date.now());
             const navbarHTML = await response.text();
             
             // Remove any existing navbar first
@@ -37,10 +39,51 @@ class NewNavbarComponent {
             this.navbar = document.getElementById('navbar');
             this.navToggle = document.getElementById('nav-toggle');
             
+            // Fix all relative paths in the loaded navbar
+            this.fixNavbarPaths();
+            
             console.log('New navbar loaded successfully with', document.querySelectorAll('.dropdown-link').length, 'service links');
         } catch (error) {
             console.error('Error loading navbar:', error);
         }
+    }
+
+    getBasePath() {
+        // Determine if we're in a subdirectory
+        const path = window.location.pathname;
+        if (path.includes('/pages/') || path.includes('pages/')) {
+            return '../';
+        }
+        return '';
+    }
+
+    fixNavbarPaths() {
+        if (!this.navbar) return;
+        
+        const basePath = this.getBasePath();
+        if (!basePath) return; // No need to fix if we're in root
+        
+        // Fix logo paths
+        const logos = this.navbar.querySelectorAll('img');
+        logos.forEach(logo => {
+            const currentSrc = logo.getAttribute('src');
+            if (currentSrc === '/assets/logos/logo.svg') {
+                logo.setAttribute('src', basePath + 'assets/logos/logo.svg');
+            }
+        });
+        
+        // Fix all navigation links
+        const links = this.navbar.querySelectorAll('a[href]');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('pages/')) {
+                link.setAttribute('href', basePath + href);
+            } else if (href === '/') {
+                link.setAttribute('href', basePath + 'index.html');
+            }
+        });
+        
+        console.log('✓ Fixed navbar paths for subdirectory');
     }
 
     setupEventListeners() {
@@ -208,6 +251,9 @@ class NewNavbarComponent {
                 existingMobileNav.remove();
             }
             
+            // Get the correct base path for assets
+            const basePath = this.getBasePath();
+            
             // Create mobile navigation with correct structure inline
             const mobileNavHTML = `
 <!-- Mobile Navigation Component -->
@@ -216,7 +262,7 @@ class NewNavbarComponent {
     <div class="mobile-nav-content">
         <div class="mobile-nav-header">
             <div class="mobile-nav-logo">
-                <img src="assets/logos/logo.svg" alt="Acadify Solution" class="nav-logo">
+                <img src="${basePath}assets/logos/logo.svg" alt="Acadify Solution" class="nav-logo">
                 <span class="nav-brand-text">Acadify Solution</span>
             </div>
             <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close Navigation">
@@ -230,7 +276,7 @@ class NewNavbarComponent {
         <nav class="mobile-nav-menu">
             <ul class="mobile-nav-list">
                 <li class="mobile-nav-item">
-                    <a href="index.html" class="mobile-nav-link">
+                    <a href="${basePath}index.html" class="mobile-nav-link">
                         <div class="nav-link-content">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -258,23 +304,23 @@ class NewNavbarComponent {
                     <div class="mobile-dropdown" id="services-dropdown">
                         <div class="mobile-dropdown-section">
                             <h5 class="mobile-section-title">Development Services</h5>
-                            <a href="pages/services/web-development.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/services/web-development.html" class="mobile-dropdown-link">
                                 <i class="fas fa-code"></i>
                                 Web Development
                             </a>
-                            <a href="pages/services/mobile-development.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/services/mobile-development.html" class="mobile-dropdown-link">
                                 <i class="fas fa-mobile-alt"></i>
                                 Mobile Development
                             </a>
-                            <a href="pages/services/custom-software.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/services/custom-software.html" class="mobile-dropdown-link">
                                 <i class="fas fa-cogs"></i>
                                 Custom Software
                             </a>
-                            <a href="pages/services/ui-ux-design.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/services/ui-ux-design.html" class="mobile-dropdown-link">
                                 <i class="fas fa-paint-brush"></i>
                                 UI/UX Design
                             </a>
-                            <a href="pages/services/qa-testing.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/services/qa-testing.html" class="mobile-dropdown-link">
                                 <i class="fas fa-bug"></i>
                                 QA & Testing
                             </a>
@@ -450,15 +496,19 @@ class NewNavbarComponent {
                     </button>
                     <div class="mobile-dropdown" id="company-dropdown">
                         <div class="mobile-dropdown-section">
-                            <a href="about.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/about.html" class="mobile-dropdown-link">
                                 <i class="fas fa-info-circle"></i>
                                 About Us
                             </a>
-                            <a href="portfolio.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/portfolio.html" class="mobile-dropdown-link">
                                 <i class="fas fa-briefcase"></i>
                                 Portfolio
                             </a>
-                            <a href="contact.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/project.html" class="mobile-dropdown-link">
+                                <i class="fas fa-tasks"></i>
+                                Projects
+                            </a>
+                            <a href="${basePath}pages/contact.html" class="mobile-dropdown-link">
                                 <i class="fas fa-envelope"></i>
                                 Contact
                             </a>

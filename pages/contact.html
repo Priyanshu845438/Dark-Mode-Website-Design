@@ -3,195 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Acadify Solution</title>
-    <meta name="description" content="Get in touch with Acadify Solution for your technology needs. Contact us today for a consultation.">
+    <title>Contact Us - Acadify Solution | Get In Touch</title>
+    <meta name="description" content="Contact Acadify Solution for web development, mobile apps, AI solutions, and digital transformation services. Let's discuss your next project.">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/global.css" as="style">
-    <link rel="preload" href="styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="styles/pages.css">
-    <link rel="stylesheet" href="components/navbar.module.css">
-    <link rel="stylesheet" href="components/footer.module.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/components/header/header-new.css">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
+    <link rel="stylesheet" href="../src/components/footer/footer.css">
+    <link rel="stylesheet" href="../src/components/testimonials/testimonials.css">
+    <link rel="stylesheet" href="../src/styles/pages/contact.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navbar-container"></div>
-
-    <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="container">
-            <div class="contact-hero-content">
-                <h1 class="hero-title">Get In Touch</h1>
-                <p class="hero-subtitle">
-                    Ready to start your next project? Let's discuss how we can help you achieve your goals.
-                </p>
+    <!-- Header Component -->
+    <div id="header-container"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb Section -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html" class="breadcrumb-link">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                    <span class="breadcrumb-separator">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <span class="breadcrumb-current">Contact Us</span>
+                </nav>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Left Column: Contact Details -->
+                    <div class="contact-details">
+                        <div class="contact-header">
+                            <h1 class="contact-title">Get In Touch</h1>
+                            <p class="contact-subtitle">
+                                Ready to transform your business with cutting-edge technology? 
+                                Let's discuss your project and bring your vision to life.
+                            </p>
                         </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>hello@acadifysolution.com</p>
-                            <p>support@acadifysolution.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
-                            <p>+1 (555) 987-6543</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>San Francisco, CA</p>
-                            <p>New York, NY</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                            <p>Saturday: 10:00 AM - 4:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Full Name</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Email Address</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone">
-                        <label for="phone">Phone Number</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="">Select a Service</option>
-                            <option value="web-development">Web Development</option>
-                            <option value="mobile-development">Mobile App Development</option>
-                            <option value="ui-ux-design">UI/UX Design</option>
-                            <option value="software-development">Software Development</option>
-                            <option value="digital-marketing">Digital Marketing</option>
-                            <option value="cloud-services">Cloud Services</option>
-                            <option value="artificial-intelligence">Artificial Intelligence</option>
-                            <option value="data-analytics">Data Analytics</option>
-                            <option value="consultation">General Consultation</option>
-                        </select>
-                        <label for="service">Service Interest</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" required>
-                        <label for="subject">Subject</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Common questions about our services and process</p>
-            </div>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4 class="faq-question">How long does a typical project take?</h4>
-                    <p class="faq-answer">Project timelines vary based on complexity and scope. Web development projects typically take 4-12 weeks, while mobile apps can take 8-16 weeks. We'll provide a detailed timeline during our initial consultation.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4 class="faq-question">Do you provide ongoing support?</h4>
-                    <p class="faq-answer">Yes! We offer comprehensive maintenance and support packages to ensure your applications continue to perform optimally. This includes security updates, bug fixes, and feature enhancements.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4 class="faq-question">What technologies do you specialize in?</h4>
-                    <p class="faq-answer">We work with modern technologies including React, Node.js, React Native, Flutter, Python, and cloud platforms like AWS and Azure. We choose the best technology stack for each project's specific needs.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h4 class="faq-question">Can you work with our existing team?</h4>
-                    <p class="faq-answer">Absolutely! We can seamlessly integrate with your existing development team, provide consulting services, or handle the entire project independently based on your preferences.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Email Address</h3>
+                                    <p>contact@acadifysolution.com</p>
+                                    <a href="mailto:contact@acadifysolution.com" class="contact-link">Send Email</a>
+                                </div>
+                            </div>
 
-    <!-- Footer -->
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Phone Number</h3>
+                                    <p>+91 62066 98170</p>
+                                    <a href="tel:+916206698170" class="contact-link">Call Now</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Business Hours</h3>
+                                    <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h3>Quick Response</h3>
+                                    <p>We typically respond within 2-4 hours during business hours</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <h3>Follow Us</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Form -->
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h2>Send Us a Message</h2>
+                            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        </div>
+
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="web-development">Web Development</option>
+                                    <option value="mobile-development">Mobile App Development</option>
+                                    <option value="ui-ux-design">UI/UX Design</option>
+                                    <option value="cloud-services">Cloud Services</option>
+                                    <option value="ai-solutions">AI Solutions</option>
+                                    <option value="digital-marketing">Digital Marketing</option>
+                                    <option value="consulting">Technology Consulting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budget">Project Budget</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-10k">Under $10,000</option>
+                                    <option value="10k-25k">$10,000 - $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-100k">$50,000 - $100,000</option>
+                                    <option value="over-100k">Over $100,000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Project Details *</label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements, goals, and timeline..." required></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and tech insights
+                                </label>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Component -->
+        <div id="testimonials-container"></div>
+    </main>
+
+    <!-- Footer Component -->
     <div id="footer-container"></div>
 
-    <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="scripts/main.js"></script>
+    <!-- JavaScript Files -->
+    <script src="../src/components/header/header-new.js"></script>
+    <script src="../src/components/footer/footer.js"></script>
+    <script src="../src/scripts/main.js"></script>
+    <script src="../link-validation.js"></script>
+    <script src="../src/scripts/contact-page.js"></script>
 </body>
 </html>
