@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Vendor Marketplace - Case Study | Acadify Solution</title>
+    <meta name="description" content="Comprehensive case study of Multi-Vendor Marketplace - an advanced e-commerce platform with vendor management and payment integration.">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Inherit styles from previous case study page */
+        .case-study-page {
+            min-height: 100vh;
+            background: #000000;
+            color: #ffffff;
+            padding-top: 70px;
+        }
+        
+        .breadcrumb-section {
+            padding: 2rem 0;
+            background: rgba(0, 191, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .breadcrumb a {
+            color: #00BFFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #39FF14;
+        }
+        
+        .breadcrumb-separator {
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0 0.25rem;
+        }
+        
+        .case-study-hero {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(255, 165, 0, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #00BFFF 50%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .meta-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .meta-label {
+            color: #00BFFF;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-value {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .project-showcase {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(0, 191, 255, 0.05));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-icon {
+            font-size: 6rem;
+            color: rgba(255, 165, 0, 0.6);
+        }
+        
+        .content-section {
+            padding: 4rem 0;
+        }
+        
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #ffffff;
+        }
+        
+        .section-content {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .challenge-card, .solution-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .challenge-card {
+            border-color: rgba(255, 165, 0, 0.3);
+        }
+        
+        .solution-card {
+            border-color: rgba(57, 255, 20, 0.3);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .card-content {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            background: rgba(255, 165, 0, 0.05);
+            border: 1px solid rgba(255, 165, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: rgba(255, 165, 0, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .tech-icon {
+            font-size: 2.5rem;
+            color: #FFA500;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-name {
+            font-weight: 600;
+            color: #ffffff;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .result-card {
+            background: rgba(57, 255, 20, 0.05);
+            border: 1px solid rgba(57, 255, 20, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #39FF14;
+            margin-bottom: 0.5rem;
+        }
+        
+        .result-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            padding: 4rem 0;
+            background: rgba(10, 10, 10, 0.8);
+            text-align: center;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #00BFFF, #39FF14);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="case-study-page">
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-section">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../index.html">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="../portfolio.html">Portfolio</a>
+            <span class="breadcrumb-separator">/</span>
+            <span>Multi-Vendor Marketplace</span>
+        </nav>
+    </section>
+    
+    <!-- Hero Section -->
+    <section class="case-study-hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Multi-Vendor Marketplace</h1>
+                <p>An advanced e-commerce platform that enables multiple vendors to sell products with integrated inventory management, payment processing, and comprehensive analytics dashboard.</p>
+                
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">Industry</div>
+                        <div class="meta-value">E-Commerce</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Project Duration</div>
+                        <div class="meta-value">10 Months</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Team Size</div>
+                        <div class="meta-value">15 Developers</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Client</div>
+                        <div class="meta-value">MarketConnect Inc</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="project-showcase">
+                    <i class="fas fa-shopping-cart project-icon"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Project Overview -->
+    <section class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-content">
+                <p>MarketConnect Inc required a robust multi-vendor e-commerce platform to compete with major marketplace players. The platform needed to support over 10,000 vendors, process millions of transactions monthly, and provide real-time inventory synchronization across multiple channels.</p>
+                
+                <p>Our solution delivered a scalable marketplace that increased sales by 240% within six months, reduced transaction processing time by 60%, and achieved a 98.5% customer satisfaction rate. The platform now handles over $50M in annual transactions with zero downtime during peak sales periods.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Challenge & Solution -->
+    <section class="content-section" style="background: rgba(10, 10, 10, 0.5);">
+        <div class="section-container">
+            <h2 class="section-title">Challenge & Solution</h2>
+            <div class="challenge-solution">
+                <div class="challenge-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-exclamation-triangle" style="color: #FFA500; margin-right: 0.5rem;"></i>
+                        The Challenge
+                    </h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem;">• Complex vendor onboarding and management system</li>
+                            <li style="margin-bottom: 1rem;">• Real-time inventory synchronization across channels</li>
+                            <li style="margin-bottom: 1rem;">• Secure multi-party payment processing</li>
+                            <li style="margin-bottom: 1rem;">• Commission calculation and automated payouts</li>
+                            <li style="margin-bottom: 1rem;">• Fraud detection and prevention mechanisms</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="solution-card">
+                    <h3 class="card-title">
+                        <i class="fas fa-lightbulb" style="color: #39FF14; margin-right: 0.5rem;"></i>
+                        Our Solution
+                    </h3>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem;">• Streamlined vendor portal with automated approval</li>
+                            <li style="margin-bottom: 1rem;">• Event-driven architecture for real-time updates</li>
+                            <li style="margin-bottom: 1rem;">• Integrated Stripe Connect for secure payments</li>
+                            <li style="margin-bottom: 1rem;">• Automated commission and tax calculations</li>
+                            <li style="margin-bottom: 1rem;">• AI-powered fraud detection system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technology Stack -->
+    <section class="content-section">
+        <div class="section-container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-vuejs tech-icon"></i>
+                    <div class="tech-name">Vue.js</div>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-laravel tech-icon"></i>
+                    <div class="tech-name">Laravel</div>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database tech-icon"></i>
+                    <div class="tech-name">MySQL</div>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-stripe tech-icon"></i>
+                    <div class="tech-name">Stripe</div>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-search tech-icon"></i>
+                    <div class="tech-name">Elasticsearch</div>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-server tech-icon"></i>
+                    <div class="tech-name">Redis Cache</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results -->
+    <section class="content-section" style="background: rgba(10, 10, 10, 0.5);">
+        <div class="section-container">
+            <h2 class="section-title">Project Results</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">240%</div>
+                    <div class="result-label">Sales Increase</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">10,000+</div>
+                    <div class="result-label">Active Vendors</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">$50M+</div>
+                    <div class="result-label">Annual Transactions</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">98.5%</div>
+                    <div class="result-label">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2 class="section-title">Ready to Transform Your Business?</h2>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+                Let's discuss how we can create innovative solutions for your organization.
+            </p>
+            <a href="../contact.html" class="cta-btn">
+                <i class="fas fa-rocket"></i>
+                Start Your Project
+            </a>
+            <a href="../schedule-meeting.html" class="cta-btn" style="background: rgba(255, 255, 255, 0.1); color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.3);">
+                <i class="fas fa-calendar-alt"></i>
+                Schedule Meeting
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="../../src/components/header/header-new.js"></script>
+    <script src="../../src/components/footer/footer.js"></script>
+    <script src="../../src/scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavbar();
+            loadFooter();
+        });
+
+        async function loadNavbar() {
+            try {
+                const response = await fetch('../../src/components/header/header-new.html');
+                const navbarHTML = await response.text();
+                document.getElementById('navbar-container').innerHTML = navbarHTML;
+                
+                if (window.NewNavbarComponent) {
+                    new NewNavbarComponent();
+                }
+            } catch (error) {
+                console.error('Error loading navbar:', error);
+            }
+        }
+
+        async function loadFooter() {
+            try {
+                const response = await fetch('../../src/components/footer/footer.html');
+                const footerHTML = await response.text();
+                document.getElementById('footer-container').innerHTML = footerHTML;
+                
+                if (window.FooterComponent) {
+                    new FooterComponent();
+                }
+            } catch (error) {
+                console.error('Error loading footer:', error);
+            }
+        }
+    </script>
+</body>
+</html>

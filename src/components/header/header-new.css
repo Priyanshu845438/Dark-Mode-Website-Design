@@ -165,8 +165,7 @@ body .navbar * {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 1.5rem;
-    min-width: 1000px;
-    max-width: 1000px;
+    max-width: 1140px;
     width: auto;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
     opacity: 0;
@@ -180,52 +179,65 @@ body .navbar * {
 
 /* Remove bridge area to prevent overlap */
 
-/* Precise hover only on dropdown container - no inheritance */
-.nav-dropdown:hover > .dropdown-menu {
+/* JavaScript-controlled hover states - disable CSS hover */
+.nav-dropdown.hover-active > .dropdown-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
     transform: translateX(-50%) translateY(0);
 }
 
-/* Keep dropdown open when directly hovering the menu */
-.dropdown-menu:hover {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
+/* Ensure smooth transitions for JavaScript-controlled states */
+.dropdown-menu {
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
 
 .dropdown-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-    max-width: 1000px;
+    gap: 1.5rem;
+    max-width: 1140px;
+    width: 100%;
+}
+
+/* Services Dropdown - Specific styling for 4-column layout */
+.nav-dropdown:nth-child(3) .dropdown-menu {
+    max-width: 1140px;
+    width: calc(100vw - 4rem);
+    min-width: 1000px;
+}
+
+.nav-dropdown:nth-child(3) .dropdown-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1140px;
     width: 100%;
 }
 
 /* Adjust grid for Industries (2 columns) */
-.nav-dropdown:nth-child(3) .dropdown-content {
+.nav-dropdown:nth-child(4) .dropdown-content {
     grid-template-columns: repeat(2, 1fr);
     max-width: 350px;
     gap: 1rem;
 }
 
 /* Adjust dropdown menu width for Industries */
-.nav-dropdown:nth-child(3) .dropdown-menu {
+.nav-dropdown:nth-child(4) .dropdown-menu {
     min-width: 350px;
     max-width: 350px;
     padding: 1rem;
 }
 
 /* Adjust grid for Products (2 columns) */  
-.nav-dropdown:nth-child(4) .dropdown-content {
+.nav-dropdown:nth-child(5) .dropdown-content {
     grid-template-columns: repeat(2, 1fr);
     max-width: 450px;
     gap: 1.5rem;
 }
 
 /* Adjust dropdown menu width for Products */
-.nav-dropdown:nth-child(4) .dropdown-menu {
+.nav-dropdown:nth-child(5) .dropdown-menu {
     min-width: 450px;
     max-width: 500px;
     padding: 1rem;
@@ -236,8 +248,8 @@ body .navbar * {
 }
 
 /* Reduce height for Industries and Products sections */
-.nav-dropdown:nth-child(3) .dropdown-section,
-.nav-dropdown:nth-child(4) .dropdown-section {
+.nav-dropdown:nth-child(4) .dropdown-section,
+.nav-dropdown:nth-child(5) .dropdown-section {
     min-height: auto;
     padding-bottom: 0;
 }

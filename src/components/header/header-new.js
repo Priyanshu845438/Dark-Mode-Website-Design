@@ -97,16 +97,22 @@ class NewNavbarComponent {
 
         const dropdowns = this.navbar.querySelectorAll('.nav-dropdown');
         this.dropdowns = Array.from(dropdowns);
+        this.dropdownTimers = new Map(); // Store timers for each dropdown
 
-        // Completely disable all JavaScript hover interactions
         dropdowns.forEach(dropdown => {
             const trigger = dropdown.querySelector('.dropdown-trigger');
-            if (!trigger) return;
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (!trigger || !menu) return;
 
             // Remove any existing event listeners and hover classes
             dropdown.classList.remove('active');
             
-            // Only handle mobile clicks
+            // Desktop hover behavior with delays
+            if (window.innerWidth >= 1024) {
+                this.setupDesktopHover(dropdown, trigger, menu);
+            }
+            
+            // Mobile click behavior
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth < 1024) {
                     e.preventDefault();
@@ -122,6 +128,76 @@ class NewNavbarComponent {
                 this.closeAllDropdowns();
             }
         });
+
+        // Update hover behavior on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                dropdowns.forEach(dropdown => {
+                    const trigger = dropdown.querySelector('.dropdown-trigger');
+                    const menu = dropdown.querySelector('.dropdown-menu');
+                    if (trigger && menu) {
+                        this.setupDesktopHover(dropdown, trigger, menu);
+                    }
+                });
+            }
+        });
+    }
+
+    setupDesktopHover(dropdown, trigger, menu) {
+        const dropdownId = dropdown.getAttribute('data-dropdown') || Math.random().toString(36);
+        dropdown.setAttribute('data-dropdown', dropdownId);
+
+        // Mouse enter - show dropdown with slight delay
+        const handleMouseEnter = () => {
+            // Clear any existing hide timer
+            if (this.dropdownTimers.has(dropdownId + '_hide')) {
+                clearTimeout(this.dropdownTimers.get(dropdownId + '_hide'));
+                this.dropdownTimers.delete(dropdownId + '_hide');
+            }
+
+            // Set show timer (small delay to prevent accidental triggers)
+            const showTimer = setTimeout(() => {
+                this.closeAllDropdowns();
+                dropdown.classList.add('hover-active');
+                menu.style.opacity = '1';
+                menu.style.visibility = 'visible';
+                menu.style.pointerEvents = 'all';
+                menu.style.transform = 'translateX(-50%) translateY(0)';
+            }, 100); // 100ms delay before showing
+
+            this.dropdownTimers.set(dropdownId + '_show', showTimer);
+        };
+
+        // Mouse leave - hide dropdown with delay
+        const handleMouseLeave = () => {
+            // Clear any existing show timer
+            if (this.dropdownTimers.has(dropdownId + '_show')) {
+                clearTimeout(this.dropdownTimers.get(dropdownId + '_show'));
+                this.dropdownTimers.delete(dropdownId + '_show');
+            }
+
+            // Set hide timer (longer delay to prevent premature closing)
+            const hideTimer = setTimeout(() => {
+                dropdown.classList.remove('hover-active');
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.pointerEvents = 'none';
+                menu.style.transform = 'translateX(-50%) translateY(-10px)';
+            }, 300); // 300ms delay before hiding
+
+            this.dropdownTimers.set(dropdownId + '_hide', hideTimer);
+        };
+
+        // Remove existing event listeners to prevent duplicates
+        trigger.removeEventListener('mouseenter', handleMouseEnter);
+        trigger.removeEventListener('mouseleave', handleMouseLeave);
+        dropdown.removeEventListener('mouseenter', handleMouseEnter);
+        dropdown.removeEventListener('mouseleave', handleMouseLeave);
+
+        // Add event listeners
+        trigger.addEventListener('mouseenter', handleMouseEnter);
+        dropdown.addEventListener('mouseenter', handleMouseEnter);
+        dropdown.addEventListener('mouseleave', handleMouseLeave);
     }
 
     loadMobileNavigation() {
@@ -603,8 +679,21 @@ class NewNavbarComponent {
 
     closeAllDropdowns() {
         this.dropdowns.forEach(dropdown => {
-            dropdown.classList.remove('active');
+            dropdown.classList.remove('active', 'hover-active');
+            const menu = dropdown.querySelector('.dropdown-menu');
+            if (menu) {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.pointerEvents = 'none';
+                menu.style.transform = 'translateX(-50%) translateY(-10px)';
+            }
         });
+
+        // Clear all dropdown timers
+        if (this.dropdownTimers) {
+            this.dropdownTimers.forEach(timer => clearTimeout(timer));
+            this.dropdownTimers.clear();
+        }
     }
 
     handleResize() {
