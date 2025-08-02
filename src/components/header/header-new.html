@@ -4,7 +4,7 @@
         <!-- Brand -->
         <div class="nav-brand">
             <a href="/" class="brand-link">
-                <img src="assets/logos/logo.svg" alt="Acadify Solution" class="logo">
+                <img src="/assets/logos/logo.svg" alt="Acadify Solution" class="logo" onerror="this.src='../assets/logos/logo.svg'">
                 <span class="brand-text">Acadify Solution</span>
             </a>
         </div>
@@ -12,6 +12,31 @@
         <!-- Desktop Navigation - Only visible on desktop -->
         <div class="nav-menu-desktop" id="nav-menu-desktop">
             <a href="/" class="nav-link">Home</a>
+            
+            <!-- Company Dropdown -->
+            <div class="nav-dropdown">
+                <span class="dropdown-trigger">
+                    Company <i class="fas fa-chevron-down"></i>
+                </span>
+                <div class="dropdown-menu simple-dropdown">
+                    <a href="pages/about.html" class="dropdown-link simple">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="pages/portfolio.html" class="dropdown-link simple">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                    <a href="#projects" class="dropdown-link simple">
+                        <i class="fas fa-tasks"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="pages/contact.html" class="dropdown-link simple">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
             
             <!-- Services Dropdown -->
             <div class="nav-dropdown">
@@ -187,7 +212,6 @@
                 </div>
             </div>
             
-            <a href="pages/about.html" class="nav-link">About</a>
             <a href="pages/blog.html" class="nav-link">Blog</a>
             <a href="pages/contact.html" class="nav-link">Contact</a>
         </div>

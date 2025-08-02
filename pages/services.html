@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Acadify Solution</title>
+    <title>Our Services - Professional Technology Solutions | Acadify Solution</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,25 @@
     <link rel="stylesheet" href="../src/styles/global.css">
     <link rel="stylesheet" href="../src/styles/utilities.css">
     <link rel="stylesheet" href="../src/styles/pages/services.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css?v=7">
+    <link rel="stylesheet" href="../src/components/header/header-new.css?v=8">
     <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
     <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
-    <link rel="stylesheet" href="../src/components/services/services.css">
-    <link rel="stylesheet" href="../src/components/testimonials/testimonials.css">
-    <link rel="stylesheet" href="../src/components/blog/blog.css">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Comprehensive technology services including web development, mobile apps, UI/UX design, cloud services, AI solutions, and digital marketing. Transform your business with cutting-edge technology.">
+    <meta name="keywords" content="web development, mobile apps, UI/UX design, cloud services, AI solutions, digital marketing, technology services">
+    <meta name="author" content="Acadify Solution">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Our Services - Professional Technology Solutions | Acadify Solution">
+    <meta property="og:description" content="Comprehensive technology services for modern business. Expert solutions in web development, mobile apps, AI, and digital transformation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acadifysolution.com/pages/services.html">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Services - Acadify Solution Technology Services">
+    <meta name="twitter:description" content="Professional technology services including web development, mobile apps, UI/UX design, and digital solutions.">
 </head>
 <body>
     <!-- Header Component -->
@@ -33,49 +46,751 @@
     
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Services Hero Section with Topbar Design -->
-        <section class="services-hero-topbar">
-            <div class="hero-overlay"></div>
+        <!-- Breadcrumb Section -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <nav class="breadcrumb">
+                    <a href="../index.html" class="breadcrumb-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    <span class="breadcrumb-separator">
+                        <i class="fas fa-chevron-right"></i>
+                    </span>
+                    <span class="breadcrumb-current">Our Services</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Services Hero Section -->
+        <section class="services-hero">
             <div class="hero-background">
-                <svg class="hero-tech-pattern" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <defs>
-                        <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                            <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0, 191, 255, 0.1)" stroke-width="0.5"/>
-                        </pattern>
-                    </defs>
-                    <rect width="100" height="100" fill="url(#grid)" />
-                </svg>
-                <div class="floating-elements">
-                    <div class="float-element float-1"></div>
-                    <div class="float-element float-2"></div>
-                    <div class="float-element float-3"></div>
+                <div class="tech-grid">
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                </div>
+                <div class="floating-particles">
+                    <div class="particle particle-1"></div>
+                    <div class="particle particle-2"></div>
+                    <div class="particle particle-3"></div>
+                    <div class="particle particle-4"></div>
+                    <div class="particle particle-5"></div>
                 </div>
             </div>
             <div class="container">
-                <div class="breadcrumb">
-                    <a href="../">HOME</a> 
-                    <span class="separator">></span> 
-                    <span class="current">OUR SERVICES</span>
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Our <span class="text-gradient">Services</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Comprehensive technology solutions designed to transform your business. 
+                        From concept to deployment, we deliver cutting-edge solutions that drive growth and innovation.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">18+</div>
+                            <div class="stat-label">Services</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
                 </div>
-                <h1 class="hero-title">OUR SERVICES</h1>
-                <p class="hero-subtitle">Comprehensive Technology Solutions for Modern Business</p>
             </div>
         </section>
-        
-        <!-- Services Overview Section -->
-        <div id="services-component"></div>
-        
-        <!-- About Section -->
-        <div id="about-component"></div>
-        
-        <!-- Tech Stack Section -->
-        <div id="tech-stack-component"></div>
-        
-        <!-- Testimonials Section -->
-        <div id="testimonials-component"></div>
-        
-        <!-- Blog Section -->
-        <div id="blog-component"></div>
+
+        <!-- About Services Section -->
+        <section class="about-services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-cogs"></i>
+                        <span>About Our Services</span>
+                    </div>
+                    <h2 class="section-title">
+                        Why Choose <span class="text-gradient">Acadify Solution?</span>
+                    </h2>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="card-title">Innovation First</h3>
+                        <p class="card-description">
+                            We leverage cutting-edge technologies and innovative approaches to deliver solutions 
+                            that keep you ahead of the competition.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="card-title">Expert Team</h3>
+                        <p class="card-description">
+                            Our team of skilled professionals brings years of experience across multiple 
+                            technologies and industries.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="card-title">Timely Delivery</h3>
+                        <p class="card-description">
+                            We understand the importance of deadlines and consistently deliver projects 
+                            on time without compromising quality.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="card-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="card-title">Quality Assurance</h3>
+                        <p class="card-description">
+                            Rigorous testing and quality control processes ensure that every solution 
+                            meets the highest standards of performance and reliability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Services Section -->
+        <section class="all-services">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-th-large"></i>
+                        <span>All Services</span>
+                    </div>
+                    <h2 class="section-title">
+                        Complete Technology <span class="text-gradient">Solutions</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Explore our comprehensive range of services designed to meet all your technology needs
+                    </p>
+                </div>
+                
+                <div class="services-grid" id="services-grid">
+                    <!-- Web Development -->
+                    <div class="service-card" data-category="development">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="service-badge">Development</div>
+                        </div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-description">
+                            Modern, responsive web applications with cutting-edge technologies and seamless user experiences.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">React</span>
+                            <span class="feature-tag">Node.js</span>
+                            <span class="feature-tag">PWA</span>
+                        </div>
+                        <a href="services/web-development.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Development -->
+                    <div class="service-card" data-category="development">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="service-badge">Development</div>
+                        </div>
+                        <h3 class="service-title">Mobile Development</h3>
+                        <p class="service-description">
+                            Native and cross-platform mobile applications for iOS and Android with optimal performance.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">React Native</span>
+                            <span class="feature-tag">Flutter</span>
+                            <span class="feature-tag">iOS/Android</span>
+                        </div>
+                        <a href="services/mobile-development.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="service-card" data-category="design">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <div class="service-badge">Design</div>
+                        </div>
+                        <h3 class="service-title">UI/UX Design</h3>
+                        <p class="service-description">
+                            User-centered design that combines aesthetics with functionality for exceptional experiences.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Figma</span>
+                            <span class="feature-tag">Prototyping</span>
+                            <span class="feature-tag">User Research</span>
+                        </div>
+                        <a href="services/ui-ux-design.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Cloud Services -->
+                    <div class="service-card" data-category="cloud">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="service-badge">Cloud</div>
+                        </div>
+                        <h3 class="service-title">Cloud Services</h3>
+                        <p class="service-description">
+                            Scalable cloud infrastructure and services for modern applications and data management.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">AWS</span>
+                            <span class="feature-tag">Azure</span>
+                            <span class="feature-tag">DevOps</span>
+                        </div>
+                        <a href="services/cloud-services.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- AI Solutions -->
+                    <div class="service-card" data-category="ai">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="service-badge">AI/ML</div>
+                        </div>
+                        <h3 class="service-title">AI Solutions</h3>
+                        <p class="service-description">
+                            Intelligent automation and machine learning solutions to transform your business processes.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Machine Learning</span>
+                            <span class="feature-tag">NLP</span>
+                            <span class="feature-tag">Computer Vision</span>
+                        </div>
+                        <a href="services/ai-solutions.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Data Analytics -->
+                    <div class="service-card" data-category="data">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="service-badge">Analytics</div>
+                        </div>
+                        <h3 class="service-title">Data Analytics</h3>
+                        <p class="service-description">
+                            Transform raw data into actionable insights with advanced analytics and visualization.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Big Data</span>
+                            <span class="feature-tag">BI</span>
+                            <span class="feature-tag">Visualization</span>
+                        </div>
+                        <a href="services/data-analytics.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">Digital Marketing</h3>
+                        <p class="service-description">
+                            Comprehensive digital marketing strategies to boost your online presence and growth.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">SEO</span>
+                            <span class="feature-tag">PPC</span>
+                            <span class="feature-tag">Content</span>
+                        </div>
+                        <a href="services/digital-marketing.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- SEO -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">SEO</h3>
+                        <p class="service-description">
+                            Search engine optimization to improve your website's visibility and organic traffic.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">On-Page SEO</span>
+                            <span class="feature-tag">Technical SEO</span>
+                            <span class="feature-tag">Analytics</span>
+                        </div>
+                        <a href="services/seo.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- SMM -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">Social Media Marketing</h3>
+                        <p class="service-description">
+                            Strategic social media campaigns to engage your audience and build brand awareness.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Strategy</span>
+                            <span class="feature-tag">Content</span>
+                            <span class="feature-tag">Analytics</span>
+                        </div>
+                        <a href="services/smm.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Email Marketing -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">Email Marketing</h3>
+                        <p class="service-description">
+                            Targeted email campaigns that nurture leads and drive conversions with personalized content.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Automation</span>
+                            <span class="feature-tag">Segmentation</span>
+                            <span class="feature-tag">A/B Testing</span>
+                        </div>
+                        <a href="services/email-marketing.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Google Ads -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fab fa-google"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">Google Ads</h3>
+                        <p class="service-description">
+                            Strategic Google Ads campaigns to maximize your ROI and reach the right audience.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">PPC</span>
+                            <span class="feature-tag">Keywords</span>
+                            <span class="feature-tag">Optimization</span>
+                        </div>
+                        <a href="services/google-ads.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- WhatsApp Marketing -->
+                    <div class="service-card" data-category="marketing">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="service-badge">Marketing</div>
+                        </div>
+                        <h3 class="service-title">WhatsApp Marketing</h3>
+                        <p class="service-description">
+                            Direct customer engagement through WhatsApp with automated messaging and support.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Automation</span>
+                            <span class="feature-tag">Chatbots</span>
+                            <span class="feature-tag">Broadcast</span>
+                        </div>
+                        <a href="services/whatsapp-marketing.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- QA & Testing -->
+                    <div class="service-card" data-category="development">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="service-badge">Development</div>
+                        </div>
+                        <h3 class="service-title">QA & Testing</h3>
+                        <p class="service-description">
+                            Comprehensive testing services to ensure your applications are bug-free and reliable.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Automation</span>
+                            <span class="feature-tag">Performance</span>
+                            <span class="feature-tag">Security</span>
+                        </div>
+                        <a href="services/qa-testing.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Technology Consulting -->
+                    <div class="service-card" data-category="consulting">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="service-badge">Consulting</div>
+                        </div>
+                        <h3 class="service-title">Technology Consulting</h3>
+                        <p class="service-description">
+                            Strategic technology guidance to help you make informed decisions and optimize processes.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Strategy</span>
+                            <span class="feature-tag">Architecture</span>
+                            <span class="feature-tag">Optimization</span>
+                        </div>
+                        <a href="services/consulting.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Maintenance & Support -->
+                    <div class="service-card" data-category="support">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="service-badge">Support</div>
+                        </div>
+                        <h3 class="service-title">Maintenance & Support</h3>
+                        <p class="service-description">
+                            Ongoing maintenance and support services to keep your systems running smoothly.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">24/7 Support</span>
+                            <span class="feature-tag">Updates</span>
+                            <span class="feature-tag">Monitoring</span>
+                        </div>
+                        <a href="services/maintenance-support.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Logo Design -->
+                    <div class="service-card" data-category="design">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="service-badge">Design</div>
+                        </div>
+                        <h3 class="service-title">Logo Design</h3>
+                        <p class="service-description">
+                            Professional logo design that captures your brand identity and creates lasting impressions.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Brand Identity</span>
+                            <span class="feature-tag">Vector Graphics</span>
+                            <span class="feature-tag">Multiple Formats</span>
+                        </div>
+                        <a href="services/logo-design.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Brand Strategy -->
+                    <div class="service-card" data-category="design">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-chess-knight"></i>
+                            </div>
+                            <div class="service-badge">Design</div>
+                        </div>
+                        <h3 class="service-title">Brand Strategy</h3>
+                        <p class="service-description">
+                            Comprehensive brand strategy development to position your brand effectively in the market.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Market Research</span>
+                            <span class="feature-tag">Positioning</span>
+                            <span class="feature-tag">Guidelines</span>
+                        </div>
+                        <a href="services/brand-strategy.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Custom Software -->
+                    <div class="service-card" data-category="development">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="service-badge">Development</div>
+                        </div>
+                        <h3 class="service-title">Custom Software</h3>
+                        <p class="service-description">
+                            Tailored software solutions designed specifically for your unique business requirements.
+                        </p>
+                        <div class="service-features">
+                            <span class="feature-tag">Custom Development</span>
+                            <span class="feature-tag">Integration</span>
+                            <span class="feature-tag">Scalable</span>
+                        </div>
+                        <a href="services/custom-software.html" class="service-link">
+                            <span>Learn More</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Client Logos Section -->
+        <section class="client-logos">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-handshake"></i>
+                        <span>Trusted By</span>
+                    </div>
+                    <h2 class="section-title">
+                        Our <span class="text-gradient">Clients</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Trusted by leading companies worldwide for their technology needs
+                    </p>
+                </div>
+                
+                <div class="logos-marquee">
+                    <div class="logos-track">
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Microsoft</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Google</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Amazon</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Spotify</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Netflix</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Uber</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Airbnb</div>
+                        </div>
+                        <div class="logo-item">
+                            <div class="logo-placeholder">Shopify</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </div>
+                    <h2 class="section-title">
+                        Frequently Asked <span class="text-gradient">Questions</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Find answers to common questions about our services and processes
+                    </p>
+                </div>
+                
+                <!-- FAQ Controls -->
+                <div class="faq-controls">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="faq-search" placeholder="Search FAQ..." />
+                    </div>
+                    
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="development">Development</button>
+                        <button class="filter-tab" data-filter="design">Design</button>
+                        <button class="filter-tab" data-filter="marketing">Marketing</button>
+                        <button class="filter-tab" data-filter="support">Support</button>
+                        <button class="filter-tab" data-filter="pricing">Pricing</button>
+                    </div>
+                </div>
+                
+                <!-- FAQ Items -->
+                <div class="faq-container">
+                    <div class="faq-item" data-category="development">
+                        <div class="faq-question">
+                            <h3>What technologies do you use for web development?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We use modern technologies including React, Next.js, Node.js, Python, and various databases. Our tech stack is chosen based on your specific project requirements to ensure optimal performance and scalability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="development">
+                        <div class="faq-question">
+                            <h3>Do you provide mobile app development for both iOS and Android?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we develop both native and cross-platform mobile applications. We use React Native and Flutter for cross-platform development, and native technologies for platform-specific requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="design">
+                        <div class="faq-question">
+                            <h3>What's included in your UI/UX design service?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our UI/UX design service includes user research, wireframing, prototyping, visual design, design systems, and usability testing. We focus on creating intuitive and engaging user experiences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="marketing">
+                        <div class="faq-question">
+                            <h3>How do you measure the success of digital marketing campaigns?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We track key performance indicators (KPIs) such as conversion rates, click-through rates, cost per acquisition, return on ad spend (ROAS), and overall ROI. Regular reports keep you informed of campaign performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>What kind of ongoing support do you provide?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer 24/7 technical support, regular updates, security monitoring, performance optimization, and bug fixes. Our support packages are customizable based on your specific needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="pricing">
+                        <div class="faq-question">
+                            <h3>How do you determine project pricing?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Pricing is based on project scope, complexity, timeline, and specific requirements. We provide detailed quotes after understanding your needs and offer both fixed-price and hourly billing options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="development">
+                        <div class="faq-question">
+                            <h3>Do you provide source code and documentation?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, upon project completion, you receive complete source code, comprehensive documentation, deployment guides, and training materials. Full ownership rights are transferred to you.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="design">
+                        <div class="faq-question">
+                            <h3>Can you redesign an existing website or application?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We specialize in redesigning existing websites and applications to improve user experience, modernize the design, enhance performance, and align with current best practices.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="marketing">
+                        <div class="faq-question">
+                            <h3>How long does it take to see results from SEO?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>SEO results typically become visible within 3-6 months, depending on competition and current website status. We provide monthly reports showing progress in rankings, traffic, and conversions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>Do you sign non-disclosure agreements (NDAs)?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we understand the importance of confidentiality and are happy to sign NDAs before discussing your project details. Your intellectual property and business information are completely secure.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No results found</h3>
+                    <p>Try adjusting your search terms or filters</p>
+                </div>
+            </div>
+        </section>
     </main>
     
     <!-- Footer Component -->
@@ -84,10 +799,9 @@
     <!-- Scripts -->
     <script src="../src/components/header/header-new.js?v=13"></script>
     <script src="../src/components/footer/footer.js"></script>
-    <script src="../src/components/about/about.js"></script>
-    <script src="../src/components/tech-stack/tech-stack.js"></script>
     <script src="../src/scripts/main.js"></script>
     <script src="../link-validation.js"></script>
+    <script src="../src/scripts/services-page.js"></script>
     
     <!-- Component Loading Script -->
     <script>
@@ -96,8 +810,6 @@
                 const response = await fetch(componentPath);
                 const html = await response.text();
                 document.getElementById(componentId).innerHTML = html;
-                
-                // Log successful component load
                 console.log(`✓ ${componentId} loaded`);
             } catch (error) {
                 console.error(`Error loading component ${componentId}:`, error);
@@ -107,26 +819,29 @@
         document.addEventListener('DOMContentLoaded', async () => {
             console.log('Loading Services page components...');
             
-            // Load all components
+            // Load all components with correct paths for pages subdirectory
             await Promise.all([
                 loadComponent('header-component', '../src/components/header/header-new.html'),
                 loadComponent('mobile-nav-component', '../src/components/navigation/mobile-nav/mobile-nav.html'),
-                loadComponent('services-component', '../src/components/services/services.html'),
-                loadComponent('about-component', '../src/components/about/about.html'),
-                loadComponent('tech-stack-component', '../src/components/tech-stack/tech-stack.html'),
-                loadComponent('testimonials-component', '../src/components/testimonials/testimonials.html'),
-                loadComponent('blog-component', '../src/components/blog/blog.html'),
                 loadComponent('footer-component', '../src/components/footer/footer.html')
             ]);
             
             console.log('✓ All Services page components loaded');
             
-            // Initialize components
+            // Initialize components after loading
             setTimeout(() => {
-                if (window.AcadifyApp) {
-                    window.AcadifyApp.init();
+                // Initialize navigation
+                if (window.initializeNavigation) {
+                    window.initializeNavigation();
                 }
-            }, 100);
+                
+                // Initialize mobile navigation
+                if (window.initializeMobileNavigation) {
+                    window.initializeMobileNavigation();
+                }
+                
+                console.log('✅ Services page fully initialized');
+            }, 500);
         });
     </script>
 </body>

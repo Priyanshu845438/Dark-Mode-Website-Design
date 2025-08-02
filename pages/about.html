@@ -3,157 +3,649 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Acadify Solution</title>
-    <meta name="description" content="Learn about Acadify Solution's mission, team, and commitment to delivering cutting-edge technology solutions.">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="styles/global.css" as="style">
-    <link rel="preload" href="styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="styles/pages.css">
-    <link rel="stylesheet" href="components/navbar.module.css">
-    <link rel="stylesheet" href="components/footer.module.css">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Overview - Professional Technology Solutions | Acadify Solution</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/styles/pages/about.css">
+    <link rel="stylesheet" href="../src/components/header/header-new.css?v=8">
+    <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Learn about Acadify Solution - Your trusted technology partner. Discover our mission, vision, core values, and commitment to delivering innovative solutions that transform businesses.">
+    <meta name="keywords" content="about acadify solution, technology company, mission vision, core values, team, company culture">
+    <meta name="author" content="Acadify Solution">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="About Us - Acadify Solution Technology Company">
+    <meta property="og:description" content="Discover Acadify Solution's journey, mission, and commitment to excellence in technology solutions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acadifysolution.com/pages/about.html">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Acadify Solution - Technology Innovation">
+    <meta name="twitter:description" content="Learn about our mission, values, and commitment to delivering exceptional technology solutions.">
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navbar-container"></div>
-
-    <!-- About Hero Section -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="about-hero-content">
-                <h1 class="hero-title">About Acadify Solution</h1>
-                <p class="hero-subtitle">
-                    We are passionate technologists dedicated to delivering exceptional digital solutions 
-                    that drive business success and innovation.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Content -->
-    <section class="about-content-section">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2 class="section-title">Our Story</h2>
-                    <p class="about-description">
-                        Founded with a vision to bridge the gap between cutting-edge technology and business needs, 
-                        Acadify Solution has grown into a trusted partner for companies seeking digital transformation. 
-                        Our team combines deep technical expertise with creative problem-solving to deliver solutions 
-                        that not only meet current requirements but also anticipate future challenges.
-                    </p>
-                    
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Innovation First</h4>
-                                <p>We leverage cutting-edge technologies and methodologies to deliver modern solutions that keep you ahead of the competition.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Client Focused</h4>
-                                <p>Your success is our priority. We work closely with you throughout the entire process to ensure exceptional results.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-cogs"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Quality Driven</h4>
-                                <p>We maintain the highest standards in code quality, testing, and performance optimization.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">Projects Delivered</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="5">0</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="30">0</div>
-                        <div class="stat-label">Happy Clients</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="99">0</div>
-                        <div class="stat-label">% Satisfaction</div>
-                    </div>
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Mobile Navigation Component -->
+    <div id="mobile-nav-component"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Breadcrumb Section -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <div class="breadcrumb-content">
+                    <nav class="breadcrumb">
+                        <a href="../index.html" class="breadcrumb-link">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                        <i class="fas fa-chevron-right breadcrumb-separator"></i>
+                        <span class="breadcrumb-current">Overview</span>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Team</h2>
-                <p class="section-subtitle">
-                    Meet the talented professionals who make Acadify Solution's success possible
-                </p>
+        <!-- About Us Hero Section -->
+        <section class="about-hero">
+            <div class="hero-background">
+                <div class="floating-particles"></div>
+                <div class="gradient-overlay"></div>
             </div>
             
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-users"></i>
+                        <span>About Us</span>
                     </div>
-                    <h3 class="member-name">John Smith</h3>
-                    <p class="member-role">Chief Technology Officer</p>
-                    <p class="member-bio">10+ years in software architecture and team leadership</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
+                    <h1 class="hero-title">
+                        Transforming Ideas into <span class="text-gradient">Digital Reality</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        We are a passionate team of innovators, designers, and developers committed to delivering 
+                        cutting-edge technology solutions that drive business success and digital transformation.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="200">0</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="98">0</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="5">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
                     </div>
-                    <h3 class="member-name">Sarah Johnson</h3>
-                    <p class="member-role">Lead UI/UX Designer</p>
-                    <p class="member-bio">Expert in user-centered design and digital experiences</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3 class="member-name">Mike Chen</h3>
-                    <p class="member-role">Senior Full-Stack Developer</p>
-                    <p class="member-bio">Specialist in modern web technologies and cloud solutions</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
+        <!-- About Us Component -->
+        <section class="about-us-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <div class="section-badge">
+                                <i class="fas fa-building"></i>
+                                <span>Our Story</span>
+                            </div>
+                            <h2 class="section-title">
+                                Who We <span class="text-gradient">Are</span>
+                            </h2>
+                        </div>
+                        
+                        <div class="about-text">
+                            <p class="lead-text">
+                                Founded with a vision to bridge the gap between innovative technology and real business needs, 
+                                Acadify Solution has emerged as a trusted partner for companies seeking digital transformation.
+                            </p>
+                            
+                            <p>
+                                Our journey began with a simple belief: technology should empower businesses to achieve their 
+                                full potential. Today, we combine deep technical expertise with creative problem-solving to 
+                                deliver solutions that not only meet current requirements but anticipate future challenges.
+                            </p>
+                            
+                            <p>
+                                From startups to enterprise organizations, we've helped hundreds of clients across diverse 
+                                industries transform their digital presence and streamline their operations through innovative 
+                                technology solutions.
+                            </p>
+                        </div>
+                        
+                        <div class="expertise-areas">
+                            <div class="expertise-item">
+                                <i class="fas fa-code"></i>
+                                <span>Full-Stack Development</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile Applications</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Cloud Solutions</span>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-robot"></i>
+                                <span>AI & Machine Learning</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-visual">
+                        <div class="visual-content">
+                            <div class="team-illustration">
+                                <div class="team-member team-1"></div>
+                                <div class="team-member team-2"></div>
+                                <div class="team-member team-3"></div>
+                                <div class="team-connections"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Mission & Vision Section -->
+        <section class="mission-vision-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-badge">
+                        <i class="fas fa-compass"></i>
+                        <span>Our Purpose</span>
+                    </div>
+                    <h2 class="section-title">
+                        Mission & <span class="text-gradient">Vision</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Driving innovation and excellence in everything we do
+                    </p>
+                </div>
+                
+                <div class="mission-vision-grid">
+                    <div class="mission-card">
+                        <div class="card-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <h3 class="card-title">Our Mission</h3>
+                        <p class="card-description">
+                            To empower businesses through innovative technology solutions that drive growth, 
+                            efficiency, and digital transformation. We are committed to delivering exceptional 
+                            value by combining cutting-edge technology with deep industry expertise.
+                        </p>
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Innovation-driven solutions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Client-centric approach</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Sustainable business growth</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="vision-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="card-title">Our Vision</h3>
+                        <p class="card-description">
+                            To be the leading technology partner that transforms how businesses operate in the 
+                            digital age. We envision a future where technology seamlessly integrates with 
+                            business processes to create unprecedented opportunities for growth and innovation.
+                        </p>
+                        <div class="card-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Global technology leadership</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Digital transformation pioneer</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check"></i>
+                                <span>Future-ready solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Core Values Section -->
+        <section class="core-values-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-badge">
+                        <i class="fas fa-heart"></i>
+                        <span>Our Foundation</span>
+                    </div>
+                    <h2 class="section-title">
+                        Our Core <span class="text-gradient">Values</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        The principles that guide every decision and action we take
+                    </p>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="value-title">Innovation</h3>
+                        <p class="value-description">
+                            We embrace cutting-edge technologies and creative thinking to deliver 
+                            solutions that push boundaries and set new industry standards.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="value-description">
+                            We maintain the highest ethical standards in all our interactions, 
+                            building trust through transparency, honesty, and accountability.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="value-title">Excellence</h3>
+                        <p class="value-description">
+                            We are committed to delivering superior quality in every project, 
+                            continuously improving our processes and exceeding expectations.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="value-title">Collaboration</h3>
+                        <p class="value-description">
+                            We believe in the power of teamwork, working closely with clients 
+                            and partners to achieve shared goals and mutual success.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="value-title">Learning</h3>
+                        <p class="value-description">
+                            We foster a culture of continuous learning and growth, staying 
+                            ahead of technological trends and expanding our expertise.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="value-title">Customer Focus</h3>
+                        <p class="value-description">
+                            We put our clients at the center of everything we do, ensuring 
+                            their success is our primary measure of achievement.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="value-title">Sustainability</h3>
+                        <p class="value-description">
+                            We are committed to creating sustainable technology solutions that 
+                            benefit not just our clients, but also contribute to a better future 
+                            for our communities and environment.
+                        </p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="value-title">Reliability</h3>
+                        <p class="value-description">
+                            We deliver consistent, dependable solutions that our clients can trust. 
+                            Our commitment to reliability ensures your technology infrastructure 
+                            operates smoothly and efficiently at all times.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Why Us</span>
+                    </div>
+                    <h2 class="section-title">
+                        Why Choose <span class="text-gradient">Acadify Solution</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Discover what sets us apart in the competitive technology landscape
+                    </p>
+                </div>
+                
+                <div class="choose-grid">
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">Proven Expertise</h3>
+                            <p class="choose-description">
+                                Our team brings years of experience across diverse technologies and industries, 
+                                ensuring your project is handled by seasoned professionals who understand 
+                                both technical complexities and business requirements.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">Timely Delivery</h3>
+                            <p class="choose-description">
+                                We respect your time and deadlines. Our agile development methodology and 
+                                project management expertise ensure that your solutions are delivered on 
+                                time without compromising on quality.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">Scalable Solutions</h3>
+                            <p class="choose-description">
+                                We design and develop solutions with scalability in mind, ensuring your 
+                                technology can grow with your business and adapt to changing market demands 
+                                without requiring complete overhauls.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">24/7 Support</h3>
+                            <p class="choose-description">
+                                Our commitment doesn't end at deployment. We provide comprehensive ongoing 
+                                support, maintenance, and updates to ensure your solutions continue to 
+                                perform optimally and stay secure.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">Cost-Effective</h3>
+                            <p class="choose-description">
+                                We offer competitive pricing without compromising on quality. Our efficient 
+                                development processes and transparent pricing model ensure you get maximum 
+                                value for your investment.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="choose-item">
+                        <div class="choose-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="choose-content">
+                            <h3 class="choose-title">Security First</h3>
+                            <p class="choose-description">
+                                Security is built into every solution we create. We follow industry best 
+                                practices and implement robust security measures to protect your data and 
+                                maintain your customers' trust.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <div class="section-badge">
+                        <i class="fas fa-question-circle"></i>
+                        <span>FAQ</span>
+                    </div>
+                    <h2 class="section-title">
+                        Frequently Asked <span class="text-gradient">Questions</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        Get answers to common questions about our company and services
+                    </p>
+                </div>
+                
+                <div class="faq-controls">
+                    <div class="faq-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="faq-search" placeholder="Search FAQs..." />
+                    </div>
+                    
+                    <div class="faq-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="company">Company</button>
+                        <button class="filter-btn" data-filter="services">Services</button>
+                        <button class="filter-btn" data-filter="process">Process</button>
+                        <button class="filter-btn" data-filter="support">Support</button>
+                    </div>
+                </div>
+                
+                <div class="faq-content">
+                    <div class="faq-item" data-category="company">
+                        <div class="faq-question">
+                            <h3>When was Acadify Solution founded?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Acadify Solution was founded in 2019 with a vision to bridge the gap between innovative technology and real business needs. Since then, we've grown into a trusted technology partner for companies worldwide.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="company">
+                        <div class="faq-question">
+                            <h3>What is your company's size and structure?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We are a growing technology company with a dedicated team of developers, designers, project managers, and quality assurance specialists. Our flat organizational structure promotes collaboration and quick decision-making.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="services">
+                        <div class="faq-question">
+                            <h3>What industries do you specialize in?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have extensive experience in EdTech, FinTech, Healthcare, E-commerce, Real Estate, SaaS, and Enterprise solutions. Our diverse industry experience allows us to understand unique business challenges and provide tailored solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="services">
+                        <div class="faq-question">
+                            <h3>Do you work with startups or only established companies?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We work with businesses of all sizes, from early-stage startups to large enterprises. We understand that each stage of business growth has unique technology needs, and we tailor our approach accordingly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="process">
+                        <div class="faq-question">
+                            <h3>What is your development methodology?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We follow Agile development methodologies with regular sprints, continuous integration, and frequent client communication. This approach ensures transparency, flexibility, and timely delivery of high-quality solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="process">
+                        <div class="faq-question">
+                            <h3>How do you ensure project quality?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Quality is ensured through multiple layers: code reviews, automated testing, manual QA testing, performance optimization, security audits, and client feedback incorporation throughout the development process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>Do you provide ongoing support after project completion?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer comprehensive post-launch support including bug fixes, security updates, performance monitoring, feature enhancements, and technical assistance. We provide various support packages to meet different needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="company">
+                        <div class="faq-question">
+                            <h3>What makes your team unique?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our team combines technical excellence with business acumen. We don't just code; we understand business objectives and translate them into effective technology solutions. Our diverse backgrounds and continuous learning culture keep us at the forefront of technology.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="process">
+                        <div class="faq-question">
+                            <h3>How do you handle intellectual property and confidentiality?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We take intellectual property protection very seriously. All team members sign comprehensive NDAs, and we're happy to sign additional client-specific confidentiality agreements. Your IP remains completely yours.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item" data-category="support">
+                        <div class="faq-question">
+                            <h3>How do you stay updated with the latest technologies?</h3>
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our team dedicates time to continuous learning through training programs, tech conferences, certification courses, and R&D projects. We maintain partnerships with leading technology providers and actively participate in the developer community.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="no-results" id="no-results" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No results found</h3>
+                    <p>Try adjusting your search terms or filters</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
     <!-- Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="../src/components/header/header-new.js?v=13"></script>
+    <script src="../src/components/footer/footer.js"></script>
+    <script src="../src/scripts/main.js"></script>
+    <script src="../link-validation.js"></script>
+    <script src="../src/scripts/about-page.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading About page components...');
+            
+            // Load all components
+            await Promise.all([
+                loadComponent('header-component', '../src/components/header/header-new.html'),
+                loadComponent('mobile-nav-component', '../src/components/navigation/mobile-nav/mobile-nav.html'),
+                loadComponent('footer-component', '../src/components/footer/footer.html')
+            ]);
+            
+            console.log('✓ All About page components loaded');
+            
+            // Initialize components after loading
+            setTimeout(() => {
+                // Initialize navigation
+                if (window.initializeNavigation) {
+                    window.initializeNavigation();
+                }
+                
+                // Initialize mobile navigation
+                if (window.initializeMobileNavigation) {
+                    window.initializeMobileNavigation();
+                }
+                
+                console.log('✅ About page fully initialized');
+            }, 500);
+        });
+    </script>
 </body>
 </html>
