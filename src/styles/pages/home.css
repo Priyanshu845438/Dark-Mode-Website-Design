@@ -267,62 +267,7 @@
     letter-spacing: 0.5px;
 }
 
-/* Contact Section */
-.contact-section {
-    background: linear-gradient(180deg, rgba(255, 165, 0, 0.02) 0%, transparent 100%);
-}
 
-.contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-4xl);
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2xl);
-}
-
-.contact-item {
-    display: flex;
-    gap: var(--spacing-md);
-    align-items: flex-start;
-}
-
-.contact-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--gradient-primary);
-    border-radius: var(--border-radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size-lg);
-    color: var(--text-primary);
-    flex-shrink: 0;
-}
-
-.contact-details h4 {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    margin-bottom: var(--spacing-xs);
-    color: var(--text-primary);
-}
-
-.contact-details p {
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: var(--leading-relaxed);
-}
-
-.contact-form {
-    background: var(--bg-card);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--border-primary);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-2xl);
-}
 
 /* About Page Specific Styles */
 .about-content-section .about-grid {
