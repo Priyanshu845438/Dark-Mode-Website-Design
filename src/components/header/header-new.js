@@ -16,9 +16,11 @@ class NewNavbarComponent {
         this.loadMobileNavigation(); // Make synchronous
         this.setupEventListeners();
         this.setupScrollHandling();
-        // Setup dropdowns immediately after DOM is ready
-        this.setupDropdowns();
-        this.setupMobileNavigation();
+        // Setup dropdowns immediately after DOM is ready with delay to ensure DOM is fully loaded
+        setTimeout(() => {
+            this.setupDropdowns();
+            this.setupMobileNavigation();
+        }, 100);
     }
 
     async loadNavbar() {
@@ -154,6 +156,38 @@ class NewNavbarComponent {
             if (trigger && menu) {
                 console.log('Setting up dropdown for:', trigger.textContent.trim());
                 
+                // Setup hover functionality for desktop
+                let hoverTimer;
+                
+                const showDropdown = () => {
+                    clearTimeout(hoverTimer);
+                    // Close all other dropdowns first
+                    document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                        if (otherMenu !== menu) {
+                            otherMenu.classList.remove('show');
+                        }
+                    });
+                    menu.classList.add('show');
+                };
+                
+                const hideDropdown = () => {
+                    hoverTimer = setTimeout(() => {
+                        menu.classList.remove('show');
+                    }, 150); // Small delay to prevent flickering
+                };
+                
+                // Mouse events for hover functionality
+                dropdown.addEventListener('mouseenter', showDropdown);
+                dropdown.addEventListener('mouseleave', hideDropdown);
+                
+                // Additional hover support for the menu itself
+                menu.addEventListener('mouseenter', () => {
+                    clearTimeout(hoverTimer);
+                    menu.classList.add('show');
+                });
+                
+                menu.addEventListener('mouseleave', hideDropdown);
+                
                 // Store event handlers for cleanup
                 const clickHandler = (e) => {
                     // Don't prevent default if it's a regular link that should navigate
@@ -187,6 +221,8 @@ class NewNavbarComponent {
                 // Store handlers for cleanup
                 trigger._dropdownClickHandler = clickHandler;
                 menu._dropdownMenuClickHandler = menuClickHandler;
+                dropdown._dropdownMouseEnter = showDropdown;
+                dropdown._dropdownMouseLeave = hideDropdown;
             }
         });
         
@@ -203,7 +239,7 @@ class NewNavbarComponent {
             document._dropdownDocumentClickHandler = documentClickHandler;
         }
         
-        console.log('✓ Navigation dropdowns setup complete (click-based behavior)');
+        console.log('✓ Navigation dropdowns setup complete (hover + click behavior)');
     }
 
     clearDropdownListeners() {
@@ -221,6 +257,16 @@ class NewNavbarComponent {
             if (menu && menu._dropdownMenuClickHandler) {
                 menu.removeEventListener('click', menu._dropdownMenuClickHandler);
                 delete menu._dropdownMenuClickHandler;
+            }
+            
+            if (dropdown._dropdownMouseEnter) {
+                dropdown.removeEventListener('mouseenter', dropdown._dropdownMouseEnter);
+                delete dropdown._dropdownMouseEnter;
+            }
+            
+            if (dropdown._dropdownMouseLeave) {
+                dropdown.removeEventListener('mouseleave', dropdown._dropdownMouseLeave);
+                delete dropdown._dropdownMouseLeave;
             }
         });
         

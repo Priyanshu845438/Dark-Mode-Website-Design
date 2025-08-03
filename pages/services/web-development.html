@@ -10,9 +10,98 @@
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
     <link rel="stylesheet" href="../../src/styles/pages/services-detail.css">
-    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=8">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=10">
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -86,7 +175,118 @@
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-laptop-code"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Main Monitor -->
+                            <rect x="50" y="40" width="280" height="180" rx="12" fill="#1a1a1a" stroke="#00BFFF" stroke-width="3"/>
+                            <rect x="65" y="55" width="250" height="150" rx="6" fill="#0a0a0a"/>
+                            
+                            <!-- IDE Interface -->
+                            <rect x="65" y="55" width="250" height="25" rx="4" fill="#2a2a2a"/>
+                            <circle cx="80" cy="67" r="4" fill="#FF5F56"/>
+                            <circle cx="95" cy="67" r="4" fill="#FFBD2E"/>
+                            <circle cx="110" cy="67" r="4" fill="#27CA3F"/>
+                            
+                            <!-- File Tabs -->
+                            <rect x="130" y="60" width="60" height="15" rx="3" fill="#333" stroke="#00BFFF" stroke-width="1"/>
+                            <text x="145" y="70" fill="#00BFFF" font-family="Arial" font-size="8">index.js</text>
+                            <rect x="195" y="60" width="50" height="15" rx="3" fill="#444"/>
+                            <text x="208" y="70" fill="#ccc" font-family="Arial" font-size="8">style.css</text>
+                            
+                            <!-- Code Editor -->
+                            <rect x="75" y="85" width="12" height="110" fill="#2a2a2a"/>
+                            
+                            <!-- Line Numbers -->
+                            <text x="80" y="95" fill="#666" font-family="monospace" font-size="7">1</text>
+                            <text x="80" y="105" fill="#666" font-family="monospace" font-size="7">2</text>
+                            <text x="80" y="115" fill="#666" font-family="monospace" font-size="7">3</text>
+                            <text x="80" y="125" fill="#666" font-family="monospace" font-size="7">4</text>
+                            <text x="80" y="135" fill="#666" font-family="monospace" font-size="7">5</text>
+                            <text x="80" y="145" fill="#666" font-family="monospace" font-size="7">6</text>
+                            <text x="80" y="155" fill="#666" font-family="monospace" font-size="7">7</text>
+                            <text x="80" y="165" fill="#666" font-family="monospace" font-size="7">8</text>
+                            <text x="80" y="175" fill="#666" font-family="monospace" font-size="7">9</text>
+                            <text x="80" y="185" fill="#666" font-family="monospace" font-size="7">10</text>
+                            
+                            <!-- Code Lines -->
+                            <rect x="95" y="90" width="60" height="4" rx="2" fill="#FF6B6B"/>
+                            <rect x="160" y="90" width="40" height="4" rx="2" fill="#FFD93D"/>
+                            <rect x="205" y="90" width="25" height="4" rx="2" fill="#39FF14"/>
+                            
+                            <rect x="95" y="100" width="45" height="4" rx="2" fill="#6BCF7F"/>
+                            <rect x="145" y="100" width="70" height="4" rx="2" fill="#4D96FF"/>
+                            <rect x="220" y="100" width="30" height="4" rx="2" fill="#9B59B6"/>
+                            
+                            <rect x="95" y="110" width="80" height="4" rx="2" fill="#FF6B6B"/>
+                            <rect x="180" y="110" width="55" height="4" rx="2" fill="#39FF14"/>
+                            
+                            <rect x="95" y="120" width="35" height="4" rx="2" fill="#FFD93D"/>
+                            <rect x="135" y="120" width="65" height="4" rx="2" fill="#00BFFF"/>
+                            <rect x="205" y="120" width="40" height="4" rx="2" fill="#6BCF7F"/>
+                            
+                            <rect x="95" y="130" width="90" height="4" rx="2" fill="#9B59B6"/>
+                            <rect x="190" y="130" width="25" height="4" rx="2" fill="#FF6B6B"/>
+                            
+                            <rect x="95" y="140" width="55" height="4" rx="2" fill="#4D96FF"/>
+                            <rect x="155" y="140" width="45" height="4" rx="2" fill="#FFD93D"/>
+                            
+                            <rect x="95" y="150" width="70" height="4" rx="2" fill="#39FF14"/>
+                            <rect x="170" y="150" width="35" height="4" rx="2" fill="#00BFFF"/>
+                            
+                            <rect x="95" y="160" width="40" height="4" rx="2" fill="#6BCF7F"/>
+                            <rect x="140" y="160" width="60" height="4" rx="2" fill="#FF6B6B"/>
+                            
+                            <rect x="95" y="170" width="85" height="4" rx="2" fill="#FFD93D"/>
+                            <rect x="185" y="170" width="30" height="4" rx="2" fill="#9B59B6"/>
+                            
+                            <rect x="95" y="180" width="50" height="4" rx="2" fill="#4D96FF"/>
+                            <rect x="150" y="180" width="40" height="4" rx="2" fill="#39FF14"/>
+                            
+                            <!-- Monitor Stand -->
+                            <rect x="170" y="220" width="60" height="15" rx="8" fill="#2a2a2a" stroke="#00BFFF" stroke-width="2"/>
+                            <rect x="120" y="235" width="160" height="8" rx="4" fill="#2a2a2a" stroke="#00BFFF" stroke-width="1"/>
+                            
+                            <!-- Floating Elements -->
+                            <g opacity="0.8">
+                                <!-- HTML Tag -->
+                                <rect x="320" y="60" width="50" height="20" rx="5" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="1"/>
+                                <text x="330" y="72" fill="#00BFFF" font-family="monospace" font-size="10">&lt;/div&gt;</text>
+                                
+                                <!-- CSS Bracket -->
+                                <rect x="30" y="120" width="30" height="25" rx="5" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="1"/>
+                                <text x="38" y="135" fill="#39FF14" font-family="monospace" font-size="12">{ }</text>
+                                
+                                <!-- JS Function -->
+                                <rect x="340" y="160" width="45" height="22" rx="5" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="1"/>
+                                <text x="347" y="173" fill="#FFD93D" font-family="monospace" font-size="9">func()</text>
+                                
+                                <!-- React Component -->
+                                <rect x="25" y="250" width="40" height="18" rx="4" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="1"/>
+                                <text x="30" y="261" fill="#FF6B6B" font-family="monospace" font-size="8">&lt;App/&gt;</text>
+                            </g>
+                            
+                            <!-- Connection Lines -->
+                            <path d="M330 80 L310 100" stroke="#00BFFF" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                            <path d="M60 140 L90 120" stroke="#39FF14" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                            <path d="M340 170 L315 160" stroke="#FFD93D" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                            <path d="M65 250 L90 200" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="4,4" opacity="0.7"/>
+                            
+                            <!-- Status Bar -->
+                            <rect x="65" y="205" width="250" height="15" rx="3" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+                            <circle cx="75" cy="212" r="3" fill="#39FF14"/>
+                            <text x="85" y="215" fill="#39FF14" font-family="Arial" font-size="8">Ready</text>
+                            <text x="250" y="215" fill="#666" font-family="Arial" font-size="7">JavaScript React</text>
+                            
+                            <!-- Productivity Indicators -->
+                            <g opacity="0.9">
+                                <circle cx="350" cy="280" r="15" fill="rgba(0, 191, 255, 0.3)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="343" y="285" fill="#00BFFF" font-family="Arial" font-size="10" font-weight="bold">95%</text>
+                                <text x="335" y="310" fill="#00BFFF" font-family="Arial" font-size="8">Performance</text>
+                                
+                                <circle cx="70" cy="320" r="12" fill="rgba(57, 255, 20, 0.3)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="65" y="325" fill="#39FF14" font-family="Arial" font-size="9">A+</text>
+                                <text x="55" y="340" fill="#39FF14" font-family="Arial" font-size="7">SEO Score</text>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -137,6 +337,18 @@
                     <h3>Educational Portals</h3>
                     <p>Learning management systems and educational platforms for online courses and training.</p>
                 </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Healthcare Platforms</h3>
+                    <p>Patient management systems, telemedicine platforms, and healthcare information systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Portfolio Websites</h3>
+                    <p>Professional portfolios and showcase websites for artists, designers, and creative professionals.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -151,52 +363,124 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">HTML</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-html5" style="color: #E34F26;"></i>
+                    </div>
                     <h4>HTML5</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">CSS</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                    </div>
                     <h4>CSS3</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">JS</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-js-square" style="color: #F7DF1E;"></i>
+                    </div>
                     <h4>JavaScript</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">React</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-react" style="color: #61DAFB;"></i>
+                    </div>
                     <h4>React.js</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Vue</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-vuejs" style="color: #4FC08D;"></i>
+                    </div>
                     <h4>Vue.js</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Node</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-node-js" style="color: #339933;"></i>
+                    </div>
                     <h4>Node.js</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">PHP</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-php" style="color: #777BB4;"></i>
+                    </div>
                     <h4>PHP</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Python</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-python" style="color: #3776AB;"></i>
+                    </div>
                     <h4>Python</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">MySQL</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-database" style="color: #00618A;"></i>
+                    </div>
                     <h4>MySQL</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Mongo</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-leaf" style="color: #47A248;"></i>
+                    </div>
                     <h4>MongoDB</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">AWS</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-aws" style="color: #FF9900;"></i>
+                    </div>
                     <h4>AWS</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Git</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                    </div>
                     <h4>Git</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                    </div>
+                    <h4>Docker</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-sass" style="color: #CC6699;"></i>
+                    </div>
+                    <h4>Sass</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-bootstrap" style="color: #7952B3;"></i>
+                    </div>
+                    <h4>Bootstrap</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-code-branch" style="color: #39FF14;"></i>
+                    </div>
+                    <h4>TypeScript</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-fire" style="color: #FFCA28;"></i>
+                    </div>
+                    <h4>Firebase</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-figma" style="color: #F24E1E;"></i>
+                    </div>
+                    <h4>Figma</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-npm" style="color: #CB3837;"></i>
+                    </div>
+                    <h4>NPM</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-server" style="color: #00BFFF;"></i>
+                    </div>
+                    <h4>Express.js</h4>
                 </div>
             </div>
         </div>
@@ -246,48 +530,189 @@
                 </div>
                 
                 <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">98%</div>
-                            <div>Client Satisfaction</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">200+</div>
-                            <div>Projects Delivered</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">24/7</div>
-                            <div>Support Available</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">5+</div>
-                            <div>Years Experience</div>
-                        </div>
-                    </div>
+                    <svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Animated Background Elements -->
+                        <defs>
+                            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(0,191,255,0.1)"/>
+                                <stop offset="50%" stop-color="rgba(57,255,20,0.1)"/>
+                                <stop offset="100%" stop-color="rgba(255,107,107,0.1)"/>
+                            </linearGradient>
+                            
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Background with gradient -->
+                        <rect width="400" height="500" fill="url(#bgGradient)" rx="20"/>
+                        
+                        <!-- Floating Particles -->
+                        <g class="floating-particles">
+                            <circle cx="50" cy="80" r="3" fill="#00BFFF" opacity="0.6">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 10,-20; 0,0" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="350" cy="120" r="2" fill="#39FF14" opacity="0.7">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; -15,25; 0,0" dur="6s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="80" cy="200" r="4" fill="#FFD93D" opacity="0.5">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 20,-10; 0,0" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Main Title -->
+                        <text x="200" y="40" fill="#00BFFF" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" filter="url(#glow)">
+                            Why Choose Acadify?
+                        </text>
+                        
+                        <!-- Central Hub -->
+                        <g transform="translate(200, 150)">
+                            <circle cx="0" cy="0" r="40" fill="rgba(0,191,255,0.2)" stroke="#00BFFF" stroke-width="3">
+                                <animate attributeName="r" values="35;45;35" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-8" fill="#00BFFF" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">ACADIFY</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">SOLUTION</text>
+                        </g>
+                        
+                        <!-- Feature Cards in Portrait Layout -->
+                        
+                        <!-- Card 1: Expert Team -->
+                        <g transform="translate(50, 80)" class="feature-card">
+                            <rect x="0" y="0" width="120" height="60" rx="12" fill="rgba(57,255,20,0.15)" stroke="#39FF14" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="20" cy="20" r="12" fill="rgba(57,255,20,0.3)" stroke="#39FF14" stroke-width="2"/>
+                            <text x="20" y="25" fill="#39FF14" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">1</text>
+                            <text x="45" y="20" fill="#39FF14" font-family="Arial" font-size="11" font-weight="bold">Expert Development</text>
+                            <text x="45" y="35" fill="#ffffff" font-family="Arial" font-size="9">Team of Professionals</text>
+                            <text x="45" y="48" fill="#39FF14" font-family="Arial" font-size="8">5+ Years Experience</text>
+                        </g>
+                        
+                        <!-- Card 2: Tailored Solutions -->
+                        <g transform="translate(230, 80)" class="feature-card">
+                            <rect x="0" y="0" width="120" height="60" rx="12" fill="rgba(255,217,61,0.15)" stroke="#FFD93D" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4.5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="20" cy="20" r="12" fill="rgba(255,217,61,0.3)" stroke="#FFD93D" stroke-width="2"/>
+                            <text x="20" y="25" fill="#FFD93D" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+                            <text x="45" y="20" fill="#FFD93D" font-family="Arial" font-size="11" font-weight="bold">Tailored Solutions</text>
+                            <text x="45" y="35" fill="#ffffff" font-family="Arial" font-size="9">Custom Development</text>
+                            <text x="45" y="48" fill="#FFD93D" font-family="Arial" font-size="8">Your Requirements</text>
+                        </g>
+                        
+                        <!-- Card 3: 24/7 Support -->
+                        <g transform="translate(50, 220)" class="feature-card">
+                            <rect x="0" y="0" width="120" height="60" rx="12" fill="rgba(255,107,107,0.15)" stroke="#FF6B6B" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="20" cy="20" r="12" fill="rgba(255,107,107,0.3)" stroke="#FF6B6B" stroke-width="2"/>
+                            <text x="20" y="25" fill="#FF6B6B" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+                            <text x="45" y="20" fill="#FF6B6B" font-family="Arial" font-size="11" font-weight="bold">24/7 Support</text>
+                            <text x="45" y="35" fill="#ffffff" font-family="Arial" font-size="9">Round the Clock</text>
+                            <text x="45" y="48" fill="#FF6B6B" font-family="Arial" font-size="8">Maintenance Available</text>
+                        </g>
+                        
+                        <!-- Card 4: On-Time Delivery -->
+                        <g transform="translate(230, 220)" class="feature-card">
+                            <rect x="0" y="0" width="120" height="60" rx="12" fill="rgba(155,89,182,0.15)" stroke="#9B59B6" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="5.5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="20" cy="20" r="12" fill="rgba(155,89,182,0.3)" stroke="#9B59B6" stroke-width="2"/>
+                            <text x="20" y="25" fill="#9B59B6" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">4</text>
+                            <text x="45" y="20" fill="#9B59B6" font-family="Arial" font-size="11" font-weight="bold">On-Time Delivery</text>
+                            <text x="45" y="35" fill="#ffffff" font-family="Arial" font-size="9">Timely Completion</text>
+                            <text x="45" y="48" fill="#9B59B6" font-family="Arial" font-size="8">Quality Assured</text>
+                        </g>
+                        
+                        <!-- Animated Connection Lines -->
+                        <g class="connection-lines" opacity="0.6">
+                            <path d="M 170 110 Q 190 130 200 150" stroke="#39FF14" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 230 110 Q 210 130 200 150" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 170 250 Q 190 230 200 190" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 230 250 Q 210 230 200 190" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="3.5s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                        
+                        <!-- Statistics Section -->
+                        <g transform="translate(0, 320)">
+                            <!-- Background for stats -->
+                            <rect x="20" y="0" width="360" height="120" rx="15" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            
+                            <!-- Stats Grid -->
+                            <g transform="translate(40, 30)">
+                                <!-- 98% Client Satisfaction -->
+                                <g>
+                                    <circle cx="40" cy="20" r="25" fill="rgba(57,255,20,0.2)" stroke="#39FF14" stroke-width="3">
+                                        <animate attributeName="r" values="20;30;20" dur="4s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="15" fill="#39FF14" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">98%</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Client Satisfaction</text>
+                                </g>
+                                
+                                <!-- 200+ Projects -->
+                                <g transform="translate(90, 0)">
+                                    <circle cx="40" cy="20" r="25" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="3">
+                                        <animate attributeName="r" values="20;30;20" dur="4.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="15" fill="#FFD93D" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">200+</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Projects Delivered</text>
+                                </g>
+                                
+                                <!-- 5+ Years Experience -->
+                                <g transform="translate(180, 0)">
+                                    <circle cx="40" cy="20" r="25" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="3">
+                                        <animate attributeName="r" values="20;30;20" dur="5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="15" fill="#FF6B6B" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">5+</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Years Experience</text>
+                                </g>
+                                
+                                <!-- 24/7 Support -->
+                                <g transform="translate(270, 0)">
+                                    <circle cx="40" cy="20" r="25" fill="rgba(155,89,182,0.2)" stroke="#9B59B6" stroke-width="3">
+                                        <animate attributeName="r" values="20;30;20" dur="5.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="15" fill="#9B59B6" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">24/7</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Support Available</text>
+                                </g>
+                            </g>
+                            
+                            <!-- Bottom tagline -->
+                            <text x="200" y="100" fill="#00BFFF" font-family="Arial" font-size="12" font-weight="600" text-anchor="middle">
+                                Your Success is Our Priority
+                            </text>
+                        </g>
+                        
+                        <!-- Decorative elements -->
+                        <g class="decorative" opacity="0.4">
+                            <circle cx="30" cy="450" r="5" fill="#00BFFF">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="370" cy="460" r="3" fill="#39FF14">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="200" cy="480" r="4" fill="#FFD93D">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Build Your Website?</h2>
-                <p>Let's discuss your web development needs and create a solution that drives your business forward.</p>
-                <div class="cta-buttons">
-                    <a href="../contact.html" class="cta-btn cta-btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Start Your Project
-                    </a>
-                    <a href="../schedule-meeting.html" class="cta-btn cta-btn-secondary">
-                        <i class="fas fa-calendar"></i>
-                        Schedule Meeting
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Footer Component -->
     <div id="footer-component"></div>
@@ -296,7 +721,7 @@
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
     <script src="../../link-validation.js"></script>
-    <script src="../../src/components/header/header-new.js?v=16"></script>
+    <script src="../../src/components/header/header-new.js?v=17"></script>
     
     <!-- Component Loading Script -->
     <script>

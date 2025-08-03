@@ -14,6 +14,95 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
     
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -85,9 +174,188 @@
                 </div>
                 
                 <div class="about-visual">
-                    <div class="service-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
+                    <svg width="400" height="450" viewBox="0 0 400 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- UI/UX Design Illustration -->
+                        <defs>
+                            <linearGradient id="designGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(0,191,255,0.1)"/>
+                                <stop offset="50%" stop-color="rgba(57,255,20,0.1)"/>
+                                <stop offset="100%" stop-color="rgba(255,107,107,0.1)"/>
+                            </linearGradient>
+                            
+                            <filter id="designGlow">
+                                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Background -->
+                        <rect width="400" height="450" fill="url(#designGradient)" rx="20"/>
+                        
+                        <!-- Main Design Interface -->
+                        <g transform="translate(100, 50)">
+                            <rect x="0" y="0" width="200" height="150" rx="15" fill="#1a1a1a" stroke="#00BFFF" stroke-width="3" filter="url(#designGlow)"/>
+                            <rect x="10" y="30" width="180" height="110" rx="8" fill="#000"/>
+                            
+                            <!-- Design Canvas -->
+                            <rect x="20" y="40" width="160" height="90" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(0,191,255,0.3)" stroke-width="1"/>
+                            
+                            <!-- UI Elements being designed -->
+                            <rect x="30" y="50" width="50" height="8" rx="4" fill="#00BFFF"/>
+                            <text x="55" y="57" fill="#00BFFF" font-family="Arial" font-size="6" text-anchor="middle">Header</text>
+                            
+                            <rect x="30" y="65" width="40" height="6" rx="3" fill="#39FF14"/>
+                            <rect x="75" y="65" width="35" height="6" rx="3" fill="#FFD93D"/>
+                            <rect x="115" y="65" width="30" height="6" rx="3" fill="#FF6B6B"/>
+                            
+                            <rect x="30" y="80" width="140" height="20" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(0,191,255,0.2)" stroke-width="1"/>
+                            <circle cx="40" cy="90" r="3" fill="#00BFFF"/>
+                            <rect x="50" y="87" width="80" height="2" rx="1" fill="rgba(255,255,255,0.3)"/>
+                            <rect x="50" y="92" width="60" height="2" rx="1" fill="rgba(255,255,255,0.2)"/>
+                            
+                            <rect x="30" y="110" width="45" height="15" rx="3" fill="rgba(57,255,20,0.3)" stroke="#39FF14" stroke-width="1"/>
+                            <text x="52" y="119" fill="#39FF14" font-family="Arial" font-size="6" text-anchor="middle">Button</text>
+                            
+                            <!-- Menu Bar -->
+                            <rect x="10" y="10" width="180" height="15" rx="5" fill="rgba(0,191,255,0.2)"/>
+                            <circle cx="20" cy="17" r="2" fill="#FF6B6B"/>
+                            <circle cx="30" cy="17" r="2" fill="#FFD93D"/>
+                            <circle cx="40" cy="17" r="2" fill="#39FF14"/>
+                            <text x="100" y="20" fill="#00BFFF" font-family="Arial" font-size="8" text-anchor="middle">Design Tool</text>
+                        </g>
+                        
+                        <!-- Design Tools Palette -->
+                        <g transform="translate(50, 230)">
+                            <rect x="0" y="0" width="80" height="120" rx="12" fill="rgba(0,191,255,0.15)" stroke="#00BFFF" stroke-width="2"/>
+                            <text x="40" y="15" fill="#00BFFF" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Tools</text>
+                            
+                            <!-- Tool Icons -->
+                            <circle cx="20" cy="30" r="8" fill="rgba(255,107,107,0.3)" stroke="#FF6B6B" stroke-width="2">
+                                <animate attributeName="r" values="6;10;6" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="20" y="34" fill="#FF6B6B" font-family="Arial" font-size="6" text-anchor="middle">P</text>
+                            
+                            <rect x="50" y="22" width="16" height="16" rx="3" fill="rgba(57,255,20,0.3)" stroke="#39FF14" stroke-width="2">
+                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+                            </rect>
+                            <text x="58" y="32" fill="#39FF14" font-family="Arial" font-size="6" text-anchor="middle">R</text>
+                            
+                            <polygon points="20,50 30,65 10,65" fill="rgba(255,217,61,0.3)" stroke="#FFD93D" stroke-width="2">
+                                <animateTransform attributeName="transform" type="rotate" values="0 20 58;10 20 58;0 20 58" dur="6s" repeatCount="indefinite"/>
+                            </polygon>
+                            
+                            <circle cx="58" cy="58" r="8" fill="rgba(155,89,182,0.3)" stroke="#9B59B6" stroke-width="2"/>
+                            <text x="58" y="62" fill="#9B59B6" font-family="Arial" font-size="6" text-anchor="middle">T</text>
+                            
+                            <!-- Color Palette -->
+                            <text x="40" y="85" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Colors</text>
+                            <circle cx="20" cy="95" r="5" fill="#00BFFF"/>
+                            <circle cx="35" cy="95" r="5" fill="#39FF14"/>
+                            <circle cx="50" cy="95" r="5" fill="#FFD93D"/>
+                            <circle cx="65" cy="95" r="5" fill="#FF6B6B"/>
+                            
+                            <circle cx="20" cy="110" r="5" fill="#9B59B6"/>
+                            <circle cx="35" cy="110" r="5" fill="#FF4081"/>
+                            <circle cx="50" cy="110" r="5" fill="#2196F3"/>
+                            <circle cx="65" cy="110" r="5" fill="#4CAF50"/>
+                        </g>
+                        
+                        <!-- User Research -->
+                        <g transform="translate(270, 230)">
+                            <rect x="0" y="0" width="80" height="80" rx="12" fill="rgba(57,255,20,0.15)" stroke="#39FF14" stroke-width="2"/>
+                            <text x="40" y="15" fill="#39FF14" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle">Research</text>
+                            
+                            <!-- User Persona -->
+                            <circle cx="25" cy="35" r="8" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="1"/>
+                            <circle cx="25" cy="32" r="3" fill="#ffffff"/>
+                            <ellipse cx="25" cy="40" rx="4" ry="3" fill="#ffffff"/>
+                            
+                            <circle cx="55" cy="35" r="8" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="1"/>
+                            <circle cx="55" cy="32" r="3" fill="#ffffff"/>
+                            <ellipse cx="55" cy="40" rx="4" ry="3" fill="#ffffff"/>
+                            
+                            <!-- Analytics Chart -->
+                            <rect x="15" y="55" width="50" height="15" fill="rgba(0,0,0,0.3)" rx="3"/>
+                            <rect x="20" y="60" width="3" height="8" fill="#00BFFF"/>
+                            <rect x="25" y="58" width="3" height="10" fill="#39FF14"/>
+                            <rect x="30" y="62" width="3" height="6" fill="#FFD93D"/>
+                            <rect x="35" y="57" width="3" height="11" fill="#FF6B6B"/>
+                            <rect x="40" y="61" width="3" height="7" fill="#9B59B6"/>
+                        </g>
+                        
+                        <!-- Design Process Flow -->
+                        <g transform="translate(150, 340)">
+                            <circle cx="0" cy="0" r="35" fill="rgba(0,191,255,0.2)" stroke="#00BFFF" stroke-width="3">
+                                <animate attributeName="r" values="30;40;30" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-8" fill="#00BFFF" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">DESIGN</text>
+                            <text x="0" y="5" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">PROCESS</text>
+                            <text x="0" y="15" fill="#39FF14" font-family="Arial" font-size="7" text-anchor="middle">USER-CENTERED</text>
+                        </g>
+                        
+                        <!-- Process Steps -->
+                        <g transform="translate(70, 340)">
+                            <rect x="0" y="0" width="60" height="25" rx="8" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="2"/>
+                            <text x="30" y="12" fill="#FFD93D" font-family="Arial" font-size="9" text-anchor="middle">1. Research</text>
+                            <text x="30" y="20" fill="#ffffff" font-family="Arial" font-size="6" text-anchor="middle">User Insights</text>
+                        </g>
+                        
+                        <g transform="translate(270, 340)">
+                            <rect x="0" y="0" width="60" height="25" rx="8" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                            <text x="30" y="12" fill="#FF6B6B" font-family="Arial" font-size="9" text-anchor="middle">2. Prototype</text>
+                            <text x="30" y="20" fill="#ffffff" font-family="Arial" font-size="6" text-anchor="middle">Interactive</text>
+                        </g>
+                        
+                        <!-- Connecting Flow Lines -->
+                        <g opacity="0.6">
+                            <path d="M 130 350 Q 140 340 150 345" stroke="#FFD93D" stroke-width="2" stroke-dasharray="4,4">
+                                <animate attributeName="stroke-dashoffset" values="0;8;0" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 185 345 Q 195 340 205 350" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="4,4">
+                                <animate attributeName="stroke-dashoffset" values="0;8;0" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                        
+                        <!-- Devices Preview -->
+                        <g transform="translate(50, 80)">
+                            <!-- Desktop -->
+                            <rect x="0" y="0" width="25" height="15" rx="2" fill="rgba(0,191,255,0.3)" stroke="#00BFFF" stroke-width="1"/>
+                            <rect x="2" y="2" width="21" height="11" fill="#000"/>
+                            <text x="12" y="20" fill="#00BFFF" font-family="Arial" font-size="6" text-anchor="middle">Desktop</text>
+                        </g>
+                        
+                        <g transform="translate(325, 80)">
+                            <!-- Mobile -->
+                            <rect x="0" y="0" width="12" height="20" rx="3" fill="rgba(39,255,20,0.3)" stroke="#39FF14" stroke-width="1"/>
+                            <rect x="2" y="3" width="8" height="14" fill="#000"/>
+                            <text x="6" y="28" fill="#39FF14" font-family="Arial" font-size="6" text-anchor="middle">Mobile</text>
+                        </g>
+                        
+                        <!-- Floating Elements -->
+                        <g class="floating-elements">
+                            <circle cx="60" cy="60" r="3" fill="#00BFFF" opacity="0.6">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 8,-15; 0,0" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="340" cy="70" r="2" fill="#39FF14" opacity="0.7">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; -12,20; 0,0" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="80" cy="400" r="4" fill="#FFD93D" opacity="0.5">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 15,-8; 0,0" dur="6s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Success Metrics -->
+                        <text x="200" y="410" fill="#00BFFF" font-family="Arial" font-size="12" font-weight="600" text-anchor="middle">
+                            User-Centered Design Excellence
+                        </text>
+                        
+                        <text x="200" y="430" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">
+                            Research • Prototype • Test • Iterate
+                        </text>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -151,52 +419,124 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Figma</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-figma" style="color: #F24E1E;"></i>
+                    </div>
                     <h4>Figma</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Sketch</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-pen-nib" style="color: #FDAD00;"></i>
+                    </div>
                     <h4>Sketch</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Adobe XD</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-adobe" style="color: #FF0000;"></i>
+                    </div>
                     <h4>Adobe XD</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">PS</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-image" style="color: #31A8FF;"></i>
+                    </div>
                     <h4>Photoshop</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">AI</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-vector-square" style="color: #FF9A00;"></i>
+                    </div>
                     <h4>Illustrator</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Principle</div>
-                    <h4>Principle</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cube" style="color: #00BFFF;"></i>
+                    </div>
+                    <h4>Prototyping</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">InVision</div>
-                    <h4>InVision</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-search" style="color: #39FF14;"></i>
+                    </div>
+                    <h4>User Research</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Marvel</div>
-                    <h4>Marvel</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-project-diagram" style="color: #FFD93D;"></i>
+                    </div>
+                    <h4>Wireframing</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Zeplin</div>
-                    <h4>Zeplin</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-palette" style="color: #FF6B6B;"></i>
+                    </div>
+                    <h4>Visual Design</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Maze</div>
-                    <h4>Maze</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-mouse-pointer" style="color: #9B59B6;"></i>
+                    </div>
+                    <h4>Interaction Design</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Hotjar</div>
-                    <h4>Hotjar</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-user-check" style="color: #2196F3;"></i>
+                    </div>
+                    <h4>Usability Testing</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Miro</div>
-                    <h4>Miro</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-award" style="color: #FF4081;"></i>
+                    </div>
+                    <h4>Brand Design</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-mobile-alt" style="color: #4CAF50;"></i>
+                    </div>
+                    <h4>Responsive Design</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-eye" style="color: #FF9800;"></i>
+                    </div>
+                    <h4>Visual Hierarchy</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-universal-access" style="color: #795548;"></i>
+                    </div>
+                    <h4>Accessibility</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-bar" style="color: #607D8B;"></i>
+                    </div>
+                    <h4>Design Systems</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-layer-group" style="color: #E91E63;"></i>
+                    </div>
+                    <h4>Information Architecture</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-heart" style="color: #F44336;"></i>
+                    </div>
+                    <h4>User Experience</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cogs" style="color: #3F51B5;"></i>
+                    </div>
+                    <h4>Design Thinking</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-comments" style="color: #009688;"></i>
+                    </div>
+                    <h4>User Feedback</h4>
                 </div>
             </div>
         </div>
@@ -246,24 +586,218 @@
                 </div>
                 
                 <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">85%</div>
-                            <div>User Satisfaction</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">100+</div>
-                            <div>Design Projects</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">65%</div>
-                            <div>Conversion Increase</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">2-4w</div>
-                            <div>Design Timeline</div>
-                        </div>
-                    </div>
+                    <svg width="400" height="500" viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- UI/UX Design Why Choose Acadify -->
+                        <defs>
+                            <linearGradient id="uxWhyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="rgba(0,191,255,0.1)"/>
+                                <stop offset="30%" stop-color="rgba(57,255,20,0.1)"/>
+                                <stop offset="70%" stop-color="rgba(255,217,61,0.1)"/>
+                                <stop offset="100%" stop-color="rgba(255,107,107,0.1)"/>
+                            </linearGradient>
+                            
+                            <filter id="uxGlow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <!-- Background with gradient -->
+                        <rect width="400" height="500" fill="url(#uxWhyGradient)" rx="20"/>
+                        
+                        <!-- Floating Design Elements -->
+                        <g class="floating-particles">
+                            <circle cx="60" cy="70" r="3" fill="#00BFFF" opacity="0.6">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 12,-25; 0,0" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="340" cy="90" r="2" fill="#39FF14" opacity="0.7">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; -18,30; 0,0" dur="6s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="90" cy="180" r="4" fill="#FFD93D" opacity="0.5">
+                                <animateTransform attributeName="transform" type="translate" values="0,0; 25,-12; 0,0" dur="7s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                        
+                        <!-- Main Title -->
+                        <text x="200" y="40" fill="#00BFFF" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" filter="url(#uxGlow)">
+                            Why Choose Acadify for UI/UX?
+                        </text>
+                        
+                        <!-- Central Design Hub -->
+                        <g transform="translate(200, 140)">
+                            <circle cx="0" cy="0" r="45" fill="rgba(0,191,255,0.2)" stroke="#00BFFF" stroke-width="3">
+                                <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-10" fill="#00BFFF" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">USER</text>
+                            <text x="0" y="5" fill="#ffffff" font-family="Arial" font-size="10" text-anchor="middle">CENTERED</text>
+                            <text x="0" y="18" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">DESIGN</text>
+                        </g>
+                        
+                        <!-- Design Process Cards in Portrait Layout -->
+                        
+                        <!-- Card 1: User-Centered Approach -->
+                        <g transform="translate(40, 70)" class="feature-card">
+                            <rect x="0" y="0" width="130" height="65" rx="12" fill="rgba(57,255,20,0.15)" stroke="#39FF14" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="22" cy="22" r="14" fill="rgba(57,255,20,0.3)" stroke="#39FF14" stroke-width="2"/>
+                            <text x="22" y="27" fill="#39FF14" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">1</text>
+                            <text x="50" y="20" fill="#39FF14" font-family="Arial" font-size="11" font-weight="bold">User-Centered</text>
+                            <text x="50" y="32" fill="#39FF14" font-family="Arial" font-size="10" font-weight="bold">Approach</text>
+                            <text x="50" y="45" fill="#ffffff" font-family="Arial" font-size="9">Research-backed</text>
+                            <text x="50" y="55" fill="#39FF14" font-family="Arial" font-size="8">design decisions</text>
+                        </g>
+                        
+                        <!-- Card 2: Conversion-Focused Design -->
+                        <g transform="translate(230, 70)" class="feature-card">
+                            <rect x="0" y="0" width="130" height="65" rx="12" fill="rgba(255,217,61,0.15)" stroke="#FFD93D" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="4.5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="22" cy="22" r="14" fill="rgba(255,217,61,0.3)" stroke="#FFD93D" stroke-width="2"/>
+                            <text x="22" y="27" fill="#FFD93D" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">2</text>
+                            <text x="50" y="20" fill="#FFD93D" font-family="Arial" font-size="11" font-weight="bold">Conversion</text>
+                            <text x="50" y="32" fill="#FFD93D" font-family="Arial" font-size="10" font-weight="bold">Focused</text>
+                            <text x="50" y="45" fill="#ffffff" font-family="Arial" font-size="9">Business goals</text>
+                            <text x="50" y="55" fill="#FFD93D" font-family="Arial" font-size="8">driven design</text>
+                        </g>
+                        
+                        <!-- Card 3: Collaborative Process -->
+                        <g transform="translate(40, 220)" class="feature-card">
+                            <rect x="0" y="0" width="130" height="65" rx="12" fill="rgba(255,107,107,0.15)" stroke="#FF6B6B" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="22" cy="22" r="14" fill="rgba(255,107,107,0.3)" stroke="#FF6B6B" stroke-width="2"/>
+                            <text x="22" y="27" fill="#FF6B6B" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">3</text>
+                            <text x="50" y="20" fill="#FF6B6B" font-family="Arial" font-size="11" font-weight="bold">Collaborative</text>
+                            <text x="50" y="32" fill="#FF6B6B" font-family="Arial" font-size="10" font-weight="bold">Process</text>
+                            <text x="50" y="45" fill="#ffffff" font-family="Arial" font-size="9">Close partnership</text>
+                            <text x="50" y="55" fill="#FF6B6B" font-family="Arial" font-size="8">throughout design</text>
+                        </g>
+                        
+                        <!-- Card 4: Iterative Design -->
+                        <g transform="translate(230, 220)" class="feature-card">
+                            <rect x="0" y="0" width="130" height="65" rx="12" fill="rgba(155,89,182,0.15)" stroke="#9B59B6" stroke-width="2">
+                                <animate attributeName="opacity" values="0.15;0.3;0.15" dur="5.5s" repeatCount="indefinite"/>
+                            </rect>
+                            <circle cx="22" cy="22" r="14" fill="rgba(155,89,182,0.3)" stroke="#9B59B6" stroke-width="2"/>
+                            <text x="22" y="27" fill="#9B59B6" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">4</text>
+                            <text x="50" y="20" fill="#9B59B6" font-family="Arial" font-size="11" font-weight="bold">Iterative</text>
+                            <text x="50" y="32" fill="#9B59B6" font-family="Arial" font-size="10" font-weight="bold">Refinement</text>
+                            <text x="50" y="45" fill="#ffffff" font-family="Arial" font-size="9">Continuous</text>
+                            <text x="50" y="55" fill="#9B59B6" font-family="Arial" font-size="8">improvement</text>
+                        </g>
+                        
+                        <!-- Animated Connection Lines -->
+                        <g class="connection-lines" opacity="0.6">
+                            <path d="M 170 105 Q 185 125 200 140" stroke="#39FF14" stroke-width="2" stroke-dasharray="6,6">
+                                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 230 105 Q 215 125 200 140" stroke="#FFD93D" stroke-width="2" stroke-dasharray="6,6">
+                                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 170 255 Q 185 235 200 185" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="6,6">
+                                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 230 255 Q 215 235 200 185" stroke="#9B59B6" stroke-width="2" stroke-dasharray="6,6">
+                                <animate attributeName="stroke-dashoffset" values="0;12;0" dur="3.5s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                        
+                        <!-- Statistics Section -->
+                        <g transform="translate(0, 320)">
+                            <!-- Background for stats -->
+                            <rect x="20" y="0" width="360" height="130" rx="15" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+                            
+                            <!-- Stats Grid -->
+                            <g transform="translate(40, 35)">
+                                <!-- 85+ User Satisfaction -->
+                                <g>
+                                    <circle cx="40" cy="22" r="28" fill="rgba(57,255,20,0.2)" stroke="#39FF14" stroke-width="3">
+                                        <animate attributeName="r" values="23;33;23" dur="4s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="16" fill="#39FF14" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">85%</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">User Satisfaction</text>
+                                </g>
+                                
+                                <!-- 100+ Design Projects -->
+                                <g transform="translate(90, 0)">
+                                    <circle cx="40" cy="22" r="28" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="3">
+                                        <animate attributeName="r" values="23;33;23" dur="4.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="16" fill="#FFD93D" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">100+</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Design Projects</text>
+                                </g>
+                                
+                                <!-- 65% Conversion Increase -->
+                                <g transform="translate(180, 0)">
+                                    <circle cx="40" cy="22" r="28" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="3">
+                                        <animate attributeName="r" values="23;33;23" dur="5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="13" fill="#FF6B6B" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">65%</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Conversion Increase</text>
+                                </g>
+                                
+                                <!-- 2-4w Design Timeline -->
+                                <g transform="translate(270, 0)">
+                                    <circle cx="40" cy="22" r="28" fill="rgba(155,89,182,0.2)" stroke="#9B59B6" stroke-width="3">
+                                        <animate attributeName="r" values="23;33;23" dur="5.5s" repeatCount="indefinite"/>
+                                    </circle>
+                                    <text x="40" y="14" fill="#9B59B6" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle">2-4w</text>
+                                    <text x="40" y="30" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Design Timeline</text>
+                                </g>
+                            </g>
+                            
+                            <!-- Design Process Flow -->
+                            <g transform="translate(40, 75)">
+                                <rect x="0" y="0" width="70" height="20" rx="10" fill="rgba(0,191,255,0.2)" stroke="#00BFFF" stroke-width="2">
+                                    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+                                </rect>
+                                <text x="35" y="13" fill="#00BFFF" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">Research</text>
+                            </g>
+                            
+                            <g transform="translate(120, 75)">
+                                <rect x="0" y="0" width="70" height="20" rx="10" fill="rgba(57,255,20,0.2)" stroke="#39FF14" stroke-width="2">
+                                    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3.5s" repeatCount="indefinite"/>
+                                </rect>
+                                <text x="35" y="13" fill="#39FF14" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">Design</text>
+                            </g>
+                            
+                            <g transform="translate(200, 75)">
+                                <rect x="0" y="0" width="70" height="20" rx="10" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="2">
+                                    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+                                </rect>
+                                <text x="35" y="13" fill="#FFD93D" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">Prototype</text>
+                            </g>
+                            
+                            <g transform="translate(280, 75)">
+                                <rect x="0" y="0" width="70" height="20" rx="10" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="2">
+                                    <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4.5s" repeatCount="indefinite"/>
+                                </rect>
+                                <text x="35" y="13" fill="#FF6B6B" font-family="Arial" font-size="9" font-weight="bold" text-anchor="middle">Test</text>
+                            </g>
+                            
+                            <!-- Bottom tagline -->
+                            <text x="180" y="115" fill="#00BFFF" font-family="Arial" font-size="12" font-weight="600" text-anchor="middle">
+                                Designing for Human Connection
+                            </text>
+                        </g>
+                        
+                        <!-- Decorative elements -->
+                        <g class="decorative" opacity="0.4">
+                            <circle cx="30" cy="450" r="5" fill="#00BFFF">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="370" cy="460" r="3" fill="#39FF14">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="200" cy="480" r="4" fill="#FFD93D">
+                                <animate attributeName="opacity" values="0.4;0.8;0.4" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>

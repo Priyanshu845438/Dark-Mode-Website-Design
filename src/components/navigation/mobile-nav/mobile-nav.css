@@ -89,9 +89,23 @@
 }
 
 .nav-logo {
-    height: 44px;
+    height: 48px;
     width: auto;
     object-fit: contain;
+    max-width: 180px;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+    .nav-logo {
+        height: 42px;
+        max-width: 160px;
+    }
 }
 
 .nav-brand-text {
