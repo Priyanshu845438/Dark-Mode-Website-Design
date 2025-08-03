@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Security: Protecting Your Digital Assets - Acadify Solution</title>
+    <meta name="description" content="Essential security measures and best practices for protecting your applications and data in cloud environments.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/styles/pages/blog-post.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../../index.html" class="breadcrumb-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../blog.html" class="breadcrumb-item">Blog</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item current">Cloud Security Guide</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header">
+        <div class="container">
+            <div class="post-header-content">
+                <div class="post-category">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Cloud Services</span>
+                </div>
+                <h1 class="post-title">Cloud Security: Protecting Your Digital Assets</h1>
+                <p class="post-subtitle">
+                    Essential security measures and best practices for protecting your applications and data in cloud environments.
+                </p>
+                <div class="post-meta">
+                    <div class="author-info">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <span class="author-name">Robert Smith</span>
+                            <span class="author-title">Cloud Security Architect</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Jul 8, 2025</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>9 min read</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span>2.7k views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="post-article">
+                    <div class="article-content">
+                        <h2>The Cloud Security Landscape</h2>
+                        <p>As organizations increasingly migrate to cloud environments, security becomes a shared responsibility between cloud providers and customers. Understanding this shared responsibility model and implementing comprehensive security measures is crucial for protecting digital assets and maintaining business continuity.</p>
+                        
+                        <h3>1. Shared Responsibility Model</h3>
+                        
+                        <div class="highlight-box">
+                            <h4>Cloud Provider Responsibilities:</h4>
+                            <ul>
+                                <li><strong>Physical Security:</strong> Data center security and access controls</li>
+                                <li><strong>Infrastructure Security:</strong> Network controls, host OS patching</li>
+                                <li><strong>Platform Security:</strong> Hypervisor and managed service security</li>
+                                <li><strong>Compliance:</strong> Infrastructure compliance certifications</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="highlight-box">
+                            <h4>Customer Responsibilities:</h4>
+                            <ul>
+                                <li><strong>Data Security:</strong> Data classification, encryption, backup</li>
+                                <li><strong>Identity Management:</strong> User access controls and authentication</li>
+                                <li><strong>Application Security:</strong> Code security and vulnerability management</li>
+                                <li><strong>Network Security:</strong> Firewall rules and network segmentation</li>
+                                <li><strong>Operating System:</strong> OS configuration and patching (for IaaS)</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>2. Identity and Access Management (IAM)</h3>
+                        <p>Proper IAM is the foundation of cloud security, controlling who has access to what resources.</p>
+                        
+                        <div class="code-block">
+                            <pre><code># AWS IAM Policy Example - Principle of Least Privilege
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "S3ReadOnlyAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:GetObjectVersion",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::company-data-bucket",
+        "arn:aws:s3:::company-data-bucket/*"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-server-side-encryption": "AES256"
+        },
+        "IpAddress": {
+          "aws:SourceIp": ["203.0.113.0/24", "198.51.100.0/24"]
+        }
+      }
+    },
+    {
+      "Sid": "CloudWatchLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:us-east-1:*:log-group:/aws/lambda/my-function"
+    }
+  ]
+}</code></pre>
+                        </div>
+                        
+                        <h4>Multi-Factor Authentication Implementation</h4>
+                        <div class="code-block">
+                            <pre><code># Python implementation for MFA validation
+import pyotp
+import qrcode
+import secrets
+from datetime import datetime, timedelta
+
+class MFAManager:
+    def __init__(self):
+        self.secret_key = secrets.token_hex(16)
+    
+    def generate_qr_code(self, user_email, service_name):
+        """Generate QR code for MFA setup"""
+        totp_uri = pyotp.totp.TOTP(self.secret_key).provisioning_uri(
+            user_email,
+            issuer_name=service_name
+        )
+        
+        qr = qrcode.QRCode(version=1, box_size=10, border=5)
+        qr.add_data(totp_uri)
+        qr.make(fit=True)
+        
+        return qr.make_image(fill_color="black", back_color="white")
+    
+    def verify_token(self, user_token, secret_key, window=1):
+        """Verify TOTP token with time window"""
+        totp = pyotp.TOTP(secret_key)
+        
+        # Check current time and adjacent time windows
+        for i in range(-window, window + 1):
+            time_step = datetime.now() + timedelta(seconds=30 * i)
+            if totp.verify(user_token, for_time=time_step):
+                return True
+        
+        return False
+    
+    def backup_codes_generate(self, count=10):
+        """Generate backup codes for account recovery"""
+        backup_codes = []
+        for _ in range(count):
+            code = ''.join([secrets.choice('0123456789ABCDEF') for _ in range(8)])
+            backup_codes.append(f"{code[:4]}-{code[4:]}")
+        
+        return backup_codes</code></pre>
+                        </div>
+                        
+                        <h3>3. Data Encryption</h3>
+                        <p>Encryption protects data both at rest and in transit, ensuring confidentiality even if unauthorized access occurs.</p>
+                        
+                        <h4>Encryption at Rest</h4>
+                        <div class="code-block">
+                            <pre><code># Python encryption implementation using Fernet
+from cryptography.fernet import Fernet
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+import base64
+import os
+
+class DataEncryption:
+    def __init__(self, password: str):
+        self.password = password.encode()
+        self.salt = os.urandom(16)
+        self.key = self._derive_key()
+        self.cipher = Fernet(self.key)
+    
+    def _derive_key(self):
+        """Derive encryption key from password"""
+        kdf = PBKDF2HMAC(
+            algorithm=hashes.SHA256(),
+            length=32,
+            salt=self.salt,
+            iterations=100000,
+        )
+        key = base64.urlsafe_b64encode(kdf.derive(self.password))
+        return key
+    
+    def encrypt_data(self, data: str) -> bytes:
+        """Encrypt data"""
+        return self.cipher.encrypt(data.encode())
+    
+    def decrypt_data(self, encrypted_data: bytes) -> str:
+        """Decrypt data"""
+        return self.cipher.decrypt(encrypted_data).decode()
+    
+    def encrypt_file(self, file_path: str, output_path: str):
+        """Encrypt file"""
+        with open(file_path, 'rb') as file:
+            file_data = file.read()
+        
+        encrypted_data = self.cipher.encrypt(file_data)
+        
+        with open(output_path, 'wb') as encrypted_file:
+            encrypted_file.write(self.salt + encrypted_data)
+    
+    def decrypt_file(self, encrypted_file_path: str, output_path: str):
+        """Decrypt file"""
+        with open(encrypted_file_path, 'rb') as encrypted_file:
+            salt = encrypted_file.read(16)
+            encrypted_data = encrypted_file.read()
+        
+        # Re-derive key with stored salt
+        kdf = PBKDF2HMAC(
+            algorithm=hashes.SHA256(),
+            length=32,
+            salt=salt,
+            iterations=100000,
+        )
+        key = base64.urlsafe_b64encode(kdf.derive(self.password))
+        cipher = Fernet(key)
+        
+        decrypted_data = cipher.decrypt(encrypted_data)
+        
+        with open(output_path, 'wb') as decrypted_file:
+            decrypted_file.write(decrypted_data)</code></pre>
+                        </div>
+                        
+                        <h4>TLS Configuration</h4>
+                        <div class="code-block">
+                            <pre><code># Nginx TLS configuration
+server {
+    listen 443 ssl http2;
+    server_name api.company.com;
+    
+    # TLS certificates
+    ssl_certificate /etc/ssl/certs/api.company.com.crt;
+    ssl_certificate_key /etc/ssl/private/api.company.com.key;
+    
+    # TLS configuration
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+    
+    # Perfect Forward Secrecy
+    ssl_ecdh_curve secp384r1;
+    
+    # OCSP stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+    
+    # Security headers
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';" always;
+    
+    # Disable server tokens
+    server_tokens off;
+    
+    location / {
+        proxy_pass http://backend;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}</code></pre>
+                        </div>
+                        
+                        <h3>4. Network Security</h3>
+                        <p>Implementing proper network segmentation and controls to limit attack surfaces.</p>
+                        
+                        <div class="code-block">
+                            <pre><code># Terraform configuration for VPC security
+resource "aws_vpc" "main" {
+  cidr_block           = "10.0.0.0/16"
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+  
+  tags = {
+    Name = "secure-vpc"
+  }
+}
+
+# Public subnet for load balancers
+resource "aws_subnet" "public" {
+  count             = 2
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.${count.index + 1}.0/24"
+  availability_zone = data.aws_availability_zones.available.names[count.index]
+  
+  map_public_ip_on_launch = true
+  
+  tags = {
+    Name = "public-subnet-${count.index + 1}"
+    Type = "public"
+  }
+}
+
+# Private subnet for application servers
+resource "aws_subnet" "private" {
+  count             = 2
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.${count.index + 10}.0/24"
+  availability_zone = data.aws_availability_zones.available.names[count.index]
+  
+  tags = {
+    Name = "private-subnet-${count.index + 1}"
+    Type = "private"
+  }
+}
+
+# Database subnet (isolated)
+resource "aws_subnet" "database" {
+  count             = 2
+  vpc_id            = aws_vpc.main.id
+  cidr_block        = "10.0.${count.index + 20}.0/24"
+  availability_zone = data.aws_availability_zones.available.names[count.index]
+  
+  tags = {
+    Name = "database-subnet-${count.index + 1}"
+    Type = "database"
+  }
+}
+
+# Security group for web tier
+resource "aws_security_group" "web" {
+  name_prefix = "web-sg"
+  vpc_id      = aws_vpc.main.id
+  
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Security group for application tier
+resource "aws_security_group" "app" {
+  name_prefix = "app-sg"
+  vpc_id      = aws_vpc.main.id
+  
+  ingress {
+    from_port       = 8080
+    to_port         = 8080
+    protocol        = "tcp"
+    security_groups = [aws_security_group.web.id]
+  }
+  
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Security group for database tier
+resource "aws_security_group" "database" {
+  name_prefix = "db-sg"
+  vpc_id      = aws_vpc.main.id
+  
+  ingress {
+    from_port       = 5432
+    to_port         = 5432
+    protocol        = "tcp"
+    security_groups = [aws_security_group.app.id]
+  }
+}</code></pre>
+                        </div>
+                        
+                        <h3>5. Security Monitoring and Logging</h3>
+                        <p>Comprehensive monitoring and logging for threat detection and incident response.</p>
+                        
+                        <div class="code-block">
+                            <pre><code># Security monitoring with Python
+import json
+import boto3
+import datetime
+from typing import Dict, List
+
+class SecurityMonitor:
+    def __init__(self):
+        self.cloudtrail = boto3.client('cloudtrail')
+        self.guardduty = boto3.client('guardduty')
+        self.cloudwatch = boto3.client('cloudwatch')
+        self.sns = boto3.client('sns')
+    
+    def analyze_failed_logins(self, time_window_hours: int = 1) -> List[Dict]:
+        """Analyze failed login attempts"""
+        end_time = datetime.datetime.now()
+        start_time = end_time - datetime.timedelta(hours=time_window_hours)
+        
+        response = self.cloudtrail.lookup_events(
+            LookupAttributes=[
+                {
+                    'AttributeKey': 'EventName',
+                    'AttributeValue': 'ConsoleLogin'
+                }
+            ],
+            StartTime=start_time,
+            EndTime=end_time
+        )
+        
+        failed_logins = []
+        for event in response['Events']:
+            event_detail = json.loads(event['CloudTrailEvent'])
+            if event_detail.get('errorCode') == 'SigninFailure':
+                failed_logins.append({
+                    'timestamp': event['EventTime'],
+                    'source_ip': event_detail.get('sourceIPAddress'),
+                    'user_agent': event_detail.get('userAgent'),
+                    'error_message': event_detail.get('errorMessage')
+                })
+        
+        # Alert if too many failed attempts
+        if len(failed_logins) > 5:
+            self.send_security_alert(
+                'Multiple Failed Login Attempts',
+                f'Detected {len(failed_logins)} failed login attempts in the last hour'
+            )
+        
+        return failed_logins
+    
+    def check_unusual_api_activity(self, api_call_threshold: int = 1000):
+        """Monitor for unusual API activity"""
+        # Get API call metrics from CloudWatch
+        response = self.cloudwatch.get_metric_statistics(
+            Namespace='AWS/CloudTrail',
+            MetricName='APICallCount',
+            Dimensions=[
+                {
+                    'Name': 'Region',
+                    'Value': 'us-east-1'
+                }
+            ],
+            StartTime=datetime.datetime.now() - datetime.timedelta(hours=1),
+            EndTime=datetime.datetime.now(),
+            Period=3600,
+            Statistics=['Sum']
+        )
+        
+        if response['Datapoints']:
+            api_calls = response['Datapoints'][0]['Sum']
+            if api_calls > api_call_threshold:
+                self.send_security_alert(
+                    'Unusual API Activity',
+                    f'Detected {api_calls} API calls in the last hour (threshold: {api_call_threshold})'
+                )
+    
+    def monitor_privilege_escalation(self):
+        """Monitor for privilege escalation attempts"""
+        suspicious_actions = [
+            'AttachUserPolicy',
+            'AttachRolePolicy',
+            'CreateRole',
+            'PutUserPolicy',
+            'PutRolePolicy'
+        ]
+        
+        end_time = datetime.datetime.now()
+        start_time = end_time - datetime.timedelta(hours=24)
+        
+        for action in suspicious_actions:
+            response = self.cloudtrail.lookup_events(
+                LookupAttributes=[
+                    {
+                        'AttributeKey': 'EventName',
+                        'AttributeValue': action
+                    }
+                ],
+                StartTime=start_time,
+                EndTime=end_time
+            )
+            
+            if response['Events']:
+                self.analyze_privilege_events(response['Events'], action)
+    
+    def send_security_alert(self, title: str, message: str):
+        """Send security alert via SNS"""
+        alert_message = {
+            'title': title,
+            'message': message,
+            'timestamp': datetime.datetime.now().isoformat(),
+            'severity': 'HIGH'
+        }
+        
+        self.sns.publish(
+            TopicArn='arn:aws:sns:us-east-1:123456789012:security-alerts',
+            Message=json.dumps(alert_message),
+            Subject=f'Security Alert: {title}'
+        )</code></pre>
+                        </div>
+                        
+                        <h3>6. Backup and Disaster Recovery</h3>
+                        
+                        <div class="highlight-box">
+                            <h4>Backup Strategy Components:</h4>
+                            <ul>
+                                <li><strong>Automated Backups:</strong> Regular, automated backup schedules</li>
+                                <li><strong>Cross-Region Replication:</strong> Geographic distribution of backups</li>
+                                <li><strong>Point-in-Time Recovery:</strong> Granular recovery options</li>
+                                <li><strong>Backup Testing:</strong> Regular restore testing procedures</li>
+                                <li><strong>RTO/RPO Planning:</strong> Define recovery time and point objectives</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>7. Compliance and Governance</h3>
+                        <p>Ensuring compliance with industry standards and regulations.</p>
+                        
+                        <div class="code-block">
+                            <pre><code># Compliance monitoring script
+class ComplianceMonitor:
+    def __init__(self):
+        self.compliance_frameworks = {
+            'SOC2': self.check_soc2_compliance,
+            'PCI_DSS': self.check_pci_compliance,
+            'HIPAA': self.check_hipaa_compliance,
+            'GDPR': self.check_gdpr_compliance
+        }
+    
+    def check_soc2_compliance(self):
+        """Check SOC 2 compliance requirements"""
+        checks = {
+            'encryption_at_rest': self.verify_encryption_at_rest(),
+            'encryption_in_transit': self.verify_encryption_in_transit(),
+            'access_controls': self.verify_access_controls(),
+            'monitoring': self.verify_monitoring(),
+            'backup_procedures': self.verify_backup_procedures()
+        }
+        
+        return self.evaluate_compliance(checks, 'SOC2')
+    
+    def check_pci_compliance(self):
+        """Check PCI DSS compliance requirements"""
+        checks = {
+            'network_segmentation': self.verify_network_segmentation(),
+            'vulnerability_scanning': self.verify_vulnerability_scanning(),
+            'access_restrictions': self.verify_access_restrictions(),
+            'monitoring_access': self.verify_monitoring_access(),
+            'regular_testing': self.verify_security_testing()
+        }
+        
+        return self.evaluate_compliance(checks, 'PCI_DSS')
+    
+    def generate_compliance_report(self, framework: str):
+        """Generate compliance report"""
+        if framework not in self.compliance_frameworks:
+            raise ValueError(f"Unsupported framework: {framework}")
+        
+        results = self.compliance_frameworks[framework]()
+        
+        report = {
+            'framework': framework,
+            'timestamp': datetime.datetime.now().isoformat(),
+            'overall_score': results['score'],
+            'passed_checks': results['passed'],
+            'failed_checks': results['failed'],
+            'recommendations': results['recommendations']
+        }
+        
+        return report</code></pre>
+                        </div>
+                        
+                        <h3>8. Security Best Practices Checklist</h3>
+                        
+                        <div class="highlight-box">
+                            <h4>Essential Security Practices:</h4>
+                            <ul>
+                                <li><strong>Principle of Least Privilege:</strong> Grant minimum necessary permissions</li>
+                                <li><strong>Defense in Depth:</strong> Multiple layers of security controls</li>
+                                <li><strong>Regular Security Assessments:</strong> Periodic vulnerability testing</li>
+                                <li><strong>Incident Response Plan:</strong> Documented response procedures</li>
+                                <li><strong>Security Training:</strong> Regular team security education</li>
+                                <li><strong>Patch Management:</strong> Timely security updates</li>
+                                <li><strong>Data Classification:</strong> Categorize and protect sensitive data</li>
+                                <li><strong>Zero Trust Architecture:</strong> Never trust, always verify</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>9. Emerging Security Threats</h3>
+                        <p>Stay informed about evolving threats in cloud environments:</p>
+                        
+                        <ul>
+                            <li><strong>Container Security:</strong> Securing containerized applications</li>
+                            <li><strong>Serverless Security:</strong> Function-as-a-Service security concerns</li>
+                            <li><strong>Supply Chain Attacks:</strong> Third-party dependency risks</li>
+                            <li><strong>AI/ML Security:</strong> Protecting machine learning models</li>
+                            <li><strong>Quantum Computing:</strong> Preparing for post-quantum cryptography</li>
+                        </ul>
+                        
+                        <h2>Conclusion</h2>
+                        <p>Cloud security is an ongoing journey that requires continuous attention, regular updates, and proactive measures. The shared responsibility model means that while cloud providers secure the infrastructure, customers must secure their data, applications, and access controls.</p>
+                        
+                        <p>Implement a comprehensive security strategy that includes strong identity management, data encryption, network security, monitoring, and compliance. Regular security assessments and team training ensure that your security posture evolves with the threat landscape.</p>
+                    </div>
+                    
+                    <!-- Social Share -->
+                    <div class="social-share">
+                        <h4>Share this article</h4>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="#" class="share-btn linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="#" class="share-btn facebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="post-tags">
+                        <span class="tag">Cloud Security</span>
+                        <span class="tag">Cybersecurity</span>
+                        <span class="tag">Data Protection</span>
+                        <span class="tag">Compliance</span>
+                        <span class="tag">Risk Management</span>
+                    </div>
+                </article>
+                
+                <!-- Sidebar -->
+                <aside class="post-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About the Author</h3>
+                        <div class="author-card">
+                            <div class="author-avatar-large">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>Robert Smith</h4>
+                            <p>Cloud Security Architect with 12+ years of experience in cybersecurity and cloud infrastructure. Certified in AWS, Azure, and multiple security frameworks including CISSP and CISM.</p>
+                            <div class="author-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Related Articles</h3>
+                        <div class="related-posts">
+                            <a href="microservices-architecture.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>Microservices Architecture</h5>
+                                    <span>14 min read</span>
+                                </div>
+                            </a>
+                            <a href="ml-model-deployment.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>ML Model Deployment</h5>
+                                    <span>16 min read</span>
+                                </div>
+                            </a>
+                            <a href="progressive-web-apps.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>Building Progressive Web Apps</h5>
+                                    <span>13 min read</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Newsletter</h3>
+                        <p>Get the latest security insights delivered to your inbox.</p>
+                        <form class="sidebar-newsletter">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
+    <!-- Scripts -->
+    <script src="../../src/components/header/header-new.js?v=15"></script>
+    <script src="../../src/components/footer/footer.js"></script>
+    <script src="../../src/scripts/blog-post.js"></script>
+    <script src="../../link-validation.js"></script>
+</body>
+</html>

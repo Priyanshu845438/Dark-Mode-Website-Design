@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Progressive Web Apps (PWAs) for Better Performance - Acadify Solution</title>
+    <meta name="description" content="Step-by-step guide to creating Progressive Web Apps that deliver native app experiences with web technologies.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/styles/pages/blog-post.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../../index.html" class="breadcrumb-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="../blog.html" class="breadcrumb-item">Blog</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item current">Progressive Web Apps</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Blog Post Header -->
+    <section class="blog-post-header">
+        <div class="container">
+            <div class="post-header-content">
+                <div class="post-category">
+                    <i class="fas fa-code"></i>
+                    <span>Web Development</span>
+                </div>
+                <h1 class="post-title">Building Progressive Web Apps (PWAs) for Better Performance</h1>
+                <p class="post-subtitle">
+                    Step-by-step guide to creating Progressive Web Apps that deliver native app experiences with web technologies.
+                </p>
+                <div class="post-meta">
+                    <div class="author-info">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-details">
+                            <span class="author-name">James Wilson</span>
+                            <span class="author-title">Frontend Architect</span>
+                        </div>
+                    </div>
+                    <div class="post-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Jul 14, 2025</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>13 min read</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-eye"></i>
+                            <span>2.3k views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="post-article">
+                    <div class="article-content">
+                        <h2>What are Progressive Web Apps?</h2>
+                        <p>Progressive Web Apps (PWAs) are web applications that use modern web capabilities to deliver an app-like experience to users. They combine the best of web and mobile apps, offering reliability, speed, and engagement that rivals native applications.</p>
+                        
+                        <h3>1. Core PWA Principles</h3>
+                        
+                        <div class="highlight-box">
+                            <h4>PWA Characteristics:</h4>
+                            <ul>
+                                <li><strong>Progressive:</strong> Works for every user, regardless of browser choice</li>
+                                <li><strong>Responsive:</strong> Fits any form factor: desktop, mobile, tablet</li>
+                                <li><strong>Connectivity Independent:</strong> Works offline or with poor connectivity</li>
+                                <li><strong>App-like:</strong> Feels like a native app with app-style interactions</li>
+                                <li><strong>Safe:</strong> Served via HTTPS to prevent tampering</li>
+                                <li><strong>Re-engageable:</strong> Makes re-engagement easy through push notifications</li>
+                                <li><strong>Installable:</strong> Can be installed on device home screen</li>
+                                <li><strong>Fresh:</strong> Always up-to-date thanks to service worker update process</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>2. Building the Foundation: Web App Manifest</h3>
+                        <p>The web app manifest provides metadata about your application, enabling installation and app-like behavior.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// manifest.json
+{
+  "name": "Acadify Task Manager",
+  "short_name": "TaskManager",
+  "description": "A powerful task management application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00BFFF",
+  "orientation": "portrait-primary",
+  "categories": ["productivity", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of the application"
+    },
+    {
+      "src": "/screenshots/mobile-1.png",
+      "sizes": "375x667",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of the application"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Task",
+      "short_name": "New Task",
+      "description": "Create a new task",
+      "url": "/new-task",
+      "icons": [
+        {
+          "src": "/icons/new-task-96x96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}</code></pre>
+                        </div>
+                        
+                        <h3>3. Service Workers: The Heart of PWAs</h3>
+                        <p>Service workers enable offline functionality, background sync, and push notifications.</p>
+                        
+                        <h4>Basic Service Worker Setup</h4>
+                        <div class="code-block">
+                            <pre><code>// sw.js - Service Worker
+const CACHE_NAME = 'task-manager-v1';
+const urlsToCache = [
+  '/',
+  '/styles/main.css',
+  '/scripts/app.js',
+  '/offline.html',
+  '/icons/icon-192x192.png'
+];
+
+// Install event - cache resources
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+
+// Fetch event - serve from cache, fallback to network
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        // Return cached resource if available
+        if (response) {
+          return response;
+        }
+        
+        // Clone the request for fetch
+        const fetchRequest = event.request.clone();
+        
+        return fetch(fetchRequest).then(response => {
+          // Check if valid response
+          if (!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
+          }
+          
+          // Clone response for caching
+          const responseToCache = response.clone();
+          
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              cache.put(event.request, responseToCache);
+            });
+          
+          return response;
+        }).catch(() => {
+          // Return offline page for navigation requests
+          if (event.request.destination === 'document') {
+            return caches.match('/offline.html');
+          }
+        });
+      })
+  );
+});</code></pre>
+                        </div>
+                        
+                        <h4>Advanced Caching Strategies</h4>
+                        <div class="code-block">
+                            <pre><code>// Advanced caching strategies
+class CacheManager {
+  constructor() {
+    this.CACHE_NAMES = {
+      static: 'static-cache-v1',
+      dynamic: 'dynamic-cache-v1',
+      api: 'api-cache-v1'
+    };
+  }
+  
+  // Cache First Strategy (for static assets)
+  async cacheFirst(request) {
+    const cache = await caches.open(this.CACHE_NAMES.static);
+    const cachedResponse = await cache.match(request);
+    
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    const networkResponse = await fetch(request);
+    cache.put(request, networkResponse.clone());
+    return networkResponse;
+  }
+  
+  // Network First Strategy (for API calls)
+  async networkFirst(request) {
+    const cache = await caches.open(this.CACHE_NAMES.api);
+    
+    try {
+      const networkResponse = await fetch(request);
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    } catch (error) {
+      const cachedResponse = await cache.match(request);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      throw error;
+    }
+  }
+  
+  // Stale While Revalidate Strategy (for dynamic content)
+  async staleWhileRevalidate(request) {
+    const cache = await caches.open(this.CACHE_NAMES.dynamic);
+    const cachedResponse = await cache.match(request);
+    
+    const fetchPromise = fetch(request).then(networkResponse => {
+      cache.put(request, networkResponse.clone());
+      return networkResponse;
+    });
+    
+    return cachedResponse || fetchPromise;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <h3>4. Implementing Push Notifications</h3>
+                        <p>Push notifications help re-engage users and provide timely updates.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// Push notification implementation
+class NotificationManager {
+  async requestPermission() {
+    const permission = await Notification.requestPermission();
+    if (permission === 'granted') {
+      console.log('Notification permission granted');
+      return this.subscribeToNotifications();
+    }
+    return null;
+  }
+  
+  async subscribeToNotifications() {
+    const registration = await navigator.serviceWorker.ready;
+    
+    const subscription = await registration.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: this.urlBase64ToUint8Array(this.vapidPublicKey)
+    });
+    
+    // Send subscription to server
+    await this.sendSubscriptionToServer(subscription);
+    return subscription;
+  }
+  
+  urlBase64ToUint8Array(base64String) {
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding)
+      .replace(/-/g, '+')
+      .replace(/_/g, '/');
+    
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+    
+    for (let i = 0; i < rawData.length; ++i) {
+      outputArray[i] = rawData.charCodeAt(i);
+    }
+    return outputArray;
+  }
+  
+  async sendSubscriptionToServer(subscription) {
+    return fetch('/api/notifications/subscribe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(subscription)
+    });
+  }
+}
+
+// In service worker - handle push events
+self.addEventListener('push', event => {
+  const options = {
+    body: event.data ? event.data.text() : 'New notification',
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/badge-72x72.png',
+    data: {
+      url: '/tasks'
+    },
+    actions: [
+      {
+        action: 'view',
+        title: 'View Tasks',
+        icon: '/icons/view-icon.png'
+      },
+      {
+        action: 'dismiss',
+        title: 'Dismiss',
+        icon: '/icons/dismiss-icon.png'
+      }
+    ]
+  };
+  
+  event.waitUntil(
+    self.registration.showNotification('Task Manager', options)
+  );
+});</code></pre>
+                        </div>
+                        
+                        <h3>5. Background Sync</h3>
+                        <p>Background sync allows your app to defer actions until the user has stable connectivity.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// Background sync implementation
+class BackgroundSync {
+  async registerSync(tag) {
+    const registration = await navigator.serviceWorker.ready;
+    return registration.sync.register(tag);
+  }
+  
+  async syncTasks() {
+    // Get pending tasks from IndexedDB
+    const pendingTasks = await this.getPendingTasks();
+    
+    if (pendingTasks.length === 0) {
+      return;
+    }
+    
+    try {
+      // Sync with server
+      for (const task of pendingTasks) {
+        await fetch('/api/tasks', {
+          method: 'POST',
+          body: JSON.stringify(task),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        // Remove from pending queue
+        await this.removePendingTask(task.id);
+      }
+    } catch (error) {
+      console.error('Sync failed:', error);
+      // Tasks remain in queue for next sync attempt
+    }
+  }
+}
+
+// In service worker - handle background sync
+self.addEventListener('sync', event => {
+  if (event.tag === 'task-sync') {
+    event.waitUntil(
+      syncTasks()
+    );
+  }
+});
+
+async function syncTasks() {
+  const db = await openDB('TaskManager', 1);
+  const tx = db.transaction('pendingTasks', 'readonly');
+  const store = tx.objectStore('pendingTasks');
+  const pendingTasks = await store.getAll();
+  
+  for (const task of pendingTasks) {
+    try {
+      const response = await fetch('/api/tasks', {
+        method: 'POST',
+        body: JSON.stringify(task.data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Remove from pending queue
+        const deleteTx = db.transaction('pendingTasks', 'readwrite');
+        const deleteStore = deleteTx.objectStore('pendingTasks');
+        await deleteStore.delete(task.id);
+      }
+    } catch (error) {
+      console.error('Failed to sync task:', error);
+    }
+  }
+}</code></pre>
+                        </div>
+                        
+                        <h3>6. App Shell Architecture</h3>
+                        <p>The app shell model separates the core application infrastructure from the data.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// App shell implementation
+class AppShell {
+  constructor() {
+    this.shell = {
+      header: document.querySelector('#app-header'),
+      navigation: document.querySelector('#app-nav'),
+      content: document.querySelector('#app-content'),
+      footer: document.querySelector('#app-footer')
+    };
+    
+    this.loadShell();
+  }
+  
+  async loadShell() {
+    // Load cached shell components
+    const cacheShell = await this.getCachedShell();
+    if (cacheShell) {
+      this.renderShell(cacheShell);
+    }
+    
+    // Load content dynamically
+    this.loadContent();
+  }
+  
+  async getCachedShell() {
+    const cache = await caches.open('app-shell-v1');
+    const shellResponse = await cache.match('/shell.html');
+    
+    if (shellResponse) {
+      return await shellResponse.text();
+    }
+    
+    return null;
+  }
+  
+  renderShell(shellHTML) {
+    const parser = new DOMParser();
+    const shellDoc = parser.parseFromString(shellHTML, 'text/html');
+    
+    // Update shell components
+    this.shell.header.innerHTML = shellDoc.querySelector('#app-header').innerHTML;
+    this.shell.navigation.innerHTML = shellDoc.querySelector('#app-nav').innerHTML;
+    this.shell.footer.innerHTML = shellDoc.querySelector('#app-footer').innerHTML;
+  }
+  
+  async loadContent() {
+    const path = window.location.pathname;
+    
+    try {
+      // Try to load from cache first
+      const cache = await caches.open('dynamic-content-v1');
+      let response = await cache.match(path);
+      
+      if (!response) {
+        // Fetch from network
+        response = await fetch(`/api/content${path}`);
+        
+        if (response.ok) {
+          cache.put(path, response.clone());
+        }
+      }
+      
+      const content = await response.json();
+      this.renderContent(content);
+    } catch (error) {
+      this.renderOfflineContent();
+    }
+  }
+  
+  renderContent(content) {
+    this.shell.content.innerHTML = content.html;
+    
+    // Update page title and meta tags
+    document.title = content.title;
+    
+    // Trigger content-specific JavaScript
+    this.initializeContentScripts();
+  }
+  
+  renderOfflineContent() {
+    this.shell.content.innerHTML = `
+      &lt;div class="offline-message"&gt;
+        &lt;h2&gt;You're offline&lt;/h2&gt;
+        &lt;p&gt;Please check your connection and try again.&lt;/p&gt;
+        &lt;button onclick="window.location.reload()"&gt;Retry&lt;/button&gt;
+      &lt;/div&gt;
+    `;
+  }
+}</code></pre>
+                        </div>
+                        
+                        <h3>7. Performance Optimization</h3>
+                        
+                        <div class="highlight-box">
+                            <h4>PWA Performance Best Practices:</h4>
+                            <ul>
+                                <li><strong>Critical Resource Prioritization:</strong> Load critical CSS and JS first</li>
+                                <li><strong>Code Splitting:</strong> Split code into smaller, cacheable chunks</li>
+                                <li><strong>Lazy Loading:</strong> Load resources only when needed</li>
+                                <li><strong>Service Worker Optimization:</strong> Efficient caching strategies</li>
+                                <li><strong>Bundle Optimization:</strong> Tree shaking and minification</li>
+                            </ul>
+                        </div>
+                        
+                        <h3>8. Testing and Debugging PWAs</h3>
+                        <p>Comprehensive testing ensures your PWA works across all scenarios.</p>
+                        
+                        <div class="code-block">
+                            <pre><code>// PWA testing checklist
+const pwaTestingChecklist = {
+  manifest: {
+    validation: "Use Chrome DevTools Application tab",
+    installability: "Test install banner and process",
+    icons: "Verify all icon sizes display correctly"
+  },
+  serviceWorker: {
+    registration: "Check successful SW registration",
+    caching: "Verify resources are cached properly",
+    updates: "Test SW update mechanism",
+    offline: "Test offline functionality"
+  },
+  performance: {
+    lighthouse: "Run Lighthouse PWA audit",
+    webVitals: "Measure Core Web Vitals",
+    networkThrottling: "Test on slow connections"
+  },
+  crossBrowser: {
+    chrome: "Full PWA support",
+    firefox: "Most features supported",
+    safari: "Limited PWA support",
+    edge: "Full PWA support"
+  }
+};</code></pre>
+                        </div>
+                        
+                        <h3>9. PWA Distribution and Installation</h3>
+                        <p>PWAs can be distributed through multiple channels:</p>
+                        
+                        <ul>
+                            <li><strong>Web:</strong> Direct URL sharing and browser install prompts</li>
+                            <li><strong>App Stores:</strong> Google Play Store, Microsoft Store</li>
+                            <li><strong>Enterprise:</strong> Internal distribution systems</li>
+                            <li><strong>Progressive Enhancement:</strong> Gradual feature enablement</li>
+                        </ul>
+                        
+                        <h2>Conclusion</h2>
+                        <p>Progressive Web Apps represent the future of web development, combining the reach of the web with the experience of native apps. By implementing service workers, web app manifests, and modern web APIs, you can create applications that are fast, reliable, and engaging.</p>
+                        
+                        <p>The key to successful PWA development is progressive enhancement—start with a solid web foundation and gradually add PWA features. Focus on performance, reliability, and user experience to create apps that users love to use and install.</p>
+                    </div>
+                    
+                    <!-- Social Share -->
+                    <div class="social-share">
+                        <h4>Share this article</h4>
+                        <div class="share-buttons">
+                            <a href="#" class="share-btn twitter">
+                                <i class="fab fa-twitter"></i>
+                                Twitter
+                            </a>
+                            <a href="#" class="share-btn linkedin">
+                                <i class="fab fa-linkedin"></i>
+                                LinkedIn
+                            </a>
+                            <a href="#" class="share-btn facebook">
+                                <i class="fab fa-facebook"></i>
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags -->
+                    <div class="post-tags">
+                        <span class="tag">Progressive Web Apps</span>
+                        <span class="tag">Service Workers</span>
+                        <span class="tag">Web Development</span>
+                        <span class="tag">Performance</span>
+                        <span class="tag">Mobile Web</span>
+                    </div>
+                </article>
+                
+                <!-- Sidebar -->
+                <aside class="post-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>About the Author</h3>
+                        <div class="author-card">
+                            <div class="author-avatar-large">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h4>James Wilson</h4>
+                            <p>Frontend Architect with 10+ years of experience in web development and progressive web technologies. Specialized in performance optimization and modern web architectures.</p>
+                            <div class="author-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Related Articles</h3>
+                        <div class="related-posts">
+                            <a href="react-development-2025.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>Modern React Development</h5>
+                                    <span>8 min read</span>
+                                </div>
+                            </a>
+                            <a href="microservices-architecture.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>Microservices Architecture</h5>
+                                    <span>14 min read</span>
+                                </div>
+                            </a>
+                            <a href="cloud-security-guide.html" class="related-post">
+                                <div class="related-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="related-content">
+                                    <h5>Cloud Security Guide</h5>
+                                    <span>9 min read</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Newsletter</h3>
+                        <p>Get the latest web development insights.</p>
+                        <form class="sidebar-newsletter">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
+    <!-- Scripts -->
+    <script src="../../src/components/header/header-new.js?v=15"></script>
+    <script src="../../src/components/footer/footer.js"></script>
+    <script src="../../src/scripts/blog-post.js"></script>
+    <script src="../../link-validation.js"></script>
+</body>
+</html>

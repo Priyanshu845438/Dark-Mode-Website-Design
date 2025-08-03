@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Acadify Solution</title>
-    <meta name="description" content="Stay updated with the latest trends in technology, web development, and digital transformation.">
+    <meta name="description" content="Stay updated with the latest insights in technology, web development, AI solutions, and digital transformation trends.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../src/styles/global.css">
     <link rel="stylesheet" href="../src/styles/utilities.css">
-    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../src/components/footer/footer.css?v=2">
+    <link rel="stylesheet" href="../src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../src/styles/pages/blog.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,286 +25,496 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
     
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
         <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Blog</span>
-            </div>
-            <h1 class="page-title">Our Blog</h1>
-            <p class="page-subtitle">Insights, tutorials, and industry trends from our experts</p>
+            <nav class="breadcrumb">
+                <a href="../index.html" class="breadcrumb-item">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-item current">Blog</span>
+            </nav>
         </div>
     </section>
 
-    <!-- Blog Overview -->
-    <section class="service-overview">
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
         <div class="container">
-            <div class="service-content">
-                <div class="service-description">
-                    <h2>Latest Insights & Updates</h2>
-                    <p>Stay informed with the latest trends, insights, and best practices in technology. Our team shares expertise on web development, digital transformation, and industry innovations.</p>
-                    
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>Industry Insights</h4>
-                                <p>Expert analysis of technology trends and market developments</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-code"></i>
-                            <div>
-                                <h4>Technical Tutorials</h4>
-                                <p>Step-by-step guides and development best practices</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-rocket"></i>
-                            <div>
-                                <h4>Success Stories</h4>
-                                <p>Case studies and client project showcases</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="hero-background">
+                <div class="hero-particles"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-blog"></i>
+                    <span>Knowledge Hub</span>
                 </div>
-                
-                <div class="service-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-blog"></i>
-                        <p>Blog Content</p>
+                <h1 class="hero-title">
+                    <span class="gradient-text">Latest Insights</span>
+                    <br>& Tech Trends
+                </h1>
+                <p class="hero-subtitle">
+                    Discover cutting-edge technology insights, development tutorials, 
+                    and industry trends from our expert team. Stay ahead in the digital transformation journey.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Expert Articles</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Monthly Readers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Reader Satisfaction</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQs Section -->
-    <section id="faqs" class="social-platforms">
+    <!-- Blog Categories Filter -->
+    <section class="blog-categories">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="platforms-grid">
-                <div class="platform-card">
-                    <i class="fas fa-question-circle"></i>
-                    <h3>What services do you offer?</h3>
-                    <p>We provide comprehensive technology solutions including web development, mobile apps, UI/UX design, and digital marketing services.</p>
-                </div>
-                <div class="platform-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>How long does a project take?</h3>
-                    <p>Project timelines vary based on complexity. Web projects typically take 4-12 weeks, while mobile apps may require 8-16 weeks.</p>
-                </div>
-                <div class="platform-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Do you provide ongoing support?</h3>
-                    <p>Yes, we offer comprehensive maintenance and support packages to keep your applications running smoothly post-launch.</p>
-                </div>
-                <div class="platform-card">
-                    <i class="fas fa-dollar-sign"></i>
-                    <h3>How do you price your services?</h3>
-                    <p>We provide customized quotes based on project requirements. Contact us for a detailed proposal tailored to your needs.</p>
-                </div>
+            <div class="categories-wrapper">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="web-development">Web Development</button>
+                <button class="category-btn" data-category="mobile-development">Mobile Development</button>
+                <button class="category-btn" data-category="ai-ml">AI & Machine Learning</button>
+                <button class="category-btn" data-category="ui-ux">UI/UX Design</button>
+                <button class="category-btn" data-category="cloud-services">Cloud Services</button>
+                <button class="category-btn" data-category="digital-marketing">Digital Marketing</button>
             </div>
         </div>
     </section>
 
-    <!-- Success Stories Section -->
-    <section id="success-stories" class="seo-process">
-        <div class="container">
-            <h2 class="section-title">Success Stories</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>EduTech Platform</h3>
-                    <p>Developed a comprehensive learning management system serving 10,000+ students with 99.9% uptime</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>E-commerce Solution</h3>
-                    <p>Built a scalable e-commerce platform that increased client sales by 300% within the first year</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Healthcare App</h3>
-                    <p>Created a telemedicine application connecting 5,000+ patients with healthcare providers</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number"><i class="fas fa-chart-line"></i></div>
-                    <h3>FinTech Platform</h3>
-                    <p>Delivered a secure payment processing system handling $1M+ in transactions monthly</p>
-                </div>
-            </div>
-        </div>
-    </section>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Grid -->
+    <!-- Blog Grid Section -->
     <section class="blog-grid-section">
         <div class="container">
             <div class="blog-grid">
-                <article class="blog-card">
+                <!-- Blog Post 1 -->
+                <article class="blog-card" data-category="web-development">
                     <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-mobile-alt"></i>
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
                         </div>
+                        <div class="blog-category-tag">Web Development</div>
                     </div>
                     <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Mobile Development</span>
-                            <span class="article-date">July 28, 2025</span>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Sarah Johnson</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Aug 1, 2025</span>
+                            </div>
                         </div>
-                        <h3 class="blog-title">Building Cross-Platform Apps with React Native</h3>
+                        <h3 class="blog-title">Modern React Development: Best Practices for 2025</h3>
                         <p class="blog-excerpt">
-                            Learn the best practices for developing high-performance mobile applications that work seamlessly across iOS and Android platforms.
+                            Explore the latest React patterns, hooks optimization, and performance techniques that will elevate your development skills in 2025.
                         </p>
                         <div class="blog-footer">
-                            <div class="author-info">
-                                <span class="author-name">Mike Chen</span>
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    8 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    2.5k views
+                                </span>
                             </div>
-                            <span class="read-time">6 min read</span>
+                            <a href="blogs/react-development-2025.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <!-- Blog Post 2 -->
+                <article class="blog-card" data-category="ai-ml">
                     <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-brain"></i>
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
                         </div>
+                        <div class="blog-category-tag">AI & ML</div>
                     </div>
                     <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">AI & ML</span>
-                            <span class="article-date">July 25, 2025</span>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Dr. Michael Chen</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 29, 2025</span>
+                            </div>
                         </div>
-                        <h3 class="blog-title">Implementing AI in Business Applications</h3>
+                        <h3 class="blog-title">Implementing AI-Powered Chatbots for Business Growth</h3>
                         <p class="blog-excerpt">
-                            A comprehensive guide to integrating artificial intelligence into your business processes for improved efficiency and decision-making.
+                            Learn how to integrate intelligent chatbots into your business operations to enhance customer experience and boost productivity.
                         </p>
                         <div class="blog-footer">
-                            <div class="author-info">
-                                <span class="author-name">Dr. Emily Rodriguez</span>
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    12 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    3.2k views
+                                </span>
                             </div>
-                            <span class="read-time">10 min read</span>
+                            <a href="blogs/ai-chatbots-business.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <!-- Blog Post 3 -->
+                <article class="blog-card" data-category="ui-ux">
                     <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-paint-brush"></i>
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
                         </div>
+                        <div class="blog-category-tag">UI/UX Design</div>
                     </div>
                     <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">UI/UX Design</span>
-                            <span class="article-date">July 22, 2025</span>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Emily Rodriguez</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 26, 2025</span>
+                            </div>
                         </div>
-                        <h3 class="blog-title">Design Systems: Creating Consistent User Experiences</h3>
+                        <h3 class="blog-title">Creating Stunning User Interfaces with Design Systems</h3>
                         <p class="blog-excerpt">
-                            Discover how to build and maintain design systems that ensure consistency and efficiency across all your digital products.
+                            Master the art of building scalable design systems that ensure consistency and enhance user experience across all platforms.
                         </p>
                         <div class="blog-footer">
-                            <div class="author-info">
-                                <span class="author-name">Alex Thompson</span>
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    10 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    1.8k views
+                                </span>
                             </div>
-                            <span class="read-time">7 min read</span>
+                            <a href="blogs/design-systems-guide.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <!-- Blog Post 4 -->
+                <article class="blog-card" data-category="mobile-development">
                     <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-cloud"></i>
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
                         </div>
+                        <div class="blog-category-tag">Mobile Development</div>
                     </div>
                     <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Cloud Services</span>
-                            <span class="article-date">July 19, 2025</span>
-                        </div>
-                        <h3 class="blog-title">Microservices Architecture: Best Practices</h3>
-                        <p class="blog-excerpt">
-                            Learn how to design and implement scalable microservices architectures that can grow with your business needs.
-                        </p>
-                        <div class="blog-footer">
+                        <div class="blog-meta">
                             <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <span class="author-name">David Kumar</span>
                             </div>
-                            <span class="read-time">9 min read</span>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 23, 2025</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Security</span>
-                            <span class="article-date">July 16, 2025</span>
-                        </div>
-                        <h3 class="blog-title">Cybersecurity Best Practices for Web Applications</h3>
+                        <h3 class="blog-title">Flutter vs React Native: Choosing the Right Framework</h3>
                         <p class="blog-excerpt">
-                            Essential security measures every web application should implement to protect against modern cyber threats.
+                            Comprehensive comparison of Flutter and React Native to help you make the best choice for your mobile app development project.
                         </p>
                         <div class="blog-footer">
-                            <div class="author-info">
-                                <span class="author-name">Lisa Park</span>
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    15 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    4.1k views
+                                </span>
                             </div>
-                            <span class="read-time">8 min read</span>
+                            <a href="blogs/flutter-vs-react-native.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <!-- Blog Post 5 -->
+                <article class="blog-card" data-category="cloud-services">
                     <div class="blog-image">
-                        <div class="article-placeholder">
-                            <i class="fas fa-chart-line"></i>
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
                         </div>
+                        <div class="blog-category-tag">Cloud Services</div>
                     </div>
                     <div class="blog-content">
-                        <div class="article-meta">
-                            <span class="article-category">Industry Insights</span>
-                            <span class="article-date">July 13, 2025</span>
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Alex Thompson</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 20, 2025</span>
+                            </div>
                         </div>
-                        <h3 class="blog-title">Digital Transformation Trends in 2025</h3>
+                        <h3 class="blog-title">Microservices Architecture: Scaling Your Applications</h3>
                         <p class="blog-excerpt">
-                            Explore the key digital transformation trends that are reshaping industries and driving business innovation.
+                            Learn how to design and implement microservices architecture for building scalable, maintainable, and resilient applications.
                         </p>
                         <div class="blog-footer">
-                            <div class="author-info">
-                                <span class="author-name">Robert Martinez</span>
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    14 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    2.9k views
+                                </span>
                             </div>
-                            <span class="read-time">5 min read</span>
+                            <a href="blogs/microservices-architecture.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </article>
-            </div>
 
-            <!-- Pagination -->
-            <div class="pagination">
-                <button class="pagination-btn active">1</button>
-                <button class="pagination-btn">2</button>
-                <button class="pagination-btn">3</button>
-                <button class="pagination-btn">Next</button>
+                <!-- Blog Post 6 -->
+                <article class="blog-card" data-category="digital-marketing">
+                    <div class="blog-image">
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="blog-category-tag">Digital Marketing</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Lisa Martinez</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 17, 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="blog-title">SEO Strategies That Actually Work in 2025</h3>
+                        <p class="blog-excerpt">
+                            Discover the latest SEO techniques and strategies that drive real results in today's competitive digital landscape.
+                        </p>
+                        <div class="blog-footer">
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    11 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    3.7k views
+                                </span>
+                            </div>
+                            <a href="blogs/seo-strategies-2025.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 7 -->
+                <article class="blog-card" data-category="web-development">
+                    <div class="blog-image">
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="blog-category-tag">Web Development</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">James Wilson</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 14, 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="blog-title">Building Progressive Web Apps (PWAs) for Better Performance</h3>
+                        <p class="blog-excerpt">
+                            Step-by-step guide to creating Progressive Web Apps that deliver native app experiences with web technologies.
+                        </p>
+                        <div class="blog-footer">
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    13 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    2.3k views
+                                </span>
+                            </div>
+                            <a href="blogs/progressive-web-apps.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 8 -->
+                <article class="blog-card" data-category="ai-ml">
+                    <div class="blog-image">
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="blog-category-tag">AI & ML</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Dr. Rachel Green</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 11, 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="blog-title">Machine Learning Model Deployment: From Development to Production</h3>
+                        <p class="blog-excerpt">
+                            Complete guide to deploying machine learning models in production environments with best practices and optimization techniques.
+                        </p>
+                        <div class="blog-footer">
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    16 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    1.9k views
+                                </span>
+                            </div>
+                            <a href="blogs/ml-model-deployment.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 9 -->
+                <article class="blog-card" data-category="cloud-services">
+                    <div class="blog-image">
+                        <div class="blog-overlay">
+                            <div class="blog-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                        </div>
+                        <div class="blog-category-tag">Cloud Services</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="author-info">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="author-name">Robert Smith</span>
+                            </div>
+                            <div class="blog-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Jul 8, 2025</span>
+                            </div>
+                        </div>
+                        <h3 class="blog-title">Cloud Security: Protecting Your Digital Assets</h3>
+                        <p class="blog-excerpt">
+                            Essential security measures and best practices for protecting your applications and data in cloud environments.
+                        </p>
+                        <div class="blog-footer">
+                            <div class="blog-stats">
+                                <span class="read-time">
+                                    <i class="fas fa-clock"></i>
+                                    9 min read
+                                </span>
+                                <span class="views">
+                                    <i class="fas fa-eye"></i>
+                                    2.7k views
+                                </span>
+                            </div>
+                            <a href="blogs/cloud-security-guide.html" class="blog-btn">
+                                Read More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
@@ -306,13 +523,25 @@
     <section class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
-                <h2 class="newsletter-title">Stay Updated</h2>
-                <p class="newsletter-subtitle">Subscribe to our newsletter for the latest insights and updates</p>
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h2 class="newsletter-title">Stay Updated with Latest Insights</h2>
+                <p class="newsletter-description">
+                    Get the latest technology trends, development tips, and industry insights delivered directly to your inbox.
+                </p>
                 <form class="newsletter-form">
                     <div class="form-group">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="newsletter-btn">
+                            Subscribe Now
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
                     </div>
+                    <p class="newsletter-note">
+                        <i class="fas fa-lock"></i>
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
                 </form>
             </div>
         </div>
@@ -322,8 +551,9 @@
     <div id="footer-component"></div>
     
     <!-- Scripts -->
-    <script src="../src/components/header/header-new.js"></script>
+    <script src="../src/components/header/header-new.js?v=15"></script>
     <script src="../src/components/footer/footer.js"></script>
-    <script src="../src/scripts/main.js"></script>
+    <script src="../src/scripts/blog.js"></script>
+    <script src="../link-validation.js"></script>
 </body>
 </html>

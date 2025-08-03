@@ -1,121 +1,23 @@
-<!-- Blog Section Component -->
-<section class="blog-section" id="blog-section">
+<!-- Blog Component -->
+<section class="blog-section">
     <div class="container">
-        <div class="blog-header">
-            <h2 class="blog-title">Latest Insights & Blogs</h2>
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-highlight">Latest</span> Blog Posts
+            </h2>
+            <p class="section-subtitle">
+                Stay updated with insights, tutorials, and trends in technology and digital innovation
+            </p>
         </div>
         
-        <div class="blog-grid">
-            <!-- Blog Card 1 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">Web Development</div>
-                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=240&fit=crop&auto=format" alt="Modern Web Development" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/modern-web-development-trends-2025.html">Modern Web Development Trends: Building the Future in 2025</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Explore the latest web development technologies, frameworks, and best practices that Acadify Solutions uses to create cutting-edge websites and applications.
-                    </p>
-                    <a href="pages/blog/modern-web-development-trends-2025.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- Blog Card 2 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">Mobile Apps</div>
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=240&fit=crop&auto=format" alt="Mobile App Development" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/mobile-app-development-guide.html">Mobile App Development: From Concept to App Store Success</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Learn how Acadify Solutions transforms your mobile app ideas into reality with React Native, Flutter, and native development approaches.
-                    </p>
-                    <a href="pages/blog/mobile-app-development-guide.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- Blog Card 3 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">ERP Solutions</div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=240&fit=crop&auto=format" alt="ERP System Development" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/custom-erp-development-benefits.html">Custom ERP Development: Why One Size Doesn't Fit All</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Discover how Acadify Solutions creates tailored ERP systems that streamline your business operations and boost productivity across all departments.
-                    </p>
-                    <a href="pages/blog/custom-erp-development-benefits.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- Blog Card 4 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">Cloud Solutions</div>
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop&auto=format" alt="Cloud Infrastructure" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/cloud-migration-strategy.html">Cloud Migration Strategy: Scaling Your Business for the Future</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Learn how Acadify Solutions helps businesses migrate to cloud infrastructure with AWS, Azure, and Google Cloud for improved scalability and cost efficiency.
-                    </p>
-                    <a href="pages/blog/cloud-migration-strategy.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- Blog Card 5 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">UI/UX Design</div>
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=240&fit=crop&auto=format" alt="UI UX Design Process" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/user-centered-design-approach.html">User-Centered Design: Creating Experiences That Convert</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Explore Acadify Solutions' design methodology that puts users first, resulting in intuitive interfaces and improved conversion rates for digital products.
-                    </p>
-                    <a href="pages/blog/user-centered-design-approach.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
-
-            <!-- Blog Card 6 -->
-            <article class="blog-card">
-                <div class="blog-image">
-                    <div class="blog-badge">AI Integration</div>
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=240&fit=crop&auto=format" alt="AI Integration in Business" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3 class="blog-card-title">
-                        <a href="pages/blog/ai-integration-business-applications.html">AI Integration: Transforming Business Operations with Smart Technology</a>
-                    </h3>
-                    <p class="blog-summary">
-                        Discover how Acadify Solutions integrates AI and machine learning into business applications to automate processes and enhance decision-making capabilities.
-                    </p>
-                    <a href="pages/blog/ai-integration-business-applications.html" class="blog-read-more">Read More</a>
-                </div>
-            </article>
+        <div class="blog-grid" id="blog-posts-container">
+            <!-- Blog posts will be dynamically loaded here -->
         </div>
-
+        
         <div class="blog-cta">
-            <a href="pages/blog.html" class="btn btn-primary blog-view-all">
-                <span>View All Blogs</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5l7 7-7 7"></path>
-                </svg>
+            <a href="pages/blog.html" class="btn btn-primary">
+                View All Posts
+                <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     </div>
