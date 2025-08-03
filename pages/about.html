@@ -155,12 +155,78 @@
                     </div>
                     
                     <div class="about-visual">
-                        <div class="visual-content">
-                            <div class="team-illustration">
-                                <div class="team-member team-1"></div>
-                                <div class="team-member team-2"></div>
-                                <div class="team-member team-3"></div>
-                                <div class="team-connections"></div>
+                        <div class="ultra-tech-animation">
+                            <svg class="tech-network" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Central Hub -->
+                                <circle class="central-hub" cx="200" cy="200" r="25" fill="url(#hubGradient)" />
+                                
+                                <!-- Orbital Nodes -->
+                                <g class="orbital-system">
+                                    <circle class="orbit-node node-1" cx="120" cy="120" r="12" fill="url(#nodeGradient1)" />
+                                    <circle class="orbit-node node-2" cx="280" cy="140" r="10" fill="url(#nodeGradient2)" />
+                                    <circle class="orbit-node node-3" cx="320" cy="260" r="14" fill="url(#nodeGradient3)" />
+                                    <circle class="orbit-node node-4" cx="180" cy="320" r="11" fill="url(#nodeGradient4)" />
+                                    <circle class="orbit-node node-5" cx="80" cy="280" r="13" fill="url(#nodeGradient5)" />
+                                    <circle class="orbit-node node-6" cx="100" cy="180" r="9" fill="url(#nodeGradient6)" />
+                                </g>
+                                
+                                <!-- Connection Lines -->
+                                <g class="connections">
+                                    <path class="data-flow flow-1" d="M120,120 Q160,160 200,200" stroke="url(#flowGradient1)" stroke-width="2" fill="none" />
+                                    <path class="data-flow flow-2" d="M280,140 Q240,170 200,200" stroke="url(#flowGradient2)" stroke-width="2" fill="none" />
+                                    <path class="data-flow flow-3" d="M320,260 Q260,230 200,200" stroke="url(#flowGradient3)" stroke-width="2" fill="none" />
+                                    <path class="data-flow flow-4" d="M180,320 Q190,260 200,200" stroke="url(#flowGradient4)" stroke-width="2" fill="none" />
+                                    <path class="data-flow flow-5" d="M80,280 Q140,240 200,200" stroke="url(#flowGradient5)" stroke-width="2" fill="none" />
+                                    <path class="data-flow flow-6" d="M100,180 Q150,190 200,200" stroke="url(#flowGradient6)" stroke-width="2" fill="none" />
+                                </g>
+                                
+                                <!-- Data Particles -->
+                                <g class="particles">
+                                    <circle class="particle p1" cx="120" cy="120" r="2" fill="#00bfff" opacity="0" />
+                                    <circle class="particle p2" cx="280" cy="140" r="2" fill="#39ff14" opacity="0" />
+                                    <circle class="particle p3" cx="320" cy="260" r="2" fill="#ffa500" opacity="0" />
+                                    <circle class="particle p4" cx="180" cy="320" r="2" fill="#ff1493" opacity="0" />
+                                    <circle class="particle p5" cx="80" cy="280" r="2" fill="#00bfff" opacity="0" />
+                                    <circle class="particle p6" cx="100" cy="180" r="2" fill="#39ff14" opacity="0" />
+                                </g>
+                                
+                                <!-- Tech Grid Background -->
+                                <defs>
+                                    <pattern id="techGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,191,255,0.1)" stroke-width="0.5"/>
+                                    </pattern>
+                                    
+                                    <radialGradient id="hubGradient">
+                                        <stop offset="0%" stop-color="#00bfff" />
+                                        <stop offset="50%" stop-color="#39ff14" />
+                                        <stop offset="100%" stop-color="#ffa500" />
+                                    </radialGradient>
+                                    
+                                    <linearGradient id="nodeGradient1"><stop offset="0%" stop-color="#00bfff" /><stop offset="100%" stop-color="#39ff14" /></linearGradient>
+                                    <linearGradient id="nodeGradient2"><stop offset="0%" stop-color="#39ff14" /><stop offset="100%" stop-color="#ffa500" /></linearGradient>
+                                    <linearGradient id="nodeGradient3"><stop offset="0%" stop-color="#ffa500" /><stop offset="100%" stop-color="#ff1493" /></linearGradient>
+                                    <linearGradient id="nodeGradient4"><stop offset="0%" stop-color="#ff1493" /><stop offset="100%" stop-color="#00bfff" /></linearGradient>
+                                    <linearGradient id="nodeGradient5"><stop offset="0%" stop-color="#00bfff" /><stop offset="100%" stop-color="#39ff14" /></linearGradient>
+                                    <linearGradient id="nodeGradient6"><stop offset="0%" stop-color="#39ff14" /><stop offset="100%" stop-color="#ffa500" /></linearGradient>
+                                    
+                                    <linearGradient id="flowGradient1"><stop offset="0%" stop-color="#00bfff" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                    <linearGradient id="flowGradient2"><stop offset="0%" stop-color="#39ff14" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                    <linearGradient id="flowGradient3"><stop offset="0%" stop-color="#ffa500" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                    <linearGradient id="flowGradient4"><stop offset="0%" stop-color="#ff1493" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                    <linearGradient id="flowGradient5"><stop offset="0%" stop-color="#00bfff" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                    <linearGradient id="flowGradient6"><stop offset="0%" stop-color="#39ff14" stop-opacity="0.8" /><stop offset="100%" stop-color="transparent" /></linearGradient>
+                                </defs>
+                                
+                                <rect width="100%" height="100%" fill="url(#techGrid)" opacity="0.3" />
+                            </svg>
+                            
+                            <!-- Floating Tech Icons -->
+                            <div class="floating-tech-icons">
+                                <div class="tech-icon icon-1"><i class="fas fa-code"></i></div>
+                                <div class="tech-icon icon-2"><i class="fas fa-database"></i></div>
+                                <div class="tech-icon icon-3"><i class="fas fa-cloud"></i></div>
+                                <div class="tech-icon icon-4"><i class="fas fa-mobile-alt"></i></div>
+                                <div class="tech-icon icon-5"><i class="fas fa-robot"></i></div>
                             </div>
                         </div>
                     </div>
@@ -184,54 +250,98 @@
                     </p>
                 </div>
                 
-                <div class="mission-vision-grid">
-                    <div class="mission-card">
-                        <div class="card-icon">
-                            <i class="fas fa-target"></i>
+                <div class="ultra-purpose-container">
+                    <div class="purpose-card mission-card">
+                        <div class="card-glow-effect"></div>
+                        <div class="card-header">
+                            <div class="card-icon-advanced">
+                                <div class="icon-ring ring-1"></div>
+                                <div class="icon-ring ring-2"></div>
+                                <div class="icon-ring ring-3"></div>
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-label">01 — Purpose</span>
+                                <h3 class="card-title">Our Mission</h3>
+                            </div>
                         </div>
-                        <h3 class="card-title">Our Mission</h3>
+                        
                         <p class="card-description">
                             To empower businesses through innovative technology solutions that drive growth, 
                             efficiency, and digital transformation. We are committed to delivering exceptional 
                             value by combining cutting-edge technology with deep industry expertise.
                         </p>
+                        
+                        <div class="card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-number">200+</span>
+                                <span class="metric-label">Projects</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-number">98%</span>
+                                <span class="metric-label">Success Rate</span>
+                            </div>
+                        </div>
+                        
                         <div class="card-features">
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-rocket"></i></div>
                                 <span>Innovation-driven solutions</span>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-users"></i></div>
                                 <span>Client-centric approach</span>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                                 <span>Sustainable business growth</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="vision-card">
-                        <div class="card-icon">
-                            <i class="fas fa-eye"></i>
+                    <div class="purpose-card vision-card">
+                        <div class="card-glow-effect"></div>
+                        <div class="card-header">
+                            <div class="card-icon-advanced">
+                                <div class="icon-ring ring-1"></div>
+                                <div class="icon-ring ring-2"></div>
+                                <div class="icon-ring ring-3"></div>
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="card-meta">
+                                <span class="card-label">02 — Vision</span>
+                                <h3 class="card-title">Our Vision</h3>
+                            </div>
                         </div>
-                        <h3 class="card-title">Our Vision</h3>
+                        
                         <p class="card-description">
                             To be the leading technology partner that transforms how businesses operate in the 
                             digital age. We envision a future where technology seamlessly integrates with 
                             business processes to create unprecedented opportunities for growth and innovation.
                         </p>
+                        
+                        <div class="card-metrics">
+                            <div class="metric-item">
+                                <span class="metric-number">5+</span>
+                                <span class="metric-label">Years</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-number">24/7</span>
+                                <span class="metric-label">Support</span>
+                            </div>
+                        </div>
+                        
                         <div class="card-features">
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-globe"></i></div>
                                 <span>Global technology leadership</span>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-digital-tachograph"></i></div>
                                 <span>Digital transformation pioneer</span>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-check"></i>
+                                <div class="feature-icon"><i class="fas fa-infinity"></i></div>
                                 <span>Future-ready solutions</span>
                             </div>
                         </div>
@@ -366,88 +476,160 @@
                     </p>
                 </div>
                 
-                <div class="choose-grid">
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-rocket"></i>
+                <div class="ultra-why-us-grid">
+                    <div class="why-us-card card-1">
+                        <div class="card-number">01</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(0,191,255,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#00bfff" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">Proven Expertise</h3>
-                            <p class="choose-description">
+                        <div class="card-content">
+                            <h3 class="card-title">Proven Expertise</h3>
+                            <p class="card-description">
                                 Our team brings years of experience across diverse technologies and industries, 
-                                ensuring your project is handled by seasoned professionals who understand 
-                                both technical complexities and business requirements.
+                                ensuring your project is handled by seasoned professionals.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">200+ Projects</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-clock"></i>
+                    <div class="why-us-card card-2">
+                        <div class="card-number">02</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(57,255,20,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#39ff14" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">Timely Delivery</h3>
-                            <p class="choose-description">
-                                We respect your time and deadlines. Our agile development methodology and 
-                                project management expertise ensure that your solutions are delivered on 
-                                time without compromising on quality.
+                        <div class="card-content">
+                            <h3 class="card-title">Timely Delivery</h3>
+                            <p class="card-description">
+                                We respect your time and deadlines. Our agile development methodology ensures 
+                                solutions are delivered on time without compromising quality.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">98% On-Time</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-cogs"></i>
+                    <div class="why-us-card card-3">
+                        <div class="card-number">03</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(255,165,0,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#ffa500" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">Scalable Solutions</h3>
-                            <p class="choose-description">
-                                We design and develop solutions with scalability in mind, ensuring your 
-                                technology can grow with your business and adapt to changing market demands 
-                                without requiring complete overhauls.
+                        <div class="card-content">
+                            <h3 class="card-title">Scalable Solutions</h3>
+                            <p class="card-description">
+                                We design solutions with scalability in mind, ensuring your technology can 
+                                grow with your business and adapt to changing market demands.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">∞ Scalability</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-headset"></i>
+                    <div class="why-us-card card-4">
+                        <div class="card-number">04</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(255,20,147,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#ff1493" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">24/7 Support</h3>
-                            <p class="choose-description">
+                        <div class="card-content">
+                            <h3 class="card-title">24/7 Support</h3>
+                            <p class="card-description">
                                 Our commitment doesn't end at deployment. We provide comprehensive ongoing 
-                                support, maintenance, and updates to ensure your solutions continue to 
-                                perform optimally and stay secure.
+                                support, maintenance, and updates to ensure optimal performance.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">24/7 Available</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-dollar-sign"></i>
+                    <div class="why-us-card card-5">
+                        <div class="card-number">05</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(0,191,255,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#00bfff" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">Cost-Effective</h3>
-                            <p class="choose-description">
-                                We offer competitive pricing without compromising on quality. Our efficient 
-                                development processes and transparent pricing model ensure you get maximum 
-                                value for your investment.
+                        <div class="card-content">
+                            <h3 class="card-title">Cost-Effective</h3>
+                            <p class="card-description">
+                                We offer competitive pricing without compromising quality. Our efficient 
+                                processes ensure you get maximum value for your investment.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">Best ROI</span>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="choose-item">
-                        <div class="choose-icon">
-                            <i class="fas fa-lock"></i>
+                    <div class="why-us-card card-6">
+                        <div class="card-number">06</div>
+                        <div class="card-visual">
+                            <div class="icon-container">
+                                <div class="icon-bg"></div>
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="progress-ring">
+                                <svg width="80" height="80">
+                                    <circle cx="40" cy="40" r="35" stroke="rgba(57,255,20,0.2)" stroke-width="3" fill="none" />
+                                    <circle class="progress-circle" cx="40" cy="40" r="35" stroke="#39ff14" stroke-width="3" fill="none" stroke-linecap="round" />
+                                </svg>
+                            </div>
                         </div>
-                        <div class="choose-content">
-                            <h3 class="choose-title">Security First</h3>
-                            <p class="choose-description">
+                        <div class="card-content">
+                            <h3 class="card-title">Security First</h3>
+                            <p class="card-description">
                                 Security is built into every solution we create. We follow industry best 
-                                practices and implement robust security measures to protect your data and 
-                                maintain your customers' trust.
+                                practices to protect your data and maintain customer trust.
                             </p>
+                            <div class="card-stats">
+                                <span class="stat-highlight">Bank-Level Security</span>
+                            </div>
                         </div>
                     </div>
                 </div>

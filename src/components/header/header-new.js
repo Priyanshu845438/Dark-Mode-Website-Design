@@ -16,10 +16,8 @@ class NewNavbarComponent {
         this.loadMobileNavigation(); // Make synchronous
         this.setupEventListeners();
         this.setupScrollHandling();
-        // Setup dropdowns after a delay to ensure DOM is ready
-        setTimeout(() => {
-            this.setupDropdowns();
-        }, 500);
+        // Setup dropdowns immediately after DOM is ready
+        this.setupDropdowns();
         this.setupMobileNavigation();
     }
 
@@ -143,58 +141,94 @@ class NewNavbarComponent {
     setupDropdowns() {
         console.log('Setting up navigation dropdowns...');
         
-        // Use a delay to ensure DOM is fully ready
-        setTimeout(() => {
-            const dropdowns = document.querySelectorAll('.nav-dropdown');
-            console.log('Found dropdowns:', dropdowns.length);
+        // Clear any existing dropdown event listeners first
+        this.clearDropdownListeners();
+        
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        console.log('Found dropdowns:', dropdowns.length);
+        
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            const menu = dropdown.querySelector('.dropdown-menu');
             
-            dropdowns.forEach(dropdown => {
-                const trigger = dropdown.querySelector('.dropdown-trigger');
-                const menu = dropdown.querySelector('.dropdown-menu');
+            if (trigger && menu) {
+                console.log('Setting up dropdown for:', trigger.textContent.trim());
                 
-                if (trigger && menu) {
-                    console.log('Setting up dropdown for:', trigger.textContent.trim());
+                // Store event handlers for cleanup
+                const clickHandler = (e) => {
+                    // Don't prevent default if it's a regular link that should navigate
+                    if (!trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
                     
-                    // Handle click behavior for both desktop and mobile
-                    trigger.addEventListener('click', (e) => {
-                        // Don't prevent default if it's a regular link that should navigate
-                        if (!trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
-                            e.preventDefault();
-                        }
-                        
-                        // Stop event from bubbling to document click handler
-                        e.stopPropagation();
-                        
-                        // Toggle dropdown for both desktop and mobile
-                        if (menu.classList.contains('show')) {
-                            menu.classList.remove('show');
-                        } else {
-                            // Close other dropdowns first
-                            document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
-                                otherMenu.classList.remove('show');
-                            });
-                            menu.classList.add('show');
-                        }
-                    });
+                    // Stop event from bubbling to document click handler
+                    e.stopPropagation();
                     
-                    // Prevent dropdown from closing when clicking inside the menu
-                    menu.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                    });
-                }
-            });
-            
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', (e) => {
+                    // Toggle dropdown for both desktop and mobile
+                    if (menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                    } else {
+                        // Close other dropdowns first
+                        document.querySelectorAll('.dropdown-menu').forEach(otherMenu => {
+                            otherMenu.classList.remove('show');
+                        });
+                        menu.classList.add('show');
+                    }
+                };
+                
+                const menuClickHandler = (e) => {
+                    e.stopPropagation();
+                };
+                
+                // Add event listeners
+                trigger.addEventListener('click', clickHandler);
+                menu.addEventListener('click', menuClickHandler);
+                
+                // Store handlers for cleanup
+                trigger._dropdownClickHandler = clickHandler;
+                menu._dropdownMenuClickHandler = menuClickHandler;
+            }
+        });
+        
+        // Add document click handler only once
+        if (!document._dropdownDocumentClickHandler) {
+            const documentClickHandler = (e) => {
                 if (!e.target.closest('.nav-dropdown')) {
                     document.querySelectorAll('.dropdown-menu').forEach(menu => {
                         menu.classList.remove('show');
                     });
                 }
-            });
+            };
+            document.addEventListener('click', documentClickHandler);
+            document._dropdownDocumentClickHandler = documentClickHandler;
+        }
+        
+        console.log('✓ Navigation dropdowns setup complete (click-based behavior)');
+    }
+
+    clearDropdownListeners() {
+        // Remove existing event listeners to prevent conflicts
+        const dropdowns = document.querySelectorAll('.nav-dropdown');
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('.dropdown-trigger');
+            const menu = dropdown.querySelector('.dropdown-menu');
             
-            console.log('✓ Navigation dropdowns setup complete (click-based behavior)');
-        }, 100);
+            if (trigger && trigger._dropdownClickHandler) {
+                trigger.removeEventListener('click', trigger._dropdownClickHandler);
+                delete trigger._dropdownClickHandler;
+            }
+            
+            if (menu && menu._dropdownMenuClickHandler) {
+                menu.removeEventListener('click', menu._dropdownMenuClickHandler);
+                delete menu._dropdownMenuClickHandler;
+            }
+        });
+        
+        // Remove document click handler
+        if (document._dropdownDocumentClickHandler) {
+            document.removeEventListener('click', document._dropdownDocumentClickHandler);
+            delete document._dropdownDocumentClickHandler;
+        }
     }
 
     setupDesktopHover(dropdown, trigger, menu) {
@@ -274,7 +308,6 @@ class NewNavbarComponent {
         <div class="mobile-nav-header">
             <div class="mobile-nav-logo">
                 <img src="${basePath}assets/logos/logo.svg" alt="Acadify Solution" class="nav-logo">
-                <span class="nav-brand-text">Acadify Solution</span>
             </div>
             <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close Navigation">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -459,33 +492,33 @@ class NewNavbarComponent {
                     <div class="mobile-dropdown" id="products-dropdown">
                         <div class="mobile-dropdown-section">
                             <h5 class="mobile-section-title">Business Solutions</h5>
-                            <a href="pages/products/acadify-erp.html" class="mobile-dropdown-link">
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-building"></i>
                                 Acadify ERP
-                            </a>
-                            <a href="pages/products/acadify-crm.html" class="mobile-dropdown-link">
+                            </span>
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-users"></i>
                                 Acadify CRM
-                            </a>
-                            <a href="pages/products/acadify-inventory.html" class="mobile-dropdown-link">
+                            </span>
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-boxes"></i>
                                 Acadify Inventory
-                            </a>
+                            </span>
                         </div>
                         <div class="mobile-dropdown-section">
                             <h5 class="mobile-section-title">Tools</h5>
-                            <a href="pages/products/acadify-pos.html" class="mobile-dropdown-link">
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-cash-register"></i>
                                 Acadify POS
-                            </a>
-                            <a href="pages/products/acadify-lms.html" class="mobile-dropdown-link">
+                            </span>
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-book"></i>
                                 Acadify LMS
-                            </a>
-                            <a href="pages/products/acadify-task.html" class="mobile-dropdown-link">
+                            </span>
+                            <span class="mobile-dropdown-link">
                                 <i class="fas fa-tasks"></i>
                                 Acadify Task
-                            </a>
+                            </span>
                         </div>
                     </div>
                 </li>
