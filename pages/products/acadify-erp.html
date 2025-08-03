@@ -3,143 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify ERP Portal - Enterprise Resource Planning</title>
-    <meta name="description" content="Comprehensive ERP solution for managing business operations, inventory, finance, and human resources in one integrated platform.">
+    <title>Acadify ERP - Enterprise Resource Planning Solution | Acadify Solution</title>
+    <meta name="description" content="Streamline your entire business operations with Acadify ERP. Comprehensive Enterprise Resource Planning solution for inventory, finance, HR, and operational management.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify ERP</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify ERP Portal</h1>
-                    <p class="product-subtitle">Complete Enterprise Resource Planning Solution</p>
-                    <p class="product-description">
-                        Streamline your entire business operations with our comprehensive ERP system. 
-                        Manage inventory, finance, HR, and more in one integrated platform.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-building"></i>
+                        <span>Enterprise Solution</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">ERP</span>
+                    </h1>
+                    <p class="hero-subtitle">Complete Enterprise Resource Planning Solution</p>
+                    <p class="hero-description">
+                        Transform your business operations with our comprehensive ERP system. Manage inventory, finance, 
+                        human resources, and streamline all your business processes in one integrated platform designed 
+                        for modern enterprises.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Request Demo</button>
-                        <button class="btn btn-secondary">View Pricing</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Companies Trust Us</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime Guarantee</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support Available</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-network-wired"></i>
-                        <p>ERP Dashboard Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify ERP Dashboard</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Revenue Growth</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-boxes"></i>
+                                    <span>Inventory Status</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-users"></i>
+                                    <span>Team Performance</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">Core Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-boxes"></i>
-                    <h3>Inventory Management</h3>
-                    <p>Real-time inventory tracking, automated reordering, and warehouse management</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify ERP</h2>
+                <p class="section-description">
+                    Acadify ERP is a comprehensive business management solution that integrates all your core business 
+                    processes into a single, unified platform. From financial management to supply chain optimization, 
+                    our ERP system empowers businesses to operate more efficiently and make data-driven decisions.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Real-time Integration</h3>
+                    <p>Seamlessly connect all departments with real-time data synchronization across your entire organization.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-calculator"></i>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Gain valuable insights with powerful reporting tools and customizable dashboards for informed decision-making.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enterprise Security</h3>
+                    <p>Protect your business data with enterprise-grade security features and compliance standards.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Scalable Solution</h3>
+                    <p>Grow your business without limitations with our flexible and scalable ERP architecture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Discover the comprehensive suite of modules designed to streamline every aspect of your business operations.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
                     <h3>Financial Management</h3>
-                    <p>Complete accounting, budgeting, and financial reporting capabilities</p>
+                    <p>Complete accounting, budgeting, and financial reporting with automated workflows and compliance tracking.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> General Ledger</li>
+                        <li><i class="fas fa-check"></i> Accounts Payable/Receivable</li>
+                        <li><i class="fas fa-check"></i> Financial Reporting</li>
+                        <li><i class="fas fa-check"></i> Budget Management</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Inventory Management</h3>
+                    <p>Real-time inventory tracking, automated reordering, and comprehensive warehouse management solutions.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Stock Tracking</li>
+                        <li><i class="fas fa-check"></i> Automated Reordering</li>
+                        <li><i class="fas fa-check"></i> Warehouse Management</li>
+                        <li><i class="fas fa-check"></i> Barcode Integration</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <h3>Human Resources</h3>
-                    <p>Employee management, payroll, and performance tracking</p>
+                    <p>Comprehensive HR management including payroll, performance tracking, and employee self-service portals.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Employee Management</li>
+                        <li><i class="fas fa-check"></i> Payroll Processing</li>
+                        <li><i class="fas fa-check"></i> Performance Reviews</li>
+                        <li><i class="fas fa-check"></i> Leave Management</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shopping-cart"></i>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                     <h3>Sales & CRM</h3>
-                    <p>Customer relationship management and sales pipeline tracking</p>
+                    <p>Integrated sales management and customer relationship tools to drive revenue and enhance customer satisfaction.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Lead Management</li>
+                        <li><i class="fas fa-check"></i> Sales Pipeline</li>
+                        <li><i class="fas fa-check"></i> Customer Portal</li>
+                        <li><i class="fas fa-check"></i> Order Management</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Analytics & Reporting</h3>
-                    <p>Advanced business intelligence and customizable reports</p>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Supply Chain</h3>
+                    <p>Optimize your supply chain operations with vendor management, procurement, and logistics coordination.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Vendor Management</li>
+                        <li><i class="fas fa-check"></i> Purchase Orders</li>
+                        <li><i class="fas fa-check"></i> Logistics Tracking</li>
+                        <li><i class="fas fa-check"></i> Quality Control</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Workflow Automation</h3>
-                    <p>Automated business processes and approval workflows</p>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>Advanced analytics and reporting tools to gain actionable insights and drive strategic decision-making.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Custom Dashboards</li>
+                        <li><i class="fas fa-check"></i> Real-time Analytics</li>
+                        <li><i class="fas fa-check"></i> Predictive Reports</li>
+                        <li><i class="fas fa-check"></i> KPI Monitoring</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Benefits -->
-    <section class="product-benefits">
+    <!-- Benefits Section -->
+    <section class="benefits-section">
         <div class="container">
-            <h2 class="section-title">Why Choose Acadify ERP?</h2>
-            <div class="benefits-content">
-                <div class="benefits-list">
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h4>All-in-One Solution</h4>
-                            <p>Eliminate data silos with integrated modules</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h4>Scalable Architecture</h4>
-                            <p>Grows with your business from startup to enterprise</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h4>Cloud-Based</h4>
-                            <p>Access your data anywhere, anytime with secure cloud hosting</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <h4>Customizable</h4>
-                            <p>Tailored to your specific industry and business needs</p>
-                        </div>
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Discover how Acadify ERP transforms businesses by streamlining operations and driving growth.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Increased Efficiency</h3>
+                        <p>Automate routine tasks and eliminate manual processes, reducing operational costs by up to 30%.</p>
                     </div>
                 </div>
-                <div class="benefits-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-chart-line"></i>
-                        <p>Business Growth Chart</p>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Better Decision Making</h3>
+                        <p>Access real-time data and comprehensive analytics to make informed strategic decisions quickly.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Compliance</h3>
+                        <p>Stay compliant with industry regulations through automated compliance tracking and reporting.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Improved Customer Service</h3>
+                        <p>Deliver exceptional customer experiences with integrated CRM and order management capabilities.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Cost Reduction</h3>
+                        <p>Optimize resource utilization and reduce operational expenses through intelligent automation.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Scalable Growth</h3>
+                        <p>Scale your operations seamlessly as your business grows without system limitations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify ERP stands apart from traditional ERP solutions with our innovative approach and cutting-edge technology.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Rapid Implementation</h4>
+                                <p>Get up and running in weeks, not months, with our streamlined implementation process.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Industry-Specific Customization</h4>
+                                <p>Pre-configured solutions tailored to your industry's unique requirements and workflows.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>AI-Powered Insights</h4>
+                                <p>Leverage artificial intelligence for predictive analytics and intelligent automation.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Mobile-First Design</h4>
+                                <p>Access your ERP system anywhere, anytime with our responsive mobile applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Implementation Timeline Comparison</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Traditional ERP</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 100%"></div>
+                                    <span class="bar-value">12-18 months</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">Acadify ERP</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 25%"></div>
+                                    <span class="bar-value">4-6 weeks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our ERP Clients Say</h2>
+                <p class="section-description">
+                    Hear from businesses that have transformed their operations with Acadify ERP.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify ERP transformed our entire business operation. We've seen a 40% improvement in efficiency 
+                            and our financial reporting is now real-time and accurate. The implementation was smooth and the 
+                            support team is exceptional."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CFO, TechCorp Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The inventory management module is game-changing. We've reduced stockouts by 85% and our warehouse 
+                            operations are now completely automated. The ROI was evident within the first quarter."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>Operations Director, Global Manufacturing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "As a growing company, we needed an ERP that could scale with us. Acadify ERP has supported our 
+                            200% growth over the past two years without any performance issues. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <p>CEO, InnovateTech Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Business?</h2>
+                <p class="cta-description">
+                    Join hundreds of companies that have revolutionized their operations with Acadify ERP. 
+                    Start your free trial today and experience the difference.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>

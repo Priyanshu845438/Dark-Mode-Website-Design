@@ -3,88 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify CRM - Customer Relationship Management</title>
-    <meta name="description" content="Powerful CRM system to manage customer relationships, sales pipelines, and boost business growth with intelligent automation.">
+    <title>Acadify CRM - Customer Relationship Management | Acadify Solution</title>
+    <meta name="description" content="Boost your sales and enhance customer relationships with Acadify CRM. Comprehensive customer management solution with lead tracking, sales pipeline, and automation.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify CRM</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify CRM</h1>
-                    <p class="product-subtitle">Customer Relationship Management Platform</p>
-                    <p class="product-description">
-                        Build stronger customer relationships and boost sales with our intelligent CRM system. 
-                        Track leads, manage contacts, and automate your sales process.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-users"></i>
+                        <span>Customer Management</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">CRM</span>
+                    </h1>
+                    <p class="hero-subtitle">Customer Relationship Management System</p>
+                    <p class="hero-description">
+                        Build stronger customer relationships and boost sales with our comprehensive CRM solution. 
+                        Manage leads, track sales pipeline, automate marketing campaigns, and deliver exceptional 
+                        customer experiences at every touchpoint.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Start Free Trial</button>
-                        <button class="btn btn-secondary">View Features</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">300%</div>
+                            <div class="stat-label">Sales Increase</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Customer Retention</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50%</div>
+                            <div class="stat-label">Faster Response</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-handshake"></i>
-                        <p>CRM Dashboard Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify CRM Dashboard</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Sales Pipeline</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Lead Management</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Customer Health</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">CRM Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-address-book"></i>
-                    <h3>Contact Management</h3>
-                    <p>Centralized customer database with detailed contact profiles</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify CRM</h2>
+                <p class="section-description">
+                    Acadify CRM is designed to help businesses of all sizes build meaningful customer relationships and 
+                    drive revenue growth. Our intuitive platform combines powerful automation with deep insights to 
+                    streamline your sales process and enhance customer satisfaction.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3>Sales Pipeline Management</h3>
+                    <p>Visualize and manage your entire sales process with customizable pipeline stages and automated workflows.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-funnel-dollar"></i>
-                    <h3>Sales Pipeline</h3>
-                    <p>Visual sales pipeline tracking and opportunity management</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Marketing Automation</h3>
+                    <p>Automate lead nurturing, email campaigns, and customer communications to drive engagement and conversions.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Email Integration</h3>
-                    <p>Seamless email integration and automated follow-ups</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Get actionable insights with comprehensive reporting and real-time dashboards to optimize your sales strategy.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Sales Analytics</h3>
-                    <p>Comprehensive sales reports and performance insights</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Access</h3>
+                    <p>Access your CRM data and manage customer relationships on-the-go with our responsive mobile application.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Explore the comprehensive features designed to transform your customer relationship management.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Lead Management</h3>
+                    <p>Capture, qualify, and nurture leads from multiple sources with intelligent lead scoring and automated follow-ups.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Lead Capture Forms</li>
+                        <li><i class="fas fa-check"></i> Lead Scoring</li>
+                        <li><i class="fas fa-check"></i> Source Tracking</li>
+                        <li><i class="fas fa-check"></i> Automated Assignment</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Opportunity Management</h3>
+                    <p>Track deals through your sales pipeline with customizable stages, probability tracking, and revenue forecasting.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Deal Tracking</li>
+                        <li><i class="fas fa-check"></i> Revenue Forecasting</li>
+                        <li><i class="fas fa-check"></i> Win/Loss Analysis</li>
+                        <li><i class="fas fa-check"></i> Activity Timeline</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Contact Management</h3>
+                    <p>Maintain comprehensive customer profiles with interaction history, preferences, and communication tracking.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Customer Profiles</li>
+                        <li><i class="fas fa-check"></i> Interaction History</li>
+                        <li><i class="fas fa-check"></i> Communication Log</li>
+                        <li><i class="fas fa-check"></i> Segmentation</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Email Marketing</h3>
+                    <p>Create and execute targeted email campaigns with automation, personalization, and performance tracking.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Campaign Builder</li>
+                        <li><i class="fas fa-check"></i> Email Templates</li>
+                        <li><i class="fas fa-check"></i> A/B Testing</li>
+                        <li><i class="fas fa-check"></i> Performance Analytics</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer Support</h3>
+                    <p>Deliver exceptional customer service with integrated support ticketing, knowledge base, and satisfaction tracking.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Ticket Management</li>
+                        <li><i class="fas fa-check"></i> Knowledge Base</li>
+                        <li><i class="fas fa-check"></i> SLA Tracking</li>
+                        <li><i class="fas fa-check"></i> Satisfaction Surveys</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Make data-driven decisions with comprehensive analytics, custom reports, and real-time performance dashboards.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Sales Reports</li>
+                        <li><i class="fas fa-check"></i> Custom Dashboards</li>
+                        <li><i class="fas fa-check"></i> ROI Analysis</li>
+                        <li><i class="fas fa-check"></i> Performance Metrics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Discover how Acadify CRM transforms your sales process and enhances customer relationships.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Increased Sales Revenue</h3>
+                        <p>Boost your sales by up to 300% with intelligent lead management and automated sales processes.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Customer Retention</h3>
+                        <p>Improve customer loyalty and retention rates through personalized experiences and proactive engagement.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Streamlined Sales Process</h3>
+                        <p>Eliminate manual tasks and accelerate deal closure with automated workflows and smart notifications.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Better Team Collaboration</h3>
+                        <p>Enhance team productivity with shared customer insights, collaboration tools, and unified communication.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Data-Driven Insights</h3>
+                        <p>Make informed decisions with comprehensive analytics and real-time reporting capabilities.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Scalable Growth</h3>
+                        <p>Scale your customer management processes seamlessly as your business grows and evolves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify CRM goes beyond traditional customer management with innovative features and intelligent automation.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>AI-Powered Insights</h4>
+                                <p>Leverage artificial intelligence for predictive lead scoring and customer behavior analysis.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Seamless Integrations</h4>
+                                <p>Connect with 500+ popular business tools and platforms for unified data management.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Automation First</h4>
+                                <p>Automate repetitive tasks and focus on building meaningful customer relationships.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Enterprise Security</h4>
+                                <p>Protect sensitive customer data with bank-level security and compliance standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Customer Satisfaction Improvement</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Before Acadify CRM</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 60%"></div>
+                                    <span class="bar-value">60%</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">After Acadify CRM</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 95%"></div>
+                                    <span class="bar-value">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our CRM Clients Say</h2>
+                <p class="section-description">
+                    Hear from sales teams that have transformed their customer relationships with Acadify CRM.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify CRM completely transformed our sales process. Our conversion rate increased by 250% 
+                            and we're closing deals 40% faster. The automation features have saved our team countless hours."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>David Thompson</h4>
+                                <p>Sales Director, Digital Dynamics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The lead scoring and pipeline management features are incredible. We now focus our efforts 
+                            on high-quality leads and have seen our customer acquisition cost drop by 60%."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Lisa Martinez</h4>
+                                <p>VP Sales, Growth Partners</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Customer service has never been easier. The integrated support system and knowledge base 
+                            have improved our customer satisfaction scores to 95%. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>James Wilson</h4>
+                                <p>Customer Success Manager, TechFlow</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Supercharge Your Sales?</h2>
+                <p class="cta-description">
+                    Join thousands of sales teams using Acadify CRM to build stronger customer relationships 
+                    and drive revenue growth. Start your journey today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>

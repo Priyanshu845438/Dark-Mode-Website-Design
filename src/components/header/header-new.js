@@ -13,6 +13,7 @@ class NewNavbarComponent {
 
     async init() {
         await this.loadNavbar();
+        await this.loadFooter(); // Load footer if container exists
         this.loadMobileNavigation(); // Make synchronous
         this.setupEventListeners();
         this.setupScrollHandling();
@@ -54,7 +55,10 @@ class NewNavbarComponent {
     getBasePath() {
         // Determine if we're in a subdirectory
         const path = window.location.pathname;
-        if (path.includes('/pages/services/') || path.includes('pages/services/')) {
+        if (path.includes('/pages/services/') || path.includes('pages/services/') ||
+            path.includes('/pages/industries/') || path.includes('pages/industries/') ||
+            path.includes('/pages/products/') || path.includes('pages/products/') ||
+            path.includes('/pages/portfolio/') || path.includes('pages/portfolio/')) {
             return '../../';
         } else if (path.includes('/pages/') || path.includes('pages/')) {
             return '../';
@@ -72,8 +76,10 @@ class NewNavbarComponent {
         const logos = this.navbar.querySelectorAll('img');
         logos.forEach(logo => {
             const currentSrc = logo.getAttribute('src');
-            if (currentSrc === '/assets/logos/logo.svg') {
+            if (currentSrc === '/assets/logos/logo.svg' || currentSrc === 'assets/logos/logo.svg') {
                 logo.setAttribute('src', basePath + 'assets/logos/logo.svg');
+            } else if (currentSrc === '/assets/logos/logo.png' || currentSrc === 'assets/logos/logo.png') {
+                logo.setAttribute('src', basePath + 'assets/logos/logo.png');
             }
         });
         
@@ -89,6 +95,59 @@ class NewNavbarComponent {
         });
         
         console.log('✓ Fixed navbar paths for subdirectory');
+    }
+
+    async loadFooter() {
+        try {
+            const footerContainer = document.getElementById('footer-component');
+            if (!footerContainer) return; // Footer container not found, skip loading
+            
+            const basePath = this.getBasePath();
+            const response = await fetch(`${basePath}src/components/footer/footer.html`);
+            
+            if (response.ok) {
+                const footerHTML = await response.text();
+                footerContainer.innerHTML = footerHTML;
+                
+                // Fix footer paths for subdirectories
+                this.fixFooterPaths(footerContainer);
+                
+                // Initialize footer functionality if FooterComponent exists
+                if (window.FooterComponent) {
+                    const footer = new window.FooterComponent();
+                    await footer.init();
+                }
+                
+                console.log('✓ Footer component loaded successfully');
+            }
+        } catch (error) {
+            console.error('Error loading footer:', error);
+        }
+    }
+
+    fixFooterPaths(footerContainer) {
+        const basePath = this.getBasePath();
+        if (!basePath) return; // No need to fix if we're in root
+        
+        // Fix logo paths in footer
+        const footerLogos = footerContainer.querySelectorAll('img');
+        footerLogos.forEach(logo => {
+            const currentSrc = logo.getAttribute('src');
+            if (currentSrc && currentSrc.startsWith('/assets/')) {
+                logo.setAttribute('src', basePath + currentSrc.substring(1));
+            }
+        });
+        
+        // Fix all footer links
+        const footerLinks = footerContainer.querySelectorAll('a[href]');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('/pages/')) {
+                link.setAttribute('href', basePath + href.substring(1));
+            }
+        });
+        
+        console.log('✓ Fixed footer paths for subdirectory');
     }
 
     setupEventListeners() {
@@ -538,33 +597,41 @@ class NewNavbarComponent {
                     <div class="mobile-dropdown" id="products-dropdown">
                         <div class="mobile-dropdown-section">
                             <h5 class="mobile-section-title">Business Solutions</h5>
-                            <span class="mobile-dropdown-link">
+                            <a href="${basePath}pages/products/acadify-erp.html" class="mobile-dropdown-link">
                                 <i class="fas fa-building"></i>
                                 Acadify ERP
-                            </span>
-                            <span class="mobile-dropdown-link">
+                            </a>
+                            <a href="${basePath}pages/products/acadify-crm.html" class="mobile-dropdown-link">
                                 <i class="fas fa-users"></i>
                                 Acadify CRM
-                            </span>
-                            <span class="mobile-dropdown-link">
+                            </a>
+                            <a href="${basePath}pages/products/acadify-inventory.html" class="mobile-dropdown-link">
                                 <i class="fas fa-boxes"></i>
                                 Acadify Inventory
-                            </span>
+                            </a>
                         </div>
                         <div class="mobile-dropdown-section">
                             <h5 class="mobile-section-title">Tools</h5>
-                            <span class="mobile-dropdown-link">
+                            <a href="${basePath}pages/products/acadify-pos.html" class="mobile-dropdown-link">
                                 <i class="fas fa-cash-register"></i>
                                 Acadify POS
-                            </span>
-                            <span class="mobile-dropdown-link">
-                                <i class="fas fa-book"></i>
+                            </a>
+                            <a href="${basePath}pages/products/acadify-lms.html" class="mobile-dropdown-link">
+                                <i class="fas fa-graduation-cap"></i>
                                 Acadify LMS
-                            </span>
-                            <span class="mobile-dropdown-link">
+                            </a>
+                            <a href="${basePath}pages/products/acadify-task.html" class="mobile-dropdown-link">
                                 <i class="fas fa-tasks"></i>
                                 Acadify Task
-                            </span>
+                            </a>
+                        </div>
+                        <div class="mobile-dropdown-section">
+                            <div class="mobile-view-all">
+                                <a href="${basePath}pages/product.html" class="mobile-view-all-btn">
+                                    <i class="fas fa-arrow-right"></i>
+                                    View All Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </li>

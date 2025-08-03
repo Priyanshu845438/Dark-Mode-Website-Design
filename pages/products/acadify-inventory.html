@@ -3,88 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify Inventory - Inventory Management System</title>
-    <meta name="description" content="Complete inventory management solution with real-time tracking, automated reordering, and comprehensive warehouse management.">
+    <title>Acadify Inventory - Inventory Management System | Acadify Solution</title>
+    <meta name="description" content="Optimize your inventory operations with Acadify Inventory. Real-time tracking, automated reordering, warehouse management, and comprehensive stock control.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify Inventory</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify Inventory</h1>
-                    <p class="product-subtitle">Smart Inventory Management System</p>
-                    <p class="product-description">
-                        Optimize your inventory operations with real-time tracking, automated reordering, 
-                        and intelligent forecasting to reduce costs and improve efficiency.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-boxes"></i>
+                        <span>Inventory Control</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">Inventory</span>
+                    </h1>
+                    <p class="hero-subtitle">Smart Inventory Management System</p>
+                    <p class="hero-description">
+                        Take complete control of your inventory with real-time tracking, automated reordering, 
+                        and intelligent warehouse management. Reduce costs, prevent stockouts, and optimize 
+                        your supply chain operations with our advanced inventory solution.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Request Demo</button>
-                        <button class="btn btn-secondary">View Pricing</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Stockout Reduction</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Cost Savings</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Accuracy Rate</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-boxes"></i>
-                        <p>Inventory Dashboard Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify Inventory Dashboard</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-warehouse"></i>
+                                    <span>Stock Levels</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-truck-loading"></i>
+                                    <span>Order Status</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Turnover Rate</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">Inventory Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-warehouse"></i>
-                    <h3>Warehouse Management</h3>
-                    <p>Multi-location inventory tracking and warehouse optimization</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify Inventory</h2>
+                <p class="section-description">
+                    Acadify Inventory is a comprehensive inventory management system designed to optimize your stock 
+                    control, reduce carrying costs, and ensure product availability. Our solution combines real-time 
+                    tracking with intelligent automation to streamline your entire inventory workflow.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Real-time Visibility</h3>
+                    <p>Get complete visibility into your inventory levels across all locations with real-time updates and tracking.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-qrcode"></i>
-                    <h3>Barcode Scanning</h3>
-                    <p>Quick product identification and inventory updates</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Smart Automation</h3>
+                    <p>Automate reordering, stock alerts, and workflow processes to reduce manual work and human errors.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Auto Reordering</h3>
-                    <p>Intelligent reorder points and automated purchase orders</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Demand Forecasting</h3>
-                    <p>AI-powered demand prediction and inventory optimization</p>
+                    <p>Leverage AI-powered analytics to predict demand patterns and optimize your inventory levels.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>Barcode Integration</h3>
+                    <p>Streamline operations with barcode scanning and RFID integration for accurate inventory tracking.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Discover the powerful features that make Acadify Inventory the ultimate solution for stock management.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Stock Tracking</h3>
+                    <p>Monitor inventory levels in real-time across multiple locations with comprehensive tracking capabilities.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Multi-location Tracking</li>
+                        <li><i class="fas fa-check"></i> Serial Number Control</li>
+                        <li><i class="fas fa-check"></i> Batch Management</li>
+                        <li><i class="fas fa-check"></i> Expiry Date Tracking</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Automated Reordering</h3>
+                    <p>Set intelligent reorder points and automate purchase orders to maintain optimal stock levels.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Smart Reorder Points</li>
+                        <li><i class="fas fa-check"></i> Automatic PO Generation</li>
+                        <li><i class="fas fa-check"></i> Supplier Integration</li>
+                        <li><i class="fas fa-check"></i> Lead Time Management</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Warehouse Management</h3>
+                    <p>Optimize warehouse operations with location mapping, pick path optimization, and space utilization.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Location Mapping</li>
+                        <li><i class="fas fa-check"></i> Pick Path Optimization</li>
+                        <li><i class="fas fa-check"></i> Space Utilization</li>
+                        <li><i class="fas fa-check"></i> Cycle Counting</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Transfers & Adjustments</h3>
+                    <p>Manage stock transfers between locations and handle inventory adjustments with full audit trails.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Inter-location Transfers</li>
+                        <li><i class="fas fa-check"></i> Stock Adjustments</li>
+                        <li><i class="fas fa-check"></i> Audit Trails</li>
+                        <li><i class="fas fa-check"></i> Approval Workflows</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-area"></i>
+                    </div>
+                    <h3>Demand Planning</h3>
+                    <p>Forecast demand using historical data and market trends to optimize purchasing and stock levels.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Demand Forecasting</li>
+                        <li><i class="fas fa-check"></i> Seasonal Analysis</li>
+                        <li><i class="fas fa-check"></i> Trend Identification</li>
+                        <li><i class="fas fa-check"></i> Safety Stock Calculation</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>Cost Management</h3>
+                    <p>Track inventory costs, valuation methods, and financial impact with comprehensive cost analysis tools.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Cost Tracking</li>
+                        <li><i class="fas fa-check"></i> Valuation Methods</li>
+                        <li><i class="fas fa-check"></i> Carrying Cost Analysis</li>
+                        <li><i class="fas fa-check"></i> ROI Calculations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Transform your inventory operations and achieve significant cost savings with Acadify Inventory.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Reduce Carrying Costs</h3>
+                        <p>Optimize inventory levels and reduce carrying costs by up to 40% with intelligent stock management.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Prevent Stockouts</h3>
+                        <p>Eliminate stockouts and lost sales with automated reordering and smart inventory alerts.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Improve Accuracy</h3>
+                        <p>Achieve 99.9% inventory accuracy with barcode scanning and automated tracking systems.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Increase Efficiency</h3>
+                        <p>Streamline warehouse operations and reduce processing time by up to 60% with automation.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Better Forecasting</h3>
+                        <p>Make informed purchasing decisions with AI-powered demand forecasting and trend analysis.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Complete Visibility</h3>
+                        <p>Get real-time visibility into inventory across all locations with comprehensive reporting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify Inventory combines advanced technology with user-friendly design to deliver superior inventory management.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>AI-Powered Optimization</h4>
+                                <p>Use machine learning algorithms to optimize stock levels and predict demand patterns automatically.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Cloud-Native Architecture</h4>
+                                <p>Access your inventory data from anywhere with our secure, scalable cloud infrastructure.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Mobile-First Design</h4>
+                                <p>Manage inventory on-the-go with our responsive mobile app and barcode scanning capabilities.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Seamless Integration</h4>
+                                <p>Integrate with your existing ERP, accounting, and e-commerce systems for unified operations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Inventory Accuracy Improvement</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Manual Tracking</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 75%"></div>
+                                    <span class="bar-value">75%</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">Acadify Inventory</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 99%"></div>
+                                    <span class="bar-value">99.9%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Inventory Clients Say</h2>
+                <p class="section-description">
+                    See how businesses have optimized their inventory operations with Acadify Inventory.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify Inventory transformed our warehouse operations. We've reduced stockouts by 90% 
+                            and our inventory accuracy is now 99.8%. The automated reordering alone saves us 20 hours per week."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Robert Kim</h4>
+                                <p>Warehouse Manager, Supply Pro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The demand forecasting feature is incredible. We've optimized our purchasing and reduced 
+                            carrying costs by 35%. The ROI was evident within the first quarter of implementation."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Amanda Davis</h4>
+                                <p>Operations Director, Retail Plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Multi-location tracking has been a game-changer for our business. We can see inventory 
+                            levels across all 15 locations in real-time. The system is intuitive and our team adopted it quickly."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Mark Stevens</h4>
+                                <p>Inventory Controller, Distribution Corp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Optimize Your Inventory?</h2>
+                <p class="cta-description">
+                    Join hundreds of businesses that have streamlined their inventory operations with Acadify Inventory. 
+                    Start reducing costs and improving efficiency today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>

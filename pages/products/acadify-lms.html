@@ -3,88 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify LMS - Learning Management System</title>
-    <meta name="description" content="Comprehensive learning management system for online education, course creation, and student engagement.">
+    <title>Acadify LMS - Learning Management System | Acadify Solution</title>
+    <meta name="description" content="Transform education and training with Acadify LMS. Comprehensive learning management system with course creation, student tracking, and interactive learning tools.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify LMS</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify LMS</h1>
-                    <p class="product-subtitle">Learning Management System</p>
-                    <p class="product-description">
-                        Create, deliver, and manage educational content with our comprehensive LMS. 
-                        Perfect for schools, universities, and corporate training programs.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Learning Platform</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">LMS</span>
+                    </h1>
+                    <p class="hero-subtitle">Learning Management System</p>
+                    <p class="hero-description">
+                        Revolutionize education and corporate training with our comprehensive learning management system. 
+                        Create engaging courses, track student progress, and deliver personalized learning experiences 
+                        that drive knowledge retention and skill development.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Start Free Trial</button>
-                        <button class="btn btn-secondary">Request Demo</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Active Learners</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Completion Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Learning Access</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-graduation-cap"></i>
-                        <p>LMS Dashboard Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify LMS Platform</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-book-open"></i>
+                                    <span>Course Library</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Progress Tracking</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Certifications</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">LMS Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Course Creation</h3>
-                    <p>Intuitive course builder with multimedia content support</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify LMS</h2>
+                <p class="section-description">
+                    Acadify LMS is a cutting-edge learning management system that empowers educators, trainers, and organizations 
+                    to deliver exceptional learning experiences. Our platform combines advanced technology with intuitive design 
+                    to create engaging, interactive, and measurable learning programs.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Interactive Learning</h3>
+                    <p>Create engaging multimedia courses with videos, quizzes, assignments, and interactive content elements.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-video"></i>
-                    <h3>Virtual Classrooms</h3>
-                    <p>Interactive online classrooms with video conferencing</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users-class"></i>
+                    </div>
+                    <h3>Collaborative Environment</h3>
+                    <p>Foster collaboration with discussion forums, group projects, and peer-to-peer learning opportunities.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Assessment Tools</h3>
-                    <p>Quizzes, assignments, and automated grading systems</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Track learning progress, identify knowledge gaps, and measure training effectiveness with detailed analytics.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Progress Tracking</h3>
-                    <p>Student progress monitoring and performance analytics</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Learning</h3>
+                    <p>Enable learning on-the-go with our responsive mobile app and offline content access capabilities.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Explore the comprehensive features that make learning engaging, effective, and measurable.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Course Creation</h3>
+                    <p>Build comprehensive courses with multimedia content, interactive elements, and structured learning paths.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Drag & Drop Builder</li>
+                        <li><i class="fas fa-check"></i> Video Integration</li>
+                        <li><i class="fas fa-check"></i> SCORM Support</li>
+                        <li><i class="fas fa-check"></i> Assessment Tools</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Student Management</h3>
+                    <p>Manage learner enrollment, track progress, and provide personalized learning experiences.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> User Profiles</li>
+                        <li><i class="fas fa-check"></i> Enrollment Management</li>
+                        <li><i class="fas fa-check"></i> Progress Tracking</li>
+                        <li><i class="fas fa-check"></i> Communication Tools</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Assessment & Testing</h3>
+                    <p>Create comprehensive assessments with various question types, automated grading, and instant feedback.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Quiz Builder</li>
+                        <li><i class="fas fa-check"></i> Auto-grading</li>
+                        <li><i class="fas fa-check"></i> Proctoring Tools</li>
+                        <li><i class="fas fa-check"></i> Question Banks</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certification Management</h3>
+                    <p>Issue digital certificates and badges, track certification compliance, and manage continuing education.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Digital Certificates</li>
+                        <li><i class="fas fa-check"></i> Badge System</li>
+                        <li><i class="fas fa-check"></i> Compliance Tracking</li>
+                        <li><i class="fas fa-check"></i> Renewal Reminders</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Collaboration Tools</h3>
+                    <p>Enable social learning with discussion forums, chat rooms, and collaborative workspaces.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Discussion Forums</li>
+                        <li><i class="fas fa-check"></i> Live Chat</li>
+                        <li><i class="fas fa-check"></i> Group Projects</li>
+                        <li><i class="fas fa-check"></i> Virtual Classrooms</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Gain insights into learning effectiveness with comprehensive reports and analytics dashboards.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Learning Analytics</li>
+                        <li><i class="fas fa-check"></i> Custom Reports</li>
+                        <li><i class="fas fa-check"></i> ROI Tracking</li>
+                        <li><i class="fas fa-check"></i> Compliance Reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Transform your training and education programs with Acadify LMS and see measurable results.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Improved Learning Outcomes</h3>
+                        <p>Increase knowledge retention by 75% with interactive content and personalized learning paths.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Reduced Training Costs</h3>
+                        <p>Cut training expenses by up to 60% with online delivery and automated administrative processes.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Flexible Learning</h3>
+                        <p>Enable anytime, anywhere learning with mobile access and offline content synchronization.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Compliance Management</h3>
+                        <p>Ensure regulatory compliance with automated tracking, reporting, and certification management.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Scalable Solution</h3>
+                        <p>Scale from small teams to enterprise-wide deployments with unlimited user and course capacity.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Data-Driven Insights</h3>
+                        <p>Make informed decisions with detailed analytics on learner performance and course effectiveness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify LMS goes beyond traditional learning platforms with innovative features that enhance engagement and effectiveness.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>AI-Powered Personalization</h4>
+                                <p>Deliver personalized learning experiences with AI-driven content recommendations and adaptive paths.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Gamification Elements</h4>
+                                <p>Increase engagement with points, badges, leaderboards, and achievement systems.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Interactive Video Learning</h4>
+                                <p>Create immersive video experiences with embedded quizzes, notes, and branching scenarios.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Microlearning Support</h4>
+                                <p>Deliver bite-sized learning modules that fit into busy schedules and improve retention.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Course Completion Rate Comparison</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Traditional LMS</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 45%"></div>
+                                    <span class="bar-value">45%</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">Acadify LMS</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 90%"></div>
+                                    <span class="bar-value">90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our LMS Clients Say</h2>
+                <p class="section-description">
+                    Discover how organizations have transformed their training programs with Acadify LMS.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify LMS revolutionized our employee training. Course completion rates increased from 60% to 95%, 
+                            and the interactive features keep our team engaged. The analytics help us continuously improve our programs."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Rachel Green</h4>
+                                <p>L&D Director, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The gamification features are amazing! Our students are more motivated than ever, and the mobile 
+                            app allows learning during commutes. Implementation was smooth and support is outstanding."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Dr. Michael Chen</h4>
+                                <p>Dean of Online Education, University Plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Compliance tracking has never been easier. The automated certification renewals and detailed 
+                            reporting save us countless hours while ensuring we meet all regulatory requirements."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sandra Miller</h4>
+                                <p>Compliance Manager, HealthCare Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Learning?</h2>
+                <p class="cta-description">
+                    Join thousands of educators and organizations using Acadify LMS to deliver exceptional 
+                    learning experiences. Start your learning transformation today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>

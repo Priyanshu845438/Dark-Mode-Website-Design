@@ -1,5 +1,5 @@
 modules = ["web", "nodejs-20", "python-3.11"]
-run = "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"
+run = "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/index.html"
 
 [nix]
 channel = "stable-25_05"
@@ -22,7 +22,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 5000 --bind 0.0.0.0"
+args = "python3 -m http.server 5000 --bind 0.0.0.0"
 waitForPort = 5000
 
 [[ports]]
@@ -33,4 +33,4 @@ externalPort = 80
 expertMode = true
 
 [deployment]
-run = ["sh", "-c", "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"]
+run = ["sh", "-c", "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/index.html"]

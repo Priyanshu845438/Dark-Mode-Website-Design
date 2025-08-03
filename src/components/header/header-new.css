@@ -270,18 +270,21 @@ body .navbar * {
     width: 100%;
 }
 
-/* Adjust grid for Industries (2 columns) */
+/* Adjust grid for Industries (3 columns) */
 .nav-dropdown:nth-child(4) .dropdown-content {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 350px;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    gap: 1.5rem;
 }
 
 /* Adjust dropdown menu width for Industries */
 .nav-dropdown:nth-child(4) .dropdown-menu {
-    min-width: 350px;
-    max-width: 350px;
-    padding: 1rem;
+    min-width: 800px;
+    max-width: 850px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 /* Adjust grid for Products (2 columns) */  
@@ -302,11 +305,16 @@ body .navbar * {
     min-height: auto;
 }
 
-/* Reduce height for Industries and Products sections */
-.nav-dropdown:nth-child(4) .dropdown-section,
+/* Reduce height for Products sections only */
 .nav-dropdown:nth-child(5) .dropdown-section {
     min-height: auto;
     padding-bottom: 0;
+}
+
+/* Industries sections styling */
+.nav-dropdown:nth-child(4) .dropdown-section {
+    min-height: auto;
+    padding-bottom: 1rem;
 }
 
 .dropdown-section h4 {

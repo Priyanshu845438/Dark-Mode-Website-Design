@@ -3,88 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify POS - Point of Sale System</title>
-    <meta name="description" content="Modern point of sale system with payment processing, inventory integration, and comprehensive retail management features.">
+    <title>Acadify POS - Point of Sale System | Acadify Solution</title>
+    <meta name="description" content="Streamline your retail operations with Acadify POS. Modern point of sale system with inventory integration, payment processing, and comprehensive analytics.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify POS</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify POS</h1>
-                    <p class="product-subtitle">Complete Point of Sale Solution</p>
-                    <p class="product-description">
-                        Streamline your retail operations with our modern POS system. 
-                        Process payments, manage inventory, and track sales all in one platform.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-cash-register"></i>
+                        <span>Point of Sale</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">POS</span>
+                    </h1>
+                    <p class="hero-subtitle">Modern Point of Sale System</p>
+                    <p class="hero-description">
+                        Transform your retail operations with our intuitive point of sale system. Process transactions 
+                        quickly, manage inventory seamlessly, and gain valuable insights into your business performance 
+                        with our all-in-one POS solution designed for modern retailers.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Start Free Trial</button>
-                        <button class="btn btn-secondary">View Demo</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3sec</div>
+                            <div class="stat-label">Transaction Speed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-cash-register"></i>
-                        <p>POS System Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify POS Interface</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span>Sales Processing</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Payment Gateway</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-receipt"></i>
+                                    <span>Receipt Management</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">POS Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-credit-card"></i>
-                    <h3>Payment Processing</h3>
-                    <p>Accept all payment methods including cards, mobile, and contactless</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify POS</h2>
+                <p class="section-description">
+                    Acadify POS is a comprehensive point of sale solution that simplifies retail operations while 
+                    providing powerful tools for inventory management, customer engagement, and business analytics. 
+                    Our cloud-based system ensures reliability, security, and seamless integration with your existing systems.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Process transactions in under 3 seconds with our optimized checkout interface and hardware integration.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-receipt"></i>
-                    <h3>Receipt Management</h3>
-                    <p>Digital and printed receipts with customizable templates</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud-Based</h3>
+                    <p>Access your sales data and manage operations from anywhere with our secure cloud infrastructure.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Sales Reporting</h3>
-                    <p>Real-time sales analytics and comprehensive reporting</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Multi-Payment Support</h3>
+                    <p>Accept all major payment methods including cards, digital wallets, and contactless payments.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Customer Management</h3>
-                    <p>Customer profiles, loyalty programs, and purchase history</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Get instant insights into sales performance, top products, and customer behavior patterns.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Explore the comprehensive features that make Acadify POS the perfect solution for modern retail.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-cash-register"></i>
+                    </div>
+                    <h3>Sales Processing</h3>
+                    <p>Fast and intuitive checkout experience with barcode scanning, price modifications, and discount applications.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Barcode Scanning</li>
+                        <li><i class="fas fa-check"></i> Quick Item Search</li>
+                        <li><i class="fas fa-check"></i> Discount Management</li>
+                        <li><i class="fas fa-check"></i> Tax Calculations</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Processing</h3>
+                    <p>Secure payment processing with support for all major payment methods and instant transaction approval.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Card Payments</li>
+                        <li><i class="fas fa-check"></i> Digital Wallets</li>
+                        <li><i class="fas fa-check"></i> Contactless Payments</li>
+                        <li><i class="fas fa-check"></i> Split Payments</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3>Inventory Integration</h3>
+                    <p>Real-time inventory updates with automatic stock level adjustments and low stock alerts.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Real-time Updates</li>
+                        <li><i class="fas fa-check"></i> Stock Alerts</li>
+                        <li><i class="fas fa-check"></i> Product Variants</li>
+                        <li><i class="fas fa-check"></i> Batch Tracking</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer Management</h3>
+                    <p>Build customer profiles, track purchase history, and implement loyalty programs to drive repeat business.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Customer Profiles</li>
+                        <li><i class="fas fa-check"></i> Purchase History</li>
+                        <li><i class="fas fa-check"></i> Loyalty Programs</li>
+                        <li><i class="fas fa-check"></i> Email Receipts</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Sales Analytics</h3>
+                    <p>Comprehensive reporting and analytics to track sales performance, identify trends, and make informed decisions.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Sales Reports</li>
+                        <li><i class="fas fa-check"></i> Product Analytics</li>
+                        <li><i class="fas fa-check"></i> Performance Metrics</li>
+                        <li><i class="fas fa-check"></i> Custom Dashboards</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security & Compliance</h3>
+                    <p>Enterprise-grade security with PCI compliance, data encryption, and comprehensive audit trails.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> PCI Compliance</li>
+                        <li><i class="fas fa-check"></i> Data Encryption</li>
+                        <li><i class="fas fa-check"></i> User Permissions</li>
+                        <li><i class="fas fa-check"></i> Audit Trails</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Discover how Acadify POS enhances your retail operations and drives business growth.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Faster Checkout</h3>
+                        <p>Reduce checkout time by 60% with optimized interface and quick payment processing capabilities.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Increased Sales</h3>
+                        <p>Boost sales with upselling suggestions, loyalty programs, and streamlined customer experience.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>Inventory Accuracy</h3>
+                        <p>Maintain 99.9% inventory accuracy with real-time updates and automated stock management.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Customer Insights</h3>
+                        <p>Gain valuable customer insights to improve marketing strategies and enhance customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Reduced Errors</h3>
+                        <p>Minimize human errors in pricing, inventory, and transactions with automated processes.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Business Growth</h3>
+                        <p>Scale your operations easily with multi-location support and comprehensive business analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify POS stands out with innovative features and superior performance that traditional POS systems can't match.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Offline Capability</h4>
+                                <p>Continue processing sales even without internet connection with automatic sync when online.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Multi-Device Support</h4>
+                                <p>Run on tablets, smartphones, and desktop computers with consistent user experience.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Instant Setup</h4>
+                                <p>Get started in minutes with our plug-and-play setup and intuitive configuration wizard.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Customer-Centric</h4>
+                                <p>Focus on customer experience with loyalty programs, personalized offers, and quick service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Transaction Speed Comparison</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Traditional POS</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 80%"></div>
+                                    <span class="bar-value">12 seconds</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">Acadify POS</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 20%"></div>
+                                    <span class="bar-value">3 seconds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our POS Clients Say</h2>
+                <p class="section-description">
+                    See how retailers have improved their operations and customer experience with Acadify POS.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify POS transformed our checkout process. Customer wait times dropped by 70% and our staff 
+                            loves the intuitive interface. The analytics help us make better inventory decisions daily."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Jennifer Lee</h4>
+                                <p>Store Manager, Fashion Forward</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The offline capability saved us during network outages. We never miss a sale anymore. 
+                            The customer loyalty features have increased our repeat customers by 45%."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Carlos Rodriguez</h4>
+                                <p>Owner, Electronics Plus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Multi-location management is seamless. I can monitor all 8 stores from my phone and the 
+                            real-time inventory sync prevents overselling. Setup was incredibly easy."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Williams</h4>
+                                <p>Regional Manager, Quick Mart</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Modernize Your Retail?</h2>
+                <p class="cta-description">
+                    Join thousands of retailers who have upgraded to Acadify POS for faster transactions, 
+                    better inventory management, and improved customer satisfaction.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>

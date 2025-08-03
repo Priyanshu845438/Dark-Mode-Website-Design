@@ -3,88 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acadify Task - Project Management & Collaboration</title>
-    <meta name="description" content="Powerful project management and team collaboration platform with task tracking, time management, and productivity tools.">
+    <title>Acadify Task - Task Management System | Acadify Solution</title>
+    <meta name="description" content="Boost team productivity with Acadify Task. Comprehensive task management system with project tracking, team collaboration, and workflow automation.">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../../src/styles/global.css">
-    <link rel="stylesheet" href="../../src/styles/utilities.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../../src/styles/pages/products.css">
-    <link rel="stylesheet" href="../../src/components/header/header.css">
-    <link rel="stylesheet" href="../../src/components/footer/footer.css">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=11">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../../assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/icons/favicon.png" type="image/png">
 </head>
 <body>
     <!-- Header Component -->
     <div id="header-component"></div>
-    
-    <!-- Product Hero -->
+
+    <!-- Breadcrumb Navigation -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="/" class="breadcrumb-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="/pages/product.html" class="breadcrumb-link">Products</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Acadify Task</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Hero Section -->
     <section class="product-hero">
         <div class="container">
-            <div class="product-hero-content">
-                <div class="product-info">
-                    <h1 class="product-title">Acadify Task</h1>
-                    <p class="product-subtitle">Project Management & Collaboration Platform</p>
-                    <p class="product-description">
-                        Boost team productivity and streamline project management with our comprehensive 
-                        collaboration platform. Track tasks, manage deadlines, and achieve goals together.
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="product-badge">
+                        <i class="fas fa-tasks"></i>
+                        <span>Productivity Solution</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Acadify <span class="gradient-text">Task</span>
+                    </h1>
+                    <p class="hero-subtitle">Smart Task Management System</p>
+                    <p class="hero-description">
+                        Supercharge your team's productivity with our intelligent task management platform. 
+                        Organize projects, track progress, automate workflows, and collaborate seamlessly 
+                        to deliver exceptional results on time and within budget.
                     </p>
-                    <div class="product-actions">
-                        <button class="btn btn-primary">Start Free Trial</button>
-                        <button class="btn btn-secondary">View Features</button>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">70%</div>
+                            <div class="stat-label">Productivity Boost</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">On-time Delivery</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50%</div>
+                            <div class="stat-label">Time Saved</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="/pages/schedule-meeting.html" class="btn-primary">
+                            <span>Start Free Trial</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="/pages/contact.html" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Watch Demo</span>
+                        </a>
                     </div>
                 </div>
-                <div class="product-image">
-                    <div class="placeholder-image">
-                        <i class="fas fa-tasks"></i>
-                        <p>Task Management Preview</p>
+                <div class="hero-visual">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-header">
+                            <div class="dashboard-title">Acadify Task Dashboard</div>
+                            <div class="dashboard-controls">
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                                <div class="control-dot"></div>
+                            </div>
+                        </div>
+                        <div class="dashboard-content">
+                            <div class="dashboard-stats">
+                                <div class="stat-card">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Project Overview</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span>Task Calendar</span>
+                                </div>
+                                <div class="stat-card">
+                                    <i class="fas fa-users"></i>
+                                    <span>Team Progress</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Features -->
-    <section class="product-features">
+    <!-- About Product Section -->
+    <section class="about-product">
         <div class="container">
-            <h2 class="section-title">Task Management Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-project-diagram"></i>
-                    <h3>Project Planning</h3>
-                    <p>Visual project planning with Gantt charts and timelines</p>
+            <div class="section-header">
+                <h2 class="section-title">About Acadify Task</h2>
+                <p class="section-description">
+                    Acadify Task is an intelligent task management system designed to streamline project workflows, 
+                    enhance team collaboration, and boost productivity. Our platform combines powerful project 
+                    management capabilities with intuitive design to help teams achieve their goals efficiently.
+                </p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Project Organization</h3>
+                    <p>Structure projects with hierarchical tasks, subtasks, and dependencies for clear workflow management.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-users"></i>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
                     <h3>Team Collaboration</h3>
-                    <p>Real-time collaboration and communication tools</p>
+                    <p>Enable seamless collaboration with real-time updates, comments, file sharing, and team messaging.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Time Tracking</h3>
-                    <p>Built-in time tracking and productivity monitoring</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Workflow Automation</h3>
+                    <p>Automate repetitive tasks, notifications, and workflows to reduce manual work and increase efficiency.</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h3>Project Analytics</h3>
-                    <p>Comprehensive project insights and performance metrics</p>
+                <div class="about-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-gantt"></i>
+                    </div>
+                    <h3>Visual Planning</h3>
+                    <p>Plan and track projects with Gantt charts, Kanban boards, and timeline views for better visualization.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Modules Section -->
+    <section class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core Modules</h2>
+                <p class="section-description">
+                    Discover the powerful features that make project management efficient and collaborative.
+                </p>
+            </div>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Task Management</h3>
+                    <p>Create, assign, and track tasks with priorities, deadlines, and progress indicators for complete visibility.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Task Creation</li>
+                        <li><i class="fas fa-check"></i> Priority Levels</li>
+                        <li><i class="fas fa-check"></i> Due Date Tracking</li>
+                        <li><i class="fas fa-check"></i> Progress Monitoring</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Planning</h3>
+                    <p>Plan comprehensive projects with milestones, dependencies, and resource allocation for successful delivery.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Milestone Planning</li>
+                        <li><i class="fas fa-check"></i> Resource Management</li>
+                        <li><i class="fas fa-check"></i> Dependency Tracking</li>
+                        <li><i class="fas fa-check"></i> Budget Monitoring</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-columns"></i>
+                    </div>
+                    <h3>Kanban Boards</h3>
+                    <p>Visualize workflow with customizable Kanban boards, drag-and-drop functionality, and status tracking.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Custom Workflows</li>
+                        <li><i class="fas fa-check"></i> Drag & Drop</li>
+                        <li><i class="fas fa-check"></i> Status Columns</li>
+                        <li><i class="fas fa-check"></i> Card Details</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Tracking</h3>
+                    <p>Track time spent on tasks and projects with automated timers, manual entries, and detailed reporting.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Time Timers</li>
+                        <li><i class="fas fa-check"></i> Manual Entry</li>
+                        <li><i class="fas fa-check"></i> Billable Hours</li>
+                        <li><i class="fas fa-check"></i> Time Reports</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Communication Hub</h3>
+                    <p>Centralize team communication with task comments, team chat, file sharing, and notification systems.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Task Comments</li>
+                        <li><i class="fas fa-check"></i> Team Chat</li>
+                        <li><i class="fas fa-check"></i> File Sharing</li>
+                        <li><i class="fas fa-check"></i> Notifications</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="module-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Analytics & Reports</h3>
+                    <p>Generate comprehensive reports on project progress, team performance, and productivity metrics.</p>
+                    <ul class="module-features">
+                        <li><i class="fas fa-check"></i> Progress Reports</li>
+                        <li><i class="fas fa-check"></i> Team Analytics</li>
+                        <li><i class="fas fa-check"></i> Time Reports</li>
+                        <li><i class="fas fa-check"></i> Custom Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits</h2>
+                <p class="section-description">
+                    Transform your team's productivity and project delivery with Acadify Task management system.
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-number">01</div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Productivity</h3>
+                        <p>Boost team productivity by 70% with streamlined workflows and automated task management.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">02</div>
+                    <div class="benefit-content">
+                        <h3>Better Collaboration</h3>
+                        <p>Improve team collaboration with real-time updates, centralized communication, and file sharing.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">03</div>
+                    <div class="benefit-content">
+                        <h3>On-Time Delivery</h3>
+                        <p>Achieve 95% on-time project delivery with clear deadlines, progress tracking, and alerts.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">04</div>
+                    <div class="benefit-content">
+                        <h3>Resource Optimization</h3>
+                        <p>Optimize resource allocation and workload distribution for maximum efficiency and quality.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">05</div>
+                    <div class="benefit-content">
+                        <h3>Transparency</h3>
+                        <p>Increase project transparency with real-time visibility into task progress and team performance.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-number">06</div>
+                    <div class="benefit-content">
+                        <h3>Scalable Growth</h3>
+                        <p>Scale your project management processes seamlessly as your team and projects grow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We're Different Section -->
+    <section class="different-section">
+        <div class="container">
+            <div class="different-content">
+                <div class="different-text">
+                    <h2 class="section-title">How We're Different</h2>
+                    <p class="section-description">
+                        Acadify Task combines advanced features with intuitive design to deliver superior project management experience.
+                    </p>
+                    <div class="different-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>AI-Powered Insights</h4>
+                                <p>Get intelligent recommendations for task prioritization, resource allocation, and deadline optimization.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-magic"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Smart Automation</h4>
+                                <p>Automate routine tasks, status updates, and notifications to focus on high-value work.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Seamless Integrations</h4>
+                                <p>Connect with your favorite tools and platforms for a unified workflow experience.</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="point-content">
+                                <h4>Mobile-First Design</h4>
+                                <p>Manage tasks and projects on-the-go with our responsive mobile application.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="different-visual">
+                    <div class="comparison-chart">
+                        <div class="chart-header">
+                            <h4>Project Success Rate Improvement</h4>
+                        </div>
+                        <div class="chart-bars">
+                            <div class="bar-item">
+                                <div class="bar-label">Traditional Methods</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill traditional" style="width: 65%"></div>
+                                    <span class="bar-value">65%</span>
+                                </div>
+                            </div>
+                            <div class="bar-item">
+                                <div class="bar-label">Acadify Task</div>
+                                <div class="bar-container">
+                                    <div class="bar-fill acadify" style="width: 95%"></div>
+                                    <span class="bar-value">95%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Task Management Clients Say</h2>
+                <p class="section-description">
+                    See how teams have transformed their productivity and project success with Acadify Task.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Acadify Task completely transformed our project management. We've increased our on-time delivery 
+                            from 70% to 95% and team productivity has soared. The automation features save us hours every week."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Alex Johnson</h4>
+                                <p>Project Manager, Innovation Labs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The Kanban boards and time tracking features are exceptional. Our team collaboration has improved 
+                            dramatically, and we have complete visibility into project progress. Highly recommended!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Maria Garcia</h4>
+                                <p>Team Lead, Creative Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Managing multiple client projects has never been easier. The analytics and reporting give us 
+                            insights we never had before, and the mobile app keeps us connected wherever we are."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>David Brown</h4>
+                                <p>Operations Director, Consulting Firm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Boost Team Productivity?</h2>
+                <p class="cta-description">
+                    Join thousands of teams using Acadify Task to streamline projects, enhance collaboration, 
+                    and deliver exceptional results. Start your productivity transformation today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="/pages/schedule-meeting.html" class="btn-primary">
+                        <span>Start Free Trial</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="/pages/contact.html" class="btn-secondary">
+                        <i class="fas fa-phone"></i>
+                        <span>Talk to Sales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
-    
+
     <!-- Scripts -->
-    <script src="../../src/components/header/header-new.js?v=13"></script>
+    <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
 </body>
