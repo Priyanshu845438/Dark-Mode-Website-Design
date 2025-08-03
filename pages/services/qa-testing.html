@@ -19,6 +19,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -86,7 +175,48 @@
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-check-circle"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- QA Testing Illustration -->
+                            <rect x="50" y="40" width="280" height="180" rx="12" fill="#1a1a1a" stroke="#00BFFF" stroke-width="3"/>
+                            <rect x="65" y="55" width="250" height="150" rx="6" fill="#0a0a0a"/>
+                            
+                            <!-- Testing Dashboard -->
+                            <rect x="65" y="55" width="250" height="25" rx="4" fill="#2a2a2a"/>
+                            <circle cx="80" cy="67" r="4" fill="#FF5F56"/>
+                            <circle cx="95" cy="67" r="4" fill="#FFBD2E"/>
+                            <circle cx="110" cy="67" r="4" fill="#27CA3F"/>
+                            
+                            <!-- Test Results -->
+                            <rect x="75" y="85" width="12" height="110" fill="#2a2a2a"/>
+                            
+                            <!-- Test Cases -->
+                            <circle cx="95" cy="95" r="3" fill="#39FF14"/>
+                            <rect x="105" y="92" width="100" height="6" rx="3" fill="#39FF14"/>
+                            <text x="110" y="98" fill="#39FF14" font-family="Arial" font-size="8">✓ Login Test Passed</text>
+                            
+                            <circle cx="95" cy="110" r="3" fill="#39FF14"/>
+                            <rect x="105" y="107" width="120" height="6" rx="3" fill="#39FF14"/>
+                            <text x="110" y="113" fill="#39FF14" font-family="Arial" font-size="8">✓ Payment Flow Passed</text>
+                            
+                            <circle cx="95" cy="125" r="3" fill="#FF6B6B"/>
+                            <rect x="105" y="122" width="90" height="6" rx="3" fill="#FF6B6B"/>
+                            <text x="110" y="128" fill="#FF6B6B" font-family="Arial" font-size="8">✗ Error Handling</text>
+                            
+                            <circle cx="95" cy="140" r="3" fill="#FFD93D"/>
+                            <rect x="105" y="137" width="110" height="6" rx="3" fill="#FFD93D"/>
+                            <text x="110" y="143" fill="#FFD93D" font-family="Arial" font-size="8">⚠ Performance Test</text>
+                            
+                            <!-- Testing Elements -->
+                            <rect x="320" y="60" width="50" height="20" rx="5" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="1"/>
+                            <text x="330" y="72" fill="#00BFFF" font-family="monospace" font-size="10">TEST</text>
+                            
+                            <rect x="30" y="120" width="30" height="25" rx="5" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="1"/>
+                            <text x="38" y="135" fill="#39FF14" font-family="monospace" font-size="12">QA</text>
+                            
+                            <!-- Monitor Stand -->
+                            <rect x="170" y="220" width="60" height="15" rx="8" fill="#2a2a2a" stroke="#00BFFF" stroke-width="2"/>
+                            <rect x="120" y="235" width="160" height="8" rx="4" fill="#2a2a2a" stroke="#00BFFF" stroke-width="1"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -137,6 +267,18 @@
                     <h3>CI/CD Integration</h3>
                     <p>Automated testing integration into continuous integration and deployment pipelines.</p>
                 </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Testing</h3>
+                    <p>Load testing and performance optimization for high-traffic applications and systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-lock"></i>
+                    <h3>Security Testing</h3>
+                    <p>Comprehensive security assessments and vulnerability testing for enterprise applications.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -151,52 +293,118 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Selenium</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-robot" style="color: #43B02A;"></i>
+                    </div>
                     <h4>Selenium</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Cypress</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-circle" style="color: #17202C;"></i>
+                    </div>
                     <h4>Cypress</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Jest</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-js-square" style="color: #C21325;"></i>
+                    </div>
                     <h4>Jest</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Postman</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-paper-plane" style="color: #FF6C37;"></i>
+                    </div>
                     <h4>Postman</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">JMeter</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-tachometer-alt" style="color: #D22128;"></i>
+                    </div>
                     <h4>JMeter</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">TestRail</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-clipboard-list" style="color: #0052CC;"></i>
+                    </div>
                     <h4>TestRail</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Appium</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-mobile-alt" style="color: #40D47E;"></i>
+                    </div>
                     <h4>Appium</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">JIRA</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-jira" style="color: #0052CC;"></i>
+                    </div>
                     <h4>JIRA</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">BrowserStack</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-layer-group" style="color: #F24E1E;"></i>
+                    </div>
                     <h4>BrowserStack</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">TestComplete</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-check-double" style="color: #1B365D;"></i>
+                    </div>
                     <h4>TestComplete</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Katalon</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cogs" style="color: #00A1F1;"></i>
+                    </div>
                     <h4>Katalon</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">LoadRunner</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-weight" style="color: #2E7D32;"></i>
+                    </div>
                     <h4>LoadRunner</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-bug" style="color: #FF4444;"></i>
+                    </div>
+                    <h4>Bug Tracking</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-shield-alt" style="color: #28A745;"></i>
+                    </div>
+                    <h4>Security Testing</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-bar" style="color: #6F42C1;"></i>
+                    </div>
+                    <h4>Test Analytics</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-sync" style="color: #17A2B8;"></i>
+                    </div>
+                    <h4>CI/CD Testing</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-database" style="color: #FD7E14;"></i>
+                    </div>
+                    <h4>Database Testing</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cloud" style="color: #20C997;"></i>
+                    </div>
+                    <h4>Cloud Testing</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-users" style="color: #E83E8C;"></i>
+                    </div>
+                    <h4>User Acceptance</h4>
                 </div>
             </div>
         </div>
@@ -246,24 +454,58 @@
                 </div>
                 
                 <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">95%</div>
-                            <div>Bug Detection Rate</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">150+</div>
-                            <div>Testing Projects</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">60%</div>
-                            <div>Testing Time Saved</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">99.5%</div>
-                            <div>Quality Assurance</div>
-                        </div>
-                    </div>
+                    <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- QA Testing Stats Visual -->
+                        <rect x="0" y="0" width="400" height="300" rx="20" fill="rgba(0,0,0,0.1)"/>
+                        
+                        <!-- Main Bug Detection Ring -->
+                        <g transform="translate(200, 150)">
+                            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(57,255,20,0.2)" stroke-width="8"/>
+                            <circle cx="0" cy="0" r="80" fill="none" stroke="#39FF14" stroke-width="8" stroke-dasharray="377" stroke-dashoffset="19">
+                                <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-10" fill="#39FF14" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">95%</text>
+                            <text x="0" y="10" fill="#ffffff" font-family="Arial" font-size="12" text-anchor="middle">Bug Detection</text>
+                        </g>
+                        
+                        <!-- Floating Stats -->
+                        <g transform="translate(80, 80)">
+                            <circle cx="0" cy="0" r="30" fill="rgba(0,191,255,0.2)" stroke="#00BFFF" stroke-width="3">
+                                <animate attributeName="r" values="25;35;25" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-5" fill="#00BFFF" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">150+</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Testing Projects</text>
+                        </g>
+                        
+                        <g transform="translate(320, 220)">
+                            <circle cx="0" cy="0" r="30" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="3">
+                                <animate attributeName="r" values="25;35;25" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-5" fill="#FFD93D" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">60%</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Time Saved</text>
+                        </g>
+                        
+                        <g transform="translate(80, 220)">
+                            <rect x="-25" y="-15" width="50" height="30" rx="8" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="2">
+                                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+                            </rect>
+                            <text x="0" y="-3" fill="#FF6B6B" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">99.5%</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Quality Assurance</text>
+                        </g>
+                        
+                        <!-- Connection Lines -->
+                        <g opacity="0.5">
+                            <path d="M 110 110 Q 150 120 160 140" stroke="#00BFFF" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 240 140 Q 280 160 290 190" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 160 200 Q 120 210 110 220" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>

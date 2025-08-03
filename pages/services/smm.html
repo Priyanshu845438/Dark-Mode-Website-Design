@@ -19,6 +19,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -86,7 +175,51 @@
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-share-alt"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Social Media Dashboard -->
+                            <rect x="50" y="40" width="300" height="200" rx="12" fill="#1a1a1a" stroke="#00BFFF" stroke-width="3"/>
+                            <rect x="65" y="55" width="270" height="170" rx="6" fill="#0a0a0a"/>
+                            
+                            <!-- Social Dashboard Header -->
+                            <rect x="65" y="55" width="270" height="30" rx="4" fill="#2a2a2a"/>
+                            <circle cx="80" cy="70" r="5" fill="#FF5F56"/>
+                            <circle cx="95" cy="70" r="5" fill="#FFBD2E"/>
+                            <circle cx="110" cy="70" r="5" fill="#27CA3F"/>
+                            <text x="200" y="75" fill="#E1306C" font-family="Arial" font-size="14" text-anchor="middle">Social Media Manager</text>
+                            
+                            <!-- Platform Metrics -->
+                            <rect x="80" y="100" width="50" height="50" rx="4" fill="#1877F2" stroke="#fff" stroke-width="2"/>
+                            <text x="105" y="120" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">f</text>
+                            <text x="105" y="135" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">12.5K</text>
+                            <text x="105" y="145" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">followers</text>
+                            
+                            <rect x="150" y="100" width="50" height="50" rx="4" fill="#E4405F" stroke="#fff" stroke-width="2"/>
+                            <text x="175" y="125" fill="#fff" font-family="Arial" font-size="16" text-anchor="middle">📷</text>
+                            <text x="175" y="140" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">8.2K</text>
+                            <text x="175" y="150" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">likes</text>
+                            
+                            <rect x="220" y="100" width="50" height="50" rx="4" fill="#0077B5" stroke="#fff" stroke-width="2"/>
+                            <text x="245" y="125" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">in</text>
+                            <text x="245" y="140" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">5.1K</text>
+                            <text x="245" y="150" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">connections</text>
+                            
+                            <!-- Engagement Chart -->
+                            <rect x="80" y="170" width="190" height="40" rx="4" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="1"/>
+                            <path d="M 90 200 Q 120 180 150 190 T 210 175 T 260 185" stroke="#39FF14" stroke-width="3" fill="none">
+                                <animate attributeName="stroke-dasharray" values="0,300;150,150;300,0" dur="4s" repeatCount="indefinite"/>
+                            </path>
+                            <text x="90" y="175" fill="#39FF14" font-family="Arial" font-size="8">Engagement Rate: 6.8%</text>
+                            
+                            <!-- Content Calendar -->
+                            <rect x="80" y="250" width="190" height="60" rx="4" fill="rgba(255, 255, 255, 0.05)" stroke="#666" stroke-width="1"/>
+                            <text x="90" y="265" fill="#fff" font-family="Arial" font-size="10">📅 Content Calendar</text>
+                            <rect x="90" y="270" width="30" height="15" rx="2" fill="#1877F2"/>
+                            <text x="105" y="280" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">FB</text>
+                            <rect x="130" y="270" width="30" height="15" rx="2" fill="#E4405F"/>
+                            <text x="145" y="280" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">IG</text>
+                            <rect x="170" y="270" width="30" height="15" rx="2" fill="#1DA1F2"/>
+                            <text x="185" y="280" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">TW</text>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -137,6 +270,18 @@
                     <h3>TikTok Marketing</h3>
                     <p>Creative short-form video content and trend-based marketing campaigns.</p>
                 </div>
+                
+                <div class="use-case">
+                    <i class="fab fa-pinterest"></i>
+                    <h3>Pinterest Marketing</h3>
+                    <p>Visual discovery marketing and product promotion through Pinterest boards.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-comments"></i>
+                    <h3>Community Building</h3>
+                    <p>Build engaged communities and foster brand loyalty through social interactions.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -151,52 +296,112 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Hootsuite</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-share-alt" style="color: #1DA1F2;"></i>
+                    </div>
                     <h4>Hootsuite</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Buffer</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-calendar" style="color: #168EEA;"></i>
+                    </div>
                     <h4>Buffer</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Sprout</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-seedling" style="color: #59CE72;"></i>
+                    </div>
                     <h4>Sprout Social</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Meta</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-facebook" style="color: #1877F2;"></i>
+                    </div>
                     <h4>Meta Business</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Canva</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-palette" style="color: #00C4CC;"></i>
+                    </div>
                     <h4>Canva</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Adobe</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-adobe" style="color: #FF0000;"></i>
+                    </div>
                     <h4>Adobe Creative</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Later</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-clock" style="color: #FF6B35;"></i>
+                    </div>
                     <h4>Later</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">BuzzSumo</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-line" style="color: #FF6600;"></i>
+                    </div>
                     <h4>BuzzSumo</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Socialbakers</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-bar" style="color: #4A90E2;"></i>
+                    </div>
                     <h4>Socialbakers</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Mention</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-at" style="color: #26C9FF;"></i>
+                    </div>
                     <h4>Mention</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Brandwatch</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-eye" style="color: #1B4B93;"></i>
+                    </div>
                     <h4>Brandwatch</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Creator</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-video" style="color: #E4405F;"></i>
+                    </div>
                     <h4>Creator Studio</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-instagram" style="color: #E4405F;"></i>
+                    </div>
+                    <h4>Instagram</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-linkedin" style="color: #0077B5;"></i>
+                    </div>
+                    <h4>LinkedIn</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
+                    </div>
+                    <h4>Twitter</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                    </div>
+                    <h4>YouTube</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-tiktok" style="color: #000;"></i>
+                    </div>
+                    <h4>TikTok</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-pinterest" style="color: #BD081C;"></i>
+                    </div>
+                    <h4>Pinterest</h4>
                 </div>
             </div>
         </div>
@@ -247,35 +452,42 @@
                 
                 <div class="why-us-visual">
                     <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">320%</div>
-                            <div>Avg Engagement Growth</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">200+</div>
-                            <div>Social Campaigns</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">90%</div>
-                            <div>Client Retention</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">2-4w</div>
-                            <div>Setup Timeline</div>
-                        </div>
+                        <svg width="350" height="280" viewBox="0 0 350 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Social Media Growth Dashboard -->
+                            <rect x="50" y="50" width="250" height="180" rx="15" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="2"/>
+                            
+                            <!-- Engagement Growth Chart -->
+                            <rect x="70" y="70" width="80" height="120" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                            <rect x="70" y="120" width="80" height="70" rx="4" fill="#39FF14"/>
+                            <text x="110" y="150" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">320%</text>
+                            <text x="110" y="165" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Engagement</text>
+                            
+                            <!-- Campaigns Success -->
+                            <rect x="170" y="70" width="80" height="120" rx="8" fill="rgba(255, 165, 0, 0.2)" stroke="#FFA500" stroke-width="2"/>
+                            <rect x="170" y="100" width="80" height="90" rx="4" fill="#FFA500"/>
+                            <text x="210" y="140" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">200+</text>
+                            <text x="210" y="155" fill="#FFA500" font-family="Arial" font-size="10" text-anchor="middle">Campaigns</text>
+                            
+                            <!-- Client Retention -->
+                            <circle cx="110" cy="260" r="20" fill="rgba(0, 191, 255, 0.3)" stroke="#00BFFF" stroke-width="2"/>
+                            <text x="110" y="265" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle">90%</text>
+                            <text x="110" y="285" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Retention</text>
+                            
+                            <!-- Setup Timeline -->
+                            <circle cx="210" cy="260" r="20" fill="rgba(57, 255, 20, 0.3)" stroke="#39FF14" stroke-width="2"/>
+                            <text x="210" y="265" fill="#39FF14" font-family="Arial" font-size="12" text-anchor="middle">2-4w</text>
+                            <text x="210" y="285" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Timeline</text>
+                            
+                            <!-- Social Media Platform Icons -->
+                            <circle cx="160" cy="250" r="8" fill="#1877F2"/>
+                            <text x="160" y="254" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">f</text>
+                            <circle cx="180" cy="250" r="8" fill="#E4405F"/>
+                            <text x="180" y="254" fill="#fff" font-family="Arial" font-size="6" text-anchor="middle">📷</text>
+                            <circle cx="200" cy="250" r="8" fill="#1DA1F2"/>
+                            <text x="200" y="254" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">t</text>
+                        </svg>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Grow Your Social Presence?</h2>
-                <p>Let's create a social media strategy that builds community and drives business results</p>
-                <a href="../contact.html" class="cta-button">Start Social Campaign</a>
             </div>
         </div>
     </section>

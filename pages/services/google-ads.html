@@ -19,6 +19,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -86,7 +175,42 @@
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fab fa-google"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Google Ads Dashboard -->
+                            <rect x="50" y="40" width="300" height="200" rx="12" fill="#1a1a1a" stroke="#4285F4" stroke-width="3"/>
+                            <rect x="65" y="55" width="270" height="170" rx="6" fill="#0a0a0a"/>
+                            
+                            <!-- Google Ads Header -->
+                            <rect x="65" y="55" width="270" height="30" rx="4" fill="#2a2a2a"/>
+                            <circle cx="80" cy="70" r="5" fill="#FF5F56"/>
+                            <circle cx="95" cy="70" r="5" fill="#FFBD2E"/>
+                            <circle cx="110" cy="70" r="5" fill="#27CA3F"/>
+                            <text x="200" y="75" fill="#4285F4" font-family="Arial" font-size="14" text-anchor="middle">Google Ads Manager</text>
+                            
+                            <!-- Campaign Performance -->
+                            <rect x="80" y="100" width="80" height="50" rx="4" fill="#333" stroke="#34A853" stroke-width="2"/>
+                            <text x="120" y="115" fill="#34A853" font-family="Arial" font-size="10" text-anchor="middle">Clicks</text>
+                            <text x="120" y="130" fill="#fff" font-family="Arial" font-size="14" text-anchor="middle">12,456</text>
+                            <text x="120" y="145" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">+45% ↗</text>
+                            
+                            <rect x="180" y="100" width="80" height="50" rx="4" fill="#333" stroke="#FBBC05" stroke-width="2"/>
+                            <text x="220" y="115" fill="#FBBC05" font-family="Arial" font-size="10" text-anchor="middle">CPC</text>
+                            <text x="220" y="130" fill="#fff" font-family="Arial" font-size="14" text-anchor="middle">$2.15</text>
+                            <text x="220" y="145" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">-12% ↓</text>
+                            
+                            <!-- Keywords & Quality Score -->
+                            <rect x="80" y="170" width="180" height="40" rx="4" fill="rgba(66, 133, 244, 0.1)" stroke="#4285F4" stroke-width="1"/>
+                            <text x="90" y="185" fill="#4285F4" font-family="Arial" font-size="10">Top Keywords:</text>
+                            <text x="90" y="195" fill="#fff" font-family="Arial" font-size="9">• digital marketing services (QS: 9/10)</text>
+                            <text x="90" y="205" fill="#fff" font-family="Arial" font-size="9">• web development company (QS: 8/10)</text>
+                            
+                            <!-- Ad Preview -->
+                            <rect x="80" y="250" width="220" height="60" rx="4" fill="rgba(255, 255, 255, 0.05)" stroke="#666" stroke-width="1"/>
+                            <text x="90" y="265" fill="#1a0dab" font-family="Arial" font-size="10">Professional Digital Marketing | Get Results</text>
+                            <text x="90" y="275" fill="#006621" font-family="Arial" font-size="9">Ad • www.acadifysolution.com</text>
+                            <text x="90" y="285" fill="#545454" font-family="Arial" font-size="8">Expert digital marketing services that drive</text>
+                            <text x="90" y="295" fill="#545454" font-family="Arial" font-size="8">traffic and increase conversions. Get started today!</text>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -137,6 +261,18 @@
                     <h3>App Promotion</h3>
                     <p>Drive app downloads and engagement across Google's mobile network.</p>
                 </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Local Campaigns</h3>
+                    <p>Drive local store visits and phone calls with location-based advertising.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Performance Max</h3>
+                    <p>Automated campaigns across all Google channels for maximum performance.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -151,51 +287,93 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Ads</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-google" style="color: #FBBC05;"></i>
+                    </div>
                     <h4>Google Ads</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Analytics</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-bar" style="color: #4285F4;"></i>
+                    </div>
                     <h4>Google Analytics</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Keyword</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-search" style="color: #34A853;"></i>
+                    </div>
                     <h4>Keyword Planner</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Tag</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-tags" style="color: #FF6B6B;"></i>
+                    </div>
                     <h4>Google Tag Manager</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Optimize</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-flask" style="color: #9B59B6;"></i>
+                    </div>
                     <h4>Google Optimize</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Editor</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-edit" style="color: #FFA500;"></i>
+                    </div>
                     <h4>Google Ads Editor</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Script</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-code" style="color: #39FF14;"></i>
+                    </div>
                     <h4>Google Ads Scripts</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Merchant</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-bullseye" style="color: #FF5722;"></i>
+                    </div>
+                    <h4>Remarketing</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                    </div>
+                    <h4>YouTube Ads</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-shopping-bag" style="color: #673AB7;"></i>
+                    </div>
+                    <h4>Shopping Ads</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-store" style="color: #4CAF50;"></i>
+                    </div>
                     <h4>Merchant Center</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">SEMrush</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-line" style="color: #FF6B35;"></i>
+                    </div>
                     <h4>SEMrush</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">SpyFu</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-eye" style="color: #2196F3;"></i>
+                    </div>
                     <h4>SpyFu</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Optmyzr</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cogs" style="color: #795548;"></i>
+                    </div>
                     <h4>Optmyzr</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Unbounce</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-rocket" style="color: #E91E63;"></i>
+                    </div>
                     <h4>Unbounce</h4>
                 </div>
             </div>
@@ -247,35 +425,40 @@
                 
                 <div class="why-us-visual">
                     <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">420%</div>
-                            <div>Avg ROI Increase</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">65%</div>
-                            <div>Cost Reduction</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">8.2%</div>
-                            <div>Avg CTR</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">1-2w</div>
-                            <div>Setup Time</div>
-                        </div>
+                        <svg width="350" height="280" viewBox="0 0 350 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Google Ads Performance Dashboard -->
+                            <rect x="50" y="50" width="250" height="180" rx="15" fill="rgba(66, 133, 244, 0.1)" stroke="#4285F4" stroke-width="2"/>
+                            
+                            <!-- ROI Growth Chart -->
+                            <rect x="70" y="70" width="80" height="120" rx="8" fill="rgba(251, 188, 5, 0.2)" stroke="#FBBC05" stroke-width="2"/>
+                            <rect x="70" y="110" width="80" height="80" rx="4" fill="#FBBC05"/>
+                            <text x="110" y="145" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">420%</text>
+                            <text x="110" y="160" fill="#FBBC05" font-family="Arial" font-size="10" text-anchor="middle">ROI Growth</text>
+                            
+                            <!-- Cost Reduction -->
+                            <rect x="170" y="70" width="80" height="120" rx="8" fill="rgba(52, 168, 83, 0.2)" stroke="#34A853" stroke-width="2"/>
+                            <rect x="170" y="120" width="80" height="70" rx="4" fill="#34A853"/>
+                            <text x="210" y="150" fill="#fff" font-family="Arial" font-size="12" text-anchor="middle">65%</text>
+                            <text x="210" y="165" fill="#34A853" font-family="Arial" font-size="10" text-anchor="middle">Cost Saved</text>
+                            
+                            <!-- CTR Performance -->
+                            <circle cx="110" cy="260" r="20" fill="rgba(66, 133, 244, 0.3)" stroke="#4285F4" stroke-width="2"/>
+                            <text x="110" y="265" fill="#4285F4" font-family="Arial" font-size="12" text-anchor="middle">8.2%</text>
+                            <text x="110" y="285" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Avg CTR</text>
+                            
+                            <!-- Setup Timeline -->
+                            <circle cx="210" cy="260" r="20" fill="rgba(251, 188, 5, 0.3)" stroke="#FBBC05" stroke-width="2"/>
+                            <text x="210" y="265" fill="#FBBC05" font-family="Arial" font-size="12" text-anchor="middle">1-2w</text>
+                            <text x="210" y="285" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">Setup</text>
+                            
+                            <!-- Google Ads Icons -->
+                            <rect x="260" y="100" width="20" height="20" rx="4" fill="#4285F4"/>
+                            <text x="270" y="112" fill="#fff" font-family="Arial" font-size="10" text-anchor="middle">G</text>
+                            <rect x="260" y="130" width="20" height="20" rx="4" fill="#FBBC05"/>
+                            <text x="270" y="142" fill="#fff" font-family="Arial" font-size="8" text-anchor="middle">Ad</text>
+                        </svg>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Maximize Your Google Ads ROI?</h2>
-                <p>Let's create high-performing campaigns that drive qualified traffic and conversions</p>
-                <a href="../contact.html" class="cta-button">Start Ads Campaign</a>
             </div>
         </div>
     </section>

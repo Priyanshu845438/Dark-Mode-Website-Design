@@ -19,6 +19,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -86,7 +175,38 @@
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-laptop-code"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Custom Software Development Illustration -->
+                            <rect x="50" y="40" width="280" height="180" rx="12" fill="#1a1a1a" stroke="#00BFFF" stroke-width="3"/>
+                            <rect x="65" y="55" width="250" height="150" rx="6" fill="#0a0a0a"/>
+                            
+                            <!-- IDE Interface -->
+                            <rect x="65" y="55" width="250" height="25" rx="4" fill="#2a2a2a"/>
+                            <circle cx="80" cy="67" r="4" fill="#FF5F56"/>
+                            <circle cx="95" cy="67" r="4" fill="#FFBD2E"/>
+                            <circle cx="110" cy="67" r="4" fill="#27CA3F"/>
+                            
+                            <!-- Custom Software Code -->
+                            <rect x="75" y="85" width="12" height="110" fill="#2a2a2a"/>
+                            
+                            <!-- Code Lines with Custom Software Elements -->
+                            <rect x="95" y="90" width="60" height="4" rx="2" fill="#FF6B6B"/>
+                            <rect x="160" y="90" width="40" height="4" rx="2" fill="#FFD93D"/>
+                            <rect x="95" y="100" width="70" height="4" rx="2" fill="#39FF14"/>
+                            <rect x="95" y="110" width="55" height="4" rx="2" fill="#00BFFF"/>
+                            <rect x="95" y="120" width="80" height="4" rx="2" fill="#9B59B6"/>
+                            
+                            <!-- Custom Elements -->
+                            <rect x="320" y="60" width="50" height="20" rx="5" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="1"/>
+                            <text x="330" y="72" fill="#00BFFF" font-family="monospace" font-size="10">Custom</text>
+                            
+                            <rect x="30" y="120" width="30" height="25" rx="5" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="1"/>
+                            <text x="38" y="135" fill="#39FF14" font-family="monospace" font-size="12">API</text>
+                            
+                            <!-- Monitor Stand -->
+                            <rect x="170" y="220" width="60" height="15" rx="8" fill="#2a2a2a" stroke="#00BFFF" stroke-width="2"/>
+                            <rect x="120" y="235" width="160" height="8" rx="4" fill="#2a2a2a" stroke="#00BFFF" stroke-width="1"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -137,6 +257,18 @@
                     <h3>Real Estate Solutions</h3>
                     <p>Property management, CRM systems, and real estate workflow automation.</p>
                 </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-truck"></i>
+                    <h3>Logistics & Supply Chain</h3>
+                    <p>Custom logistics management and supply chain optimization software systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security & Compliance</h3>
+                    <p>Custom security applications and compliance management systems for enterprises.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -151,52 +283,118 @@
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Java</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-java" style="color: #f89820;"></i>
+                    </div>
                     <h4>Java</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">C#</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-microsoft" style="color: #0078d4;"></i>
+                    </div>
                     <h4>C# .NET</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Python</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-python" style="color: #3776AB;"></i>
+                    </div>
                     <h4>Python</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Node</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-node-js" style="color: #339933;"></i>
+                    </div>
                     <h4>Node.js</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Spring</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-leaf" style="color: #6DB33F;"></i>
+                    </div>
                     <h4>Spring Boot</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Django</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-python" style="color: #092E20;"></i>
+                    </div>
                     <h4>Django</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">SQL</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-database" style="color: #CC2927;"></i>
+                    </div>
                     <h4>SQL Server</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">PostgreSQL</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-elephant" style="color: #336791;"></i>
+                    </div>
                     <h4>PostgreSQL</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">MongoDB</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-leaf" style="color: #47A248;"></i>
+                    </div>
                     <h4>MongoDB</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Docker</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                    </div>
                     <h4>Docker</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">K8s</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-dharmachakra" style="color: #326CE5;"></i>
+                    </div>
                     <h4>Kubernetes</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Microservices</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cubes" style="color: #39FF14;"></i>
+                    </div>
                     <h4>Microservices</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-react" style="color: #61DAFB;"></i>
+                    </div>
+                    <h4>React</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-angular" style="color: #DD0031;"></i>
+                    </div>
+                    <h4>Angular</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-vuejs" style="color: #4FC08D;"></i>
+                    </div>
+                    <h4>Vue.js</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-aws" style="color: #FF9900;"></i>
+                    </div>
+                    <h4>AWS</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-google" style="color: #4285F4;"></i>
+                    </div>
+                    <h4>Google Cloud</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                    </div>
+                    <h4>Git</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-code-branch" style="color: #39FF14;"></i>
+                    </div>
+                    <h4>TypeScript</h4>
                 </div>
             </div>
         </div>
@@ -246,39 +444,63 @@
                 </div>
                 
                 <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">85+</div>
-                            <div>Custom Projects</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">98%</div>
-                            <div>Client Satisfaction</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">50%</div>
-                            <div>Process Efficiency</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">4-8mo</div>
-                            <div>Development Time</div>
-                        </div>
-                    </div>
+                    <svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Custom Software Stats Visual -->
+                        <rect x="0" y="0" width="400" height="300" rx="20" fill="rgba(0,0,0,0.1)"/>
+                        
+                        <!-- Main Performance Ring -->
+                        <g transform="translate(200, 150)">
+                            <circle cx="0" cy="0" r="80" fill="none" stroke="rgba(0,191,255,0.2)" stroke-width="8"/>
+                            <circle cx="0" cy="0" r="80" fill="none" stroke="#00BFFF" stroke-width="8" stroke-dasharray="377" stroke-dashoffset="75">
+                                <animateTransform attributeName="transform" type="rotate" values="0;360" dur="10s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-10" fill="#00BFFF" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">85+</text>
+                            <text x="0" y="10" fill="#ffffff" font-family="Arial" font-size="12" text-anchor="middle">Custom Projects</text>
+                        </g>
+                        
+                        <!-- Floating Stats -->
+                        <g transform="translate(80, 80)">
+                            <circle cx="0" cy="0" r="30" fill="rgba(57,255,20,0.2)" stroke="#39FF14" stroke-width="3">
+                                <animate attributeName="r" values="25;35;25" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-5" fill="#39FF14" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">98%</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Client Satisfaction</text>
+                        </g>
+                        
+                        <g transform="translate(320, 220)">
+                            <circle cx="0" cy="0" r="30" fill="rgba(255,217,61,0.2)" stroke="#FFD93D" stroke-width="3">
+                                <animate attributeName="r" values="25;35;25" dur="5s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="0" y="-5" fill="#FFD93D" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">50%</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Process Efficiency</text>
+                        </g>
+                        
+                        <g transform="translate(80, 220)">
+                            <rect x="-25" y="-15" width="50" height="30" rx="8" fill="rgba(255,107,107,0.2)" stroke="#FF6B6B" stroke-width="2">
+                                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite"/>
+                            </rect>
+                            <text x="0" y="-3" fill="#FF6B6B" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">4-8mo</text>
+                            <text x="0" y="8" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Development Time</text>
+                        </g>
+                        
+                        <!-- Connection Lines -->
+                        <g opacity="0.5">
+                            <path d="M 110 110 Q 150 120 160 140" stroke="#39FF14" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 240 140 Q 280 160 290 190" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="2.5s" repeatCount="indefinite"/>
+                            </path>
+                            <path d="M 160 200 Q 120 210 110 220" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5">
+                                <animate attributeName="stroke-dashoffset" values="0;10;0" dur="3s" repeatCount="indefinite"/>
+                            </path>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready for Custom Software?</h2>
-                <p>Let's build a software solution that perfectly fits your unique business needs</p>
-                <a href="../contact.html" class="cta-button">Discuss Your Project</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer Component -->
     <div id="footer-component"></div>
