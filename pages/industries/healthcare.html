@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness & Beauty Technology Solutions | Acadify Solution</title>
-    <meta name="description" content="Advanced wellness and beauty technology solutions including appointment booking, client management, and beauty service platforms.">
+    <title>Healthcare Technology Solutions | Acadify Solution</title>
+    <meta name="description" content="Advanced healthcare technology solutions including patient management systems, telemedicine platforms, and healthcare analytics for medical institutions.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
     <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/icons/favicon.png">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,16 +25,18 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/styles/pages/services.css">
     
+    <!-- Industry Specific Styles -->
     <style>
         :root {
-            --wellness-primary: #FF69B4;
-            --wellness-secondary: #00BFFF;
-            --wellness-accent: #FFB6C1;
-            --wellness-purple: #DDA0DD;
+            --industry-primary: #00BFFF;
+            --industry-secondary: #39FF14;
+            --industry-accent: #FFA500;
+            --healthcare-blue: #0066CC;
+            --healthcare-green: #00CC66;
         }
 
         .industry-hero {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(221, 160, 221, 0.1) 50%, rgba(0, 0, 0, 0.9) 100%), #000;
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
@@ -46,8 +49,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23FF69B4;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23FF69B4;stop-opacity:0"/></radialGradient></defs><circle cx="300" cy="200" r="100" fill="url(%23g1)"/><circle cx="700" cy="400" r="120" fill="url(%23g1)"/><circle cx="200" cy="700" r="90" fill="url(%23g1)"/></svg>') no-repeat center/cover;
-            opacity: 0.4;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%2300BFFF;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%2300BFFF;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g1)"/><circle cx="300" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
         }
 
         .breadcrumb {
@@ -57,13 +60,13 @@
         }
 
         .breadcrumb a {
-            color: var(--wellness-primary);
+            color: var(--industry-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .breadcrumb a:hover {
-            color: var(--wellness-secondary);
+            color: var(--industry-secondary);
         }
 
         .breadcrumb span {
@@ -74,7 +77,7 @@
         .industry-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -98,7 +101,7 @@
 
         .stat-card {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 105, 180, 0.2);
+            border: 1px solid rgba(0, 191, 255, 0.2);
             border-radius: 15px;
             padding: 30px;
             text-align: center;
@@ -108,14 +111,14 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.1);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.1);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--wellness-primary);
+            color: var(--industry-primary);
             margin-bottom: 10px;
         }
 
@@ -133,7 +136,7 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, var(--wellness-primary));
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -158,7 +161,7 @@
 
         .help-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.1);
             border-radius: 20px;
             padding: 40px;
             transition: all 0.3s ease;
@@ -173,7 +176,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -184,14 +187,14 @@
 
         .help-card:hover {
             transform: translateY(-10px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.15);
+            border-color: var(--industry-primary);
+            box-shadow: 0 25px 50px rgba(0, 191, 255, 0.15);
         }
 
         .help-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -230,7 +233,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--wellness-primary);
+            color: var(--industry-secondary);
             font-weight: bold;
         }
 
@@ -242,8 +245,8 @@
         }
 
         .why-card {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(221, 160, 221, 0.05));
-            border: 1px solid rgba(255, 105, 180, 0.2);
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.05), rgba(57, 255, 20, 0.05));
+            border: 1px solid rgba(0, 191, 255, 0.2);
             border-radius: 15px;
             padding: 35px;
             text-align: center;
@@ -252,15 +255,33 @@
             transition: all 0.3s ease;
         }
 
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 191, 255, 0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
         .why-card:hover {
             transform: scale(1.05);
-            border-color: var(--wellness-primary);
+            border-color: var(--industry-primary);
         }
 
         .why-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -292,7 +313,7 @@
 
         .project-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.1);
             border-radius: 20px;
             padding: 40px;
             position: relative;
@@ -300,10 +321,22 @@
             transition: all 0.3s ease;
         }
 
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 0 20px 0 100px;
+            opacity: 0.1;
+        }
+
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.1);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.1);
         }
 
         .project-header {
@@ -315,7 +348,7 @@
         .project-logo {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -333,7 +366,7 @@
         }
 
         .project-type {
-            color: var(--wellness-primary);
+            color: var(--industry-primary);
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -353,15 +386,15 @@
         .metric {
             text-align: center;
             padding: 15px;
-            background: rgba(255, 105, 180, 0.05);
+            background: rgba(0, 191, 255, 0.05);
             border-radius: 10px;
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.1);
         }
 
         .metric-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--wellness-primary);
+            color: var(--industry-primary);
             margin-bottom: 5px;
         }
 
@@ -371,7 +404,7 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(221, 160, 221, 0.1));
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(57, 255, 20, 0.1));
             border-radius: 30px;
             padding: 80px 40px;
             text-align: center;
@@ -380,11 +413,27 @@
             overflow: hidden;
         }
 
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
         .cta-title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, var(--wellness-primary));
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -413,23 +462,25 @@
             text-decoration: none;
             transition: all 0.3s ease;
             border: 2px solid;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             color: #000;
             border-color: transparent;
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--wellness-primary);
-            border-color: var(--wellness-primary);
+            color: var(--industry-primary);
+            border-color: var(--industry-primary);
         }
 
         .btn-primary:hover, .btn-secondary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -437,8 +488,20 @@
                 padding: 80px 0 60px;
             }
             
+            .industry-title {
+                font-size: 2.5rem;
+            }
+            
             .help-grid, .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .help-card, .project-card {
+                padding: 30px;
+            }
+            
+            .cta-section {
+                padding: 60px 20px;
             }
             
             .cta-buttons {
@@ -461,29 +524,29 @@
                 <span>/</span>
                 <a href="../industries.html">Industries</a>
                 <span>/</span>
-                <span>Wellness & Beauty</span>
+                <span>Healthcare</span>
             </nav>
             
-            <h1 class="industry-title">Wellness & Beauty Technology Solutions</h1>
-            <p class="industry-subtitle">Transform wellness and beauty businesses with comprehensive technology solutions that enhance client experiences and streamline operations.</p>
+            <h1 class="industry-title">Healthcare Technology Solutions</h1>
+            <p class="industry-subtitle">Transform patient care with innovative healthcare technology solutions that improve outcomes, streamline operations, and enhance the medical experience.</p>
             
             <!-- Industry Stats -->
             <div class="industry-stats">
                 <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Beauty Businesses</div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Healthcare Projects</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Appointments Scheduled</div>
+                    <div class="stat-number">98.5%</div>
+                    <div class="stat-label">Patient Satisfaction</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">96%</div>
-                    <div class="stat-label">Client Satisfaction</div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">System Uptime</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Revenue Increase</div>
+                    <div class="stat-number">HIPAA</div>
+                    <div class="stat-label">Compliant Solutions</div>
                 </div>
             </div>
         </div>
@@ -492,52 +555,67 @@
     <!-- How We Help Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">How We Help Wellness & Beauty Businesses</h2>
-            <p class="section-subtitle">We provide comprehensive technology solutions that enhance client experiences, streamline operations, and drive business growth in the wellness and beauty industry.</p>
+            <h2 class="section-title">How We Help Healthcare Organizations</h2>
+            <p class="section-subtitle">We provide comprehensive technology solutions that address the unique challenges of healthcare providers, improving patient care and operational efficiency.</p>
             
             <div class="help-grid">
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-user-md"></i>
                     </div>
-                    <h3 class="help-title">Appointment Booking Systems</h3>
-                    <p class="help-description">Advanced booking platforms that allow clients to schedule appointments online, manage cancellations, and receive automated reminders.</p>
+                    <h3 class="help-title">Patient Management Systems</h3>
+                    <p class="help-description">Streamline patient care with comprehensive management solutions that track medical history, appointments, and treatment plans.</p>
                     <ul class="help-features">
-                        <li>Online Booking Interface</li>
-                        <li>Real-time Availability</li>
-                        <li>Automated Reminders</li>
-                        <li>Staff Schedule Management</li>
-                        <li>Service Package Booking</li>
+                        <li>Electronic Health Records (EHR)</li>
+                        <li>Patient Portal Access</li>
+                        <li>Appointment Scheduling</li>
+                        <li>Medical History Tracking</li>
+                        <li>Insurance Management</li>
                     </ul>
                 </div>
                 
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-user-friends"></i>
+                        <i class="fas fa-video"></i>
                     </div>
-                    <h3 class="help-title">Client Management Systems</h3>
-                    <p class="help-description">Comprehensive CRM solutions that track client history, preferences, and treatment records for personalized service delivery.</p>
+                    <h3 class="help-title">Telemedicine Platforms</h3>
+                    <p class="help-description">Enable remote healthcare delivery with secure, HIPAA-compliant telemedicine solutions for virtual consultations.</p>
                     <ul class="help-features">
-                        <li>Client Profiles & History</li>
-                        <li>Treatment Records</li>
-                        <li>Preference Tracking</li>
-                        <li>Communication Tools</li>
-                        <li>Loyalty Programs</li>
+                        <li>Video Consultations</li>
+                        <li>Secure Messaging</li>
+                        <li>Digital Prescriptions</li>
+                        <li>Remote Monitoring</li>
+                        <li>Mobile App Integration</li>
                     </ul>
                 </div>
                 
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-credit-card"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="help-title">Payment & POS Systems</h3>
-                    <p class="help-description">Secure payment processing systems with support for multiple payment methods, tipping, and integrated inventory management.</p>
+                    <h3 class="help-title">Healthcare Analytics</h3>
+                    <p class="help-description">Make data-driven decisions with advanced analytics that provide insights into patient outcomes and operational performance.</p>
                     <ul class="help-features">
-                        <li>Multi-Payment Processing</li>
-                        <li>Tipping Integration</li>
-                        <li>Inventory Tracking</li>
-                        <li>Sales Analytics</li>
-                        <li>Commission Management</li>
+                        <li>Clinical Decision Support</li>
+                        <li>Performance Dashboards</li>
+                        <li>Predictive Analytics</li>
+                        <li>Quality Metrics</li>
+                        <li>Population Health Management</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="help-title">Healthcare Security</h3>
+                    <p class="help-description">Protect sensitive patient data with robust security measures and compliance frameworks designed for healthcare.</p>
+                    <ul class="help-features">
+                        <li>HIPAA Compliance</li>
+                        <li>Data Encryption</li>
+                        <li>Access Controls</li>
+                        <li>Audit Trails</li>
+                        <li>Security Monitoring</li>
                     </ul>
                 </div>
                 
@@ -545,44 +623,29 @@
                     <div class="help-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3 class="help-title">Mobile Beauty Apps</h3>
-                    <p class="help-description">Engaging mobile applications that provide clients with booking capabilities, service information, and beauty tips and tutorials.</p>
+                    <h3 class="help-title">Mobile Health Apps</h3>
+                    <p class="help-description">Engage patients with intuitive mobile applications that provide access to health information and services.</p>
                     <ul class="help-features">
-                        <li>Mobile Booking</li>
-                        <li>Service Catalog</li>
-                        <li>Beauty Tips & Tutorials</li>
-                        <li>Push Notifications</li>
-                        <li>Loyalty Rewards</li>
+                        <li>Patient Apps</li>
+                        <li>Health Tracking</li>
+                        <li>Medication Reminders</li>
+                        <li>Symptom Monitoring</li>
+                        <li>Provider Communication</li>
                     </ul>
                 </div>
                 
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="help-title">Business Analytics</h3>
-                    <p class="help-description">Comprehensive analytics platforms that provide insights into business performance, client trends, and revenue optimization opportunities.</p>
+                    <h3 class="help-title">Practice Management</h3>
+                    <p class="help-description">Optimize healthcare operations with integrated practice management solutions that handle billing, scheduling, and administration.</p>
                     <ul class="help-features">
-                        <li>Revenue Analytics</li>
-                        <li>Client Behavior Insights</li>
-                        <li>Staff Performance Metrics</li>
-                        <li>Service Popularity Analysis</li>
-                        <li>Predictive Scheduling</li>
-                    </ul>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-icon">
-                        <i class="fas fa-shopping-bag"></i>
-                    </div>
-                    <h3 class="help-title">Product & Inventory Management</h3>
-                    <p class="help-description">Efficient inventory systems that track beauty products, manage supplier relationships, and optimize stock levels for retail operations.</p>
-                    <ul class="help-features">
-                        <li>Product Catalog Management</li>
-                        <li>Inventory Tracking</li>
-                        <li>Supplier Management</li>
-                        <li>Automated Reordering</li>
-                        <li>Retail Integration</li>
+                        <li>Revenue Cycle Management</li>
+                        <li>Claims Processing</li>
+                        <li>Staff Scheduling</li>
+                        <li>Inventory Management</li>
+                        <li>Reporting & Analytics</li>
                     </ul>
                 </div>
             </div>
@@ -590,46 +653,46 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="section" style="background: rgba(255, 105, 180, 0.02);">
+    <section class="section" style="background: rgba(0, 191, 255, 0.02);">
         <div class="container">
-            <h2 class="section-title">Why Choose Acadify for Wellness & Beauty Technology</h2>
-            <p class="section-subtitle">We combine deep understanding of the wellness and beauty industry with cutting-edge technology to create solutions that truly enhance business operations.</p>
+            <h2 class="section-title">Why Choose Acadify for Healthcare Technology</h2>
+            <p class="section-subtitle">We combine deep healthcare industry knowledge with cutting-edge technology expertise to deliver solutions that truly make a difference.</p>
             
             <div class="why-us-grid">
                 <div class="why-card">
                     <div class="why-number">01</div>
-                    <h3 class="why-title">Industry Expertise</h3>
-                    <p class="why-description">Our team understands the unique challenges and opportunities in the wellness and beauty industry, from spas to salons to wellness centers.</p>
+                    <h3 class="why-title">Healthcare Expertise</h3>
+                    <p class="why-description">Our team includes healthcare professionals and HIPAA-certified developers who understand the unique requirements of medical environments.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">02</div>
-                    <h3 class="why-title">User-Friendly Design</h3>
-                    <p class="why-description">We create intuitive interfaces that are easy for both staff and clients to use, ensuring smooth adoption and enhanced user experience.</p>
+                    <h3 class="why-title">Compliance First</h3>
+                    <p class="why-description">All our solutions are built with HIPAA, HITECH, and other healthcare regulations in mind from the ground up, ensuring complete compliance.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">03</div>
-                    <h3 class="why-title">Customizable Solutions</h3>
-                    <p class="why-description">Our platforms can be tailored to match your brand identity and specific business requirements, from single locations to multi-location chains.</p>
+                    <h3 class="why-title">Interoperability</h3>
+                    <p class="why-description">We design systems that seamlessly integrate with existing healthcare infrastructure, including EHR systems, medical devices, and third-party services.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">04</div>
-                    <h3 class="why-title">Mobile-First Approach</h3>
-                    <p class="why-description">All our solutions are designed with mobile-first principles, ensuring clients can access services and book appointments from anywhere.</p>
+                    <h3 class="why-title">Scalable Solutions</h3>
+                    <p class="why-description">Our healthcare solutions grow with your organization, from small clinics to large hospital networks, maintaining performance and security.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">05</div>
-                    <h3 class="why-title">Integration Ready</h3>
-                    <p class="why-description">Seamless integration with existing business tools, payment processors, and marketing platforms for unified operations.</p>
+                    <h3 class="why-title">24/7 Support</h3>
+                    <p class="why-description">Healthcare never stops, and neither do we. Our dedicated support team ensures your systems are always running smoothly.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">06</div>
-                    <h3 class="why-title">Ongoing Support</h3>
-                    <p class="why-description">Dedicated support team with industry knowledge to help you maximize the value of your technology investment.</p>
+                    <h3 class="why-title">Innovation Focus</h3>
+                    <p class="why-description">We stay at the forefront of healthcare technology trends, incorporating AI, IoT, and emerging technologies to improve patient outcomes.</p>
                 </div>
             </div>
         </div>
@@ -638,39 +701,39 @@
     <!-- Successful Projects Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Successful Wellness & Beauty Projects Delivered</h2>
-            <p class="section-subtitle">Discover how we've helped wellness and beauty businesses transform their operations and enhance client experiences through innovative technology.</p>
+            <h2 class="section-title">Successful Healthcare Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped healthcare organizations transform their operations and improve patient care through innovative technology solutions.</p>
             
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-logo">
-                            <i class="fas fa-spa"></i>
+                            <i class="fas fa-hospital"></i>
                         </div>
                         <div class="project-info">
-                            <h4>Luxury Spa Network</h4>
-                            <div class="project-type">Comprehensive Spa Management System</div>
+                            <h4>Regional Medical Center</h4>
+                            <div class="project-type">Hospital Management System</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Developed a complete spa management platform for a luxury spa chain with 15 locations, featuring appointment booking, client management, and staff scheduling systems.
+                        Implemented a comprehensive hospital management system serving 500+ beds with integrated EHR, patient portal, and analytics dashboard. The solution streamlined operations and improved patient satisfaction scores.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">15</div>
-                            <div class="metric-label">Spa Locations</div>
+                            <div class="metric-value">45%</div>
+                            <div class="metric-label">Reduced Wait Times</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">60%</div>
-                            <div class="metric-label">Booking Efficiency</div>
+                            <div class="metric-value">92%</div>
+                            <div class="metric-label">Patient Satisfaction</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">Client Satisfaction</div>
+                            <div class="metric-value">30%</div>
+                            <div class="metric-label">Cost Reduction</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">35%</div>
-                            <div class="metric-label">Revenue Growth</div>
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">System Uptime</div>
                         </div>
                     </div>
                 </div>
@@ -678,32 +741,65 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-logo">
-                            <i class="fas fa-cut"></i>
+                            <i class="fas fa-stethoscope"></i>
                         </div>
                         <div class="project-info">
-                            <h4>StyleHub Salon Chain</h4>
-                            <div class="project-type">Salon Management Platform</div>
+                            <h4>TeleCare Network</h4>
+                            <div class="project-type">Telemedicine Platform</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Built an integrated salon management system for a hair and beauty salon chain with online booking, client profiles, inventory management, and staff commission tracking.
+                        Developed a HIPAA-compliant telemedicine platform connecting 200+ healthcare providers with patients across rural areas. Features include video consultations, e-prescriptions, and remote monitoring.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">25K+</div>
-                            <div class="metric-label">Monthly Bookings</div>
+                            <div class="metric-value">10K+</div>
+                            <div class="metric-label">Monthly Consultations</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">80%</div>
-                            <div class="metric-label">Online Booking Rate</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">50%</div>
+                            <div class="metric-value">85%</div>
                             <div class="metric-label">No-Show Reduction</div>
                         </div>
                         <div class="metric">
                             <div class="metric-value">40%</div>
-                            <div class="metric-label">Revenue Increase</div>
+                            <div class="metric-label">Travel Time Saved</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Provider Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>HealthAnalytics Pro</h4>
+                            <div class="project-type">Healthcare Analytics Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built an AI-powered analytics platform that processes millions of patient records to provide predictive insights for population health management and clinical decision support.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">25%</div>
+                            <div class="metric-label">Readmission Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15%</div>
+                            <div class="metric-label">Cost Savings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">90%</div>
+                            <div class="metric-label">Prediction Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50M+</div>
+                            <div class="metric-label">Records Processed</div>
                         </div>
                     </div>
                 </div>
@@ -714,62 +810,29 @@
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div class="project-info">
-                            <h4>BeautyConnect App</h4>
-                            <div class="project-type">Beauty Services Mobile Platform</div>
+                            <h4>PatientConnect Mobile</h4>
+                            <div class="project-type">Patient Engagement App</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Created a comprehensive beauty services mobile app connecting clients with beauty professionals, featuring at-home services, booking, and beauty consultations.
+                        Created a comprehensive patient engagement mobile app with features for appointment scheduling, medication tracking, health monitoring, and secure communication with healthcare providers.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">75K+</div>
-                            <div class="metric-label">App Users</div>
+                            <div class="metric-value">50K+</div>
+                            <div class="metric-label">Active Users</div>
                         </div>
                         <div class="metric">
                             <div class="metric-value">4.8★</div>
                             <div class="metric-label">App Store Rating</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">300+</div>
-                            <div class="metric-label">Beauty Professionals</div>
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Engagement Increase</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">90%</div>
-                            <div class="metric-label">Service Completion Rate</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-logo">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <div class="project-info">
-                            <h4>WellnessPro Platform</h4>
-                            <div class="project-type">Integrated Wellness Management</div>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Implemented a comprehensive wellness platform for fitness centers and wellness clinics with class booking, membership management, and health tracking features.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <div class="metric-value">10K+</div>
-                            <div class="metric-label">Active Members</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">85%</div>
-                            <div class="metric-label">Class Attendance Rate</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">30%</div>
-                            <div class="metric-label">Member Retention</div>
-                        </div>
-                        <div class="metric">
-                            <div class="metric-value">45%</div>
-                            <div class="metric-label">Revenue Growth</div>
+                            <div class="metric-value">35%</div>
+                            <div class="metric-label">Appointment Efficiency</div>
                         </div>
                     </div>
                 </div>
@@ -780,9 +843,9 @@
     <!-- Call to Action Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Ready to Transform Your Wellness & Beauty Business?</h2>
+            <h2 class="cta-title">Ready to Transform Your Healthcare Operations?</h2>
             <p class="cta-description">
-                Let's discuss how our technology solutions can enhance client experiences, streamline operations, and drive growth for your wellness and beauty business.
+                Let's discuss how our healthcare technology solutions can improve patient outcomes, streamline operations, and drive growth for your organization.
             </p>
             <div class="cta-buttons">
                 <a href="../schedule-meeting.html" class="btn-primary">Schedule Consultation</a>

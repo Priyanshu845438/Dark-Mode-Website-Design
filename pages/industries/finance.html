@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wellness & Beauty Technology Solutions | Acadify Solution</title>
-    <meta name="description" content="Advanced wellness and beauty technology solutions including appointment booking, client management, and beauty service platforms.">
+    <title>Finance Technology Solutions | Acadify Solution</title>
+    <meta name="description" content="Advanced financial technology solutions including banking systems, payment processing, risk management, and compliance platforms for financial institutions.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
@@ -26,14 +26,14 @@
     
     <style>
         :root {
-            --wellness-primary: #FF69B4;
-            --wellness-secondary: #00BFFF;
-            --wellness-accent: #FFB6C1;
-            --wellness-purple: #DDA0DD;
+            --finance-primary: #FFA500;
+            --finance-secondary: #00BFFF;
+            --finance-accent: #39FF14;
+            --finance-gold: #FFD700;
         }
 
         .industry-hero {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1) 0%, rgba(221, 160, 221, 0.1) 50%, rgba(0, 0, 0, 0.9) 100%), #000;
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
@@ -46,8 +46,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23FF69B4;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23FF69B4;stop-opacity:0"/></radialGradient></defs><circle cx="300" cy="200" r="100" fill="url(%23g1)"/><circle cx="700" cy="400" r="120" fill="url(%23g1)"/><circle cx="200" cy="700" r="90" fill="url(%23g1)"/></svg>') no-repeat center/cover;
-            opacity: 0.4;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23FFA500;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23FFA500;stop-opacity:0"/></radialGradient></defs><circle cx="250" cy="200" r="120" fill="url(%23g1)"/><circle cx="750" cy="400" r="100" fill="url(%23g1)"/><circle cx="350" cy="750" r="150" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
         }
 
         .breadcrumb {
@@ -57,13 +57,13 @@
         }
 
         .breadcrumb a {
-            color: var(--wellness-primary);
+            color: var(--finance-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .breadcrumb a:hover {
-            color: var(--wellness-secondary);
+            color: var(--finance-secondary);
         }
 
         .breadcrumb span {
@@ -74,7 +74,7 @@
         .industry-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--finance-primary), var(--finance-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -98,7 +98,7 @@
 
         .stat-card {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 105, 180, 0.2);
+            border: 1px solid rgba(255, 165, 0, 0.2);
             border-radius: 15px;
             padding: 30px;
             text-align: center;
@@ -108,14 +108,14 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.1);
+            border-color: var(--finance-primary);
+            box-shadow: 0 20px 40px rgba(255, 165, 0, 0.1);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--wellness-primary);
+            color: var(--finance-primary);
             margin-bottom: 10px;
         }
 
@@ -133,7 +133,7 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, var(--wellness-primary));
+            background: linear-gradient(135deg, #fff, var(--finance-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -158,7 +158,7 @@
 
         .help-card {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.1);
             border-radius: 20px;
             padding: 40px;
             transition: all 0.3s ease;
@@ -173,7 +173,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(90deg, var(--finance-primary), var(--finance-gold));
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -184,14 +184,14 @@
 
         .help-card:hover {
             transform: translateY(-10px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.15);
+            border-color: var(--finance-primary);
+            box-shadow: 0 25px 50px rgba(255, 165, 0, 0.15);
         }
 
         .help-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--finance-primary), var(--finance-gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -230,7 +230,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--wellness-primary);
+            color: var(--finance-primary);
             font-weight: bold;
         }
 
@@ -242,8 +242,8 @@
         }
 
         .why-card {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.05), rgba(221, 160, 221, 0.05));
-            border: 1px solid rgba(255, 105, 180, 0.2);
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.05), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 165, 0, 0.2);
             border-radius: 15px;
             padding: 35px;
             text-align: center;
@@ -254,13 +254,13 @@
 
         .why-card:hover {
             transform: scale(1.05);
-            border-color: var(--wellness-primary);
+            border-color: var(--finance-primary);
         }
 
         .why-number {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--finance-primary), var(--finance-gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -292,7 +292,7 @@
 
         .project-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.1);
             border-radius: 20px;
             padding: 40px;
             position: relative;
@@ -302,8 +302,8 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            border-color: var(--wellness-primary);
-            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.1);
+            border-color: var(--finance-primary);
+            box-shadow: 0 20px 40px rgba(255, 165, 0, 0.1);
         }
 
         .project-header {
@@ -315,7 +315,7 @@
         .project-logo {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--finance-primary), var(--finance-gold));
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -333,7 +333,7 @@
         }
 
         .project-type {
-            color: var(--wellness-primary);
+            color: var(--finance-primary);
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -353,15 +353,15 @@
         .metric {
             text-align: center;
             padding: 15px;
-            background: rgba(255, 105, 180, 0.05);
+            background: rgba(255, 165, 0, 0.05);
             border-radius: 10px;
-            border: 1px solid rgba(255, 105, 180, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.1);
         }
 
         .metric-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--wellness-primary);
+            color: var(--finance-primary);
             margin-bottom: 5px;
         }
 
@@ -371,7 +371,7 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(221, 160, 221, 0.1));
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(255, 215, 0, 0.1));
             border-radius: 30px;
             padding: 80px 40px;
             text-align: center;
@@ -384,7 +384,7 @@
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, var(--wellness-primary));
+            background: linear-gradient(135deg, #fff, var(--finance-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -416,20 +416,20 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--wellness-primary), var(--wellness-purple));
+            background: linear-gradient(135deg, var(--finance-primary), var(--finance-gold));
             color: #000;
             border-color: transparent;
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--wellness-primary);
-            border-color: var(--wellness-primary);
+            color: var(--finance-primary);
+            border-color: var(--finance-primary);
         }
 
         .btn-primary:hover, .btn-secondary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -461,29 +461,29 @@
                 <span>/</span>
                 <a href="../industries.html">Industries</a>
                 <span>/</span>
-                <span>Wellness & Beauty</span>
+                <span>Finance</span>
             </nav>
             
-            <h1 class="industry-title">Wellness & Beauty Technology Solutions</h1>
-            <p class="industry-subtitle">Transform wellness and beauty businesses with comprehensive technology solutions that enhance client experiences and streamline operations.</p>
+            <h1 class="industry-title">Finance Technology Solutions</h1>
+            <p class="industry-subtitle">Empower financial institutions with secure, compliant, and innovative technology solutions that drive growth and enhance customer experiences.</p>
             
             <!-- Industry Stats -->
             <div class="industry-stats">
                 <div class="stat-card">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Beauty Businesses</div>
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Financial Institutions</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Appointments Scheduled</div>
+                    <div class="stat-number">$10B+</div>
+                    <div class="stat-label">Transactions Processed</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">96%</div>
-                    <div class="stat-label">Client Satisfaction</div>
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Security Compliance</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">40%</div>
-                    <div class="stat-label">Revenue Increase</div>
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">System Monitoring</div>
                 </div>
             </div>
         </div>
@@ -492,37 +492,22 @@
     <!-- How We Help Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">How We Help Wellness & Beauty Businesses</h2>
-            <p class="section-subtitle">We provide comprehensive technology solutions that enhance client experiences, streamline operations, and drive business growth in the wellness and beauty industry.</p>
+            <h2 class="section-title">How We Help Financial Institutions</h2>
+            <p class="section-subtitle">We provide comprehensive technology solutions that address the unique challenges of financial services, ensuring security, compliance, and innovation.</p>
             
             <div class="help-grid">
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-university"></i>
                     </div>
-                    <h3 class="help-title">Appointment Booking Systems</h3>
-                    <p class="help-description">Advanced booking platforms that allow clients to schedule appointments online, manage cancellations, and receive automated reminders.</p>
+                    <h3 class="help-title">Core Banking Systems</h3>
+                    <p class="help-description">Robust banking platforms that handle all core banking operations with real-time processing, multi-currency support, and scalable architecture.</p>
                     <ul class="help-features">
-                        <li>Online Booking Interface</li>
-                        <li>Real-time Availability</li>
-                        <li>Automated Reminders</li>
-                        <li>Staff Schedule Management</li>
-                        <li>Service Package Booking</li>
-                    </ul>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-icon">
-                        <i class="fas fa-user-friends"></i>
-                    </div>
-                    <h3 class="help-title">Client Management Systems</h3>
-                    <p class="help-description">Comprehensive CRM solutions that track client history, preferences, and treatment records for personalized service delivery.</p>
-                    <ul class="help-features">
-                        <li>Client Profiles & History</li>
-                        <li>Treatment Records</li>
-                        <li>Preference Tracking</li>
-                        <li>Communication Tools</li>
-                        <li>Loyalty Programs</li>
+                        <li>Account Management</li>
+                        <li>Transaction Processing</li>
+                        <li>Multi-Currency Support</li>
+                        <li>Real-time Reporting</li>
+                        <li>API Integration</li>
                     </ul>
                 </div>
                 
@@ -530,14 +515,29 @@
                     <div class="help-icon">
                         <i class="fas fa-credit-card"></i>
                     </div>
-                    <h3 class="help-title">Payment & POS Systems</h3>
-                    <p class="help-description">Secure payment processing systems with support for multiple payment methods, tipping, and integrated inventory management.</p>
+                    <h3 class="help-title">Payment Processing</h3>
+                    <p class="help-description">Secure payment gateways and processing systems that handle multiple payment methods with PCI DSS compliance and fraud detection.</p>
                     <ul class="help-features">
-                        <li>Multi-Payment Processing</li>
-                        <li>Tipping Integration</li>
-                        <li>Inventory Tracking</li>
-                        <li>Sales Analytics</li>
-                        <li>Commission Management</li>
+                        <li>Multi-Payment Methods</li>
+                        <li>PCI DSS Compliance</li>
+                        <li>Fraud Detection</li>
+                        <li>Real-time Settlement</li>
+                        <li>Mobile Payments</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="help-title">Risk Management</h3>
+                    <p class="help-description">Advanced risk assessment and management platforms that monitor, analyze, and mitigate financial risks in real-time.</p>
+                    <ul class="help-features">
+                        <li>Credit Risk Assessment</li>
+                        <li>Market Risk Analysis</li>
+                        <li>Compliance Monitoring</li>
+                        <li>Stress Testing</li>
+                        <li>Regulatory Reporting</li>
                     </ul>
                 </div>
                 
@@ -545,44 +545,44 @@
                     <div class="help-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3 class="help-title">Mobile Beauty Apps</h3>
-                    <p class="help-description">Engaging mobile applications that provide clients with booking capabilities, service information, and beauty tips and tutorials.</p>
+                    <h3 class="help-title">Digital Banking</h3>
+                    <p class="help-description">Modern digital banking solutions including mobile apps, web platforms, and digital wallet integration for enhanced customer experience.</p>
                     <ul class="help-features">
-                        <li>Mobile Booking</li>
-                        <li>Service Catalog</li>
-                        <li>Beauty Tips & Tutorials</li>
-                        <li>Push Notifications</li>
-                        <li>Loyalty Rewards</li>
+                        <li>Mobile Banking Apps</li>
+                        <li>Digital Wallets</li>
+                        <li>Online Account Opening</li>
+                        <li>Digital KYC</li>
+                        <li>Biometric Authentication</li>
                     </ul>
                 </div>
                 
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-chart-bar"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="help-title">Business Analytics</h3>
-                    <p class="help-description">Comprehensive analytics platforms that provide insights into business performance, client trends, and revenue optimization opportunities.</p>
+                    <h3 class="help-title">Financial Analytics</h3>
+                    <p class="help-description">Comprehensive analytics platforms that provide insights into customer behavior, market trends, and business performance.</p>
                     <ul class="help-features">
-                        <li>Revenue Analytics</li>
-                        <li>Client Behavior Insights</li>
-                        <li>Staff Performance Metrics</li>
-                        <li>Service Popularity Analysis</li>
-                        <li>Predictive Scheduling</li>
+                        <li>Customer Analytics</li>
+                        <li>Portfolio Management</li>
+                        <li>Predictive Modeling</li>
+                        <li>Performance Dashboards</li>
+                        <li>Regulatory Reporting</li>
                     </ul>
                 </div>
                 
                 <div class="help-card">
                     <div class="help-icon">
-                        <i class="fas fa-shopping-bag"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="help-title">Product & Inventory Management</h3>
-                    <p class="help-description">Efficient inventory systems that track beauty products, manage supplier relationships, and optimize stock levels for retail operations.</p>
+                    <h3 class="help-title">AI & Automation</h3>
+                    <p class="help-description">Intelligent automation solutions including chatbots, process automation, and AI-powered decision making for improved efficiency.</p>
                     <ul class="help-features">
-                        <li>Product Catalog Management</li>
-                        <li>Inventory Tracking</li>
-                        <li>Supplier Management</li>
-                        <li>Automated Reordering</li>
-                        <li>Retail Integration</li>
+                        <li>Chatbots & Virtual Assistants</li>
+                        <li>Process Automation</li>
+                        <li>AI-Powered Underwriting</li>
+                        <li>Algorithmic Trading</li>
+                        <li>Robotic Process Automation</li>
                     </ul>
                 </div>
             </div>
@@ -590,46 +590,46 @@
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="section" style="background: rgba(255, 105, 180, 0.02);">
+    <section class="section" style="background: rgba(255, 165, 0, 0.02);">
         <div class="container">
-            <h2 class="section-title">Why Choose Acadify for Wellness & Beauty Technology</h2>
-            <p class="section-subtitle">We combine deep understanding of the wellness and beauty industry with cutting-edge technology to create solutions that truly enhance business operations.</p>
+            <h2 class="section-title">Why Choose Acadify for Financial Technology</h2>
+            <p class="section-subtitle">We combine deep financial industry expertise with cutting-edge technology to deliver solutions that meet the highest standards of security and compliance.</p>
             
             <div class="why-us-grid">
                 <div class="why-card">
                     <div class="why-number">01</div>
-                    <h3 class="why-title">Industry Expertise</h3>
-                    <p class="why-description">Our team understands the unique challenges and opportunities in the wellness and beauty industry, from spas to salons to wellness centers.</p>
+                    <h3 class="why-title">Financial Expertise</h3>
+                    <p class="why-description">Our team includes financial technology specialists and compliance experts who understand the complex requirements of financial services.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">02</div>
-                    <h3 class="why-title">User-Friendly Design</h3>
-                    <p class="why-description">We create intuitive interfaces that are easy for both staff and clients to use, ensuring smooth adoption and enhanced user experience.</p>
+                    <h3 class="why-title">Security First</h3>
+                    <p class="why-description">We implement bank-grade security measures with end-to-end encryption, multi-factor authentication, and continuous security monitoring.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">03</div>
-                    <h3 class="why-title">Customizable Solutions</h3>
-                    <p class="why-description">Our platforms can be tailored to match your brand identity and specific business requirements, from single locations to multi-location chains.</p>
+                    <h3 class="why-title">Regulatory Compliance</h3>
+                    <p class="why-description">All our solutions are built to meet financial regulations including PCI DSS, SOX, Basel III, and other international compliance standards.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">04</div>
-                    <h3 class="why-title">Mobile-First Approach</h3>
-                    <p class="why-description">All our solutions are designed with mobile-first principles, ensuring clients can access services and book appointments from anywhere.</p>
+                    <h3 class="why-title">Scalable Architecture</h3>
+                    <p class="why-description">Our solutions are designed to handle high transaction volumes and scale seamlessly as your business grows.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">05</div>
-                    <h3 class="why-title">Integration Ready</h3>
-                    <p class="why-description">Seamless integration with existing business tools, payment processors, and marketing platforms for unified operations.</p>
+                    <h3 class="why-title">24/7 Monitoring</h3>
+                    <p class="why-description">Continuous system monitoring and support ensure your financial operations run smoothly without interruption.</p>
                 </div>
                 
                 <div class="why-card">
                     <div class="why-number">06</div>
-                    <h3 class="why-title">Ongoing Support</h3>
-                    <p class="why-description">Dedicated support team with industry knowledge to help you maximize the value of your technology investment.</p>
+                    <h3 class="why-title">Innovation Focus</h3>
+                    <p class="why-description">We stay ahead of fintech trends, incorporating blockchain, AI, and emerging technologies to give you a competitive advantage.</p>
                 </div>
             </div>
         </div>
@@ -638,39 +638,39 @@
     <!-- Successful Projects Section -->
     <section class="section">
         <div class="container">
-            <h2 class="section-title">Successful Wellness & Beauty Projects Delivered</h2>
-            <p class="section-subtitle">Discover how we've helped wellness and beauty businesses transform their operations and enhance client experiences through innovative technology.</p>
+            <h2 class="section-title">Successful Finance Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped financial institutions modernize their operations, improve security, and enhance customer experiences through innovative technology.</p>
             
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-logo">
-                            <i class="fas fa-spa"></i>
+                            <i class="fas fa-bank"></i>
                         </div>
                         <div class="project-info">
-                            <h4>Luxury Spa Network</h4>
-                            <div class="project-type">Comprehensive Spa Management System</div>
+                            <h4>Premier Banking Network</h4>
+                            <div class="project-type">Core Banking System</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Developed a complete spa management platform for a luxury spa chain with 15 locations, featuring appointment booking, client management, and staff scheduling systems.
+                        Developed a comprehensive core banking system for a regional bank serving 500,000+ customers with real-time processing, multi-channel access, and advanced security features.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">15</div>
-                            <div class="metric-label">Spa Locations</div>
+                            <div class="metric-value">500K+</div>
+                            <div class="metric-label">Active Customers</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">60%</div>
-                            <div class="metric-label">Booking Efficiency</div>
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Daily Transactions</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">95%</div>
-                            <div class="metric-label">Client Satisfaction</div>
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">System Uptime</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">35%</div>
-                            <div class="metric-label">Revenue Growth</div>
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Processing Speed Increase</div>
                         </div>
                     </div>
                 </div>
@@ -678,32 +678,32 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-logo">
-                            <i class="fas fa-cut"></i>
+                            <i class="fas fa-credit-card"></i>
                         </div>
                         <div class="project-info">
-                            <h4>StyleHub Salon Chain</h4>
-                            <div class="project-type">Salon Management Platform</div>
+                            <h4>SecurePay Gateway</h4>
+                            <div class="project-type">Payment Processing Platform</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Built an integrated salon management system for a hair and beauty salon chain with online booking, client profiles, inventory management, and staff commission tracking.
+                        Built a PCI DSS compliant payment processing platform handling $2B+ in annual transactions with advanced fraud detection and multiple payment method support.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">25K+</div>
-                            <div class="metric-label">Monthly Bookings</div>
+                            <div class="metric-value">$2B+</div>
+                            <div class="metric-label">Annual Transactions</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">80%</div>
-                            <div class="metric-label">Online Booking Rate</div>
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Fraud Detection Rate</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">50%</div>
-                            <div class="metric-label">No-Show Reduction</div>
+                            <div class="metric-value">0.01%</div>
+                            <div class="metric-label">False Positive Rate</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">40%</div>
-                            <div class="metric-label">Revenue Increase</div>
+                            <div class="metric-value">2.5s</div>
+                            <div class="metric-label">Average Processing Time</div>
                         </div>
                     </div>
                 </div>
@@ -714,29 +714,29 @@
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div class="project-info">
-                            <h4>BeautyConnect App</h4>
-                            <div class="project-type">Beauty Services Mobile Platform</div>
+                            <h4>MobileBanking Pro</h4>
+                            <div class="project-type">Digital Banking App</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Created a comprehensive beauty services mobile app connecting clients with beauty professionals, featuring at-home services, booking, and beauty consultations.
+                        Created a comprehensive mobile banking application with biometric authentication, digital wallet integration, and AI-powered financial insights for enhanced user experience.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">75K+</div>
-                            <div class="metric-label">App Users</div>
+                            <div class="metric-value">200K+</div>
+                            <div class="metric-label">Active Users</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">4.8★</div>
+                            <div class="metric-value">4.9★</div>
                             <div class="metric-label">App Store Rating</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">300+</div>
-                            <div class="metric-label">Beauty Professionals</div>
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Digital Adoption</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">90%</div>
-                            <div class="metric-label">Service Completion Rate</div>
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Branch Visit Reduction</div>
                         </div>
                     </div>
                 </div>
@@ -744,32 +744,32 @@
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-logo">
-                            <i class="fas fa-dumbbell"></i>
+                            <i class="fas fa-chart-bar"></i>
                         </div>
                         <div class="project-info">
-                            <h4>WellnessPro Platform</h4>
-                            <div class="project-type">Integrated Wellness Management</div>
+                            <h4>RiskAnalytics Suite</h4>
+                            <div class="project-type">Risk Management Platform</div>
                         </div>
                     </div>
                     <p class="project-description">
-                        Implemented a comprehensive wellness platform for fitness centers and wellness clinics with class booking, membership management, and health tracking features.
+                        Implemented an AI-powered risk management platform that provides real-time risk assessment, regulatory compliance monitoring, and predictive analytics for financial institutions.
                     </p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="metric-value">10K+</div>
-                            <div class="metric-label">Active Members</div>
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Risk Prediction Accuracy</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">85%</div>
-                            <div class="metric-label">Class Attendance Rate</div>
+                            <div class="metric-value">50%</div>
+                            <div class="metric-label">Compliance Time Reduction</div>
                         </div>
                         <div class="metric">
                             <div class="metric-value">30%</div>
-                            <div class="metric-label">Member Retention</div>
+                            <div class="metric-label">Risk Assessment Speed</div>
                         </div>
                         <div class="metric">
-                            <div class="metric-value">45%</div>
-                            <div class="metric-label">Revenue Growth</div>
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Regulatory Compliance</div>
                         </div>
                     </div>
                 </div>
@@ -780,9 +780,9 @@
     <!-- Call to Action Section -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="cta-title">Ready to Transform Your Wellness & Beauty Business?</h2>
+            <h2 class="cta-title">Ready to Transform Your Financial Operations?</h2>
             <p class="cta-description">
-                Let's discuss how our technology solutions can enhance client experiences, streamline operations, and drive growth for your wellness and beauty business.
+                Let's discuss how our financial technology solutions can enhance security, improve compliance, and drive innovation for your institution.
             </p>
             <div class="cta-buttons">
                 <a href="../schedule-meeting.html" class="btn-primary">Schedule Consultation</a>

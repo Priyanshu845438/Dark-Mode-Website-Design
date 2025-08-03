@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech Solutions | Acadify Solution</title>
+    <meta name="description" content="Advanced FinTech solutions including digital payments, blockchain applications, robo-advisors, and financial technology platforms.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/global.css">
+    <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../../src/components/header/header-new.css?v=9">
+    <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../../src/styles/pages/services.css">
+    
+    <style>
+        :root {
+            --fintech-primary: #1E90FF;
+            --fintech-secondary: #FFD700;
+            --fintech-accent: #32CD32;
+            --fintech-dark: #191970;
+        }
+
+        .industry-hero {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 100%), #000;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .breadcrumb a {
+            color: var(--fintech-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .industry-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--fintech-primary), var(--fintech-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .industry-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--fintech-primary);
+            margin-bottom: 10px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--fintech-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(30, 144, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--fintech-primary), var(--fintech-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .help-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--fintech-primary);
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--fintech-primary), var(--fintech-secondary));
+            color: #000;
+            border-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 80px 0 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Component -->
+    <div id="header-component"></div>
+    
+    <!-- Industry Hero Section -->
+    <section class="industry-hero">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="../../index.html">Home</a>
+                <span>/</span>
+                <a href="../industries.html">Industries</a>
+                <span>/</span>
+                <span>FinTech</span>
+            </nav>
+            
+            <h1 class="industry-title">FinTech Solutions</h1>
+            <p class="industry-subtitle">Revolutionary financial technology solutions that transform traditional banking, payments, and investment services with innovative digital platforms.</p>
+            
+            <!-- Industry Stats -->
+            <div class="industry-stats">
+                <div class="stat-card">
+                    <div class="stat-number">$5B+</div>
+                    <div class="stat-label">Transactions Processed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Security Compliance</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">FinTech Solutions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">System Monitoring</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How We Help FinTech Companies</h2>
+            <p class="section-subtitle">We provide cutting-edge financial technology solutions that enable innovation, ensure compliance, and deliver exceptional user experiences.</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="help-title">Digital Payment Platforms</h3>
+                    <p class="help-description">Secure, scalable payment processing systems with multi-currency support, fraud detection, and real-time transaction monitoring.</p>
+                    <ul class="help-features">
+                        <li>Real-time Payment Processing</li>
+                        <li>Multi-currency Support</li>
+                        <li>Fraud Detection & Prevention</li>
+                        <li>API Integration</li>
+                        <li>PCI DSS Compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="help-title">Blockchain & Cryptocurrency</h3>
+                    <p class="help-description">Innovative blockchain solutions including cryptocurrency wallets, DeFi platforms, and smart contract development.</p>
+                    <ul class="help-features">
+                        <li>Cryptocurrency Wallets</li>
+                        <li>Smart Contract Development</li>
+                        <li>DeFi Platform Creation</li>
+                        <li>NFT Marketplaces</li>
+                        <li>Blockchain Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="help-title">Investment & Trading Platforms</h3>
+                    <p class="help-description">Advanced trading and investment platforms with real-time market data, portfolio management, and automated trading capabilities.</p>
+                    <ul class="help-features">
+                        <li>Real-time Market Data</li>
+                        <li>Portfolio Management</li>
+                        <li>Algorithmic Trading</li>
+                        <li>Risk Analytics</li>
+                        <li>Robo-Advisors</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="help-title">RegTech & Compliance</h3>
+                    <p class="help-description">Regulatory technology solutions that automate compliance processes, monitor transactions, and ensure adherence to financial regulations.</p>
+                    <ul class="help-features">
+                        <li>Automated Compliance</li>
+                        <li>AML & KYC Solutions</li>
+                        <li>Transaction Monitoring</li>
+                        <li>Regulatory Reporting</li>
+                        <li>Risk Assessment</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="help-title">Lending & Credit Platforms</h3>
+                    <p class="help-description">Digital lending solutions with automated underwriting, credit scoring, and loan management for various financial institutions.</p>
+                    <ul class="help-features">
+                        <li>Automated Underwriting</li>
+                        <li>Credit Scoring Models</li>
+                        <li>Loan Origination</li>
+                        <li>Default Prediction</li>
+                        <li>Portfolio Analytics</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="help-title">Personal Finance Management</h3>
+                    <p class="help-description">Comprehensive personal finance applications that help users manage budgets, track expenses, and achieve financial goals.</p>
+                    <ul class="help-features">
+                        <li>Budget Management</li>
+                        <li>Expense Tracking</li>
+                        <li>Financial Goal Setting</li>
+                        <li>Investment Insights</li>
+                        <li>Spending Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background: rgba(30, 144, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title">Why Choose Acadify for FinTech Solutions</h2>
+            <p class="section-subtitle">We combine deep financial technology expertise with cutting-edge innovation to deliver solutions that meet the highest standards of security and compliance.</p>
+            
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3 class="why-title">FinTech Expertise</h3>
+                    <p class="why-description">Our team includes financial technology specialists who understand the complex requirements and regulatory landscape of the FinTech industry.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3 class="why-title">Security-First Approach</h3>
+                    <p class="why-description">We implement bank-grade security measures with advanced encryption, fraud detection, and continuous security monitoring.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3 class="why-title">Regulatory Compliance</h3>
+                    <p class="why-description">Our solutions are built to meet financial regulations including PCI DSS, GDPR, and other international compliance standards.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3 class="why-title">Scalable Infrastructure</h3>
+                    <p class="why-description">Our platforms are designed to handle high transaction volumes and scale seamlessly as your FinTech business grows.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">05</div>
+                    <h3 class="why-title">Innovation Focus</h3>
+                    <p class="why-description">We stay at the forefront of FinTech trends, incorporating AI, blockchain, and emerging technologies for competitive advantage.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">06</div>
+                    <h3 class="why-title">24/7 Monitoring</h3>
+                    <p class="why-description">Continuous system monitoring and support ensure your FinTech operations run smoothly without interruption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Successful Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Successful FinTech Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped FinTech companies transform financial services and deliver innovative solutions that drive business growth.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>PayFlow Digital</h4>
+                            <div class="project-type">Digital Payment Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed a comprehensive digital payment platform processing millions of transactions with advanced fraud detection, multi-currency support, and real-time settlements.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$2B+</div>
+                            <div class="metric-label">Annual Processing</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Fraud Detection Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">1.2s</div>
+                            <div class="metric-label">Average Settlement</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Countries Supported</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>CryptoTrade Pro</h4>
+                            <div class="project-type">Cryptocurrency Exchange</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built a secure cryptocurrency exchange platform with advanced trading features, multi-signature wallets, and institutional-grade security measures.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">500K+</div>
+                            <div class="metric-label">Active Traders</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">Uptime</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">Trading Pairs</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Zero</div>
+                            <div class="metric-label">Security Breaches</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>InvestSmart Platform</h4>
+                            <div class="project-type">Robo-Advisor Solution</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Created an AI-powered robo-advisor platform that provides automated investment advice, portfolio management, and personalized financial planning.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$500M+</div>
+                            <div class="metric-label">Assets Under Management</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Client Satisfaction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12%</div>
+                            <div class="metric-label">Average Annual Return</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">25K+</div>
+                            <div class="metric-label">Active Investors</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>LendTech Solutions</h4>
+                            <div class="project-type">Digital Lending Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented a comprehensive digital lending platform with automated underwriting, risk assessment, and loan management for multiple financial institutions.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$100M+</div>
+                            <div class="metric-label">Loans Processed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Approval Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2min</div>
+                            <div class="metric-label">Average Decision Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3%</div>
+                            <div class="metric-label">Default Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Transform Financial Services?</h2>
+            <p class="cta-description">
+                Let's discuss how our FinTech solutions can enhance your financial services, improve customer experiences, and drive innovation in your business.
+            </p>
+            <div class="cta-buttons">
+                <a href="../schedule-meeting.html" class="btn-primary">Schedule Consultation</a>
+                <a href="../contact.html" class="btn-secondary">Contact Our Experts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+
+    <!-- Scripts -->
+    <script src="../../src/components/header/header-new.js?v=14"></script>
+    <script src="../../src/components/footer/footer.js"></script>
+    <script src="../../src/scripts/main.js"></script>
+</body>
+</html>
