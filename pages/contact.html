@@ -290,7 +290,7 @@
             // Show loading toast
             showToast('loading', 'Sending', 'Please wait while we send your message...');
             
-            // Send to PHP backend
+            // Send to PHP backend (adjust path for nested directory)
             fetch('../contact-handler.php', {
                 method: 'POST',
                 body: formData

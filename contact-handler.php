@@ -13,13 +13,16 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 // SMTP Configuration - Use environment variables or defaults
 $smtp_host = $_ENV['SMTP_HOST'] ?? 'smtp.hostinger.com';
-$smtp_port = $_ENV['SMTP_PORT'] ?? 465;
+$smtp_port = (int)($_ENV['SMTP_PORT'] ?? 465);
 $smtp_username = $_ENV['SMTP_USERNAME'] ?? 'contact@acadifysolution.com';
 $smtp_password = $_ENV['SMTP_PASSWORD'] ?? '';
-$smtp_encryption = $_ENV['SMTP_ENCRYPTION'] ?? 'ssl';
+$smtp_encryption = $smtp_port == 587 ? 'tls' : 'ssl';
 
 // Admin email (where form submissions are sent)
 $admin_email = $_ENV['ADMIN_EMAIL'] ?? 'contact@acadifysolution.com';
+
+// Log configuration for debugging
+error_log("SMTP Config: Host={$smtp_host}, Port={$smtp_port}, User={$smtp_username}, Encryption={$smtp_encryption}");
 
 // Validate and sanitize input
 function sanitize_input($data) {
@@ -74,33 +77,26 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 try {
-    // Create PHPMailer instances
-    $mail_to_admin = new PHPMailer(true);
-    $mail_to_user = new PHPMailer(true);
+    // Create PHPMailer instance (only for admin)
+    $mail = new PHPMailer(true);
 
-    // Configure SMTP for both emails
-    function configure_smtp($mail, $smtp_host, $smtp_port, $smtp_username, $smtp_password, $smtp_encryption) {
-        $mail->isSMTP();
-        $mail->Host = $smtp_host;
-        $mail->SMTPAuth = true;
-        $mail->Username = $smtp_username;
-        $mail->Password = $smtp_password;
-        $mail->SMTPSecure = $smtp_encryption;
-        $mail->Port = $smtp_port;
-        $mail->CharSet = 'UTF-8';
-    }
+    // Configure SMTP
+    $mail->isSMTP();
+    $mail->Host = $smtp_host;
+    $mail->SMTPAuth = true;
+    $mail->Username = $smtp_username;
+    $mail->Password = $smtp_password;
+    $mail->SMTPSecure = $smtp_encryption;
+    $mail->Port = $smtp_port;
+    $mail->CharSet = 'UTF-8';
 
-    // Configure both email instances
-    configure_smtp($mail_to_admin, $smtp_host, $smtp_port, $smtp_username, $smtp_password, $smtp_encryption);
-    configure_smtp($mail_to_user, $smtp_host, $smtp_port, $smtp_username, $smtp_password, $smtp_encryption);
-
-    // Email to Admin (New Contact Form Submission)
-    $mail_to_admin->setFrom($smtp_username, 'Acadify Solution Contact Form');
-    $mail_to_admin->addAddress($admin_email, 'Acadify Solution Admin');
-    $mail_to_admin->addReplyTo($email, $name);
+    // Email to Admin only (New Contact Form Submission)
+    $mail->setFrom($smtp_username, 'Acadify Solution Contact Form');
+    $mail->addAddress($admin_email, 'Acadify Solution Admin');
+    $mail->addReplyTo($email, $name);
     
-    $mail_to_admin->isHTML(true);
-    $mail_to_admin->Subject = 'New Contact Form Submission: ' . $subject;
+    $mail->isHTML(true);
+    $mail->Subject = 'New Contact Form Submission: ' . $subject;
     
     // Admin email template
     $admin_email_body = file_get_contents('email-templates/admin-notification.html');
@@ -126,49 +122,35 @@ try {
         date('g:i A')
     ], $admin_email_body);
     
-    $mail_to_admin->Body = $admin_email_body;
+    $mail->Body = $admin_email_body;
 
-    // Email to User (Thank You Confirmation)
-    $mail_to_user->setFrom($smtp_username, 'Acadify Solution');
-    $mail_to_user->addAddress($email, $name);
-    
-    $mail_to_user->isHTML(true);
-    $mail_to_user->Subject = 'Thank You for Contacting Acadify Solution';
-    
-    // User confirmation email template
-    $user_email_body = file_get_contents('email-templates/user-confirmation.html');
-    $user_email_body = str_replace([
-        '{{name}}',
-        '{{subject}}',
-        '{{message}}',
-        '{{date}}'
-    ], [
-        $name,
-        $subject,
-        nl2br($message),
-        date('F j, Y')
-    ], $user_email_body);
-    
-    $mail_to_user->Body = $user_email_body;
+    // Send email to admin only
+    $email_sent = $mail->send();
 
-    // Send both emails
-    $admin_sent = $mail_to_admin->send();
-    $user_sent = $mail_to_user->send();
-
-    if ($admin_sent && $user_sent) {
+    if ($email_sent) {
         echo json_encode([
             'success' => true,
             'message' => 'Thank you! Your message has been sent successfully. We will get back to you within 24 hours.'
         ]);
     } else {
-        throw new Exception('Failed to send one or both emails');
+        throw new Exception('Failed to send email to admin');
     }
 
 } catch (Exception $e) {
     error_log('Contact form error: ' . $e->getMessage());
+    error_log('Contact form full error: ' . $e->getTraceAsString());
+    
+    // More detailed error response
+    $error_message = 'Sorry, there was an error sending your message. Please try again later or contact us directly.';
+    
+    // Include specific error details for debugging (remove in production)
+    if (strpos($e->getMessage(), 'SMTP') !== false) {
+        $error_message .= ' (SMTP configuration issue)';
+    }
+    
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error sending your message. Please try again later or contact us directly.'
+        'message' => 'We apologize, but there was an issue sending your message. Please try again or contact us directly at contact@acadifysolution.com'
     ]);
 }
 ?>

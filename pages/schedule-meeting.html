@@ -509,7 +509,7 @@
 </head>
 <body>
     <!-- Header -->
-    <div id="header-container"></div>
+    <div id="header-component"></div>
 
     <!-- Meeting Hero Section -->
     <section class="meeting-hero">
@@ -708,7 +708,7 @@
     </section>
 
     <!-- Footer -->
-    <div id="footer-container"></div>
+    <div id="footer-component"></div>
 
     <!-- Toast Notification -->
     <div id="toast-container"></div>
@@ -718,6 +718,43 @@
     <script src="../src/components/footer/footer.js"></script>
     <script src="../src/scripts/main.js"></script>
     <script src="../src/scripts/toast.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        // Load header and footer components
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading Meeting page components...');
+            
+            // Load all components
+            await Promise.all([
+                loadComponent('header-component', '../src/components/header/header-new.html'),
+                loadComponent('footer-component', '../src/components/footer/footer.html')
+            ]);
+            
+            console.log('✓ All Meeting page components loaded');
+            
+            // Initialize components after loading
+            setTimeout(() => {
+                // Initialize navigation
+                if (window.initializeNavigation) {
+                    window.initializeNavigation();
+                }
+                
+                console.log('✅ Meeting page fully initialized');
+            }, 1000);
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -742,7 +779,7 @@
                 try {
                     const formData = new FormData(form);
                     
-                    const response = await fetch('/meeting-handler.php', {
+                    const response = await fetch('../meeting-handler.php', {
                         method: 'POST',
                         body: formData
                     });
@@ -750,17 +787,25 @@
                     const result = await response.json();
                     
                     if (result.success) {
-                        showToast('Meeting scheduled successfully! We\'ll contact you within 4 hours to confirm.', 'success');
+                        if (window.toastManager) {
+                            window.toastManager.success('Meeting Request Submitted!', result.message, 6000);
+                        } else {
+                            alert('Meeting Request Submitted! ' + result.message);
+                        }
                         form.reset();
                         
                         // Reset date minimum
                         dateInput.setAttribute('min', tomorrowString);
                     } else {
-                        throw new Error(result.message || 'Failed to schedule meeting');
+                        throw new Error(result.message || 'Failed to submit meeting request');
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    showToast('Failed to schedule meeting. Please try again or contact us directly.', 'error');
+                    if (window.toastManager) {
+                        window.toastManager.error('Error', error.message || 'We apologize, but there was an issue with your meeting request. Please try again or contact us directly.', 8000);
+                    } else {
+                        alert('Error: ' + (error.message || 'We apologize, but there was an issue with your meeting request. Please try again or contact us directly.'));
+                    }
                 } finally {
                     // Reset button state
                     submitBtn.classList.remove('loading');

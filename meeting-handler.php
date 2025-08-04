@@ -13,13 +13,16 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 // SMTP Configuration - Use environment variables or defaults
 $smtp_host = $_ENV['SMTP_HOST'] ?? 'smtp.hostinger.com';
-$smtp_port = $_ENV['SMTP_PORT'] ?? 465;
+$smtp_port = (int)($_ENV['SMTP_PORT'] ?? 465);
 $smtp_username = $_ENV['SMTP_USERNAME'] ?? 'contact@acadifysolution.com';
 $smtp_password = $_ENV['SMTP_PASSWORD'] ?? '';
-$smtp_encryption = $_ENV['SMTP_ENCRYPTION'] ?? 'ssl';
+$smtp_encryption = $smtp_port == 587 ? 'tls' : 'ssl';
 
 // Admin email (where form submissions are sent)
 $admin_email = $_ENV['ADMIN_EMAIL'] ?? 'contact@acadifysolution.com';
+
+// Log configuration for debugging
+error_log("Meeting Form SMTP Config: Host={$smtp_host}, Port={$smtp_port}, User={$smtp_username}, Encryption={$smtp_encryption}");
 
 // Validate and sanitize input
 function sanitize_input($data) {
@@ -284,20 +287,24 @@ try {
 
     echo json_encode([
         'success' => true,
-        'message' => 'Meeting request submitted successfully! We will contact you within 4 hours to confirm.',
-        'data' => [
-            'submitted_at' => date('Y-m-d H:i:s'),
-            'meeting_date' => $formattedDate,
-            'meeting_time' => $formattedTime
-        ]
+        'message' => 'Thank you! Your meeting request has been submitted successfully. We will contact you within 4 hours to confirm your appointment.'
     ]);
 
 } catch (Exception $e) {
     error_log("Meeting form error: " . $e->getMessage());
+    error_log("Meeting form full error: " . $e->getTraceAsString());
+    
+    // More detailed error response
+    $error_message = 'Sorry, there was an error processing your meeting request. Please try again or contact us directly.';
+    
+    // Include specific error details for debugging (remove in production)
+    if (strpos($e->getMessage(), 'SMTP') !== false) {
+        $error_message .= ' (SMTP configuration issue)';
+    }
+    
     echo json_encode([
         'success' => false,
-        'message' => 'Sorry, there was an error processing your meeting request. Please try again or contact us directly.',
-        'error' => 'Technical error occurred'
+        'message' => 'We apologize, but there was an issue processing your meeting request. Please try again or contact us directly at contact@acadifysolution.com'
     ]);
 }
 ?>

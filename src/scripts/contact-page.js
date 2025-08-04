@@ -147,68 +147,33 @@ class ContactFormHandler {
             formData.append('message', this.form.message.value.trim());
             formData.append('service', this.form.service.value);
             
-            // Check if we're in Replit environment (no PHP support)
-            const isReplit = window.location.hostname.includes('replit') || !document.querySelector('meta[name="php-enabled"]');
+            // Send to PHP backend
+            const response = await fetch('../contact-handler.php', {
+                method: 'POST',
+                body: formData
+            });
             
-            if (isReplit) {
-                // Simulate form submission for Replit environment
-                console.log('Replit environment detected - simulating form submission');
-                console.log('Form data that would be sent:', Object.fromEntries(formData));
-                
-                // Simulate network delay
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                this.showMessage('success', 
-                    `Thank you ${firstName}! Your message has been received. ` +
-                    `In production on Hostinger, both you and ${firstName} would receive professional email notifications. ` +
-                    `The complete email system is ready for deployment.`
-                );
+            const result = await response.json();
+            
+            if (result.success) {
+                this.showMessage('success', result.message);
                 this.form.reset();
                 
-                // Track simulation for analytics
+                // Track form submission
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'form_submit_simulation', {
+                    gtag('event', 'form_submit', {
                         'event_category': 'Contact',
-                        'event_label': 'Contact Form Simulation',
+                        'event_label': 'Contact Form',
                         'value': 1
                     });
                 }
             } else {
-                // Production environment - send to PHP backend
-                const response = await fetch('/contact-handler.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const result = await response.json();
-                
-                if (result.success) {
-                    this.showMessage('success', result.message);
-                    this.form.reset();
-                    
-                    // Track real form submission
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'form_submit', {
-                            'event_category': 'Contact',
-                            'event_label': 'Contact Form',
-                            'value': 1
-                        });
-                    }
-                } else {
-                    this.showMessage('error', result.message || 'An error occurred. Please try again.');
-                }
+                this.showMessage('error', result.message || 'An error occurred. Please try again.');
             }
             
         } catch (error) {
             console.error('Form submission error:', error);
-            if (error.message.includes('501') || error.message.includes('Unsupported method')) {
-                this.showMessage('success', 
-                    `Form validation successful! This is a Replit environment which doesn't support PHP. ` +
-                    `Your complete email system with professional templates is ready for Hostinger deployment.`
-                );
-            } else {
-                this.showMessage('error', 'Network error. Please check your connection and try again.');
-            }
+            this.showMessage('error', 'We apologize, but there was a network error. Please check your connection and try again.');
         } finally {
             this.setLoadingState(false);
         }
