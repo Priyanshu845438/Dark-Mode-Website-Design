@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Acadify Solution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%2300BFFF" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/></circle><circle cx="80" cy="80" r="2" fill="%2339FF14" opacity="0.3"><animate attributeName="opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></circle></svg>');
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #00BFFF 0%, #39FF14 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #00BFFF;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 40px 20px;
+        }
+        
+        .success-badge {
+            background: linear-gradient(135deg, #39FF14 0%, #00BFFF 100%);
+            color: #000000;
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .greeting {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .message-summary {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #00BFFF;
+        }
+        
+        .message-summary h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .user-message {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            color: #555;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .next-steps h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: 8px 0;
+            color: #555;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .next-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #39FF14;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            background: #000000;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            color: #00BFFF;
+            margin-bottom: 15px;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: #39FF14;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 25px 20px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px;
+            background: #000000;
+            color: #00BFFF;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .timestamp {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .email-container {
+                margin: 10px;
+                border-radius: 5px;
+            }
+            
+            .header, .content {
+                padding: 25px 15px;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">🚀 Acadify Solution</div>
+                <h1>Thank You for Reaching Out!</h1>
+                <p>Your message has been received successfully</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="success-badge">
+                ✅ Message Received
+            </div>
+            
+            <div class="greeting">
+                Hi <strong>{{name}}</strong>,
+            </div>
+            
+            <p>Thank you for contacting Acadify Solution! We've successfully received your inquiry and we're excited to help you transform your business with cutting-edge technology solutions.</p>
+            
+            <div class="message-summary">
+                <h3>📝 Your Message Summary:</h3>
+                <p><strong>Subject:</strong> {{subject}}</p>
+                <div class="user-message">
+                    {{message}}
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3>🚀 What Happens Next?</h3>
+                <ul>
+                    <li>Our expert team will review your requirements within 2-4 hours</li>
+                    <li>We'll analyze your project needs and prepare a customized proposal</li>
+                    <li>You'll receive a detailed response with our recommendations</li>
+                    <li>We'll schedule a free consultation call to discuss your project</li>
+                    <li>Our team will provide you with a timeline and cost estimate</li>
+                </ul>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Need Immediate Assistance?</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div>📧 Email</div>
+                        <a href="mailto:contact@acadifysolution.com">contact@acadifysolution.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <div>📱 Phone</div>
+                        <a href="tel:+916206698170">+91 62066 98170</a>
+                    </div>
+                    <div class="contact-item">
+                        <div>⏰ Response Time</div>
+                        <div style="color: #39FF14;">2-4 Hours</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timestamp">
+                📅 Message sent on {{date}}
+            </div>
+            
+            <p style="color: #666; font-size: 14px; margin-top: 20px;">
+                We appreciate your interest in our services and look forward to building something amazing together!
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Acadify Solution - Professional Technology Services</strong></p>
+            <p>Web Development • Mobile Apps • AI Solutions • Digital Transformation</p>
+            
+            <div class="social-links">
+                <a href="#" title="LinkedIn">💼</a>
+                <a href="#" title="Twitter">🐦</a>
+                <a href="#" title="GitHub">💻</a>
+                <a href="#" title="Instagram">📸</a>
+            </div>
+            
+            <p style="font-size: 12px; color: #999;">
+                This is an automated confirmation email. Please do not reply to this email.<br>
+                If you need immediate assistance, please contact us using the information above.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

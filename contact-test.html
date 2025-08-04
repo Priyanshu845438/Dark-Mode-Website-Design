@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Test - Acadify Solution</title>
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/pages/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+        <h1 style="color: #00bfff; text-align: center; margin-bottom: 2rem;">Contact Form Test (Replit Environment)</h1>
+        
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+            <h3 style="color: #39ff14; margin-bottom: 1rem;">📋 Test Status</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                This form demonstrates the frontend functionality. The PHP backend will work on Hostinger but not in this Replit environment.
+            </p>
+            <div id="test-status" style="padding: 1rem; background: rgba(0, 191, 255, 0.1); border-radius: 5px; color: #00bfff;">
+                Ready to test form validation and UI
+            </div>
+        </div>
+
+        <!-- Form Messages -->
+        <div id="form-messages" class="form-messages" style="display: none;">
+            <div id="success-message" class="message success-message" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <span class="message-text"></span>
+            </div>
+            <div id="error-message" class="message error-message" style="display: none;">
+                <i class="fas fa-exclamation-circle"></i>
+                <span class="message-text"></span>
+            </div>
+            <div id="loading-message" class="message loading-message" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span class="message-text">Testing form validation...</span>
+            </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 12px;">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Send Us a Message</h2>
+            
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group">
+                    <label for="firstName" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+                </div>
+                <div class="form-group">
+                    <label for="lastName" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+                </div>
+            </div>
+
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div class="form-group">
+                    <label for="email" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Email Address *</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+                </div>
+                <div class="form-group">
+                    <label for="phone" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="subject" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Subject *</label>
+                <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="service" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Service Interested In</label>
+                <select id="service" name="service" style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px;">
+                    <option value="">Select a service</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App Development">Mobile App Development</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                    <option value="Cloud Services">Cloud Services</option>
+                    <option value="AI Solutions">AI Solutions</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Technology Consulting">Technology Consulting</option>
+                    <option value="Data Analytics">Data Analytics</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1rem;">
+                <label for="message" style="color: rgba(255, 255, 255, 0.9); display: block; margin-bottom: 0.5rem;">Project Details *</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements, goals, and timeline..." required style="width: 100%; padding: 0.75rem; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.1); color: white; border-radius: 5px; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" id="submitBtn" style="background: linear-gradient(135deg, #00bfff, #39ff14); color: #000; border: none; padding: 1rem 2rem; border-radius: 5px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; margin: 0 auto;">
+                <i class="fas fa-paper-plane"></i>
+                <span class="btn-text">Test Form Validation</span>
+            </button>
+        </form>
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+            <h3 style="color: #39ff14; margin-bottom: 1rem;">🚀 For Hostinger Deployment</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">
+                The complete email system with PHP backend is ready for your Hostinger hosting:
+            </p>
+            <ul style="color: rgba(255, 255, 255, 0.7); list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 0.5rem;">✅ PHPMailer library downloaded and configured</li>
+                <li style="margin-bottom: 0.5rem;">✅ Professional email templates created</li>
+                <li style="margin-bottom: 0.5rem;">✅ SMTP settings pre-configured for your account</li>
+                <li style="margin-bottom: 0.5rem;">✅ Form validation and error handling</li>
+                <li style="margin-bottom: 0.5rem;">✅ Mobile responsive design</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Enhanced Contact Form Handler for Testing
+        class TestContactFormHandler {
+            constructor() {
+                this.form = document.getElementById('contactForm');
+                this.submitBtn = document.getElementById('submitBtn');
+                this.messagesContainer = document.getElementById('form-messages');
+                this.successMessage = document.getElementById('success-message');
+                this.errorMessage = document.getElementById('error-message');
+                this.loadingMessage = document.getElementById('loading-message');
+                this.testStatus = document.getElementById('test-status');
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.form) {
+                    this.form.addEventListener('submit', this.handleSubmit.bind(this));
+                    this.addInputValidation();
+                    console.log('✓ Test contact form initialized');
+                    this.testStatus.innerHTML = '✅ Form initialized - Ready for validation testing';
+                }
+            }
+            
+            addInputValidation() {
+                const inputs = this.form.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', this.validateField.bind(this));
+                    input.addEventListener('input', this.clearFieldError.bind(this));
+                });
+            }
+            
+            validateField(event) {
+                const field = event.target;
+                const fieldGroup = field.closest('.form-group');
+                
+                // Remove existing error state
+                fieldGroup.classList.remove('error');
+                
+                // Validate required fields
+                if (field.hasAttribute('required') && !field.value.trim()) {
+                    this.showFieldError(fieldGroup, 'This field is required');
+                    return false;
+                }
+                
+                // Email validation
+                if (field.type === 'email' && field.value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(field.value)) {
+                        this.showFieldError(fieldGroup, 'Please enter a valid email address');
+                        return false;
+                    }
+                }
+                
+                // Phone validation (optional)
+                if (field.type === 'tel' && field.value) {
+                    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+                    if (!phoneRegex.test(field.value.replace(/[\s\-\(\)]/g, ''))) {
+                        this.showFieldError(fieldGroup, 'Please enter a valid phone number');
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+            
+            showFieldError(fieldGroup, message) {
+                fieldGroup.classList.add('error');
+                
+                // Remove existing error message
+                const existingError = fieldGroup.querySelector('.field-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Add new error message
+                const errorElement = document.createElement('div');
+                errorElement.className = 'field-error';
+                errorElement.textContent = message;
+                errorElement.style.color = '#ff5252';
+                errorElement.style.fontSize = '0.85rem';
+                errorElement.style.marginTop = '0.5rem';
+                fieldGroup.appendChild(errorElement);
+            }
+            
+            clearFieldError(event) {
+                const fieldGroup = event.target.closest('.form-group');
+                fieldGroup.classList.remove('error');
+                const errorElement = fieldGroup.querySelector('.field-error');
+                if (errorElement) {
+                    errorElement.remove();
+                }
+            }
+            
+            async handleSubmit(event) {
+                event.preventDefault();
+                
+                // Validate all fields
+                const isValid = this.validateForm();
+                if (!isValid) {
+                    this.showMessage('error', 'Please fix the errors above and try again.');
+                    return;
+                }
+                
+                // Show loading state
+                this.setLoadingState(true);
+                
+                // Simulate form processing for test
+                setTimeout(() => {
+                    const formData = new FormData(this.form);
+                    const firstName = formData.get('firstName');
+                    const lastName = formData.get('lastName');
+                    const email = formData.get('email');
+                    const subject = formData.get('subject');
+                    
+                    this.setLoadingState(false);
+                    this.showMessage('success', 
+                        `Form validation successful! In production, this would send emails to both you and ${firstName} ${lastName} (${email}) about "${subject}".`
+                    );
+                    
+                    this.testStatus.innerHTML = `🎉 Test completed! Form data captured: ${firstName} ${lastName}, ${email}`;
+                    
+                    console.log('Form data that would be sent:', Object.fromEntries(formData));
+                }, 2000);
+            }
+            
+            validateForm() {
+                const requiredFields = this.form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!this.validateField({ target: field })) {
+                        isValid = false;
+                    }
+                });
+                
+                return isValid;
+            }
+            
+            setLoadingState(loading) {
+                if (loading) {
+                    this.submitBtn.disabled = true;
+                    this.submitBtn.style.opacity = '0.7';
+                    this.submitBtn.querySelector('.btn-text').textContent = 'Testing Validation...';
+                    this.submitBtn.querySelector('i').className = 'fas fa-spinner fa-spin';
+                    this.showMessage('loading', '');
+                } else {
+                    this.submitBtn.disabled = false;
+                    this.submitBtn.style.opacity = '1';
+                    this.submitBtn.querySelector('.btn-text').textContent = 'Test Form Validation';
+                    this.submitBtn.querySelector('i').className = 'fas fa-paper-plane';
+                    this.hideMessage('loading');
+                }
+            }
+            
+            showMessage(type, message) {
+                // Hide all messages first
+                this.hideAllMessages();
+                
+                // Show the specific message
+                this.messagesContainer.style.display = 'block';
+                
+                if (type === 'success') {
+                    this.successMessage.style.display = 'flex';
+                    this.successMessage.querySelector('.message-text').textContent = message;
+                } else if (type === 'error') {
+                    this.errorMessage.style.display = 'flex';
+                    this.errorMessage.querySelector('.message-text').textContent = message;
+                } else if (type === 'loading') {
+                    this.loadingMessage.style.display = 'flex';
+                }
+                
+                // Auto-hide success/error messages after 10 seconds
+                if (type !== 'loading') {
+                    setTimeout(() => {
+                        this.hideMessage(type);
+                    }, 10000);
+                }
+                
+                // Scroll to message
+                this.messagesContainer.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'nearest' 
+                });
+            }
+            
+            hideMessage(type) {
+                if (type === 'success') {
+                    this.successMessage.style.display = 'none';
+                } else if (type === 'error') {
+                    this.errorMessage.style.display = 'none';
+                } else if (type === 'loading') {
+                    this.loadingMessage.style.display = 'none';
+                }
+                
+                // Hide container if no messages are visible
+                const visibleMessages = this.messagesContainer.querySelectorAll('.message[style*="flex"]');
+                if (visibleMessages.length === 0) {
+                    this.messagesContainer.style.display = 'none';
+                }
+            }
+            
+            hideAllMessages() {
+                this.successMessage.style.display = 'none';
+                this.errorMessage.style.display = 'none';
+                this.loadingMessage.style.display = 'none';
+            }
+        }
+
+        // Initialize test form when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new TestContactFormHandler();
+        });
+    </script>
+</body>
+</html>

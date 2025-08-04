@@ -132,83 +132,72 @@
                     </div>
 
                     <!-- Right Column: Contact Form -->
-                    <div class="contact-form-container">
-                        <div class="form-header">
+                    <div class="contact-page-form-container">
+                        <div class="contact-page-form-header">
                             <h2>Send Us a Message</h2>
                             <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                            <div class="contact-page-environment-notice" style="background: rgba(0, 191, 255, 0.1); padding: 0.75rem; border-radius: 5px; margin: 1rem 0; font-size: 0.9rem; color: #00bfff;">
+                                <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
+                                Testing mode: Form validation works here. Email system activates on Hostinger deployment.
+                            </div>
                         </div>
 
-                        <form class="contact-form" id="contactForm">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required>
-                                </div>
+                        <!-- Success/Error Messages -->
+                        <div id="contact-form-messages" class="contact-page-form-messages" style="display: none;">
+                            <div id="contact-success-message" class="contact-page-message contact-page-success-message" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <span class="contact-page-message-text"></span>
+                            </div>
+                            <div id="contact-error-message" class="contact-page-message contact-page-error-message" style="display: none;">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <span class="contact-page-message-text"></span>
+                            </div>
+                            <div id="contact-loading-message" class="contact-page-message contact-page-loading-message" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span class="contact-page-message-text">Sending your message...</span>
+                            </div>
+                        </div>
+
+                        <form class="contact-page-form" id="contactForm" action="#" method="POST">
+                            <div class="contact-page-form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone">
-                                </div>
+                            <div class="contact-page-form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                             </div>
 
-                            <div class="form-group">
-                                <label for="company">Company Name</label>
-                                <input type="text" id="company" name="company">
+                            <div class="contact-page-form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
                             </div>
 
-                            <div class="form-group">
+                            <div class="contact-page-form-group">
                                 <label for="service">Service Interested In</label>
                                 <select id="service" name="service">
                                     <option value="">Select a service</option>
-                                    <option value="web-development">Web Development</option>
-                                    <option value="mobile-development">Mobile App Development</option>
-                                    <option value="ui-ux-design">UI/UX Design</option>
-                                    <option value="cloud-services">Cloud Services</option>
-                                    <option value="ai-solutions">AI Solutions</option>
-                                    <option value="digital-marketing">Digital Marketing</option>
-                                    <option value="consulting">Technology Consulting</option>
-                                    <option value="other">Other</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="Cloud Services">Cloud Services</option>
+                                    <option value="AI Solutions">AI Solutions</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="Technology Consulting">Technology Consulting</option>
+                                    <option value="Data Analytics">Data Analytics</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
 
-                            <div class="form-group">
-                                <label for="budget">Project Budget</label>
-                                <select id="budget" name="budget">
-                                    <option value="">Select budget range</option>
-                                    <option value="under-10k">Under $10,000</option>
-                                    <option value="10k-25k">$10,000 - $25,000</option>
-                                    <option value="25k-50k">$25,000 - $50,000</option>
-                                    <option value="50k-100k">$50,000 - $100,000</option>
-                                    <option value="over-100k">Over $100,000</option>
-                                </select>
+                            <div class="contact-page-form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell us about your project requirements and goals..." required></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label for="message">Project Details *</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project requirements, goals, and timeline..." required></textarea>
-                            </div>
-
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="newsletter" name="newsletter">
-                                    <span class="checkmark"></span>
-                                    Subscribe to our newsletter for updates and tech insights
-                                </label>
-                            </div>
-
-                            <button type="submit" class="submit-btn">
+                            <button type="submit" class="contact-page-submit-btn" id="contactSubmitBtn">
                                 <i class="fas fa-paper-plane"></i>
-                                Send Message
+                                <span class="contact-btn-text">Send Message</span>
                             </button>
                         </form>
                     </div>
