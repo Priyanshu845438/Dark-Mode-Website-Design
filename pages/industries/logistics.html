@@ -24,6 +24,520 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/styles/pages/services.css">
     
+    <!-- Industry Specific Styles -->
+    <style>
+        :root {
+            --industry-primary: #FF8C00;
+            --industry-secondary: #32CD32;
+            --industry-accent: #1E90FF;
+        }
+
+        .industry-hero {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23FF8C00;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23FF8C00;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g1)"/><circle cx="300" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .breadcrumb a {
+            color: var(--industry-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--industry-secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: #666;
+        }
+
+        .industry-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .industry-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .industry-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 25px 50px rgba(255, 140, 0, 0.15);
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .help-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .help-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .help-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-features li {
+            color: #aaa;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .help-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--industry-secondary);
+            font-weight: bold;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.05), rgba(50, 205, 50, 0.05));
+            border: 1px solid rgba(255, 140, 0, 0.2);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 140, 0, 0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(255, 140, 0, 0.15);
+        }
+
+        .why-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-description {
+            color: #ccc;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 140, 0, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 30px 60px rgba(255, 140, 0, 0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .project-logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.8rem;
+            color: #000;
+        }
+
+        .project-info h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .project-type {
+            color: var(--industry-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 140, 0, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 140, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.1), rgba(50, 205, 50, 0.1));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--industry-primary);
+            border: 2px solid var(--industry-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--industry-primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 100px 0 60px;
+            }
+
+            .industry-title {
+                font-size: 2.5rem;
+            }
+
+            .industry-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+    </style>
+    
     <style>
         :root {
             --logistics-primary: #FF4500;
@@ -96,6 +610,384 @@
                     <div class="stat-number">500+</div>
                     <div class="stat-label">Fleet Vehicles</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How We Help Logistics & Supply Chain Companies</h2>
+            <p class="section-subtitle">We provide comprehensive technology solutions that optimize supply chain operations, reduce costs, and improve delivery performance.</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="help-title">Fleet Management Systems</h3>
+                    <p class="help-description">Advanced fleet management solutions with GPS tracking, route optimization, and vehicle maintenance scheduling for maximum efficiency.</p>
+                    <ul class="help-features">
+                        <li>Real-time GPS Tracking</li>
+                        <li>Route Optimization</li>
+                        <li>Fuel Management</li>
+                        <li>Driver Performance Monitoring</li>
+                        <li>Maintenance Scheduling</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="help-title">Warehouse Management</h3>
+                    <p class="help-description">Comprehensive warehouse solutions with inventory tracking, automated picking systems, and real-time stock management.</p>
+                    <ul class="help-features">
+                        <li>Inventory Management</li>
+                        <li>Automated Picking Systems</li>
+                        <li>Barcode & RFID Integration</li>
+                        <li>Order Processing</li>
+                        <li>Space Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="help-title">Shipment Tracking</h3>
+                    <p class="help-description">End-to-end shipment tracking solutions providing real-time visibility into package status and delivery updates.</p>
+                    <ul class="help-features">
+                        <li>Real-time Tracking</li>
+                        <li>Delivery Notifications</li>
+                        <li>Customer Portals</li>
+                        <li>Multi-carrier Integration</li>
+                        <li>Exception Management</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="help-title">Supply Chain Analytics</h3>
+                    <p class="help-description">Advanced analytics platform providing insights into supply chain performance, cost optimization, and predictive maintenance.</p>
+                    <ul class="help-features">
+                        <li>Performance Dashboards</li>
+                        <li>Cost Analysis</li>
+                        <li>Demand Forecasting</li>
+                        <li>Risk Assessment</li>
+                        <li>KPI Monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="help-title">Automation Solutions</h3>
+                    <p class="help-description">Intelligent automation systems for warehouse operations, order processing, and logistics workflow optimization.</p>
+                    <ul class="help-features">
+                        <li>Robotic Process Automation</li>
+                        <li>Automated Sorting</li>
+                        <li>AI-powered Planning</li>
+                        <li>Smart Scheduling</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="help-title">Mobile Logistics Apps</h3>
+                    <p class="help-description">Mobile applications for drivers, warehouse staff, and customers to manage deliveries, track shipments, and optimize operations.</p>
+                    <ul class="help-features">
+                        <li>Driver Mobile Apps</li>
+                        <li>Proof of Delivery</li>
+                        <li>Customer Tracking Apps</li>
+                        <li>Warehouse Mobile Tools</li>
+                        <li>Offline Capabilities</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background: rgba(255, 140, 0, 0.02);">
+        <div class="container">
+            <h2 class="section-title">Why Choose Acadify for Logistics Technology</h2>
+            <p class="section-subtitle">We combine deep logistics industry knowledge with cutting-edge technology expertise to deliver solutions that optimize operations and drive growth.</p>
+            
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3 class="why-title">Logistics Expertise</h3>
+                    <p class="why-description">Our team includes logistics industry specialists who understand the complex challenges of supply chain management and last-mile delivery.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3 class="why-title">Real-time Visibility</h3>
+                    <p class="why-description">Our solutions provide complete real-time visibility across your entire supply chain, from warehouse to final delivery destination.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3 class="why-title">Scalable Infrastructure</h3>
+                    <p class="why-description">Our logistics platforms are designed to handle high transaction volumes and scale seamlessly as your business grows.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3 class="why-title">Cost Optimization</h3>
+                    <p class="why-description">Advanced algorithms and analytics help optimize routes, reduce fuel costs, and minimize operational expenses across your logistics network.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">05</div>
+                    <h3 class="why-title">Integration Capabilities</h3>
+                    <p class="why-description">Seamless integration with existing ERP systems, e-commerce platforms, and third-party logistics providers for unified operations.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">06</div>
+                    <h3 class="why-title">24/7 Monitoring</h3>
+                    <p class="why-description">Continuous system monitoring and support ensure your logistics operations run smoothly without interruption, even during peak seasons.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">07</div>
+                    <h3 class="why-title">Compliance & Security</h3>
+                    <p class="why-description">Our solutions meet industry compliance standards and provide robust security measures to protect sensitive logistics and customer data.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">08</div>
+                    <h3 class="why-title">Proven Results</h3>
+                    <p class="why-description">Our logistics technology solutions deliver measurable results with improved delivery times, reduced costs, and enhanced customer satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Successful Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Successful Logistics Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped logistics and supply chain companies optimize their operations and improve delivery performance.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>FastTrack Logistics</h4>
+                            <div class="project-type">Fleet Management System</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented comprehensive fleet management system for 500+ vehicle fleet with GPS tracking, route optimization, and automated maintenance scheduling.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">30%</div>
+                            <div class="metric-label">Fuel Cost Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">98%</div>
+                            <div class="metric-label">On-time Delivery</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">25%</div>
+                            <div class="metric-label">Route Optimization</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">500+</div>
+                            <div class="metric-label">Vehicles Managed</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>MegaWarehouse Solutions</h4>
+                            <div class="project-type">Warehouse Management System</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed advanced warehouse management system with automated picking, inventory tracking, and real-time stock management across 15 distribution centers.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Picking Efficiency</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Inventory Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">35%</div>
+                            <div class="metric-label">Space Utilization</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Distribution Centers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>GlobalShip Tracking</h4>
+                            <div class="project-type">Shipment Tracking Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built comprehensive shipment tracking platform processing 1M+ packages daily with real-time updates, customer notifications, and multi-carrier integration.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Daily Packages</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.8%</div>
+                            <div class="metric-label">Tracking Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Carrier Integrations</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>LogiAnalytics Pro</h4>
+                            <div class="project-type">Supply Chain Analytics</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Created AI-powered supply chain analytics platform providing predictive insights, cost optimization recommendations, and performance monitoring for global operations.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">20%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Forecast Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50TB+</div>
+                            <div class="metric-label">Data Processed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">KPIs Monitored</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>AutoLogistics Suite</h4>
+                            <div class="project-type">Automation Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented robotic process automation across warehouse operations, reducing manual tasks by 60% and improving accuracy through intelligent automation systems.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Manual Task Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">Process Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">45%</div>
+                            <div class="metric-label">Productivity Increase</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">24/7</div>
+                            <div class="metric-label">Automated Operations</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>MobileLogistics App</h4>
+                            <div class="project-type">Driver & Customer Mobile App</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed comprehensive mobile application suite for drivers and customers with proof of delivery, real-time tracking, and offline capabilities for seamless operations.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">10K+</div>
+                            <div class="metric-label">Active Drivers</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.9★</div>
+                            <div class="metric-label">App Store Rating</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">90%</div>
+                            <div class="metric-label">Digital Proof Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">App Reliability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Optimize Your Logistics Operations?</h2>
+            <p class="cta-description">Let's discuss how our logistics technology solutions can streamline your supply chain and improve delivery performance.</p>
+            <div class="cta-buttons">
+                <a href="../schedule-meeting.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="../contact.html" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>

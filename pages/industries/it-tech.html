@@ -24,6 +24,520 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/styles/pages/services.css">
     
+    <!-- Industry Specific Styles -->
+    <style>
+        :root {
+            --industry-primary: #007BFF;
+            --industry-secondary: #28A745;
+            --industry-accent: #FFC107;
+        }
+
+        .industry-hero {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23007BFF;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23007BFF;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g1)"/><circle cx="300" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .breadcrumb a {
+            color: var(--industry-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--industry-secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: #666;
+        }
+
+        .industry-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .industry-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .industry-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 25px 50px rgba(0, 123, 255, 0.15);
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .help-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .help-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .help-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-features li {
+            color: #aaa;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .help-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--industry-secondary);
+            font-weight: bold;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.05), rgba(40, 167, 69, 0.05));
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 123, 255, 0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.15);
+        }
+
+        .why-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-description {
+            color: #ccc;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 123, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 30px 60px rgba(0, 123, 255, 0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .project-logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.8rem;
+            color: #000;
+        }
+
+        .project-info h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .project-type {
+            color: var(--industry-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 123, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(40, 167, 69, 0.1));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--industry-primary);
+            border: 2px solid var(--industry-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--industry-primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 100px 0 60px;
+            }
+
+            .industry-title {
+                font-size: 2.5rem;
+            }
+
+            .industry-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+    </style>
+    
     <style>
         :root {
             --tech-primary: #00BFFF;
@@ -96,6 +610,384 @@
                     <div class="stat-number">50%</div>
                     <div class="stat-label">Cost Reduction</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How We Help IT & Technology Companies</h2>
+            <p class="section-subtitle">We provide comprehensive technology solutions that accelerate digital transformation, enhance operational efficiency, and drive innovation.</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="help-title">Cloud Infrastructure</h3>
+                    <p class="help-description">Scalable cloud solutions with automated deployment, monitoring, and optimization for maximum performance and cost efficiency.</p>
+                    <ul class="help-features">
+                        <li>Cloud Migration Services</li>
+                        <li>Infrastructure as Code</li>
+                        <li>Auto-scaling Solutions</li>
+                        <li>Cost Optimization</li>
+                        <li>Multi-cloud Management</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="help-title">Cybersecurity Solutions</h3>
+                    <p class="help-description">Enterprise-grade security solutions protecting against evolving threats with advanced monitoring and incident response capabilities.</p>
+                    <ul class="help-features">
+                        <li>Threat Detection & Response</li>
+                        <li>Security Audits</li>
+                        <li>Compliance Management</li>
+                        <li>Identity & Access Management</li>
+                        <li>Security Training</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="help-title">AI & Machine Learning</h3>
+                    <p class="help-description">Intelligent solutions leveraging AI and ML to automate processes, extract insights, and drive innovation across your organization.</p>
+                    <ul class="help-features">
+                        <li>Predictive Analytics</li>
+                        <li>Natural Language Processing</li>
+                        <li>Computer Vision</li>
+                        <li>Process Automation</li>
+                        <li>Custom AI Models</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="help-title">Data Management</h3>
+                    <p class="help-description">Comprehensive data solutions including warehousing, analytics, and governance to unlock the value of your organizational data.</p>
+                    <ul class="help-features">
+                        <li>Data Warehousing</li>
+                        <li>ETL Pipelines</li>
+                        <li>Real-time Analytics</li>
+                        <li>Data Governance</li>
+                        <li>Business Intelligence</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="help-title">DevOps & Automation</h3>
+                    <p class="help-description">Streamlined development and deployment processes with CI/CD pipelines, automated testing, and infrastructure management.</p>
+                    <ul class="help-features">
+                        <li>CI/CD Pipelines</li>
+                        <li>Automated Testing</li>
+                        <li>Container Orchestration</li>
+                        <li>Infrastructure Monitoring</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="help-title">Enterprise Applications</h3>
+                    <p class="help-description">Custom enterprise applications designed to streamline operations, improve productivity, and support business growth.</p>
+                    <ul class="help-features">
+                        <li>Custom Software Development</li>
+                        <li>System Integration</li>
+                        <li>Legacy Modernization</li>
+                        <li>API Development</li>
+                        <li>Enterprise Architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background: rgba(0, 123, 255, 0.02);">
+        <div class="container">
+            <h2 class="section-title">Why Choose Acadify for IT Technology Solutions</h2>
+            <p class="section-subtitle">We combine deep technical expertise with proven methodologies to deliver innovative IT solutions that drive business success.</p>
+            
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3 class="why-title">Technical Excellence</h3>
+                    <p class="why-description">Our team of certified IT professionals brings extensive experience across all major technology platforms and frameworks.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3 class="why-title">Agile Methodology</h3>
+                    <p class="why-description">We follow agile development practices ensuring rapid delivery, continuous feedback, and adaptive project management.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3 class="why-title">Scalable Architecture</h3>
+                    <p class="why-description">Our solutions are built with scalability in mind, ensuring they can grow with your business and handle increasing demands.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3 class="why-title">Security First</h3>
+                    <p class="why-description">Security is integrated into every aspect of our solutions, from design to deployment, ensuring your data and systems are protected.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">05</div>
+                    <h3 class="why-title">24/7 Support</h3>
+                    <p class="why-description">Our dedicated support team provides round-the-clock monitoring and assistance to ensure your systems operate smoothly.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">06</div>
+                    <h3 class="why-title">Innovation Focus</h3>
+                    <p class="why-description">We stay at the forefront of technology trends, incorporating emerging technologies to give you competitive advantages.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">07</div>
+                    <h3 class="why-title">Cost Optimization</h3>
+                    <p class="why-description">Our solutions are designed to maximize ROI through efficient resource utilization and automated processes that reduce operational costs.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">08</div>
+                    <h3 class="why-title">Proven Track Record</h3>
+                    <p class="why-description">With 1000+ successful IT projects delivered, we have the experience and expertise to handle complex technology challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Successful Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Successful IT Technology Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped IT and technology companies accelerate their digital transformation and achieve business objectives.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>CloudTech Enterprise</h4>
+                            <div class="project-type">Cloud Migration Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Executed complete cloud migration for a Fortune 500 company, moving 500+ applications to AWS with zero downtime and 60% cost reduction.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">500+</div>
+                            <div class="metric-label">Applications Migrated</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">60%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Zero</div>
+                            <div class="metric-label">Downtime</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">Uptime Achievement</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>SecureNet Solutions</h4>
+                            <div class="project-type">Cybersecurity Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented enterprise-wide cybersecurity framework protecting 10,000+ endpoints with AI-powered threat detection and automated incident response.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">10K+</div>
+                            <div class="metric-label">Endpoints Protected</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Threat Detection Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Incident Response Time</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Zero</div>
+                            <div class="metric-label">Security Breaches</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>AI Analytics Engine</h4>
+                            <div class="project-type">Machine Learning Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed custom AI/ML platform processing 1TB+ daily data with predictive analytics, reducing operational costs by 40% and improving decision-making.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1TB+</div>
+                            <div class="metric-label">Daily Data Processing</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Cost Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Prediction Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50%</div>
+                            <div class="metric-label">Faster Decision Making</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>DataHub Analytics</h4>
+                            <div class="project-type">Big Data Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built comprehensive data warehouse solution handling 10PB+ data with real-time analytics, enabling data-driven insights across the organization.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">10PB+</div>
+                            <div class="metric-label">Data Storage</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Real-time</div>
+                            <div class="metric-label">Analytics Processing</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">75%</div>
+                            <div class="metric-label">Query Performance Boost</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">Data Sources Integrated</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>DevOps Automation Suite</h4>
+                            <div class="project-type">CI/CD Pipeline Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented comprehensive DevOps automation platform reducing deployment time by 80% and increasing development team productivity by 65%.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">80%</div>
+                            <div class="metric-label">Deployment Time Reduction</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">65%</div>
+                            <div class="metric-label">Productivity Increase</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.5%</div>
+                            <div class="metric-label">Deployment Success Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">1000+</div>
+                            <div class="metric-label">Daily Deployments</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>TechConnect Platform</h4>
+                            <div class="project-type">Enterprise Integration Suite</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed enterprise application integration platform connecting 200+ systems, eliminating data silos and improving operational efficiency by 45%.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Systems Integrated</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">45%</div>
+                            <div class="metric-label">Efficiency Improvement</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Zero</div>
+                            <div class="metric-label">Data Silos</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.99%</div>
+                            <div class="metric-label">System Availability</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Accelerate Your Digital Transformation?</h2>
+            <p class="cta-description">Let's discuss how our IT technology solutions can drive innovation and business growth for your organization.</p>
+            <div class="cta-buttons">
+                <a href="../schedule-meeting.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="../contact.html" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>

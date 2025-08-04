@@ -24,19 +24,31 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/styles/pages/services.css">
     
+    <!-- Industry Specific Styles -->
     <style>
         :root {
-            --fintech-primary: #1E90FF;
-            --fintech-secondary: #FFD700;
-            --fintech-accent: #32CD32;
+            --industry-primary: #1E90FF;
+            --industry-secondary: #FFD700;
+            --industry-accent: #32CD32;
             --fintech-dark: #191970;
         }
 
         .industry-hero {
-            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(255, 215, 0, 0.1) 50%, rgba(0, 0, 0, 0.9) 100%), #000;
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
+        }
+
+        .industry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%231E90FF;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%231E90FF;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g1)"/><circle cx="300" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
         }
 
         .breadcrumb {
@@ -46,20 +58,39 @@
         }
 
         .breadcrumb a {
-            color: var(--fintech-primary);
+            color: var(--industry-primary);
             text-decoration: none;
             transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--industry-secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: #666;
         }
 
         .industry-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            background: linear-gradient(135deg, var(--fintech-primary), var(--fintech-secondary));
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-align: center;
+        }
+
+        .industry-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
         }
 
         .industry-stats {
@@ -67,23 +98,54 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin-top: 50px;
+            position: relative;
+            z-index: 2;
         }
 
         .stat-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(30, 144, 255, 0.2);
             border-radius: 15px;
             padding: 30px;
             text-align: center;
-            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.2);
         }
 
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--fintech-primary);
+            color: var(--industry-primary);
             margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 1rem;
         }
 
         .section {
@@ -95,14 +157,387 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff, var(--fintech-primary));
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .help-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(30, 144, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 25px 50px rgba(30, 144, 255, 0.15);
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .help-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .help-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .help-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-features li {
+            color: #aaa;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .help-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--industry-secondary);
+            font-weight: bold;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.05), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(30, 144, 255, 0.2);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(30, 144, 255, 0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(30, 144, 255, 0.15);
+        }
+
+        .why-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-description {
+            color: #ccc;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(30, 144, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 30px 60px rgba(30, 144, 255, 0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .project-logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.8rem;
+            color: #000;
+        }
+
+        .project-info h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .project-type {
+            color: var(--industry-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(30, 144, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(30, 144, 255, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(255, 215, 0, 0.1));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(30, 144, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--industry-primary);
+            border: 2px solid var(--industry-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--industry-primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 100px 0 60px;
+            }
+
+            .industry-title {
+                font-size: 2.5rem;
+            }
+
+            .industry-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
+        }
+    </style>
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
             margin-top: 60px;
@@ -552,6 +987,39 @@
                         <div class="metric">
                             <div class="metric-value">95%</div>
                             <div class="metric-label">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>PersonalFinance360</h4>
+                            <div class="project-type">Personal Finance Management</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Created a comprehensive personal finance management application with AI-powered budgeting recommendations, expense categorization, and financial goal tracking for individual users.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">150K+</div>
+                            <div class="metric-label">Active Users</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Goal Achievement Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Savings Increase</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.7★</div>
+                            <div class="metric-label">App Store Rating</div>
                         </div>
                     </div>
                 </div>

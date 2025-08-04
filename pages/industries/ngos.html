@@ -24,38 +24,518 @@
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/styles/pages/services.css">
     
+    <!-- Industry Specific Styles -->
     <style>
         :root {
-            --ngo-primary: #32CD32;
-            --ngo-secondary: #00BFFF;
-            --ngo-accent: #FF6347;
+            --industry-primary: #32CD32;
+            --industry-secondary: #00BFFF;
+            --industry-accent: #FF6347;
             --ngo-earth: #228B22;
         }
 
         .industry-hero {
-            background: linear-gradient(135deg, rgba(50, 205, 50, 0.1) 0%, rgba(0, 191, 255, 0.1) 50%, rgba(0, 0, 0, 0.9) 100%), #000;
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%), #000;
             padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
         }
 
+        .industry-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%2332CD32;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%2332CD32;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23g1)"/><circle cx="800" cy="300" r="150" fill="url(%23g1)"/><circle cx="300" cy="700" r="120" fill="url(%23g1)"/></svg>') no-repeat center/cover;
+            opacity: 0.3;
+        }
+
+        .breadcrumb {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #ccc;
+        }
+
         .breadcrumb a {
-            color: var(--ngo-primary);
+            color: var(--industry-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--industry-secondary);
+        }
+
+        .breadcrumb span {
+            margin: 0 10px;
+            color: #666;
         }
 
         .industry-title {
-            background: linear-gradient(135deg, var(--ngo-primary), var(--ngo-secondary));
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .industry-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+
+        .industry-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(50, 205, 50, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 15px 30px rgba(50, 205, 50, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff, var(--industry-primary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .stat-number {
-            color: var(--ngo-primary);
+        .section-subtitle {
+            text-align: center;
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(50, 205, 50, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .help-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 25px 50px rgba(50, 205, 50, 0.15);
         }
 
         .help-icon {
-            background: linear-gradient(135deg, var(--ngo-primary), var(--ngo-secondary));
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #000;
+        }
+
+        .help-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .help-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .help-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .help-features li {
+            color: #aaa;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .help-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--industry-secondary);
+            font-weight: bold;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .why-card {
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.05), rgba(0, 191, 255, 0.05));
+            border: 1px solid rgba(50, 205, 50, 0.2);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .why-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(50, 205, 50, 0.1), transparent);
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .why-card:hover::before {
+            opacity: 1;
+            transform: rotate(-45deg) translate(50%, 50%);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 20px 40px rgba(50, 205, 50, 0.15);
+        }
+
+        .why-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .why-description {
+            color: #ccc;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(50, 205, 50, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--industry-primary), var(--industry-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--industry-primary);
+            box-shadow: 0 30px 60px rgba(50, 205, 50, 0.15);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .project-logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.8rem;
+            color: #000;
+        }
+
+        .project-info h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin: 0 0 5px 0;
+        }
+
+        .project-type {
+            color: var(--industry-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(50, 205, 50, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(50, 205, 50, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--industry-primary);
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(50, 205, 50, 0.1), rgba(0, 191, 255, 0.1));
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--industry-primary), var(--industry-secondary));
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(50, 205, 50, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--industry-primary);
+            border: 2px solid var(--industry-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--industry-primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 100px 0 60px;
+            }
+
+            .industry-title {
+                font-size: 2.5rem;
+            }
+
+            .industry-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .help-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-metrics {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 250px;
+            }
         }
     </style>
 </head>
@@ -96,6 +576,384 @@
                     <div class="stat-number">95%</div>
                     <div class="stat-label">Impact Tracking</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Help Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">How We Help NGOs & Non-Profit Organizations</h2>
+            <p class="section-subtitle">We provide comprehensive technology solutions that maximize impact, streamline operations, and enhance donor engagement for mission-driven organizations.</p>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="help-title">Donation Management Systems</h3>
+                    <p class="help-description">Comprehensive donation platforms with online giving, recurring donations, and donor relationship management for sustainable fundraising.</p>
+                    <ul class="help-features">
+                        <li>Online Donation Processing</li>
+                        <li>Recurring Giving Programs</li>
+                        <li>Donor Management CRM</li>
+                        <li>Tax Receipt Generation</li>
+                        <li>Campaign Tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="help-title">Volunteer Management</h3>
+                    <p class="help-description">Efficient volunteer coordination systems with registration, scheduling, communication, and impact tracking capabilities.</p>
+                    <ul class="help-features">
+                        <li>Volunteer Registration</li>
+                        <li>Schedule Management</li>
+                        <li>Communication Tools</li>
+                        <li>Hour Tracking</li>
+                        <li>Background Checks</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="help-title">Impact Tracking & Reporting</h3>
+                    <p class="help-description">Advanced analytics and reporting tools to measure program effectiveness, track outcomes, and demonstrate impact to stakeholders.</p>
+                    <ul class="help-features">
+                        <li>Outcome Measurement</li>
+                        <li>Program Analytics</li>
+                        <li>Grant Reporting</li>
+                        <li>Impact Dashboards</li>
+                        <li>Data Visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="help-title">Awareness & Advocacy Platforms</h3>
+                    <p class="help-description">Digital platforms for raising awareness, mobilizing supporters, and driving advocacy campaigns for social causes.</p>
+                    <ul class="help-features">
+                        <li>Campaign Management</li>
+                        <li>Social Media Integration</li>
+                        <li>Petition Platforms</li>
+                        <li>Awareness Campaigns</li>
+                        <li>Grassroots Mobilization</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="help-title">Mobile Engagement Apps</h3>
+                    <p class="help-description">Mobile applications to connect with supporters, share updates, facilitate donations, and engage communities on-the-go.</p>
+                    <ul class="help-features">
+                        <li>Donor Engagement Apps</li>
+                        <li>Volunteer Apps</li>
+                        <li>Event Management</li>
+                        <li>Push Notifications</li>
+                        <li>Offline Capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="help-title">Operations Management</h3>
+                    <p class="help-description">Integrated operations systems for program management, resource allocation, and organizational efficiency optimization.</p>
+                    <ul class="help-features">
+                        <li>Program Management</li>
+                        <li>Resource Planning</li>
+                        <li>Financial Management</li>
+                        <li>Grant Administration</li>
+                        <li>Compliance Tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="section" style="background: rgba(72, 191, 145, 0.02);">
+        <div class="container">
+            <h2 class="section-title">Why Choose Acadify for NGO Technology</h2>
+            <p class="section-subtitle">We combine deep understanding of non-profit operations with cutting-edge technology expertise to deliver solutions that amplify your mission impact.</p>
+            
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-number">01</div>
+                    <h3 class="why-title">Non-Profit Expertise</h3>
+                    <p class="why-description">Our team includes non-profit technology specialists who understand the unique challenges and requirements of mission-driven organizations.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">02</div>
+                    <h3 class="why-title">Cost-Effective Solutions</h3>
+                    <p class="why-description">We provide affordable technology solutions with flexible pricing models designed specifically for non-profit budgets and constraints.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">03</div>
+                    <h3 class="why-title">Donor-Centric Design</h3>
+                    <p class="why-description">Our platforms prioritize donor experience with intuitive interfaces, transparent processes, and seamless giving experiences that build trust.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">04</div>
+                    <h3 class="why-title">Compliance & Security</h3>
+                    <p class="why-description">Our solutions meet strict non-profit compliance requirements and provide robust security measures to protect sensitive donor and beneficiary data.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">05</div>
+                    <h3 class="why-title">Impact Measurement</h3>
+                    <p class="why-description">Advanced analytics and reporting tools help demonstrate program effectiveness and impact to donors, grantmakers, and stakeholders.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">06</div>
+                    <h3 class="why-title">Community Building</h3>
+                    <p class="why-description">Our platforms foster community engagement, volunteer coordination, and supporter mobilization to amplify your organization's reach.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">07</div>
+                    <h3 class="why-title">Training & Support</h3>
+                    <p class="why-description">Comprehensive training programs and ongoing support ensure your team can effectively utilize technology to advance your mission.</p>
+                </div>
+                
+                <div class="why-card">
+                    <div class="why-number">08</div>
+                    <h3 class="why-title">Social Impact Focus</h3>
+                    <p class="why-description">We're committed to supporting organizations that make a positive social impact, often providing pro-bono services for qualifying missions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Successful Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Successful NGO Projects Delivered</h2>
+            <p class="section-subtitle">Discover how we've helped NGOs and non-profit organizations amplify their impact and streamline operations through innovative technology solutions.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>GlobalGiving Platform</h4>
+                            <div class="project-type">Donation Management System</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built comprehensive donation platform for international NGO network processing $50M+ annually with multi-currency support and impact tracking across 100+ countries.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">$50M+</div>
+                            <div class="metric-label">Annual Donations</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100K+</div>
+                            <div class="metric-label">Active Donors</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">Countries Served</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">98%</div>
+                            <div class="metric-label">Donor Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>VolunteerConnect Network</h4>
+                            <div class="project-type">Volunteer Management Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed comprehensive volunteer management system coordinating 50,000+ volunteers across multiple programs with scheduling, communication, and impact tracking.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50K+</div>
+                            <div class="metric-label">Active Volunteers</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Volunteer Hours</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Retention Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">500+</div>
+                            <div class="metric-label">Programs Supported</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>ImpactTracker Analytics</h4>
+                            <div class="project-type">Impact Measurement Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Created advanced impact tracking system for education-focused NGO measuring outcomes for 100,000+ beneficiaries with real-time reporting and data visualization.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">100K+</div>
+                            <div class="metric-label">Beneficiaries Tracked</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">95%</div>
+                            <div class="metric-label">Data Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Real-time</div>
+                            <div class="metric-label">Impact Reporting</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Impact Metrics</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>AdvocacyMobilizer Hub</h4>
+                            <div class="project-type">Digital Advocacy Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Built comprehensive advocacy platform for environmental NGO mobilizing 1M+ supporters for policy campaigns with petition management and grassroots organizing tools.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1M+</div>
+                            <div class="metric-label">Supporters Mobilized</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">500K+</div>
+                            <div class="metric-label">Petition Signatures</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">75%</div>
+                            <div class="metric-label">Campaign Success Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Policy Victories</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>CommunityConnect App</h4>
+                            <div class="project-type">Mobile Engagement Platform</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Developed mobile application for community-based NGO connecting beneficiaries with services, enabling feedback collection, and facilitating program enrollment.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">200K+</div>
+                            <div class="metric-label">App Users</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.9★</div>
+                            <div class="metric-label">App Store Rating</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">80%</div>
+                            <div class="metric-label">Monthly Active Users</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Languages Supported</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-logo">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="project-info">
+                            <h4>NGO Operations Suite</h4>
+                            <div class="project-type">Integrated Management System</div>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Implemented comprehensive operations management system for large NGO with program management, financial tracking, grant administration, and compliance monitoring.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">Programs Managed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$25M+</div>
+                            <div class="metric-label">Grant Funds Tracked</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40%</div>
+                            <div class="metric-label">Efficiency Improvement</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Compliance Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Amplify Your Social Impact?</h2>
+            <p class="cta-description">Let's discuss how our NGO technology solutions can help maximize your mission impact and operational efficiency.</p>
+            <div class="cta-buttons">
+                <a href="../schedule-meeting.html" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="../contact.html" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
     </section>
