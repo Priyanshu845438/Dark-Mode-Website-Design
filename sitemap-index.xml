@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- Main Pages Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-main.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <!-- Services Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-services.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <!-- Industries Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-industries.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <!-- Products Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-products.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <!-- Blog Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-blogs.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+  
+  <!-- Portfolio Sitemap -->
+  <sitemap>
+    <loc>https://acadifysolution.com/sitemap-portfolio.xml</loc>
+    <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  </sitemap>
+
+</sitemapindex>

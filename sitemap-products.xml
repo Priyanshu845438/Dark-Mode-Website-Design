@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Enterprise Solutions -->
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-erp.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-crm.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Inventory & Operations -->
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-inventory.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-pos.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Learning & Management -->
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-lms.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-task.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+</urlset>

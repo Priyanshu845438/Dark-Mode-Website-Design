@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- AI & Machine Learning -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/ai-chatbots-business.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/ml-model-deployment.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Development & Architecture -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/react-development-2025.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/microservices-architecture.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/progressive-web-apps.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Mobile Development -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/flutter-vs-react-native.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Cloud & Security -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/cloud-security-guide.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Design & UX -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/design-systems-guide.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- SEO & Marketing -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/seo-strategies-2025.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+</urlset>

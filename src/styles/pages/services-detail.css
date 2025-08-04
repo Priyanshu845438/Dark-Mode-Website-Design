@@ -706,3 +706,202 @@ body {
         font-size: 20px;
     }
 }
+
+/* Service FAQ Section */
+.service-faq {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 20, 40, 0.8));
+    position: relative;
+    overflow: hidden;
+}
+
+.service-faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(0, 191, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(57, 255, 20, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.service-faq .container {
+    position: relative;
+    z-index: 1;
+}
+
+.service-faq .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-faq .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #00bfff, #39ff14);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+}
+
+.service-faq .section-header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.faq-card:hover {
+    border-color: rgba(0, 191, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.1);
+}
+
+.faq-card.active {
+    border-color: rgba(0, 191, 255, 0.5);
+    background: rgba(0, 191, 255, 0.05);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    padding: 25px 30px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.faq-question i {
+    color: #00bfff;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.faq-question::after {
+    content: '\f067';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #00bfff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    transform: rotate(0deg);
+}
+
+.faq-card.active .faq-question::after {
+    transform: rotate(45deg);
+    color: #39ff14;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.faq-card.active .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-answer p {
+    padding: 0 30px 25px 70px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Interactive animations */
+.faq-card.active .faq-question i {
+    color: #39ff14;
+    transform: scale(1.1);
+}
+
+/* Responsive Design for FAQ */
+@media (max-width: 768px) {
+    .service-faq {
+        padding: 60px 0;
+    }
+    
+    .service-faq .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        padding: 20px;
+    }
+    
+    .faq-question i {
+        font-size: 1.3rem;
+        margin-right: 15px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1.1rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 20px 20px 55px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-faq .section-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .faq-question {
+        padding: 18px 15px;
+    }
+    
+    .faq-question i {
+        font-size: 1.2rem;
+        margin-right: 12px;
+    }
+    
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 15px 18px 45px;
+        font-size: 0.9rem;
+    }
+}

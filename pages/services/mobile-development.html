@@ -48,6 +48,84 @@
     <meta name="twitter:description" content="Expert iOS and Android app development services. Custom mobile applications that drive business growth.">
     <meta name="twitter:image" content="https://acadifysolution.com/assets/logos/logo.png">
     
+    <!-- Structured Data - Breadcrumbs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://acadifysolution.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://acadifysolution.com/pages/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mobile Development",
+          "item": "https://acadifysolution.com/pages/services/mobile-development.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which mobile platforms do you develop for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We develop for both iOS and Android platforms using native development (Swift/Kotlin) and cross-platform solutions (React Native, Flutter)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does mobile app development take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mobile app development typically takes 8-16 weeks depending on complexity, features, and platforms. Simple apps take 8-12 weeks, complex apps 12-24 weeks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you help with app store submission?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we handle the complete app store submission process including Apple App Store and Google Play Store, ensuring compliance with all guidelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between native and cross-platform apps?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Native apps offer better performance and platform-specific features but require separate development. Cross-platform apps share codebase but may have slight performance differences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide post-launch app maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive post-launch support including bug fixes, feature updates, performance optimization, and compatibility updates for new OS versions."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Structured Data - Service Schema -->
     <script type="application/ld+json">
     {
@@ -811,6 +889,67 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our mobile app development services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Which mobile platforms do you develop for?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We develop for both iOS and Android platforms using native development (Swift/Kotlin) and cross-platform solutions (React Native, Flutter).</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does mobile app development take?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Mobile app development typically takes 8-16 weeks depending on complexity, features, and platforms. Simple apps take 8-12 weeks, complex apps 12-24 weeks.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-store"></i>
+                        <h3>Do you help with app store submission?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we handle the complete app store submission process including Apple App Store and Google Play Store, ensuring compliance with all guidelines.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>What's the difference between native and cross-platform apps?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Native apps offer better performance and platform-specific features but require separate development. Cross-platform apps share codebase but may have slight performance differences.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-tools"></i>
+                        <h3>Do you provide post-launch app maintenance?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive post-launch support including bug fixes, feature updates, performance optimization, and compatibility updates for new OS versions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer Component -->
     <div id="footer-component"></div>
@@ -843,7 +982,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

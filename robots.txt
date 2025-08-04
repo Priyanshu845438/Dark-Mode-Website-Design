@@ -20,5 +20,6 @@ Allow: /favicon.ico
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Sitemap location
+# Sitemap locations
+Sitemap: https://acadifysolution.com/sitemap-index.xml
 Sitemap: https://acadifysolution.com/sitemap.xml
