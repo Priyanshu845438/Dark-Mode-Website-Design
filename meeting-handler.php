@@ -258,7 +258,126 @@ try {
     </html>
     ";
 
-    $mail->send();
+    // Send email to admin
+    $admin_email_sent = $mail->send();
+    error_log("Meeting form: Admin email sent status = " . ($admin_email_sent ? 'true' : 'false'));
+
+    // Send confirmation email to user
+    $user_email_sent = false;
+    try {
+        $userMail = new PHPMailer(true);
+        
+        // Configure SMTP for user email
+        $userMail->isSMTP();
+        $userMail->Host = $smtp_host;
+        $userMail->SMTPAuth = true;
+        $userMail->Username = $smtp_username;
+        $userMail->Password = $smtp_password;
+        $userMail->SMTPSecure = $smtp_encryption;
+        $userMail->Port = $smtp_port;
+        $userMail->CharSet = 'UTF-8';
+
+        // User confirmation email settings
+        $userMail->setFrom($smtp_username, 'Acadify Solution');
+        $userMail->addAddress($email, $firstName . ' ' . $lastName);
+        $userMail->isHTML(true);
+        $userMail->Subject = '✅ Meeting Request Confirmed - Acadify Solution';
+        
+        // User confirmation email body
+        $userMail->Body = "
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset='UTF-8'>
+            <style>
+                body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; background-color: #f8f9fa; }
+                .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+                .header { background: linear-gradient(135deg, #00BFFF, #39FF14); padding: 30px; text-align: center; }
+                .header h1 { color: #000; margin: 0; font-size: 24px; font-weight: bold; }
+                .content { padding: 30px; }
+                .meeting-details { background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin: 20px 0; }
+                .detail-row { display: flex; margin-bottom: 10px; }
+                .detail-label { font-weight: bold; color: #00BFFF; min-width: 120px; }
+                .detail-value { color: #333; }
+                .success-message { background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 15px; margin: 20px 0; color: #155724; }
+                .footer { background-color: #f8f9fa; padding: 20px; text-align: center; color: #666; font-size: 14px; }
+                .logo { width: 32px; height: 32px; display: inline-block; margin-right: 10px; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <div class='header'>
+                    <h1>✅ Meeting Request Received!</h1>
+                    <p style='margin: 10px 0 0 0; color: #000; font-size: 16px;'>Thank you for scheduling a consultation with us</p>
+                </div>
+                
+                <div class='content'>
+                    <div class='success-message'>
+                        <strong>✅ Success!</strong> Your meeting request has been received and is being processed.
+                    </div>
+                    
+                    <p>Dear {$firstName} {$lastName},</p>
+                    
+                    <p>Thank you for your interest in our services! We have received your meeting request and our team will contact you within 4 hours to confirm your appointment.</p>
+                    
+                    <div class='meeting-details'>
+                        <h3 style='margin-top: 0; color: #00BFFF;'>📋 Your Meeting Details</h3>
+                        <div class='detail-row'>
+                            <div class='detail-label'>Meeting Type:</div>
+                            <div class='detail-value'>{$meetingTypeFormatted}</div>
+                        </div>
+                        <div class='detail-row'>
+                            <div class='detail-label'>Preferred Date:</div>
+                            <div class='detail-value'>{$formattedDate}</div>
+                        </div>
+                        <div class='detail-row'>
+                            <div class='detail-label'>Preferred Time:</div>
+                            <div class='detail-value'>{$formattedTime}</div>
+                        </div>
+                        <div class='detail-row'>
+                            <div class='detail-label'>Service Interest:</div>
+                            <div class='detail-value'>{$serviceInterestFormatted}</div>
+                        </div>
+                        <div class='detail-row'>
+                            <div class='detail-label'>Company:</div>
+                            <div class='detail-value'>{$company}</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>What happens next?</strong></p>
+                    <ul>
+                        <li>Our team will review your request</li>
+                        <li>We'll contact you within 4 hours to confirm availability</li>
+                        <li>You'll receive a calendar invitation with meeting details</li>
+                        <li>We'll prepare a customized presentation based on your needs</li>
+                    </ul>
+                    
+                    <p>If you have any urgent questions, please contact us directly at <a href='mailto:contact@acadifysolution.com'>contact@acadifysolution.com</a> or call us at +91 62066 98170.</p>
+                    
+                    <p>We look forward to discussing how we can help transform your business with cutting-edge technology solutions!</p>
+                    
+                    <p>Best regards,<br><strong>Acadify Solution Team</strong></p>
+                </div>
+                
+                <div class='footer'>
+                    <p><strong>Acadify Solution</strong><br>
+                    Professional Technology Services<br>
+                    Vadodara, Gujarat, India<br>
+                    <a href='mailto:contact@acadifysolution.com'>contact@acadifysolution.com</a> | 
+                    <a href='tel:+916206698170'>+91 62066 98170</a></p>
+                </div>
+            </div>
+        </body>
+        </html>
+        ";
+        
+        // Send user confirmation email
+        $user_email_sent = $userMail->send();
+        error_log("Meeting form: User confirmation email sent status = " . ($user_email_sent ? 'true' : 'false'));
+        
+    } catch (Exception $e) {
+        error_log("Meeting form: User email error = " . $e->getMessage());
+    }
 
     // Save submission to file for backup
     $submission_data = [
@@ -285,10 +404,16 @@ try {
     $filename = 'submissions/meeting_' . date('Y-m-d') . '.log';
     file_put_contents($filename, json_encode($submission_data) . PHP_EOL, FILE_APPEND | LOCK_EX);
 
-    echo json_encode([
-        'success' => true,
-        'message' => 'Thank you! Your meeting request has been submitted successfully. We will contact you within 4 hours to confirm your appointment.'
-    ]);
+    if ($admin_email_sent) {
+        echo json_encode([
+            'success' => true,
+            'message' => 'Thank you! Your meeting request has been submitted successfully. ' . 
+                        ($user_email_sent ? 'A confirmation email has been sent to your inbox. ' : '') .
+                        'We will contact you within 4 hours to confirm your appointment.'
+        ]);
+    } else {
+        throw new Exception('Failed to send meeting request to admin');
+    }
 
 } catch (Exception $e) {
     error_log("Meeting form error: " . $e->getMessage());

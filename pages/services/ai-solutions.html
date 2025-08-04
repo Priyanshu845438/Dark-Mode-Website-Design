@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Solutions & Machine Learning - Acadify Solution</title>
-    <meta name="description" content="Advanced AI and machine learning solutions including chatbots, predictive analytics, computer vision, and intelligent automation for business transformation.">
+    <meta name="description" content="Advanced AI solutions including machine learning, natural language processing, computer vision, and intelligent automation.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
+    <link rel="apple-touch-icon" href="../../assets/icons/favicon.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
@@ -19,6 +25,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -37,245 +132,625 @@
                 <span>/</span>
                 <span>AI Solutions</span>
             </div>
-            <div class="service-hero">
-                <h1 class="service-title">AI Solutions & Machine Learning</h1>
-                <p class="service-subtitle">Transform your business with intelligent AI solutions that automate processes, enhance decision-making, and drive innovation</p>
+        </div>
+    </section>
+
+    <!-- 2. Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>AI Solutions & Machine Learning</h1>
+                    <p class="hero-description">
+                        Harness the power of artificial intelligence to transform your business. Our comprehensive AI solutions include machine learning models, natural language processing, computer vision, and intelligent automation to drive innovation and competitive advantage.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Natural Language Processing</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-eye"></i>
+                            <span>Computer Vision</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-robot"></i>
+                            <span>Intelligent Automation</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="../contact.html" class="btn-primary">Get AI Consultation</a>
+                        <a href="../schedule-meeting.html" class="btn-secondary">Schedule Meeting</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="service-image">
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- AI Brain Background -->
+                            <circle cx="200" cy="175" r="120" fill="rgba(0, 191, 255, 0.1)" stroke="rgba(0, 191, 255, 0.3)" stroke-width="2"/>
+                            
+                            <!-- Neural Network -->
+                            <g transform="translate(100, 80)">
+                                <!-- Input Layer -->
+                                <circle cx="0" cy="20" r="8" fill="#00BFFF" opacity="0.8"/>
+                                <circle cx="0" cy="60" r="8" fill="#00BFFF" opacity="0.8"/>
+                                <circle cx="0" cy="100" r="8" fill="#00BFFF" opacity="0.8"/>
+                                <circle cx="0" cy="140" r="8" fill="#00BFFF" opacity="0.8"/>
+                                
+                                <!-- Hidden Layer 1 -->
+                                <circle cx="70" cy="30" r="10" fill="#39FF14" opacity="0.8"/>
+                                <circle cx="70" cy="70" r="10" fill="#39FF14" opacity="0.8"/>
+                                <circle cx="70" cy="110" r="10" fill="#39FF14" opacity="0.8"/>
+                                <circle cx="70" cy="150" r="10" fill="#39FF14" opacity="0.8"/>
+                                <circle cx="70" cy="190" r="10" fill="#39FF14" opacity="0.8"/>
+                                
+                                <!-- Hidden Layer 2 -->
+                                <circle cx="140" cy="50" r="10" fill="#FFD93D" opacity="0.8"/>
+                                <circle cx="140" cy="90" r="10" fill="#FFD93D" opacity="0.8"/>
+                                <circle cx="140" cy="130" r="10" fill="#FFD93D" opacity="0.8"/>
+                                <circle cx="140" cy="170" r="10" fill="#FFD93D" opacity="0.8"/>
+                                
+                                <!-- Output Layer -->
+                                <circle cx="200" cy="80" r="12" fill="#FF6B6B" opacity="0.8"/>
+                                <circle cx="200" cy="120" r="12" fill="#FF6B6B" opacity="0.8"/>
+                                
+                                <!-- Connections -->
+                                <g stroke="rgba(255, 255, 255, 0.3)" stroke-width="1" opacity="0.6">
+                                    <!-- Input to Hidden 1 -->
+                                    <line x1="8" y1="20" x2="60" y2="30"/>
+                                    <line x1="8" y1="20" x2="60" y2="70"/>
+                                    <line x1="8" y1="60" x2="60" y2="30"/>
+                                    <line x1="8" y1="60" x2="60" y2="70"/>
+                                    <line x1="8" y1="60" x2="60" y2="110"/>
+                                    <line x1="8" y1="100" x2="60" y2="70"/>
+                                    <line x1="8" y1="100" x2="60" y2="110"/>
+                                    <line x1="8" y1="100" x2="60" y2="150"/>
+                                    <line x1="8" y1="140" x2="60" y2="110"/>
+                                    <line x1="8" y1="140" x2="60" y2="150"/>
+                                    <line x1="8" y1="140" x2="60" y2="190"/>
+                                    
+                                    <!-- Hidden 1 to Hidden 2 -->
+                                    <line x1="80" y1="30" x2="130" y2="50"/>
+                                    <line x1="80" y1="70" x2="130" y2="90"/>
+                                    <line x1="80" y1="110" x2="130" y2="130"/>
+                                    <line x1="80" y1="150" x2="130" y2="170"/>
+                                    
+                                    <!-- Hidden 2 to Output -->
+                                    <line x1="150" y1="50" x2="188" y2="80"/>
+                                    <line x1="150" y1="90" x2="188" y2="120"/>
+                                    <line x1="150" y1="130" x2="188" y2="120"/>
+                                    <line x1="150" y1="170" x2="188" y2="120"/>
+                                </g>
+                                
+                                <!-- Data Flow Animation -->
+                                <circle cx="20" cy="60" r="3" fill="#00BFFF">
+                                    <animateMotion dur="3s" repeatCount="indefinite">
+                                        <path d="M0,0 L50,10 L110,30 L150,20 L180,40"/>
+                                    </animateMotion>
+                                </circle>
+                            </g>
+                            
+                            <!-- AI Applications -->
+                            <g transform="translate(50, 280)">
+                                <!-- Computer Vision -->
+                                <rect x="0" y="0" width="40" height="30" rx="5" fill="rgba(0, 191, 255, 0.3)" stroke="#00BFFF" stroke-width="2"/>
+                                <circle cx="20" cy="15" r="6" fill="none" stroke="#00BFFF" stroke-width="2"/>
+                                <circle cx="20" cy="15" r="3" fill="#00BFFF"/>
+                                <text x="20" y="45" fill="#00BFFF" font-family="Arial" font-size="8" text-anchor="middle">Vision</text>
+                                
+                                <!-- NLP -->
+                                <rect x="60" y="0" width="40" height="30" rx="5" fill="rgba(57, 255, 20, 0.3)" stroke="#39FF14" stroke-width="2"/>
+                                <path d="M70 10 Q80 5 90 10 Q80 20 70 15 Q80 10 90 15" stroke="#39FF14" stroke-width="2" fill="none"/>
+                                <text x="80" y="45" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">NLP</text>
+                                
+                                <!-- ML Model -->
+                                <rect x="120" y="0" width="40" height="30" rx="5" fill="rgba(255, 217, 61, 0.3)" stroke="#FFD93D" stroke-width="2"/>
+                                <rect x="130" y="8" width="20" height="14" rx="2" fill="none" stroke="#FFD93D" stroke-width="2"/>
+                                <line x1="135" y1="12" x2="145" y2="12" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="135" y1="16" x2="145" y2="16" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="135" y1="20" x2="145" y2="20" stroke="#FFD93D" stroke-width="1"/>
+                                <text x="140" y="45" fill="#FFD93D" font-family="Arial" font-size="8" text-anchor="middle">ML Model</text>
+                                
+                                <!-- Automation -->
+                                <rect x="180" y="0" width="40" height="30" rx="5" fill="rgba(255, 107, 107, 0.3)" stroke="#FF6B6B" stroke-width="2"/>
+                                <circle cx="195" cy="10" r="3" fill="#FF6B6B"/>
+                                <circle cx="205" cy="10" r="3" fill="#FF6B6B"/>
+                                <rect x="192" y="18" width="16" height="6" rx="3" fill="#FF6B6B"/>
+                                <text x="200" y="45" fill="#FF6B6B" font-family="Arial" font-size="8" text-anchor="middle">Automation</text>
+                                
+                                <!-- Analytics -->
+                                <rect x="240" y="0" width="40" height="30" rx="5" fill="rgba(155, 89, 182, 0.3)" stroke="#9B59B6" stroke-width="2"/>
+                                <path d="M250 20 L255 15 L260 18 L265 12 L270 15" stroke="#9B59B6" stroke-width="2" fill="none"/>
+                                <circle cx="255" cy="15" r="1" fill="#9B59B6"/>
+                                <circle cx="260" cy="18" r="1" fill="#9B59B6"/>
+                                <circle cx="265" cy="12" r="1" fill="#9B59B6"/>
+                                <text x="260" y="45" fill="#9B59B6" font-family="Arial" font-size="8" text-anchor="middle">Analytics</text>
+                            </g>
+                            
+                            <!-- AI Processing Center -->
+                            <rect x="170" y="130" width="60" height="40" rx="8" fill="rgba(0, 0, 0, 0.8)" stroke="#00BFFF" stroke-width="2"/>
+                            <text x="200" y="145" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">AI Core</text>
+                            <text x="200" y="158" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Processing</text>
+                            
+                            <!-- Data Streams -->
+                            <g opacity="0.7">
+                                <path d="M50 150 Q120 140 170 150" stroke="#00BFFF" stroke-width="2" fill="none" stroke-dasharray="4,2">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
+                                </path>
+                                <path d="M230 150 Q280 140 330 150" stroke="#39FF14" stroke-width="2" fill="none" stroke-dasharray="4,2">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1.5s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                            
+                            <!-- Performance Indicators -->
+                            <g transform="translate(300, 80)">
+                                <rect x="0" y="0" width="60" height="40" rx="5" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="1"/>
+                                <text x="30" y="15" fill="#00BFFF" font-family="Arial" font-size="8" text-anchor="middle">Accuracy</text>
+                                <text x="30" y="28" fill="#39FF14" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">95%</text>
+                            </g>
+                            
+                            <!-- Learning Progress -->
+                            <g transform="translate(40, 80)">
+                                <rect x="0" y="0" width="60" height="40" rx="5" fill="rgba(57, 255, 20, 0.1)" stroke="#39FF14" stroke-width="1"/>
+                                <text x="30" y="15" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Learning</text>
+                                <text x="30" y="28" fill="#FFD93D" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Active</text>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. About Service Section -->
+    <!-- 3. About Section -->
     <section class="about-service">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Advanced AI & Machine Learning Solutions</h2>
-                    <p>We develop cutting-edge AI solutions that leverage machine learning, natural language processing, and computer vision to solve complex business challenges and create competitive advantages for our clients.</p>
+                    <div class="section-header">
+                        <h2>About Our AI Solutions</h2>
+                        <p>Cutting-edge artificial intelligence solutions that drive innovation and business transformation</p>
+                    </div>
                     
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <i class="fas fa-robot"></i>
-                            <div>
-                                <h4>AI Chatbots & Virtual Assistants</h4>
-                                <p>Intelligent conversational AI for customer service and business automation</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Predictive Analytics</h4>
-                                <p>Machine learning models for forecasting, trend analysis, and business intelligence</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-eye"></i>
-                            <div>
-                                <h4>Computer Vision</h4>
-                                <p>Image recognition, object detection, and visual analysis solutions</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-cogs"></i>
-                            <div>
-                                <h4>Process Automation</h4>
-                                <p>Intelligent automation to streamline workflows and reduce manual tasks</p>
-                            </div>
-                        </div>
+                    <div class="about-description">
+                        <p>
+                            Our AI solutions leverage advanced machine learning algorithms, deep learning models, and intelligent automation to solve complex business challenges. From predictive analytics to natural language processing, we build custom AI systems that deliver measurable results.
+                        </p>
+                        
+                        <p>
+                            We specialize in developing and deploying AI models for various industries, ensuring scalability, reliability, and ethical AI practices. Our team of data scientists and AI engineers work closely with your organization to identify opportunities and implement solutions that drive competitive advantage.
+                        </p>
+                        
+                        <ul class="about-features">
+                            <li><i class="fas fa-check-circle"></i> Custom machine learning model development</li>
+                            <li><i class="fas fa-check-circle"></i> Natural language processing and understanding</li>
+                            <li><i class="fas fa-check-circle"></i> Computer vision and image recognition</li>
+                            <li><i class="fas fa-check-circle"></i> Predictive analytics and forecasting</li>
+                            <li><i class="fas fa-check-circle"></i> Intelligent process automation</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-brain"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- AI Development Pipeline -->
+                            <rect x="20" y="20" width="360" height="310" rx="15" fill="rgba(0, 191, 255, 0.05)" stroke="rgba(0, 191, 255, 0.2)" stroke-width="2"/>
+                            
+                            <!-- Data Collection -->
+                            <g transform="translate(50, 60)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="30" y="15" fill="#00BFFF" font-family="Arial" font-size="9" text-anchor="middle">Data</text>
+                                <text x="30" y="28" fill="#00BFFF" font-family="Arial" font-size="9" text-anchor="middle">Collection</text>
+                                
+                                <!-- Data Icons -->
+                                <rect x="10" y="8" width="8" height="6" rx="1" fill="#00BFFF"/>
+                                <rect x="20" y="8" width="8" height="6" rx="1" fill="#00BFFF"/>
+                                <rect x="30" y="8" width="8" height="6" rx="1" fill="#00BFFF"/>
+                                <rect x="40" y="8" width="8" height="6" rx="1" fill="#00BFFF"/>
+                            </g>
+                            
+                            <!-- Data Processing -->
+                            <g transform="translate(150, 60)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="30" y="15" fill="#39FF14" font-family="Arial" font-size="9" text-anchor="middle">Data</text>
+                                <text x="30" y="28" fill="#39FF14" font-family="Arial" font-size="9" text-anchor="middle">Processing</text>
+                                
+                                <!-- Processing Animation -->
+                                <circle cx="20" cy="20" r="2" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="30" cy="20" r="2" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.2s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="40" cy="20" r="2" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" begin="0.4s" repeatCount="indefinite"/>
+                                </circle>
+                            </g>
+                            
+                            <!-- Model Training -->
+                            <g transform="translate(250, 60)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="2"/>
+                                <text x="30" y="15" fill="#FFD93D" font-family="Arial" font-size="9" text-anchor="middle">Model</text>
+                                <text x="30" y="28" fill="#FFD93D" font-family="Arial" font-size="9" text-anchor="middle">Training</text>
+                                
+                                <!-- Neural Network Icon -->
+                                <circle cx="15" cy="20" r="3" fill="#FFD93D"/>
+                                <circle cx="30" cy="15" r="3" fill="#FFD93D"/>
+                                <circle cx="30" cy="25" r="3" fill="#FFD93D"/>
+                                <circle cx="45" cy="20" r="3" fill="#FFD93D"/>
+                                <line x1="18" y1="20" x2="27" y2="15" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="18" y1="20" x2="27" y2="25" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="33" y1="15" x2="42" y2="20" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="33" y1="25" x2="42" y2="20" stroke="#FFD93D" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Model Evaluation -->
+                            <g transform="translate(50, 140)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                                <text x="30" y="15" fill="#FF6B6B" font-family="Arial" font-size="9" text-anchor="middle">Model</text>
+                                <text x="30" y="28" fill="#FF6B6B" font-family="Arial" font-size="9" text-anchor="middle">Evaluation</text>
+                                
+                                <!-- Chart Icon -->
+                                <path d="M15 25 L20 20 L25 22 L30 18 L35 20 L40 15" stroke="#FF6B6B" stroke-width="2" fill="none"/>
+                                <circle cx="20" cy="20" r="1" fill="#FF6B6B"/>
+                                <circle cx="25" cy="22" r="1" fill="#FF6B6B"/>
+                                <circle cx="30" cy="18" r="1" fill="#FF6B6B"/>
+                                <circle cx="35" cy="20" r="1" fill="#FF6B6B"/>
+                            </g>
+                            
+                            <!-- Deployment -->
+                            <g transform="translate(150, 140)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(155, 89, 182, 0.2)" stroke="#9B59B6" stroke-width="2"/>
+                                <text x="30" y="15" fill="#9B59B6" font-family="Arial" font-size="9" text-anchor="middle">Model</text>
+                                <text x="30" y="28" fill="#9B59B6" font-family="Arial" font-size="9" text-anchor="middle">Deployment</text>
+                                
+                                <!-- Cloud Deployment Icon -->
+                                <ellipse cx="30" cy="20" rx="15" ry="8" fill="none" stroke="#9B59B6" stroke-width="1"/>
+                                <ellipse cx="25" cy="18" rx="8" ry="4" fill="none" stroke="#9B59B6" stroke-width="1"/>
+                                <ellipse cx="35" cy="18" rx="6" ry="3" fill="none" stroke="#9B59B6" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Monitoring -->
+                            <g transform="translate(250, 140)">
+                                <rect x="0" y="0" width="60" height="40" rx="8" fill="rgba(255, 165, 0, 0.2)" stroke="#FFA500" stroke-width="2"/>
+                                <text x="30" y="15" fill="#FFA500" font-family="Arial" font-size="9" text-anchor="middle">Model</text>
+                                <text x="30" y="28" fill="#FFA500" font-family="Arial" font-size="9" text-anchor="middle">Monitoring</text>
+                                
+                                <!-- Monitor Icon -->
+                                <rect x="20" y="15" width="20" height="12" rx="2" fill="none" stroke="#FFA500" stroke-width="1"/>
+                                <line x1="25" y1="20" x2="35" y2="20" stroke="#FFA500" stroke-width="1"/>
+                                <line x1="25" y1="23" x2="35" y2="23" stroke="#FFA500" stroke-width="1"/>
+                            </g>
+                            
+                            <!-- Pipeline Arrows -->
+                            <g stroke="#00BFFF" stroke-width="2" fill="none" marker-end="url(#arrow)">
+                                <path d="M110 80 L150 80"/>
+                                <path d="M210 80 L250 80"/>
+                                <path d="M280 100 L280 120 L110 120 L110 140"/>
+                                <path d="M110 160 L150 160"/>
+                                <path d="M210 160 L250 160"/>
+                            </g>
+                            
+                            <!-- Results Section -->
+                            <g transform="translate(50, 220)">
+                                <rect x="0" y="0" width="260" height="60" rx="10" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="130" y="20" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">AI Model Performance</text>
+                                
+                                <!-- Metrics -->
+                                <text x="50" y="40" fill="#39FF14" font-family="Arial" font-size="10">Accuracy: 95.8%</text>
+                                <text x="50" y="52" fill="#FFD93D" font-family="Arial" font-size="10">Precision: 94.2%</text>
+                                <text x="180" y="40" fill="#FF6B6B" font-family="Arial" font-size="10">Recall: 93.7%</text>
+                                <text x="180" y="52" fill="#9B59B6" font-family="Arial" font-size="10">F1-Score: 94.0%</text>
+                            </g>
+                            
+                            <!-- Arrow Marker Definition -->
+                            <defs>
+                                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#00BFFF"/>
+                                </marker>
+                            </defs>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Where We Use Section -->
+    <!-- 4. Where We Provide Section -->
     <section class="where-we-use">
         <div class="container">
             <div class="section-header">
-                <h2>Where We Use AI Solutions</h2>
-                <p>Our AI expertise transforms operations across various industries and business functions</p>
+                <h2>Where We Provide AI Solutions</h2>
+                <p>Our AI expertise transforms industries with intelligent automation and insights</p>
             </div>
             
             <div class="use-cases">
                 <div class="use-case">
-                    <i class="fas fa-comments"></i>
-                    <h3>Customer Service</h3>
-                    <p>AI chatbots and virtual assistants for 24/7 customer support and query resolution.</p>
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Healthcare AI</h3>
+                    <p>Medical image analysis, diagnostic assistance, drug discovery, and patient care optimization.</p>
                 </div>
                 
                 <div class="use-case">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Business Intelligence</h3>
-                    <p>Predictive analytics and data mining for strategic business insights and forecasting.</p>
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Financial Analytics</h3>
+                    <p>Fraud detection, risk assessment, algorithmic trading, and credit scoring systems.</p>
                 </div>
                 
                 <div class="use-case">
                     <i class="fas fa-shopping-cart"></i>
-                    <h3>E-commerce Optimization</h3>
-                    <p>Recommendation engines, price optimization, and personalized shopping experiences.</p>
-                </div>
-                
-                <div class="use-case">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Fraud Detection</h3>
-                    <p>AI-powered security systems for fraud prevention and risk assessment.</p>
+                    <h3>E-commerce Intelligence</h3>
+                    <p>Recommendation engines, demand forecasting, price optimization, and customer behavior analysis.</p>
                 </div>
                 
                 <div class="use-case">
                     <i class="fas fa-industry"></i>
-                    <h3>Manufacturing</h3>
-                    <p>Quality control, predictive maintenance, and supply chain optimization.</p>
+                    <h3>Manufacturing AI</h3>
+                    <p>Predictive maintenance, quality control, supply chain optimization, and automated inspection.</p>
                 </div>
                 
                 <div class="use-case">
-                    <i class="fas fa-heartbeat"></i>
-                    <h3>Healthcare</h3>
-                    <p>Medical image analysis, diagnostic assistance, and patient care optimization.</p>
+                    <i class="fas fa-car"></i>
+                    <h3>Automotive Intelligence</h3>
+                    <p>Autonomous driving systems, driver assistance, vehicle diagnostics, and route optimization.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-comments"></i>
+                    <h3>Customer Service</h3>
+                    <p>Intelligent chatbots, sentiment analysis, voice assistants, and automated support systems.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education Technology</h3>
+                    <p>Personalized learning, automated grading, content recommendation, and learning analytics.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersecurity AI</h3>
+                    <p>Threat detection, anomaly identification, behavioral analysis, and automated response systems.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Tech We Use Section -->
+    <!-- 5. AI Technologies Section -->
     <section class="tech-we-use">
         <div class="container">
             <div class="section-header">
                 <h2>AI Technologies We Use</h2>
-                <p>We leverage cutting-edge AI frameworks and platforms to build intelligent solutions</p>
+                <p>Cutting-edge frameworks and tools for developing intelligent solutions</p>
             </div>
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">Python</div>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-python" style="color: #3776AB;"></i>
+                    </div>
                     <h4>Python</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">TF</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-brain" style="color: #FF6F00;"></i>
+                    </div>
                     <h4>TensorFlow</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">PyTorch</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-fire" style="color: #EE4C2C;"></i>
+                    </div>
                     <h4>PyTorch</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">OpenAI</div>
-                    <h4>OpenAI GPT</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Hugging</div>
-                    <h4>Hugging Face</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Scikit</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-leaf" style="color: #76B900;"></i>
+                    </div>
                     <h4>Scikit-learn</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">OpenCV</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-chart-bar" style="color: #150458;"></i>
+                    </div>
+                    <h4>Pandas</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-calculator" style="color: #013243;"></i>
+                    </div>
+                    <h4>NumPy</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-eye" style="color: #5C3EE8;"></i>
+                    </div>
                     <h4>OpenCV</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">AWS</div>
-                    <h4>AWS AI</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-language" style="color: #FF6B35;"></i>
+                    </div>
+                    <h4>spaCy</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Azure</div>
-                    <h4>Azure AI</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-server" style="color: #326CE5;"></i>
+                    </div>
+                    <h4>Kubernetes</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">GCP</div>
-                    <h4>Google AI</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Jupyter</div>
-                    <h4>Jupyter</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Langchain</div>
-                    <h4>LangChain</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                    </div>
+                    <h4>Docker</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Why Us Section -->
-    <section class="why-us">
+    <!-- 6. Why Choose Section -->
+    <section class="why-choose">
         <div class="container">
-            <div class="why-us-content">
-                <div class="why-us-text">
-                    <h2>Why Choose Acadify Solution?</h2>
-                    <p>We deliver practical AI solutions that solve real business problems, combining deep technical expertise with strategic business understanding to create measurable value.</p>
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <div class="section-header">
+                        <h2>Why Choose Acadify Solution?</h2>
+                        <p>Leading AI expertise with proven results in developing intelligent solutions</p>
+                    </div>
                     
-                    <div class="why-us-points">
-                        <div class="why-point">
-                            <div class="point-number">1</div>
-                            <div class="why-point-content">
-                                <h4>AI/ML Expertise</h4>
-                                <p>Our team includes certified AI engineers and data scientists with proven industry experience.</p>
+                    <div class="why-features">
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Expert Data Scientists</h4>
+                                <p>PhD-level data scientists and AI engineers with extensive experience in machine learning.</p>
                             </div>
                         </div>
                         
-                        <div class="why-point">
-                            <div class="point-number">2</div>
-                            <div class="why-point-content">
-                                <h4>Business-Focused Solutions</h4>
-                                <p>We develop AI solutions that directly address business challenges and deliver ROI.</p>
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>End-to-End Solutions</h4>
+                                <p>Complete AI pipeline from data collection to model deployment and monitoring.</p>
                             </div>
                         </div>
                         
-                        <div class="why-point">
-                            <div class="point-number">3</div>
-                            <div class="why-point-content">
-                                <h4>Ethical AI Development</h4>
-                                <p>We follow responsible AI practices ensuring fairness, transparency, and privacy protection.</p>
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Ethical AI Practices</h4>
+                                <p>Responsible AI development with bias detection, fairness, and transparency.</p>
                             </div>
                         </div>
                         
-                        <div class="why-point">
-                            <div class="point-number">4</div>
-                            <div class="why-point-content">
-                                <h4>End-to-End Implementation</h4>
-                                <p>From concept to deployment, we handle the complete AI solution lifecycle.</p>
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Scalable Solutions</h4>
+                                <p>Enterprise-grade AI systems designed for scalability and high performance.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">95%</div>
-                            <div>Model Accuracy</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">60+</div>
-                            <div>AI Projects</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">40%</div>
-                            <div>Process Efficiency</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">3-6mo</div>
-                            <div>Implementation</div>
-                        </div>
+                <div class="why-choose-visual">
+                    <div class="service-image">
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- AI Excellence Framework -->
+                            <rect x="20" y="20" width="360" height="310" rx="15" fill="rgba(0, 191, 255, 0.05)" stroke="rgba(0, 191, 255, 0.2)" stroke-width="2"/>
+                            
+                            <!-- Central AI Hub -->
+                            <circle cx="200" cy="175" r="60" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="3"/>
+                            <circle cx="200" cy="175" r="35" fill="rgba(0, 191, 255, 0.3)"/>
+                            
+                            <!-- AI Brain Icon -->
+                            <path d="M180 165 C175 155, 185 150, 190 155 C195 150, 205 150, 210 155 C215 150, 225 155, 220 165 C225 175, 215 180, 210 175 C205 180, 195 180, 190 175 C185 180, 175 175, 180 165 Z" fill="#00BFFF" opacity="0.8"/>
+                            <circle cx="190" cy="165" r="2" fill="#ffffff"/>
+                            <circle cx="210" cy="165" r="2" fill="#ffffff"/>
+                            <path d="M185 175 Q200 180 215 175" stroke="#ffffff" stroke-width="2" fill="none"/>
+                            
+                            <!-- Excellence Pillars -->
+                            <g transform="translate(80, 60)">
+                                <!-- Innovation -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="35" y="20" fill="#39FF14" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Innovation</text>
+                                <text x="35" y="35" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Cutting-edge</text>
+                                <text x="35" y="45" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Research</text>
+                                
+                                <!-- Lightbulb Icon -->
+                                <circle cx="20" cy="25" r="8" fill="none" stroke="#39FF14" stroke-width="2"/>
+                                <path d="M15 30 L25 30 M17 33 L23 33 M18 36 L22 36" stroke="#39FF14" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(250, 60)">
+                                <!-- Quality -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="2"/>
+                                <text x="35" y="20" fill="#FFD93D" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Quality</text>
+                                <text x="35" y="35" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Best-in-class</text>
+                                <text x="35" y="45" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Standards</text>
+                                
+                                <!-- Quality Badge -->
+                                <circle cx="20" cy="25" r="8" fill="none" stroke="#FFD93D" stroke-width="2"/>
+                                <path d="M15 25 L18 28 L25 21" stroke="#FFD93D" stroke-width="2" fill="none"/>
+                            </g>
+                            
+                            <g transform="translate(80, 240)">
+                                <!-- Speed -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                                <text x="35" y="20" fill="#FF6B6B" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Speed</text>
+                                <text x="35" y="35" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Rapid</text>
+                                <text x="35" y="45" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Deployment</text>
+                                
+                                <!-- Speed Icon -->
+                                <path d="M12 25 L28 25 M12 25 L18 20 M12 25 L18 30" stroke="#FF6B6B" stroke-width="2"/>
+                            </g>
+                            
+                            <g transform="translate(250, 240)">
+                                <!-- Support -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(155, 89, 182, 0.2)" stroke="#9B59B6" stroke-width="2"/>
+                                <text x="35" y="20" fill="#9B59B6" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Support</text>
+                                <text x="35" y="35" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">24/7</text>
+                                <text x="35" y="45" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Assistance</text>
+                                
+                                <!-- Support Icon -->
+                                <circle cx="20" cy="25" r="6" fill="none" stroke="#9B59B6" stroke-width="2"/>
+                                <circle cx="20" cy="25" r="3" fill="#9B59B6"/>
+                                <circle cx="20" cy="35" r="1" fill="#9B59B6"/>
+                            </g>
+                            
+                            <!-- Connection Lines -->
+                            <path d="M150 85 L160 145" stroke="#39FF14" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M250 85 L240 145" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M150 265 L160 205" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M250 265 L240 205" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            
+                            <!-- Success Metrics -->
+                            <g transform="translate(40, 140)">
+                                <rect x="0" y="0" width="50" height="30" rx="5" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="1"/>
+                                <text x="25" y="12" fill="#00BFFF" font-family="Arial" font-size="8" text-anchor="middle">Success Rate</text>
+                                <text x="25" y="24" fill="#39FF14" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">98%</text>
+                            </g>
+                            
+                            <g transform="translate(310, 140)">
+                                <rect x="0" y="0" width="50" height="30" rx="5" fill="rgba(57, 255, 20, 0.1)" stroke="#39FF14" stroke-width="1"/>
+                                <text x="25" y="12" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Client Satisfaction</text>
+                                <text x="25" y="24" fill="#FFD93D" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">99%</text>
+                            </g>
+                            
+                            <!-- Award Badge -->
+                            <g transform="translate(320, 200)">
+                                <circle cx="0" cy="0" r="20" fill="rgba(255, 165, 0, 0.3)" stroke="#FFA500" stroke-width="2"/>
+                                <path d="M-8 -5 L8 -5 L8 5 C8 10, 0 15, 0 15 C0 15, -8 10, -8 5 Z" fill="#FFA500"/>
+                                <text x="0" y="-2" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">AI</text>
+                                <text x="0" y="6" fill="#ffffff" font-family="Arial" font-size="8" text-anchor="middle">Expert</text>
+                                <text x="0" y="35" fill="#FFA500" font-family="Arial" font-size="8" text-anchor="middle">Certified</text>
+                            </g>
+                            
+                            <!-- Performance Indicator -->
+                            <g opacity="0.9">
+                                <circle cx="50" cy="200" r="8" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="50" y="220" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Active</text>
+                            </g>
+                        </svg>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Embrace AI?</h2>
-                <p>Let's discuss how AI can transform your business and create competitive advantages</p>
-                <a href="../contact.html" class="cta-button">Start AI Project</a>
             </div>
         </div>
     </section>
@@ -286,32 +761,5 @@
     <!-- Scripts -->
     <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
-    
-    <!-- Component Loading Script -->
-    <script>
-        async function loadComponent(componentId, componentPath) {
-            try {
-                const response = await fetch(componentPath);
-                const html = await response.text();
-                const element = document.getElementById(componentId);
-                if (element) {
-                    element.innerHTML = html;
-                }
-            } catch (error) {
-                console.error(`Failed to load ${componentId}:`, error);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', async function() {
-            await loadComponent('header-component', '../../src/components/header/header-new.html');
-            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
-            await loadComponent('footer-component', '../../src/components/footer/footer.html');
-            
-            // Initialize header after components are loaded
-            if (typeof NewNavbarComponent !== 'undefined') {
-                new NewNavbarComponent();
-            }
-        });
-    </script>
 </body>
 </html>

@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology Consulting Services - Acadify Solution</title>
-    <meta name="description" content="Expert technology consulting services to guide digital transformation, optimize technology infrastructure, and implement strategic IT solutions for business growth.">
+    <meta name="description" content="Expert technology consulting services including digital transformation, architecture design, and strategic technology planning.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" href="../../assets/icons/favicon.png">
+    <link rel="apple-touch-icon" href="../../assets/icons/favicon.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
@@ -19,6 +25,95 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Enhanced Visuals -->
+    <style>
+        .tech-icon-bg {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-icon-bg:hover {
+            transform: translateY(-5px);
+            border-color: #00BFFF;
+            box-shadow: 0 8px 25px rgba(0, 191, 255, 0.3);
+            background: linear-gradient(135deg, #333 0%, #222 100%);
+        }
+        
+        .tech-icon-bg i {
+            font-size: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover .tech-icon-bg i {
+            transform: scale(1.1);
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .tech-item:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-3px);
+            border-color: rgba(0, 191, 255, 0.2);
+        }
+        
+        .tech-item h4 {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+            transition: color 0.3s ease;
+        }
+        
+        .tech-item:hover h4 {
+            color: #00BFFF;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 1024px) {
+            .tech-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Component -->
@@ -37,245 +132,651 @@
                 <span>/</span>
                 <span>Technology Consulting</span>
             </div>
-            <div class="service-hero">
-                <h1 class="service-title">Technology Consulting Services</h1>
-                <p class="service-subtitle">Expert guidance to navigate digital transformation and optimize your technology infrastructure for business success</p>
+        </div>
+    </section>
+
+    <!-- 2. Service Hero Section -->
+    <section class="service-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Technology Consulting Services</h1>
+                    <p class="hero-description">
+                        Drive digital transformation with expert technology consulting. We provide strategic guidance, architecture design, and implementation roadmaps to help organizations leverage technology for competitive advantage and business growth.
+                    </p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Digital Strategy</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Architecture Design</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-rocket"></i>
+                            <span>Digital Transformation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Risk Assessment</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="../contact.html" class="btn-primary">Get Strategy Consultation</a>
+                        <a href="../schedule-meeting.html" class="btn-secondary">Schedule Meeting</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="service-image">
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Strategic Planning Background -->
+                            <rect x="20" y="20" width="360" height="310" rx="15" fill="rgba(0, 191, 255, 0.05)" stroke="rgba(0, 191, 255, 0.3)" stroke-width="2"/>
+                            
+                            <!-- Central Strategy Hub -->
+                            <circle cx="200" cy="150" r="50" fill="rgba(0, 191, 255, 0.3)" stroke="#00BFFF" stroke-width="3"/>
+                            <text x="200" y="145" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Strategic</text>
+                            <text x="200" y="160" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Consulting</text>
+                            
+                            <!-- Strategy Components -->
+                            <g transform="translate(80, 60)">
+                                <!-- Business Analysis -->
+                                <rect x="0" y="0" width="80" height="40" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="40" y="18" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Business</text>
+                                <text x="40" y="30" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Analysis</text>
+                                
+                                <!-- Analysis icon -->
+                                <circle cx="20" cy="20" r="8" fill="none" stroke="#39FF14" stroke-width="1"/>
+                                <path d="M15 20 L20 15 L25 22" stroke="#39FF14" stroke-width="1" fill="none"/>
+                            </g>
+                            
+                            <g transform="translate(240, 60)">
+                                <!-- Technology Assessment -->
+                                <rect x="0" y="0" width="80" height="40" rx="8" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="2"/>
+                                <text x="40" y="18" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Technology</text>
+                                <text x="40" y="30" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Assessment</text>
+                                
+                                <!-- Tech icon -->
+                                <rect x="15" y="15" width="10" height="10" rx="2" fill="none" stroke="#FFD93D" stroke-width="1"/>
+                                <circle cx="20" cy="20" r="2" fill="#FFD93D"/>
+                            </g>
+                            
+                            <g transform="translate(80, 220)">
+                                <!-- Implementation -->
+                                <rect x="0" y="0" width="80" height="40" rx="8" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                                <text x="40" y="18" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Implementation</text>
+                                <text x="40" y="30" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Roadmap</text>
+                                
+                                <!-- Roadmap icon -->
+                                <path d="M15 20 L25 20 M20 15 L20 25 M18 18 L22 18 M18 22 L22 22" stroke="#FF6B6B" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(240, 220)">
+                                <!-- Optimization -->
+                                <rect x="0" y="0" width="80" height="40" rx="8" fill="rgba(155, 89, 182, 0.2)" stroke="#9B59B6" stroke-width="2"/>
+                                <text x="40" y="18" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Performance</text>
+                                <text x="40" y="30" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Optimization</text>
+                                
+                                <!-- Performance icon -->
+                                <path d="M15 25 L20 15 L25 20 L30 10" stroke="#9B59B6" stroke-width="2" fill="none"/>
+                                <circle cx="20" cy="15" r="1" fill="#9B59B6"/>
+                                <circle cx="25" cy="20" r="1" fill="#9B59B6"/>
+                            </g>
+                            
+                            <!-- Connection Lines -->
+                            <path d="M160 80 L175 125" stroke="#39FF14" stroke-width="2" stroke-dasharray="5,5"/>
+                            <path d="M240 80 L225 125" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5"/>
+                            <path d="M160 240 L175 175" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5"/>
+                            <path d="M240 240 L225 175" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,5"/>
+                            
+                            <!-- Digital Transformation Timeline -->
+                            <g transform="translate(50, 300)">
+                                <rect x="0" y="0" width="300" height="30" rx="5" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="1"/>
+                                <text x="150" y="12" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">Digital Transformation Timeline</text>
+                                
+                                <!-- Timeline steps -->
+                                <circle cx="30" cy="20" r="3" fill="#39FF14"/>
+                                <text x="30" y="40" fill="#39FF14" font-family="Arial" font-size="7" text-anchor="middle">Assess</text>
+                                
+                                <circle cx="90" cy="20" r="3" fill="#FFD93D"/>
+                                <text x="90" y="40" fill="#FFD93D" font-family="Arial" font-size="7" text-anchor="middle">Plan</text>
+                                
+                                <circle cx="150" cy="20" r="3" fill="#FF6B6B"/>
+                                <text x="150" y="40" fill="#FF6B6B" font-family="Arial" font-size="7" text-anchor="middle">Execute</text>
+                                
+                                <circle cx="210" cy="20" r="3" fill="#9B59B6"/>
+                                <text x="210" y="40" fill="#9B59B6" font-family="Arial" font-size="7" text-anchor="middle">Optimize</text>
+                                
+                                <circle cx="270" cy="20" r="3" fill="#00BFFF"/>
+                                <text x="270" y="40" fill="#00BFFF" font-family="Arial" font-size="7" text-anchor="middle">Scale</text>
+                                
+                                <!-- Timeline line -->
+                                <line x1="30" y1="20" x2="270" y2="20" stroke="#00BFFF" stroke-width="2"/>
+                            </g>
+                            
+                            <!-- Consulting Benefits -->
+                            <g transform="translate(320, 120)">
+                                <rect x="0" y="0" width="60" height="60" rx="8" fill="rgba(255, 165, 0, 0.2)" stroke="#FFA500" stroke-width="2"/>
+                                <text x="30" y="20" fill="#FFA500" font-family="Arial" font-size="10" text-anchor="middle">ROI</text>
+                                <text x="30" y="35" fill="#FFA500" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">300%</text>
+                                <text x="30" y="50" fill="#FFA500" font-family="Arial" font-size="9" text-anchor="middle">Average</text>
+                            </g>
+                            
+                            <g transform="translate(20, 120)">
+                                <rect x="0" y="0" width="60" height="60" rx="8" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="30" y="20" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">Projects</text>
+                                <text x="30" y="35" fill="#00BFFF" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">150+</text>
+                                <text x="30" y="50" fill="#00BFFF" font-family="Arial" font-size="9" text-anchor="middle">Delivered</text>
+                            </g>
+                            
+                            <!-- Innovation Indicators -->
+                            <g opacity="0.8">
+                                <circle cx="350" cy="180" r="6" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="350" y="200" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Innovation</text>
+                            </g>
+                            
+                            <!-- Strategic Vision -->
+                            <path d="M200 50 L200 100" stroke="#00BFFF" stroke-width="3" marker-end="url(#arrow)"/>
+                            <text x="200" y="45" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle" font-weight="bold">Vision</text>
+                            
+                            <!-- Arrow Marker -->
+                            <defs>
+                                <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#00BFFF"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 2. About Service Section -->
+    <!-- 3. About Section -->
     <section class="about-service">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Expert Technology Consulting</h2>
-                    <p>We provide strategic technology consulting to help businesses navigate digital transformation, optimize IT infrastructure, and implement solutions that drive growth and operational efficiency.</p>
+                    <div class="section-header">
+                        <h2>About Our Technology Consulting</h2>
+                        <p>Strategic technology guidance that transforms businesses and drives competitive advantage</p>
+                    </div>
                     
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>Digital Strategy</h4>
-                                <p>Comprehensive digital transformation roadmaps tailored to your business goals</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <div>
-                                <h4>Technology Assessment</h4>
-                                <p>Thorough evaluation of current systems and infrastructure optimization</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-cogs"></i>
-                            <div>
-                                <h4>Solution Architecture</h4>
-                                <p>Design scalable technology architectures for long-term business success</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <i class="fas fa-users-cog"></i>
-                            <div>
-                                <h4>Implementation Support</h4>
-                                <p>Hands-on guidance throughout technology implementation and adoption</p>
-                            </div>
-                        </div>
+                    <div class="about-description">
+                        <p>
+                            Our technology consulting services provide strategic guidance to help organizations navigate digital transformation challenges and opportunities. We combine deep technical expertise with business acumen to deliver actionable recommendations and implementation roadmaps.
+                        </p>
+                        
+                        <p>
+                            From technology assessment and architecture design to change management and performance optimization, we partner with businesses to ensure technology investments align with strategic objectives and deliver measurable value.
+                        </p>
+                        
+                        <ul class="about-features">
+                            <li><i class="fas fa-check-circle"></i> Strategic technology planning and roadmaps</li>
+                            <li><i class="fas fa-check-circle"></i> Enterprise architecture and system design</li>
+                            <li><i class="fas fa-check-circle"></i> Digital transformation and modernization</li>
+                            <li><i class="fas fa-check-circle"></i> Technology risk assessment and mitigation</li>
+                            <li><i class="fas fa-check-circle"></i> Performance optimization and scalability</li>
+                        </ul>
                     </div>
                 </div>
                 
                 <div class="about-visual">
                     <div class="service-image">
-                        <i class="fas fa-chess-knight"></i>
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Consulting Framework -->
+                            <rect x="20" y="20" width="360" height="310" rx="15" fill="rgba(0, 191, 255, 0.05)" stroke="rgba(0, 191, 255, 0.2)" stroke-width="2"/>
+                            
+                            <!-- Consulting Process Flow -->
+                            <g transform="translate(50, 50)">
+                                <!-- Discovery Phase -->
+                                <rect x="0" y="0" width="60" height="50" rx="8" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="30" y="20" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">Discovery</text>
+                                <text x="30" y="32" fill="#00BFFF" font-family="Arial" font-size="9" text-anchor="middle">Current State</text>
+                                <text x="30" y="42" fill="#00BFFF" font-family="Arial" font-size="9" text-anchor="middle">Analysis</text>
+                                
+                                <!-- Discovery icon -->
+                                <circle cx="15" cy="25" r="6" fill="none" stroke="#00BFFF" stroke-width="1"/>
+                                <circle cx="15" cy="25" r="3" fill="#00BFFF"/>
+                                <path d="M19 21 L24 16" stroke="#00BFFF" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(140, 50)">
+                                <!-- Strategy Phase -->
+                                <rect x="0" y="0" width="60" height="50" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="30" y="20" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Strategy</text>
+                                <text x="30" y="32" fill="#39FF14" font-family="Arial" font-size="9" text-anchor="middle">Future State</text>
+                                <text x="30" y="42" fill="#39FF14" font-family="Arial" font-size="9" text-anchor="middle">Design</text>
+                                
+                                <!-- Strategy icon -->
+                                <path d="M15 20 L25 20 M20 15 L20 25" stroke="#39FF14" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="3" fill="none" stroke="#39FF14" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(230, 50)">
+                                <!-- Planning Phase -->
+                                <rect x="0" y="0" width="60" height="50" rx="8" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="2"/>
+                                <text x="30" y="20" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Planning</text>
+                                <text x="30" y="32" fill="#FFD93D" font-family="Arial" font-size="9" text-anchor="middle">Roadmap &</text>
+                                <text x="30" y="42" fill="#FFD93D" font-family="Arial" font-size="9" text-anchor="middle">Timeline</text>
+                                
+                                <!-- Planning icon -->
+                                <rect x="15" y="18" width="10" height="8" rx="1" fill="none" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="17" y1="20" x2="23" y2="20" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="17" y1="22" x2="21" y2="22" stroke="#FFD93D" stroke-width="1"/>
+                                <line x1="17" y1="24" x2="23" y2="24" stroke="#FFD93D" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(95, 130)">
+                                <!-- Implementation Phase -->
+                                <rect x="0" y="0" width="60" height="50" rx="8" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                                <text x="30" y="20" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Implementation</text>
+                                <text x="30" y="32" fill="#FF6B6B" font-family="Arial" font-size="9" text-anchor="middle">Execution &</text>
+                                <text x="30" y="42" fill="#FF6B6B" font-family="Arial" font-size="9" text-anchor="middle">Delivery</text>
+                                
+                                <!-- Implementation icon -->
+                                <rect x="15" y="18" width="8" height="8" rx="1" fill="#FF6B6B"/>
+                                <path d="M18 21 L20 23 L22 19" stroke="#ffffff" stroke-width="1" fill="none"/>
+                            </g>
+                            
+                            <g transform="translate(185, 130)">
+                                <!-- Optimization Phase -->
+                                <rect x="0" y="0" width="60" height="50" rx="8" fill="rgba(155, 89, 182, 0.2)" stroke="#9B59B6" stroke-width="2"/>
+                                <text x="30" y="20" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Optimization</text>
+                                <text x="30" y="32" fill="#9B59B6" font-family="Arial" font-size="9" text-anchor="middle">Performance</text>
+                                <text x="30" y="42" fill="#9B59B6" font-family="Arial" font-size="9" text-anchor="middle">Tuning</text>
+                                
+                                <!-- Optimization icon -->
+                                <path d="M15 25 L20 20 L25 22 L30 18" stroke="#9B59B6" stroke-width="2" fill="none"/>
+                                <circle cx="20" cy="20" r="1" fill="#9B59B6"/>
+                                <circle cx="25" cy="22" r="1" fill="#9B59B6"/>
+                                <path d="M26 18 L30 18 L30 22" stroke="#9B59B6" stroke-width="1" fill="none"/>
+                            </g>
+                            
+                            <!-- Process Flow Arrows -->
+                            <g stroke="#00BFFF" stroke-width="2" fill="none" marker-end="url(#arrowblue)">
+                                <path d="M110 75 L140 75"/>
+                                <path d="M200 75 L230 75"/>
+                                <path d="M260 100 L155 130"/>
+                                <path d="M155 155 L185 155"/>
+                            </g>
+                            
+                            <!-- Technology Stack Assessment -->
+                            <g transform="translate(50, 220)">
+                                <rect x="0" y="0" width="250" height="60" rx="10" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="125" y="20" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Technology Stack Assessment</text>
+                                
+                                <!-- Stack layers -->
+                                <rect x="20" y="25" width="40" height="15" rx="3" fill="rgba(57, 255, 20, 0.3)" stroke="#39FF14" stroke-width="1"/>
+                                <text x="40" y="35" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Frontend</text>
+                                
+                                <rect x="70" y="25" width="40" height="15" rx="3" fill="rgba(255, 217, 61, 0.3)" stroke="#FFD93D" stroke-width="1"/>
+                                <text x="90" y="35" fill="#FFD93D" font-family="Arial" font-size="8" text-anchor="middle">Backend</text>
+                                
+                                <rect x="120" y="25" width="40" height="15" rx="3" fill="rgba(255, 107, 107, 0.3)" stroke="#FF6B6B" stroke-width="1"/>
+                                <text x="140" y="35" fill="#FF6B6B" font-family="Arial" font-size="8" text-anchor="middle">Database</text>
+                                
+                                <rect x="170" y="25" width="40" height="15" rx="3" fill="rgba(155, 89, 182, 0.3)" stroke="#9B59B6" stroke-width="1"/>
+                                <text x="190" y="35" fill="#9B59B6" font-family="Arial" font-size="8" text-anchor="middle">Cloud</text>
+                                
+                                <!-- Assessment metrics -->
+                                <text x="40" y="50" fill="#39FF14" font-family="Arial" font-size="7">Score: 85%</text>
+                                <text x="90" y="50" fill="#FFD93D" font-family="Arial" font-size="7">Score: 92%</text>
+                                <text x="140" y="50" fill="#FF6B6B" font-family="Arial" font-size="7">Score: 78%</text>
+                                <text x="190" y="50" fill="#9B59B6" font-family="Arial" font-size="7">Score: 95%</text>
+                            </g>
+                            
+                            <!-- Consulting Outcomes -->
+                            <g transform="translate(320, 60)">
+                                <rect x="0" y="0" width="50" height="80" rx="8" fill="rgba(255, 165, 0, 0.2)" stroke="#FFA500" stroke-width="2"/>
+                                <text x="25" y="20" fill="#FFA500" font-family="Arial" font-size="10" text-anchor="middle">Outcomes</text>
+                                
+                                <text x="25" y="35" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">↑ 40%</text>
+                                <text x="25" y="44" fill="#39FF14" font-family="Arial" font-size="7" text-anchor="middle">Efficiency</text>
+                                
+                                <text x="25" y="57" fill="#FFD93D" font-family="Arial" font-size="8" text-anchor="middle">↓ 60%</text>
+                                <text x="25" y="66" fill="#FFD93D" font-family="Arial" font-size="7" text-anchor="middle">Costs</text>
+                                
+                                <text x="25" y="79" fill="#FF6B6B" font-family="Arial" font-size="8" text-anchor="middle">↑ 200%</text>
+                                <text x="25" y="88" fill="#FF6B6B" font-family="Arial" font-size="7" text-anchor="middle">ROI</text>
+                            </g>
+                            
+                            <!-- Consulting Expertise -->
+                            <g transform="translate(20, 60)">
+                                <rect x="0" y="0" width="50" height="80" rx="8" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="2"/>
+                                <text x="25" y="20" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">Expertise</text>
+                                
+                                <text x="25" y="35" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">10+</text>
+                                <text x="25" y="44" fill="#39FF14" font-family="Arial" font-size="7" text-anchor="middle">Years</text>
+                                
+                                <text x="25" y="57" fill="#FFD93D" font-family="Arial" font-size="8" text-anchor="middle">50+</text>
+                                <text x="25" y="66" fill="#FFD93D" font-family="Arial" font-size="7" text-anchor="middle">Clients</text>
+                                
+                                <text x="25" y="79" fill="#FF6B6B" font-family="Arial" font-size="8" text-anchor="middle">100%</text>
+                                <text x="25" y="88" fill="#FF6B6B" font-family="Arial" font-size="7" text-anchor="middle">Success</text>
+                            </g>
+                            
+                            <!-- Arrow Markers -->
+                            <defs>
+                                <marker id="arrowblue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#00BFFF"/>
+                                </marker>
+                            </defs>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. Where We Use Section -->
+    <!-- 4. Where We Provide Section -->
     <section class="where-we-use">
         <div class="container">
             <div class="section-header">
-                <h2>Where We Use Technology Consulting</h2>
-                <p>Our consulting expertise helps organizations across various technology challenges and transformation initiatives</p>
+                <h2>Where We Provide Consulting</h2>
+                <p>Our consulting expertise helps organizations across industries achieve digital excellence</p>
             </div>
             
             <div class="use-cases">
                 <div class="use-case">
-                    <i class="fas fa-arrows-alt"></i>
-                    <h3>Digital Transformation</h3>
-                    <p>Guide organizations through comprehensive digital transformation journeys.</p>
+                    <i class="fas fa-building"></i>
+                    <h3>Enterprise Transformation</h3>
+                    <p>Large-scale digital transformation for enterprises seeking competitive advantage and operational efficiency.</p>
                 </div>
                 
                 <div class="use-case">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Migration</h3>
-                    <p>Strategic planning and execution of cloud adoption and migration projects.</p>
+                    <i class="fas fa-rocket"></i>
+                    <h3>Startup Strategy</h3>
+                    <p>Technology roadmaps and architecture guidance for startups scaling their operations and infrastructure.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Optimization</h3>
+                    <p>System performance analysis and optimization strategies for improved efficiency and user experience.</p>
                 </div>
                 
                 <div class="use-case">
                     <i class="fas fa-shield-alt"></i>
-                    <h3>Cybersecurity Strategy</h3>
-                    <p>Develop comprehensive security frameworks and risk mitigation strategies.</p>
+                    <h3>Security Assessment</h3>
+                    <p>Comprehensive security audits and risk mitigation strategies for enhanced cyber resilience.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Strategy</h3>
+                    <p>Cloud adoption strategies, migration planning, and multi-cloud architecture design.</p>
+                </div>
+                
+                <div class="use-case">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Process Automation</h3>
+                    <p>Business process analysis and automation strategies for improved operational efficiency.</p>
                 </div>
                 
                 <div class="use-case">
                     <i class="fas fa-database"></i>
                     <h3>Data Strategy</h3>
-                    <p>Create data governance frameworks and analytics implementation plans.</p>
+                    <p>Data governance, analytics strategy, and business intelligence architecture planning.</p>
                 </div>
                 
                 <div class="use-case">
                     <i class="fas fa-mobile-alt"></i>
-                    <h3>Modernization</h3>
-                    <p>Legacy system modernization and technology stack optimization.</p>
-                </div>
-                
-                <div class="use-case">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Vendor Selection</h3>
-                    <p>Technology vendor evaluation and procurement strategy consulting.</p>
+                    <h3>Digital Innovation</h3>
+                    <p>Innovation frameworks and emerging technology adoption for digital business transformation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Tech We Use Section -->
+    <!-- 5. Consulting Technologies Section -->
     <section class="tech-we-use">
         <div class="container">
             <div class="section-header">
-                <h2>Consulting Frameworks We Use</h2>
-                <p>We leverage proven methodologies and frameworks to deliver comprehensive technology consulting services</p>
+                <h2>Consulting Technologies We Use</h2>
+                <p>Advanced frameworks and methodologies for strategic technology consulting</p>
             </div>
             
             <div class="tech-grid">
                 <div class="tech-item">
-                    <div class="tech-icon">TOGAF</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-sitemap" style="color: #00BFFF;"></i>
+                    </div>
                     <h4>TOGAF</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">ITIL</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-project-diagram" style="color: #39FF14;"></i>
+                    </div>
+                    <h4>Zachman</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cogs" style="color: #FFD93D;"></i>
+                    </div>
                     <h4>ITIL</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">COBIT</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-shield-alt" style="color: #FF6B6B;"></i>
+                    </div>
                     <h4>COBIT</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Agile</div>
-                    <h4>Agile/Scrum</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">PRINCE2</div>
-                    <h4>PRINCE2</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Six Sigma</div>
-                    <h4>Six Sigma</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">NIST</div>
-                    <h4>NIST Framework</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">ISO</div>
-                    <h4>ISO 27001</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">Cloud</div>
-                    <h4>Cloud First</h4>
-                </div>
-                <div class="tech-item">
-                    <div class="tech-icon">DevOps</div>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-infinity" style="color: #9B59B6;"></i>
+                    </div>
                     <h4>DevOps</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Lean</div>
-                    <h4>Lean IT</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-sync-alt" style="color: #FFA500;"></i>
+                    </div>
+                    <h4>Agile</h4>
                 </div>
                 <div class="tech-item">
-                    <div class="tech-icon">Business</div>
-                    <h4>Business Analysis</h4>
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-cube" style="color: #17A2B8;"></i>
+                    </div>
+                    <h4>Microservices</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fab fa-docker" style="color: #2496ED;"></i>
+                    </div>
+                    <h4>Containerization</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-dharmachakra" style="color: #326CE5;"></i>
+                    </div>
+                    <h4>Kubernetes</h4>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon-bg">
+                        <i class="fas fa-brain" style="color: #E74C3C;"></i>
+                    </div>
+                    <h4>AI/ML Strategy</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Why Us Section -->
-    <section class="why-us">
+    <!-- 6. Why Choose Section -->
+    <section class="why-choose">
         <div class="container">
-            <div class="why-us-content">
-                <div class="why-us-text">
-                    <h2>Why Choose Acadify Solution?</h2>
-                    <p>We combine deep technical expertise with strategic business thinking to deliver technology consulting that drives real business transformation and measurable results.</p>
+            <div class="why-choose-content">
+                <div class="why-choose-text">
+                    <div class="section-header">
+                        <h2>Why Choose Acadify Solution?</h2>
+                        <p>Strategic consulting expertise with proven results in digital transformation</p>
+                    </div>
                     
-                    <div class="why-us-points">
-                        <div class="why-point">
-                            <div class="point-number">1</div>
-                            <div class="why-point-content">
-                                <h4>Proven Methodologies</h4>
-                                <p>Industry-standard frameworks and best practices for reliable outcomes.</p>
+                    <div class="why-features">
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-award"></i>
                             </div>
-                        </div>
-                        
-                        <div class="why-point">
-                            <div class="point-number">2</div>
-                            <div class="why-point-content">
+                            <div class="feature-content">
                                 <h4>Industry Expertise</h4>
-                                <p>Deep knowledge across multiple industries and technology domains.</p>
+                                <p>10+ years of technology consulting experience across diverse industries and business domains.</p>
                             </div>
                         </div>
                         
-                        <div class="why-point">
-                            <div class="point-number">3</div>
-                            <div class="why-point-content">
-                                <h4>End-to-End Support</h4>
-                                <p>From strategy development to implementation and ongoing optimization.</p>
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Proven ROI</h4>
+                                <p>Average 300% ROI on technology investments through strategic planning and execution.</p>
                             </div>
                         </div>
                         
-                        <div class="why-point">
-                            <div class="point-number">4</div>
-                            <div class="why-point-content">
-                                <h4>ROI Focus</h4>
-                                <p>Technology investments that deliver measurable business value and growth.</p>
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Partnership Approach</h4>
+                                <p>Collaborative consulting methodology that aligns technology with business objectives.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Innovation Focus</h4>
+                                <p>Cutting-edge technology recommendations that drive competitive advantage and growth.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="why-us-visual">
-                    <div class="why-us-chart">
-                        <div class="chart-item">
-                            <div class="percentage">200+</div>
-                            <div>Consulting Projects</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">85%</div>
-                            <div>Cost Optimization</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">92%</div>
-                            <div>Project Success Rate</div>
-                        </div>
-                        <div class="chart-item">
-                            <div class="percentage">2-4w</div>
-                            <div>Assessment Time</div>
-                        </div>
+                <div class="why-choose-visual">
+                    <div class="service-image">
+                        <svg width="400" height="350" viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Consulting Excellence Framework -->
+                            <rect x="20" y="20" width="360" height="310" rx="15" fill="rgba(0, 191, 255, 0.05)" stroke="rgba(0, 191, 255, 0.2)" stroke-width="2"/>
+                            
+                            <!-- Central Excellence Hub -->
+                            <circle cx="200" cy="175" r="60" fill="rgba(0, 191, 255, 0.2)" stroke="#00BFFF" stroke-width="3"/>
+                            <circle cx="200" cy="175" r="35" fill="rgba(0, 191, 255, 0.3)"/>
+                            
+                            <!-- Consulting Icon -->
+                            <path d="M185 165 Q200 155 215 165 Q200 185 185 165" fill="#00BFFF" opacity="0.8"/>
+                            <circle cx="190" cy="168" r="2" fill="#ffffff"/>
+                            <circle cx="210" cy="168" r="2" fill="#ffffff"/>
+                            <path d="M185 178 Q200 183 215 178" stroke="#ffffff" stroke-width="2" fill="none"/>
+                            
+                            <text x="200" y="195" fill="#00BFFF" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Excellence</text>
+                            <text x="200" y="210" fill="#00BFFF" font-family="Arial" font-size="10" text-anchor="middle">in Consulting</text>
+                            
+                            <!-- Excellence Dimensions -->
+                            <g transform="translate(80, 60)">
+                                <!-- Strategy -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(57, 255, 20, 0.2)" stroke="#39FF14" stroke-width="2"/>
+                                <text x="35" y="20" fill="#39FF14" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Strategy</text>
+                                <text x="35" y="35" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Expert</text>
+                                <text x="35" y="45" fill="#39FF14" font-family="Arial" font-size="10" text-anchor="middle">Planning</text>
+                                
+                                <!-- Strategy icon -->
+                                <circle cx="20" cy="25" r="8" fill="none" stroke="#39FF14" stroke-width="2"/>
+                                <path d="M15 25 L20 20 L25 25 L20 30 Z" fill="#39FF14"/>
+                            </g>
+                            
+                            <g transform="translate(250, 60)">
+                                <!-- Innovation -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(255, 217, 61, 0.2)" stroke="#FFD93D" stroke-width="2"/>
+                                <text x="35" y="20" fill="#FFD93D" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Innovation</text>
+                                <text x="35" y="35" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Future-ready</text>
+                                <text x="35" y="45" fill="#FFD93D" font-family="Arial" font-size="10" text-anchor="middle">Solutions</text>
+                                
+                                <!-- Innovation icon -->
+                                <circle cx="20" cy="25" r="8" fill="none" stroke="#FFD93D" stroke-width="2"/>
+                                <path d="M15 20 L20 15 L25 20 M15 30 L20 35 L25 30 M12 25 L28 25" stroke="#FFD93D" stroke-width="1"/>
+                            </g>
+                            
+                            <g transform="translate(80, 240)">
+                                <!-- Execution -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(255, 107, 107, 0.2)" stroke="#FF6B6B" stroke-width="2"/>
+                                <text x="35" y="20" fill="#FF6B6B" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Execution</text>
+                                <text x="35" y="35" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Flawless</text>
+                                <text x="35" y="45" fill="#FF6B6B" font-family="Arial" font-size="10" text-anchor="middle">Delivery</text>
+                                
+                                <!-- Execution icon -->
+                                <rect x="15" y="20" width="10" height="10" rx="2" fill="#FF6B6B"/>
+                                <path d="M18 23 L20 25 L22 21" stroke="#ffffff" stroke-width="1" fill="none"/>
+                            </g>
+                            
+                            <g transform="translate(250, 240)">
+                                <!-- Results -->
+                                <rect x="0" y="0" width="70" height="50" rx="8" fill="rgba(155, 89, 182, 0.2)" stroke="#9B59B6" stroke-width="2"/>
+                                <text x="35" y="20" fill="#9B59B6" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">Results</text>
+                                <text x="35" y="35" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Measurable</text>
+                                <text x="35" y="45" fill="#9B59B6" font-family="Arial" font-size="10" text-anchor="middle">Impact</text>
+                                
+                                <!-- Results icon -->
+                                <path d="M15 30 L20 20 L25 25 L30 15" stroke="#9B59B6" stroke-width="2" fill="none"/>
+                                <circle cx="20" cy="20" r="1" fill="#9B59B6"/>
+                                <circle cx="25" cy="25" r="1" fill="#9B59B6"/>
+                                <circle cx="30" cy="15" r="1" fill="#9B59B6"/>
+                            </g>
+                            
+                            <!-- Connection Lines -->
+                            <path d="M150 85 L160 145" stroke="#39FF14" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M250 85 L240 145" stroke="#FFD93D" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M150 265 L160 205" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            <path d="M250 265 L240 205" stroke="#9B59B6" stroke-width="2" stroke-dasharray="5,5" opacity="0.7"/>
+                            
+                            <!-- Success Metrics -->
+                            <g transform="translate(40, 140)">
+                                <rect x="0" y="0" width="50" height="30" rx="5" fill="rgba(0, 191, 255, 0.1)" stroke="#00BFFF" stroke-width="1"/>
+                                <text x="25" y="12" fill="#00BFFF" font-family="Arial" font-size="8" text-anchor="middle">Success Rate</text>
+                                <text x="25" y="24" fill="#39FF14" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">100%</text>
+                            </g>
+                            
+                            <g transform="translate(310, 140)">
+                                <rect x="0" y="0" width="50" height="30" rx="5" fill="rgba(57, 255, 20, 0.1)" stroke="#39FF14" stroke-width="1"/>
+                                <text x="25" y="12" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Client ROI</text>
+                                <text x="25" y="24" fill="#FFD93D" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold">300%</text>
+                            </g>
+                            
+                            <!-- Consulting Badge -->
+                            <g transform="translate(320, 200)">
+                                <circle cx="0" cy="0" r="20" fill="rgba(255, 165, 0, 0.3)" stroke="#FFA500" stroke-width="2"/>
+                                <path d="M-8 -5 L8 -5 L8 5 C8 10, 0 15, 0 15 C0 15, -8 10, -8 5 Z" fill="#FFA500"/>
+                                <text x="0" y="-2" fill="#ffffff" font-family="Arial" font-size="7" text-anchor="middle">Strategy</text>
+                                <text x="0" y="6" fill="#ffffff" font-family="Arial" font-size="7" text-anchor="middle">Expert</text>
+                                <text x="0" y="35" fill="#FFA500" font-family="Arial" font-size="8" text-anchor="middle">Certified</text>
+                            </g>
+                            
+                            <!-- Methodology Indicator -->
+                            <g opacity="0.9">
+                                <circle cx="50" cy="200" r="8" fill="#39FF14">
+                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="50" y="220" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Proven</text>
+                                <text x="50" y="230" fill="#39FF14" font-family="Arial" font-size="8" text-anchor="middle">Methods</text>
+                            </g>
+                            
+                            <!-- Strategic Vision Lines -->
+                            <g opacity="0.6">
+                                <path d="M370 100 Q350 120 370 140" stroke="#00BFFF" stroke-width="2" fill="none" stroke-dasharray="4,2">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1s" repeatCount="indefinite"/>
+                                </path>
+                                <path d="M30 100 Q50 120 30 140" stroke="#39FF14" stroke-width="2" fill="none" stroke-dasharray="4,2">
+                                    <animate attributeName="stroke-dashoffset" values="0;-10" dur="1.5s" repeatCount="indefinite"/>
+                                </path>
+                            </g>
+                        </svg>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready for Technology Transformation?</h2>
-                <p>Let's discuss how our consulting expertise can accelerate your digital transformation</p>
-                <a href="../contact.html" class="cta-button">Start Consultation</a>
             </div>
         </div>
     </section>
@@ -286,32 +787,5 @@
     <!-- Scripts -->
     <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
-    
-    <!-- Component Loading Script -->
-    <script>
-        async function loadComponent(componentId, componentPath) {
-            try {
-                const response = await fetch(componentPath);
-                const html = await response.text();
-                const element = document.getElementById(componentId);
-                if (element) {
-                    element.innerHTML = html;
-                }
-            } catch (error) {
-                console.error(`Failed to load ${componentId}:`, error);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', async function() {
-            await loadComponent('header-component', '../../src/components/header/header-new.html');
-            await loadComponent('mobile-nav-component', '../../src/components/navigation/mobile-nav/mobile-nav.html');
-            await loadComponent('footer-component', '../../src/components/footer/footer.html');
-            
-            // Initialize header after components are loaded
-            if (typeof NewNavbarComponent !== 'undefined') {
-                new NewNavbarComponent();
-            }
-        });
-    </script>
 </body>
 </html>

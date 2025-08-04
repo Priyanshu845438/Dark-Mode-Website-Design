@@ -96,7 +96,7 @@ try {
     $mail->addReplyTo($email, $name);
     
     $mail->isHTML(true);
-    $mail->Subject = 'New Contact Form Submission: ' . $subject;
+    $mail->Subject = '📧 New Contact Form Submission: ' . $subject;
     
     // Admin email template
     $admin_email_body = file_get_contents('email-templates/admin-notification.html');
@@ -124,13 +124,67 @@ try {
     
     $mail->Body = $admin_email_body;
 
-    // Send email to admin only
-    $email_sent = $mail->send();
+    // Send email to admin
+    $admin_email_sent = $mail->send();
+    
+    // Debug logging
+    error_log("Contact form: Admin email sent status = " . ($admin_email_sent ? 'true' : 'false'));
+    error_log("Contact form: Admin email = " . $admin_email);
+    error_log("Contact form: Subject = " . $mail->Subject);
 
-    if ($email_sent) {
+    // Send confirmation email to user
+    $user_email_sent = false;
+    try {
+        $userMail = new PHPMailer(true);
+        
+        // Configure SMTP for user email
+        $userMail->isSMTP();
+        $userMail->Host = $smtp_host;
+        $userMail->SMTPAuth = true;
+        $userMail->Username = $smtp_username;
+        $userMail->Password = $smtp_password;
+        $userMail->SMTPSecure = $smtp_encryption;
+        $userMail->Port = $smtp_port;
+        $userMail->CharSet = 'UTF-8';
+
+        // User confirmation email settings
+        $userMail->setFrom($smtp_username, 'Acadify Solution');
+        $userMail->addAddress($email, $name);
+        $userMail->isHTML(true);
+        $userMail->Subject = '✅ Thank You for Contacting Acadify Solution!';
+        
+        // User email template
+        $user_email_body = file_get_contents('email-templates/user-confirmation.html');
+        $user_email_body = str_replace([
+            '{{name}}',
+            '{{subject}}',
+            '{{service}}',
+            '{{date}}',
+            '{{time}}'
+        ], [
+            $name,
+            $subject,
+            $service ?: 'General Inquiry',
+            date('F j, Y'),
+            date('g:i A')
+        ], $user_email_body);
+        
+        $userMail->Body = $user_email_body;
+        
+        // Send user confirmation email
+        $user_email_sent = $userMail->send();
+        error_log("Contact form: User confirmation email sent status = " . ($user_email_sent ? 'true' : 'false'));
+        
+    } catch (Exception $e) {
+        error_log("Contact form: User email error = " . $e->getMessage());
+    }
+
+    if ($admin_email_sent) {
         echo json_encode([
             'success' => true,
-            'message' => 'Thank you! Your message has been sent successfully. We will get back to you within 24 hours.'
+            'message' => 'Thank you! Your message has been sent successfully. ' . 
+                        ($user_email_sent ? 'A confirmation email has been sent to your inbox. ' : '') .
+                        'We will get back to you within 24 hours.'
         ]);
     } else {
         throw new Exception('Failed to send email to admin');
