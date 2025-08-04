@@ -211,7 +211,6 @@
     <script src="../src/components/header/header-new.js?v=13"></script>
     <script src="../src/components/footer/footer.js"></script>
     <script src="../src/scripts/main.js"></script>
-    <script src="../link-validation.js"></script>
     <script src="../src/scripts/toast.js"></script>
     <script src="../src/scripts/contact-page.js"></script>
     
@@ -292,7 +291,7 @@
             showToast('loading', 'Sending', 'Please wait while we send your message...');
             
             // Send to PHP backend
-            fetch('/contact-handler-dev.php', {
+            fetch('../contact-handler.php', {
                 method: 'POST',
                 body: formData
             })

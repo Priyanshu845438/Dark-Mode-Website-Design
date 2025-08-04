@@ -470,8 +470,6 @@
         font-size: 1.25rem;
     }
 }
-    color: #fff;
-}
 
 .text-glow {
     background: linear-gradient(135deg, #00bfff 0%, #39ff14 50%, #ffa500 100%);

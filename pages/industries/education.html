@@ -797,5 +797,41 @@
     <script src="../../src/components/header/header-new.js?v=15"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/main.js"></script>
+    
+    <!-- Component Loading Script -->
+    <script>
+        async function loadComponent(componentId, componentPath) {
+            try {
+                const response = await fetch(componentPath);
+                const html = await response.text();
+                document.getElementById(componentId).innerHTML = html;
+                console.log(`✓ ${componentId} loaded`);
+            } catch (error) {
+                console.error(`Error loading component ${componentId}:`, error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Loading Education page components...');
+            
+            // Load all components with correct paths for nested directory
+            await Promise.all([
+                loadComponent('header-component', '../../src/components/header/header-new.html'),
+                loadComponent('footer-component', '../../src/components/footer/footer.html')
+            ]);
+            
+            console.log('✓ All Education page components loaded');
+            
+            // Initialize components after loading
+            setTimeout(() => {
+                // Initialize navigation
+                if (window.initializeNavigation) {
+                    window.initializeNavigation();
+                }
+                
+                console.log('✅ Education page fully initialized');
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

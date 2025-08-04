@@ -718,7 +718,7 @@
     <script src="../src/components/footer/footer.js"></script>
     <script src="../src/scripts/main.js"></script>
     <script src="../src/scripts/toast.js"></script>
-    <script src="../link-validation.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set minimum date to tomorrow for better scheduling
@@ -742,7 +742,7 @@
                 try {
                     const formData = new FormData(form);
                     
-                    const response = await fetch('../meeting-handler.php', {
+                    const response = await fetch('/meeting-handler.php', {
                         method: 'POST',
                         body: formData
                     });
