@@ -7,14 +7,13 @@
     <meta name="description" content="Terms and Conditions for using Acadify Solution's services and website.">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/utilities.css">
     <link rel="stylesheet" href="../src/styles/components/lazy-loading.css">
-    <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="styles/pages.css">
-    <link rel="stylesheet" href="components/navbar.module.css">
-    <link rel="stylesheet" href="components/footer.module.css">
+    <link rel="stylesheet" href="../src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../src/styles/pages/policy.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,8 +24,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <div id="navbar-container"></div>
+    <!-- Header Component -->
+    <div id="header-component"></div>
 
     <!-- Hero Section -->
     <section class="hero legal-hero">
@@ -205,17 +204,37 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <div id="footer-container"></div>
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
 
     <!-- Scripts -->
-    <!-- Performance Scripts -->
     <script src="../src/scripts/lazy-loading.js" defer></script>
     <script src="../src/scripts/resource-hints.js" defer></script>
+    <script src="../src/scripts/main.js" defer></script>
     
-    <!-- Component Scripts -->
-    <script src="components/navbar.js"></script>
-    <script src="components/footer.js"></script>
-    <script src="scripts/main.js"></script>
+    <!-- Component Loaders -->
+    <script>
+        // Load Header Component
+        fetch('../src/components/header/header-new.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-component').innerHTML = data;
+                // Load header script after HTML is loaded
+                const script = document.createElement('script');
+                script.src = '../src/components/header/header-new.js';
+                document.head.appendChild(script);
+            });
+
+        // Load Footer Component
+        fetch('../src/components/footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-component').innerHTML = data;
+                // Load footer script after HTML is loaded
+                const script = document.createElement('script');
+                script.src = '../src/components/footer/footer.js';
+                document.head.appendChild(script);
+            });
+    </script>
 </body>
 </html>

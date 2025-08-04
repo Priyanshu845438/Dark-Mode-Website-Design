@@ -123,6 +123,7 @@ class AcadifyApp {
                     if (!isActive) {
                         dropdown.classList.add('active');
                         button.classList.add('active');
+                        console.log('Dropdown activated:', targetId);
                     }
                 }
             }

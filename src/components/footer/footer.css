@@ -820,3 +820,207 @@
         font-size: 0.85rem !important;
     }
 }
+
+/* ============================================
+   ENHANCED RESPONSIVE DESIGN FOR ALL DEVICES
+   ============================================ */
+
+/* Extra Large Screens (1400px+) */
+@media screen and (min-width: 1400px) {
+    .acadify-footer-unique-container .acadify-container-unique {
+        max-width: 1600px !important;
+        padding: 0 40px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        gap: 60px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-column-title-unique {
+        font-size: 1.4rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-link-unique {
+        font-size: 1rem !important;
+    }
+}
+
+/* Large Screens (1024px - 1399px) */
+@media screen and (max-width: 1399px) and (min-width: 1024px) {
+    .acadify-footer-unique-container .acadify-container-unique {
+        max-width: 1200px !important;
+        padding: 0 30px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        gap: 40px !important;
+    }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .acadify-footer-unique-container {
+        padding: 40px 0 0 0 !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-container-unique {
+        padding: 0 25px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 35px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-stats-content-unique {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-column-title-unique {
+        font-size: 1.2rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-link-unique {
+        font-size: 0.95rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-contact-item-unique {
+        font-size: 0.9rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-quick-contact-unique {
+        flex-direction: row !important;
+        gap: 15px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-contact-cta-unique,
+    .acadify-footer-unique-container .acadify-meeting-cta-unique {
+        flex: 1 !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Landscape Mobile Orientation */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .acadify-footer-unique-container .acadify-footer-stats-unique {
+        padding: 20px 0 !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-stats-content-unique {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-stat-item-unique {
+        padding: 12px !important;
+        min-height: 70px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+}
+
+/* Ultra Small Devices (320px and below) */
+@media screen and (max-width: 320px) {
+    .acadify-footer-unique-container .acadify-container-unique {
+        padding: 0 8px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        gap: 15px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-column-title-unique {
+        font-size: 0.95rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-link-unique {
+        font-size: 0.8rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-contact-item-unique {
+        font-size: 0.75rem !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-social-icon {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-footer-social {
+        gap: 10px !important;
+    }
+}
+
+/* High DPI/Retina Displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (min-resolution: 192dpi) {
+    .acadify-footer-unique-container .acadify-social-icon,
+    .acadify-footer-unique-container .acadify-contact-icon-unique {
+        image-rendering: -webkit-optimize-contrast !important;
+        image-rendering: crisp-edges !important;
+    }
+}
+
+/* Footer Grid Layout Improvements for All Devices */
+@media screen and (max-width: 1200px) {
+    .acadify-footer-unique-container .acadify-footer-main-unique {
+        padding: 30px 0 !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .acadify-footer-unique-container .acadify-footer-grid-unique {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+}
+
+/* Enhanced Mobile Button Styles */
+@media screen and (max-width: 767px) {
+    .acadify-footer-unique-container .acadify-legal-links a {
+        display: block !important;
+        margin: 5px 0 !important;
+        text-align: center !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        transition: all 0.3s ease !important;
+        padding: 10px 15px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-legal-links a:hover {
+        background: rgba(0, 191, 255, 0.1) !important;
+        border-color: rgba(0, 191, 255, 0.3) !important;
+        transform: translateY(-1px) !important;
+        box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2) !important;
+    }
+}
+
+/* Accessibility and Touch Targets for Mobile */
+@media screen and (max-width: 767px) {
+    .acadify-footer-unique-container .acadify-footer-link-unique,
+    .acadify-footer-unique-container .acadify-contact-link-unique,
+    .acadify-footer-unique-container .acadify-legal-links a {
+        min-height: 44px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 12px 16px !important;
+    }
+    
+    .acadify-footer-unique-container .acadify-social-icon {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+}

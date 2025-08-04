@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="../src/styles/utilities.css">
     <link rel="stylesheet" href="../src/components/header/header-new.css?v=10">
     <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+    <link rel="stylesheet" href="../src/styles/pages/policy.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -200,9 +202,34 @@
     <div id="footer-component"></div>
     
     <!-- Scripts -->
-    <script src="../src/components/header/header-new.js?v=15"></script>
-    <script src="../src/components/footer/footer.js"></script>
-    <script src="../src/scripts/main.js"></script>
+    <script src="../src/scripts/lazy-loading.js" defer></script>
+    <script src="../src/scripts/resource-hints.js" defer></script>
+    <script src="../src/scripts/main.js" defer></script>
+    
+    <!-- Component Loaders -->
+    <script>
+        // Load Header Component
+        fetch('../src/components/header/header-new.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-component').innerHTML = data;
+                // Load header script after HTML is loaded
+                const script = document.createElement('script');
+                script.src = '../src/components/header/header-new.js';
+                document.head.appendChild(script);
+            });
+
+        // Load Footer Component
+        fetch('../src/components/footer/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-component').innerHTML = data;
+                // Load footer script after HTML is loaded
+                const script = document.createElement('script');
+                script.src = '../src/components/footer/footer.js';
+                document.head.appendChild(script);
+            });
+    </script>
     
     <style>
     .security-policy-content {
