@@ -145,6 +145,7 @@
                     ['.about-section', 'About section'],
                     ['.tech-stack-section', 'Tech Stack section'],
                     ['.testimonials-section', 'Testimonials section'],
+                    ['.blog-section', 'Blog section'],
                     ['.window-title', 'Innovation.js code'],
                     ['.hero-title', 'Hero title']
                 ];
@@ -199,6 +200,12 @@
                 // Initialize JavaScript functionality
                 if (window.FooterComponent) {
                     new FooterComponent();
+                }
+                
+                // Initialize Blog Component if not already done
+                if (window.BlogComponent && !window.blogComponentInstance) {
+                    console.log('✓ Initializing Blog Component');
+                    window.blogComponentInstance = new BlogComponent();
                 }
                 
                 // Tech Stack filtering is now handled by its own script

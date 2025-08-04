@@ -9,31 +9,45 @@ class BlogComponent {
     }
 
     init() {
-        // Wait for DOM content to be loaded
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.loadBlogContent());
-        } else {
-            this.loadBlogContent();
-        }
+        // Use a more reliable method to wait for components to load
+        this.waitForContainer();
+    }
+    
+    waitForContainer() {
+        const checkContainer = () => {
+            this.blogContainer = document.getElementById('blog-posts-container');
+            if (this.blogContainer) {
+                console.log('✓ Blog container found, loading content...');
+                this.loadBlogContent();
+            } else {
+                console.log('⏳ Waiting for blog container...');
+                setTimeout(checkContainer, 100);
+            }
+        };
+        checkContainer();
     }
 
     loadBlogContent() {
-        this.blogContainer = document.getElementById('blog-posts-container');
-        
+        // Container should already be found by waitForContainer
         if (!this.blogContainer) {
-            console.warn('Blog container not found');
+            console.error('Blog container not found in loadBlogContent');
             return;
         }
 
+        console.log('🔍 Checking for blog data...');
         // Check if blog data is available
-        if (typeof BlogDataHelper !== 'undefined') {
+        if (typeof BlogDataHelper !== 'undefined' && typeof window.blogData !== 'undefined') {
+            console.log('✓ Blog data found, rendering posts...');
             this.renderBlogPosts();
         } else {
+            console.log('⏳ Blog data not ready, loading script...');
             // Load blog data script if not available
             this.loadBlogDataScript().then(() => {
+                console.log('✓ Blog data script loaded, rendering posts...');
                 this.renderBlogPosts();
             }).catch(error => {
                 console.error('Failed to load blog data:', error);
+                console.log('📝 Using fallback content...');
                 this.renderFallbackContent();
             });
         }
@@ -57,8 +71,13 @@ class BlogComponent {
 
     renderBlogPosts() {
         try {
+            console.log('📝 Starting to render blog posts...');
+            console.log('🔍 BlogDataHelper available:', typeof BlogDataHelper !== 'undefined');
+            console.log('🔍 window.blogData available:', typeof window.blogData !== 'undefined');
+            
             // Get featured posts first, then recent posts as fallback
             let posts = BlogDataHelper.getFeaturedPosts(this.maxPosts);
+            console.log('📊 Featured posts found:', posts.length);
             
             if (posts.length < this.maxPosts) {
                 const recentPosts = BlogDataHelper.getRecentPosts(this.maxPosts);
@@ -69,13 +88,16 @@ class BlogComponent {
             }
 
             if (posts.length === 0) {
+                console.warn('⚠️ No posts found, using fallback content');
                 this.renderFallbackContent();
                 return;
             }
 
             // Generate HTML for each post
+            console.log('🎨 Generating HTML for', posts.length, 'posts');
             const blogHTML = posts.map(post => this.generateBlogCard(post)).join('');
             this.blogContainer.innerHTML = blogHTML;
+            console.log('✅ Blog posts rendered successfully');
 
             // Add event listeners for analytics if needed
             this.attachEventListeners();
@@ -95,27 +117,33 @@ class BlogComponent {
                             <i class="${post.icon}"></i>
                         </div>
                     </div>
-                    <div class="blog-category">${post.categoryDisplay}</div>
+                    <div class="blog-category-tag">${post.categoryDisplay}</div>
                 </div>
                 <div class="blog-content">
                     <div class="blog-meta">
-                        <span class="blog-date">
-                            <i class="fas fa-calendar"></i>
-                            ${post.date}
-                        </span>
-                        <span class="blog-read-time">
-                            <i class="fas fa-clock"></i>
-                            ${post.readTime}
-                        </span>
-                    </div>
-                    <h3 class="blog-title">${post.title}</h3>
-                    <p class="blog-excerpt">${post.excerpt}</p>
-                    <div class="blog-footer">
-                        <div class="blog-author">
+                        <div class="author-info">
                             <div class="author-avatar">
                                 <i class="fas fa-user"></i>
                             </div>
                             <span class="author-name">${post.author}</span>
+                        </div>
+                        <div class="blog-date">
+                            <i class="fas fa-calendar"></i>
+                            <span>${post.date}</span>
+                        </div>
+                    </div>
+                    <h3 class="blog-title">${post.title}</h3>
+                    <p class="blog-excerpt">${post.excerpt}</p>
+                    <div class="blog-footer">
+                        <div class="blog-stats">
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                ${post.readTime}
+                            </span>
+                            <span class="views">
+                                <i class="fas fa-eye"></i>
+                                ${post.views}
+                            </span>
                         </div>
                         <a href="pages/${post.url}" class="blog-btn" data-post-id="${post.id}">
                             Read More
@@ -284,8 +312,13 @@ class BlogComponent {
     }
 }
 
-// Initialize the blog component
-const blogComponent = new BlogComponent();
+// Initialize the blog component when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Only initialize if not already initialized
+    if (!window.blogComponentInstance) {
+        window.blogComponentInstance = new BlogComponent();
+    }
+});
 
 // Export for use in modules
 if (typeof module !== 'undefined' && module.exports) {

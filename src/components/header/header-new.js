@@ -58,7 +58,8 @@ class NewNavbarComponent {
         if (path.includes('/pages/services/') || path.includes('pages/services/') ||
             path.includes('/pages/industries/') || path.includes('pages/industries/') ||
             path.includes('/pages/products/') || path.includes('pages/products/') ||
-            path.includes('/pages/portfolio/') || path.includes('pages/portfolio/')) {
+            path.includes('/pages/portfolio/') || path.includes('pages/portfolio/') ||
+            path.includes('/pages/blogs/') || path.includes('pages/blogs/')) {
             return '../../';
         } else if (path.includes('/pages/') || path.includes('pages/')) {
             return '../';
