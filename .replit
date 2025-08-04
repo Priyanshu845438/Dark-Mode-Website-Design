@@ -1,5 +1,5 @@
-modules = ["web", "nodejs-20", "python-3.11"]
-run = "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"
+modules = ["web", "php-8.2", "nodejs-20", "php-8.3"]
+run = "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"
 
 [nix]
 channel = "stable-25_05"
@@ -15,15 +15,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Static Website"
+args = "Web Server"
 
 [[workflows.workflow]]
-name = "Static Website"
+name = "Web Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000 --bind 0.0.0.0"
+args = "php -S 0.0.0.0:5000"
 waitForPort = 5000
 
 [[ports]]
@@ -34,4 +34,4 @@ externalPort = 80
 expertMode = true
 
 [deployment]
-run = ["sh", "-c", "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"]
+run = ["sh", "-c", "node src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/src/scripts/main.js"]

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../src/components/footer/footer.css">
     <link rel="stylesheet" href="../src/components/testimonials/testimonials.css">
     <link rel="stylesheet" href="../src/styles/pages/contact.css">
+    <link rel="stylesheet" href="../src/styles/components/toast.css">
 </head>
 <body>
     <!-- Header Component -->
@@ -136,10 +137,7 @@
                         <div class="contact-page-form-header">
                             <h2>Send Us a Message</h2>
                             <p>Fill out the form below and we'll get back to you as soon as possible.</p>
-                            <div class="contact-page-environment-notice" style="background: rgba(0, 191, 255, 0.1); padding: 0.75rem; border-radius: 5px; margin: 1rem 0; font-size: 0.9rem; color: #00bfff;">
-                                <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
-                                Testing mode: Form validation works here. Email system activates on Hostinger deployment.
-                            </div>
+
                         </div>
 
                         <!-- Success/Error Messages -->
@@ -158,7 +156,7 @@
                             </div>
                         </div>
 
-                        <form class="contact-page-form" id="contactForm" action="#" method="POST">
+                        <form class="contact-page-form" id="contactForm" onsubmit="handleFormSubmit(event); return false;">
                             <div class="contact-page-form-group">
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -214,6 +212,7 @@
     <script src="../src/components/footer/footer.js"></script>
     <script src="../src/scripts/main.js"></script>
     <script src="../link-validation.js"></script>
+    <script src="../src/scripts/toast.js"></script>
     <script src="../src/scripts/contact-page.js"></script>
     
     <!-- Component Loading Script -->
@@ -253,9 +252,143 @@
                     window.initializeMobileNavigation();
                 }
                 
+                // Ensure contact form is initialized
+                const form = document.getElementById('contactForm');
+                if (form && !window.contactFormHandler) {
+                    console.log('🔄 Re-initializing contact form...');
+                    window.contactFormHandler = new ContactFormHandler();
+                } else if (form && window.contactFormHandler) {
+                    console.log('✓ Contact form already initialized');
+                } else if (!form) {
+                    console.error('❌ Contact form element not found');
+                }
+                
                 console.log('✅ Contact page fully initialized');
             }, 1000);
         });
+    </script>
+    
+    <!-- Inline Form Handler - Direct Implementation -->
+    <script>
+        // Global form handler that works immediately
+        window.handleFormSubmit = function(event) {
+            event.preventDefault();
+            console.log('Form submitted directly');
+            
+            // Get form data
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Basic validation
+            if (!name || !email || !message) {
+                showToast('error', 'Error', 'Please fill in all required fields');
+                return;
+            }
+            
+            // Show loading toast
+            showToast('loading', 'Sending', 'Please wait while we send your message...');
+            
+            // Send to PHP backend
+            fetch('/contact-handler-dev.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                // Remove loading toast
+                const loadingToast = document.querySelector('.simple-toast-loading');
+                if (loadingToast) loadingToast.remove();
+                
+                if (result.success) {
+                    showToast('success', 'Success!', result.message);
+                    form.reset();
+                } else {
+                    showToast('error', 'Error', result.message);
+                }
+            })
+            .catch(error => {
+                // Remove loading toast
+                const loadingToast = document.querySelector('.simple-toast-loading');
+                if (loadingToast) loadingToast.remove();
+                
+                console.error('Error:', error);
+                showToast('error', 'Error', 'Failed to send message. Please try again.');
+            });
+        };
+        
+        // Simple toast function
+        window.showToast = function(type, title, message) {
+            // Remove existing toasts
+            const existingToasts = document.querySelectorAll('.simple-toast');
+            existingToasts.forEach(toast => toast.remove());
+            
+            // Create toast
+            const toast = document.createElement('div');
+            toast.className = `simple-toast simple-toast-${type}`;
+            toast.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
+                color: white;
+                padding: 16px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                z-index: 9999;
+                min-width: 300px;
+                max-width: 400px;
+                font-family: Poppins, sans-serif;
+                animation: slideInRight 0.3s ease-out;
+            `;
+            
+            toast.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 4px;">${title}</div>
+                <div style="font-size: 14px; opacity: 0.9;">${message}</div>
+                <button onclick="this.parentElement.remove()" style="
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    padding: 4px;
+                ">×</button>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Auto remove after 5 seconds (except loading)
+            if (type !== 'loading') {
+                setTimeout(() => {
+                    if (toast.parentElement) {
+                        toast.remove();
+                    }
+                }, 5000);
+            }
+        };
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        console.log('Direct form handler loaded and ready');
     </script>
 </body>
 </html>

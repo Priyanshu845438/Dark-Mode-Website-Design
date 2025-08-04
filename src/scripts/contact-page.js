@@ -13,9 +13,42 @@ class ContactFormHandler {
     
     init() {
         if (this.form) {
+            // Add both form submit and button click listeners
             this.form.addEventListener('submit', this.handleSubmit.bind(this));
+            
+            // Add button click listener
+            if (this.submitBtn) {
+                this.submitBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('🚀 Submit button clicked via event listener');
+                    this.handleSubmit(e);
+                });
+                console.log('✓ Submit button click listener attached');
+                
+                // Also add a test function to check if button is accessible
+                window.testButton = () => {
+                    console.log('Testing button accessibility...');
+                    console.log('Button element:', this.submitBtn);
+                    console.log('Button disabled:', this.submitBtn.disabled);
+                    console.log('Button style.pointerEvents:', getComputedStyle(this.submitBtn).pointerEvents);
+                    this.handleSubmit({ preventDefault: () => {} });
+                };
+            } else {
+                console.error('❌ Submit button not found');
+            }
+            
             this.addInputValidation();
             console.log('✓ Contact form initialized');
+            console.log('✓ Toast manager available:', !!window.toastManager);
+            
+            // Ensure toast manager is available
+            if (!window.toastManager && window.ToastManager) {
+                window.toastManager = new window.ToastManager();
+                console.log('✓ Toast manager created');
+            }
+        } else {
+            console.error('❌ Contact form not found');
         }
     }
     
@@ -88,6 +121,7 @@ class ContactFormHandler {
     
     async handleSubmit(event) {
         event.preventDefault();
+        console.log('📝 Form submitted, processing...');
         
         // Validate all fields
         const isValid = this.validateForm();
@@ -205,67 +239,95 @@ class ContactFormHandler {
             this.submitBtn.classList.remove('loading');
             this.submitBtn.querySelector('.contact-btn-text').textContent = 'Send Message';
             this.submitBtn.querySelector('i').className = 'fas fa-paper-plane';
-            this.hideMessage('loading');
+            
+            // Hide loading toast if it exists
+            if (this.currentToast && window.toastManager) {
+                window.toastManager.hide(this.currentToast);
+                this.currentToast = null;
+            }
         }
     }
     
     showMessage(type, message) {
-        // Hide all messages first
-        this.hideAllMessages();
+        console.log(`📢 Showing ${type} message:`, message);
         
-        // Show the specific message
-        this.messagesContainer.style.display = 'block';
-        
-        if (type === 'success') {
-            this.successMessage.style.display = 'flex';
-            this.successMessage.querySelector('.contact-page-message-text').textContent = message;
-        } else if (type === 'error') {
-            this.errorMessage.style.display = 'flex';
-            this.errorMessage.querySelector('.contact-page-message-text').textContent = message;
-        } else if (type === 'loading') {
-            this.loadingMessage.style.display = 'flex';
+        // Use toast notifications instead of inline messages
+        if (window.toastManager) {
+            console.log('✓ Using toast manager for notification');
+            if (type === 'success') {
+                this.currentToast = window.toastManager.success('Message Sent!', message, 6000);
+            } else if (type === 'error') {
+                this.currentToast = window.toastManager.error('Error', message, 8000);
+            } else if (type === 'loading') {
+                this.currentToast = window.toastManager.loading('Sending Message', 'Please wait while we send your message...');
+            }
+        } else {
+            // Fallback to alert if toast manager not available
+            console.error('❌ Toast manager not available, using alert fallback');
+            alert(`${type.toUpperCase()}: ${message}`);
         }
-        
-        // Auto-hide success/error messages after 10 seconds
-        if (type !== 'loading') {
-            setTimeout(() => {
-                this.hideMessage(type);
-            }, 10000);
-        }
-        
-        // Scroll to message
-        this.messagesContainer.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'nearest' 
-        });
     }
     
     hideMessage(type) {
-        if (type === 'success') {
-            this.successMessage.style.display = 'none';
-        } else if (type === 'error') {
-            this.errorMessage.style.display = 'none';
-        } else if (type === 'loading') {
-            this.loadingMessage.style.display = 'none';
-        }
-        
-        // Hide container if no messages are visible
-        const visibleMessages = this.messagesContainer.querySelectorAll('.message[style*="flex"]');
-        if (visibleMessages.length === 0) {
-            this.messagesContainer.style.display = 'none';
-        }
+        // No longer needed as we use toast notifications
+        // Toast notifications handle their own hiding
     }
     
     hideAllMessages() {
-        this.successMessage.style.display = 'none';
-        this.errorMessage.style.display = 'none';
-        this.loadingMessage.style.display = 'none';
+        // No longer needed as we use toast notifications
+        // Toast notifications handle their own hiding
     }
 }
 
+// Global function to submit contact form (called by button onclick)
+window.submitContactForm = function() {
+    console.log('🚀 Submit button clicked');
+    
+    // Ensure toast manager is available
+    if (!window.toastManager) {
+        console.log('🔄 Creating toast manager...');
+        window.toastManager = new (window.ToastManager || ToastManager)();
+    }
+    
+    if (window.contactFormHandler) {
+        window.contactFormHandler.handleSubmit({ preventDefault: () => {} });
+    } else {
+        console.error('❌ Contact form handler not initialized');
+        // Try to create it now
+        const form = document.getElementById('contactForm');
+        if (form) {
+            console.log('🔄 Creating contact form handler now...');
+            window.contactFormHandler = new ContactFormHandler();
+            window.contactFormHandler.handleSubmit({ preventDefault: () => {} });
+        } else {
+            console.error('❌ Contact form not found');
+            alert('Form not ready. Please refresh the page and try again.');
+        }
+    }
+};
+
 // Initialize contact form when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new ContactFormHandler();
+    console.log('📄 DOM loaded, initializing contact form...');
+    
+    // Check if form exists immediately
+    const form = document.getElementById('contactForm');
+    if (form) {
+        console.log('✓ Form found immediately, initializing...');
+        window.contactFormHandler = new ContactFormHandler();
+    } else {
+        console.log('⏳ Form not found, waiting for components to load...');
+        // Wait for components to load
+        setTimeout(() => {
+            const delayedForm = document.getElementById('contactForm');
+            if (delayedForm) {
+                console.log('✓ Form found after delay, initializing...');
+                window.contactFormHandler = new ContactFormHandler();
+            } else {
+                console.error('❌ Contact form still not found after delay');
+            }
+        }, 1500);
+    }
 });
 
 // Auto-fill form from URL parameters (for marketing campaigns)

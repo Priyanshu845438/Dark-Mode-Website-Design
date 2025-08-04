@@ -59,7 +59,11 @@ class FooterComponent {
                     current = target;
                     clearInterval(timer);
                 }
-                element.textContent = Math.floor(current) + (target === 98 ? '' : '+');
+                if (target === 98) {
+                    element.textContent = Math.floor(current) + '%';
+                } else {
+                    element.textContent = Math.floor(current) + '+';
+                }
             }, 30);
         };
 

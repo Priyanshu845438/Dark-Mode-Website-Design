@@ -459,10 +459,19 @@
 .submit-btn.loading {
     opacity: 0.7;
     cursor: not-allowed;
+    pointer-events: none;
 }
 
 .submit-btn.loading i {
     animation: spin 1s linear infinite;
+}
+
+/* Ensure button is clickable */
+.contact-page-submit-btn {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
 @keyframes spin {

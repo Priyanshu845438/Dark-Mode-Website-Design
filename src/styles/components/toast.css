@@ -1,0 +1,209 @@
+/* Toast Notification System */
+
+/* Toast Container - Fixed position in top right */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    pointer-events: none;
+    max-width: 400px;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .toast-container {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+/* Individual Toast */
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+    pointer-events: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Toast Types */
+.toast.success {
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.95) 0%, rgba(0, 191, 255, 0.8) 100%);
+    border-color: rgba(57, 255, 20, 0.3);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, rgba(255, 71, 87, 0.95) 0%, rgba(255, 165, 0, 0.8) 100%);
+    border-color: rgba(255, 71, 87, 0.3);
+}
+
+.toast.loading {
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.95) 0%, rgba(57, 255, 20, 0.8) 100%);
+    border-color: rgba(0, 191, 255, 0.3);
+}
+
+/* Toast Animation States */
+.toast.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast.hide {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* Toast Icon */
+.toast-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.toast.success .toast-icon {
+    color: #39ff14;
+}
+
+.toast.error .toast-icon {
+    color: #ff4757;
+}
+
+.toast.loading .toast-icon {
+    color: #00bfff;
+}
+
+/* Toast Content */
+.toast-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.toast-title {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.toast-message {
+    font-weight: 400;
+    opacity: 0.9;
+    word-wrap: break-word;
+}
+
+/* Toast Close Button */
+.toast-close {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.toast-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Progress Bar for Auto-dismiss */
+.toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: width linear;
+}
+
+.toast.success .toast-progress {
+    background: #39ff14;
+}
+
+.toast.error .toast-progress {
+    background: #ff4757;
+}
+
+.toast.loading .toast-progress {
+    background: #00bfff;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.toast.loading .toast-icon i {
+    animation: spin 1s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .toast {
+        padding: 14px 16px;
+        font-size: 13px;
+        min-height: 56px;
+    }
+    
+    .toast-title {
+        font-size: 14px;
+    }
+    
+    .toast-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+    
+    .toast-close {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+}
+
+/* Dark theme enhancements */
+.toast {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hover effects */
+.toast:hover {
+    transform: translateX(-2px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.toast:not(.loading):hover .toast-progress {
+    animation-play-state: paused;
+}

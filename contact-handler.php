@@ -11,15 +11,15 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// SMTP Configuration - Update these with your Hostinger credentials
-$smtp_host = 'smtp.hostinger.com';
-$smtp_port = 465;
-$smtp_username = 'contact@acadifysolution.com';
-$smtp_password = 'LoveDay@1103!!!';
-$smtp_encryption = 'ssl';
+// SMTP Configuration - Use environment variables or defaults
+$smtp_host = $_ENV['SMTP_HOST'] ?? 'smtp.hostinger.com';
+$smtp_port = $_ENV['SMTP_PORT'] ?? 465;
+$smtp_username = $_ENV['SMTP_USERNAME'] ?? 'contact@acadifysolution.com';
+$smtp_password = $_ENV['SMTP_PASSWORD'] ?? '';
+$smtp_encryption = $_ENV['SMTP_ENCRYPTION'] ?? 'ssl';
 
 // Admin email (where form submissions are sent)
-$admin_email = 'contact@acadifysolution.com';
+$admin_email = $_ENV['ADMIN_EMAIL'] ?? 'contact@acadifysolution.com';
 
 // Validate and sanitize input
 function sanitize_input($data) {
