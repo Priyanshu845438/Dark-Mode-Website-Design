@@ -92,28 +92,120 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="dashboard-preview">
+                    <div class="enhanced-dashboard-preview">
                         <div class="dashboard-header">
-                            <div class="dashboard-title">Acadify POS Interface</div>
+                            <div class="dashboard-title">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Acadify POS Interface
+                            </div>
                             <div class="dashboard-controls">
-                                <div class="control-dot"></div>
-                                <div class="control-dot"></div>
-                                <div class="control-dot"></div>
+                                <div class="control-dot red"></div>
+                                <div class="control-dot yellow"></div>
+                                <div class="control-dot green"></div>
                             </div>
                         </div>
                         <div class="dashboard-content">
-                            <div class="dashboard-stats">
-                                <div class="stat-card">
+                            <div class="dashboard-nav">
+                                <div class="nav-item active">
+                                    <i class="fas fa-home"></i>
+                                    <span>Overview</span>
+                                </div>
+                                <div class="nav-item">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Analytics</span>
+                                </div>
+                                <div class="nav-item">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span>Sales Processing</span>
+                                    <span>Sales</span>
                                 </div>
-                                <div class="stat-card">
-                                    <i class="fas fa-credit-card"></i>
-                                    <span>Payment Gateway</span>
+                            </div>
+                            <div class="dashboard-main">
+                                <div class="dashboard-stats-grid">
+                                    <div class="enhanced-stat-card revenue">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Daily Sales</div>
+                                            <div class="stat-value">$34,567</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                +19.8%
+                                            </div>
+                                        </div>
+                                        <div class="stat-chart">
+                                            <div class="chart-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card inventory">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Transactions</div>
+                                            <div class="stat-value">1,456</div>
+                                            <div class="stat-change neutral">
+                                                <i class="fas fa-minus"></i>
+                                                3.2s Avg Time
+                                            </div>
+                                        </div>
+                                        <div class="inventory-bar">
+                                            <div class="bar-fill" style="width: 87%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card orders">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-credit-card"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Payment Success</div>
+                                            <div class="stat-value">98.7%</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                +2.1%
+                                            </div>
+                                        </div>
+                                        <div class="order-progress">
+                                            <div class="progress-ring">
+                                                <div class="progress-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card performance">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Customer Satisfaction</div>
+                                            <div class="stat-value">97.3%</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                Excellent
+                                            </div>
+                                        </div>
+                                        <div class="performance-gauge">
+                                            <div class="gauge-fill"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="stat-card">
-                                    <i class="fas fa-receipt"></i>
-                                    <span>Receipt Management</span>
+                                <div class="interactive-chart-section">
+                                    <div class="chart-header">
+                                        <h3>Sales Performance Analysis</h3>
+                                        <div class="chart-controls">
+                                            <button class="chart-btn active">Week</button>
+                                            <button class="chart-btn">Month</button>
+                                            <button class="chart-btn">Year</button>
+                                        </div>
+                                    </div>
+                                    <div class="chart-container">
+                                        <div class="chart-grid">
+                                            <div class="chart-bar" style="height: 85%"></div>
+                                            <div class="chart-bar" style="height: 70%"></div>
+                                            <div class="chart-bar" style="height: 95%"></div>
+                                            <div class="chart-bar" style="height: 80%"></div>
+                                            <div class="chart-bar" style="height: 90%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -268,49 +360,128 @@
                     Discover how Acadify POS enhances your retail operations and drives business growth.
                 </p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
+            <div class="enhanced-benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
                     <div class="benefit-number">01</div>
                     <div class="benefit-content">
                         <h3>Faster Checkout</h3>
                         <p>Reduce checkout time by 60% with optimized interface and quick payment processing capabilities.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label">Faster Checkout</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">3 sec</span>
+                                <span class="metric-label">Avg Transaction</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <div class="benefit-number">02</div>
                     <div class="benefit-content">
                         <h3>Increased Sales</h3>
                         <p>Boost sales with upselling suggestions, loyalty programs, and streamlined customer experience.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Sales Increase</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Smart</span>
+                                <span class="metric-label">Upselling</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
                     <div class="benefit-number">03</div>
                     <div class="benefit-content">
                         <h3>Inventory Accuracy</h3>
                         <p>Maintain 99.9% inventory accuracy with real-time updates and automated stock management.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">99.9%</span>
+                                <span class="metric-label">Accuracy Rate</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Updates</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <div class="benefit-number">04</div>
                     <div class="benefit-content">
                         <h3>Customer Insights</h3>
                         <p>Gain valuable customer insights to improve marketing strategies and enhance customer satisfaction.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">360°</span>
+                                <span class="metric-label">Customer View</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Advanced</span>
+                                <span class="metric-label">Analytics</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <div class="benefit-number">05</div>
                     <div class="benefit-content">
                         <h3>Reduced Errors</h3>
                         <p>Minimize human errors in pricing, inventory, and transactions with automated processes.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">95%</span>
+                                <span class="metric-label">Error Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Auto</span>
+                                <span class="metric-label">Processing</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <div class="benefit-number">06</div>
                     <div class="benefit-content">
                         <h3>Business Growth</h3>
                         <p>Scale your operations easily with multi-location support and comprehensive business analytics.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Multi-location</span>
+                                <span class="metric-label">Support</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Enterprise</span>
+                                <span class="metric-label">Ready</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -364,23 +535,83 @@
                     </div>
                 </div>
                 <div class="different-visual">
-                    <div class="comparison-chart">
-                        <div class="chart-header">
-                            <h4>Transaction Speed Comparison</h4>
+                    <div class="enhanced-features-showcase">
+                        <div class="showcase-header">
+                            <h4>POS Excellence Features</h4>
+                            <p class="showcase-subtitle">Experience the future of retail point of sale</p>
                         </div>
-                        <div class="chart-bars">
-                            <div class="bar-item">
-                                <div class="bar-label">Traditional POS</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill traditional" style="width: 80%"></div>
-                                    <span class="bar-value">12 seconds</span>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <h5>Fast Payments</h5>
+                                <p>Lightning-fast transaction processing</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">3 sec</span>
+                                    <span class="metric-label">Avg Transaction</span>
                                 </div>
                             </div>
-                            <div class="bar-item">
-                                <div class="bar-label">Acadify POS</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill acadify" style="width: 20%"></div>
-                                    <span class="bar-value">3 seconds</span>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cloud"></i>
+                                </div>
+                                <h5>Cloud-Based</h5>
+                                <p>Access from anywhere, always synced</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">99.9%</span>
+                                    <span class="metric-label">Uptime</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                                <h5>Loyalty Programs</h5>
+                                <p>Built-in customer loyalty management</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">40%</span>
+                                    <span class="metric-label">Repeat Sales</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <h5>Real-time Analytics</h5>
+                                <p>Instant sales and inventory insights</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">Live</span>
+                                    <span class="metric-label">Reports</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="performance-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-stopwatch"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">70%</span>
+                                    <span class="stat-label">Faster Checkout</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-store"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">5K+</span>
+                                    <span class="stat-label">Active Stores</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">98%</span>
+                                    <span class="stat-label">Customer Satisfaction</span>
                                 </div>
                             </div>
                         </div>

@@ -92,28 +92,120 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="dashboard-preview">
+                    <div class="enhanced-dashboard-preview">
                         <div class="dashboard-header">
-                            <div class="dashboard-title">Acadify CRM Dashboard</div>
+                            <div class="dashboard-title">
+                                <i class="fas fa-tachometer-alt"></i>
+                                Acadify CRM Dashboard
+                            </div>
                             <div class="dashboard-controls">
-                                <div class="control-dot"></div>
-                                <div class="control-dot"></div>
-                                <div class="control-dot"></div>
+                                <div class="control-dot red"></div>
+                                <div class="control-dot yellow"></div>
+                                <div class="control-dot green"></div>
                             </div>
                         </div>
                         <div class="dashboard-content">
-                            <div class="dashboard-stats">
-                                <div class="stat-card">
-                                    <i class="fas fa-chart-line"></i>
-                                    <span>Sales Pipeline</span>
+                            <div class="dashboard-nav">
+                                <div class="nav-item active">
+                                    <i class="fas fa-home"></i>
+                                    <span>Overview</span>
                                 </div>
-                                <div class="stat-card">
-                                    <i class="fas fa-handshake"></i>
-                                    <span>Lead Management</span>
+                                <div class="nav-item">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Analytics</span>
                                 </div>
-                                <div class="stat-card">
-                                    <i class="fas fa-heart"></i>
-                                    <span>Customer Health</span>
+                                <div class="nav-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Customers</span>
+                                </div>
+                            </div>
+                            <div class="dashboard-main">
+                                <div class="dashboard-stats-grid">
+                                    <div class="enhanced-stat-card revenue">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Sales Revenue</div>
+                                            <div class="stat-value">$189,432</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                +23.1%
+                                            </div>
+                                        </div>
+                                        <div class="stat-chart">
+                                            <div class="chart-line"></div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card inventory">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Active Customers</div>
+                                            <div class="stat-value">3,847</div>
+                                            <div class="stat-change neutral">
+                                                <i class="fas fa-minus"></i>
+                                                85% Engaged
+                                            </div>
+                                        </div>
+                                        <div class="inventory-bar">
+                                            <div class="bar-fill" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card orders">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Active Deals</div>
+                                            <div class="stat-value">567</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                +12.5%
+                                            </div>
+                                        </div>
+                                        <div class="order-progress">
+                                            <div class="progress-ring">
+                                                <div class="progress-circle"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="enhanced-stat-card performance">
+                                        <div class="stat-icon">
+                                            <i class="fas fa-heart"></i>
+                                        </div>
+                                        <div class="stat-content">
+                                            <div class="stat-label">Customer Satisfaction</div>
+                                            <div class="stat-value">96.2%</div>
+                                            <div class="stat-change positive">
+                                                <i class="fas fa-arrow-up"></i>
+                                                Excellent
+                                            </div>
+                                        </div>
+                                        <div class="performance-gauge">
+                                            <div class="gauge-fill"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="interactive-chart-section">
+                                    <div class="chart-header">
+                                        <h3>Sales Pipeline Analysis</h3>
+                                        <div class="chart-controls">
+                                            <button class="chart-btn active">Week</button>
+                                            <button class="chart-btn">Month</button>
+                                            <button class="chart-btn">Year</button>
+                                        </div>
+                                    </div>
+                                    <div class="chart-container">
+                                        <div class="chart-grid">
+                                            <div class="chart-bar" style="height: 60%"></div>
+                                            <div class="chart-bar" style="height: 80%"></div>
+                                            <div class="chart-bar" style="height: 45%"></div>
+                                            <div class="chart-bar" style="height: 90%"></div>
+                                            <div class="chart-bar" style="height: 70%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -268,49 +360,128 @@
                     Discover how Acadify CRM transforms your sales process and enhances customer relationships.
                 </p>
             </div>
-            <div class="benefits-grid">
-                <div class="benefit-item">
+            <div class="enhanced-benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <div class="benefit-number">01</div>
                     <div class="benefit-content">
                         <h3>Increased Sales Revenue</h3>
                         <p>Boost your sales by up to 300% with intelligent lead management and automated sales processes.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">300%</span>
+                                <span class="metric-label">Sales Increase</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Close Rate</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
                     <div class="benefit-number">02</div>
                     <div class="benefit-content">
                         <h3>Enhanced Customer Retention</h3>
                         <p>Improve customer loyalty and retention rates through personalized experiences and proactive engagement.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">95%</span>
+                                <span class="metric-label">Retention Rate</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">4.8/5</span>
+                                <span class="metric-label">Satisfaction</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
                     <div class="benefit-number">03</div>
                     <div class="benefit-content">
                         <h3>Streamlined Sales Process</h3>
                         <p>Eliminate manual tasks and accelerate deal closure with automated workflows and smart notifications.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">60%</span>
+                                <span class="metric-label">Faster Deals</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label">Automation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <div class="benefit-number">04</div>
                     <div class="benefit-content">
                         <h3>Better Team Collaboration</h3>
                         <p>Enhance team productivity with shared customer insights, collaboration tools, and unified communication.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">70%</span>
+                                <span class="metric-label">Productivity Boost</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Real-time</span>
+                                <span class="metric-label">Sync</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
                     <div class="benefit-number">05</div>
                     <div class="benefit-content">
                         <h3>Data-Driven Insights</h3>
                         <p>Make informed decisions with comprehensive analytics and real-time reporting capabilities.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">360°</span>
+                                <span class="metric-label">Customer View</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">50+</span>
+                                <span class="metric-label">Reports</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
                     <div class="benefit-number">06</div>
                     <div class="benefit-content">
                         <h3>Scalable Growth</h3>
                         <p>Scale your customer management processes seamlessly as your business grows and evolves.</p>
+                        <div class="benefit-metrics">
+                            <div class="metric">
+                                <span class="metric-value">500%</span>
+                                <span class="metric-label">Growth Support</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">99.9%</span>
+                                <span class="metric-label">Uptime</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -364,23 +535,83 @@
                     </div>
                 </div>
                 <div class="different-visual">
-                    <div class="comparison-chart">
-                        <div class="chart-header">
-                            <h4>Customer Satisfaction Improvement</h4>
+                    <div class="enhanced-features-showcase">
+                        <div class="showcase-header">
+                            <h4>CRM Excellence Features</h4>
+                            <p class="showcase-subtitle">Experience the future of customer relationship management</p>
                         </div>
-                        <div class="chart-bars">
-                            <div class="bar-item">
-                                <div class="bar-label">Before Acadify CRM</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill traditional" style="width: 60%"></div>
-                                    <span class="bar-value">60%</span>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-friends"></i>
+                                </div>
+                                <h5>Lead Intelligence</h5>
+                                <p>AI-powered lead scoring and predictive analytics</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">300%</span>
+                                    <span class="metric-label">Sales Increase</span>
                                 </div>
                             </div>
-                            <div class="bar-item">
-                                <div class="bar-label">After Acadify CRM</div>
-                                <div class="bar-container">
-                                    <div class="bar-fill acadify" style="width: 95%"></div>
-                                    <span class="bar-value">95%</span>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h5>Pipeline Management</h5>
+                                <p>Visual sales pipeline with forecasting</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">85%</span>
+                                    <span class="metric-label">Close Rate</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h5>Email Automation</h5>
+                                <p>Personalized campaigns with smart sequencing</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">70%</span>
+                                    <span class="metric-label">Open Rate</span>
+                                </div>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h5>Mobile CRM</h5>
+                                <p>Complete CRM access on any device</p>
+                                <div class="feature-metric">
+                                    <span class="metric-value">24/7</span>
+                                    <span class="metric-label">Access</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="performance-stats">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">95%</span>
+                                    <span class="stat-label">Customer Satisfaction</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">60%</span>
+                                    <span class="stat-label">Time Savings</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <span class="stat-number">1000+</span>
+                                    <span class="stat-label">Happy Sales Teams</span>
                                 </div>
                             </div>
                         </div>
