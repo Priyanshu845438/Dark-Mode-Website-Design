@@ -148,6 +148,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India UI/UX Design -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - UI/UX Design Services",
+      "description": "Professional UI/UX design services across India. User-centered design for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/ui-ux-design.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "UI/UX Design Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the difference between UI and UX design?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "UI (User Interface) focuses on visual elements like colors, typography, and layouts. UX (User Experience) focuses on user journey, research, and overall usability to create meaningful interactions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you conduct user research before designing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we conduct comprehensive user research including surveys, interviews, competitor analysis, and usability testing to understand your target audience and create user-centered designs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you create responsive designs for all devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! All our designs are created with a mobile-first approach and optimized for desktop, tablet, and mobile devices to ensure consistent user experience across platforms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many design revisions do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide 3 rounds of revisions for each design phase. Additional revisions can be accommodated based on project requirements and timeline adjustments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide design handoff to developers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide detailed design specifications, style guides, assets, and work closely with development teams to ensure accurate implementation of our designs."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -958,6 +1038,68 @@
     </section>
 
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our UI/UX design services and process</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>What's the difference between UI and UX design?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>UI (User Interface) focuses on visual elements like colors, typography, and layouts. UX (User Experience) focuses on user journey, research, and overall usability to create meaningful interactions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>Do you conduct user research before designing?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we conduct comprehensive user research including surveys, interviews, competitor analysis, and usability testing to understand your target audience and create user-centered designs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Do you create responsive designs for all devices?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our designs are created with a mobile-first approach and optimized for desktop, tablet, and mobile devices to ensure consistent user experience across platforms.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>How many design revisions do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide 3 rounds of revisions for each design phase. Additional revisions can be accommodated based on project requirements and timeline adjustments.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-code"></i>
+                        <h3>Do you provide design handoff to developers?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide detailed design specifications, style guides, assets, and work closely with development teams to ensure accurate implementation of our designs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -989,7 +1131,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

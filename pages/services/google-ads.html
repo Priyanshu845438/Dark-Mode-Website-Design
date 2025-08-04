@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Google Ads -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Google Ads Management",
+      "description": "Professional Google Ads management services across India. PPC campaigns and advertising for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/google-ads.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Google Ads Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What Google Ads services do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer complete Google Ads management including campaign setup, keyword research, ad creation, bid optimization, landing page optimization, and performance tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the minimum budget for Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend a minimum monthly ad spend of $1,000 for effective campaigns. Our management fee starts at $500/month, depending on campaign complexity and requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can we see Google Ads results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Initial results can be seen within 1-2 weeks. Optimal performance typically develops over 4-8 weeks as we gather data and optimize campaigns for better ROI."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you optimize Google Ads campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We continuously optimize through keyword refinement, bid adjustments, ad copy testing, audience targeting, negative keyword management, and landing page improvements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What reporting do you provide for Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide detailed monthly reports including impressions, clicks, conversions, cost per acquisition, return on ad spend, and actionable insights for improvement."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -561,6 +641,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our Google Ads management and optimization services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-google"></i>
+                        <h3>What Google Ads services do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer complete Google Ads management including campaign setup, keyword research, ad creation, bid optimization, landing page optimization, and performance tracking.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>What's the minimum budget for Google Ads?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We recommend a minimum monthly ad spend of $1,000 for effective campaigns. Our management fee starts at $500/month, depending on campaign complexity and requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>How quickly can we see Google Ads results?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Initial results can be seen within 1-2 weeks. Optimal performance typically develops over 4-8 weeks as we gather data and optimize campaigns for better ROI.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-target"></i>
+                        <h3>How do you optimize Google Ads campaigns?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We continuously optimize through keyword refinement, bid adjustments, ad copy testing, audience targeting, negative keyword management, and landing page improvements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>What reporting do you provide for Google Ads?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide detailed monthly reports including impressions, clicks, conversions, cost per acquisition, return on ad spend, and actionable insights for improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -592,7 +734,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

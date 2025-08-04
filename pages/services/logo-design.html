@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Logo Design -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Logo Design Services",
+      "description": "Professional logo design and brand identity services across India. Custom logos and branding for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/logo-design.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Logo Design Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's included in your logo design service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our logo design includes 3-5 initial concepts, 3 rounds of revisions, final files in multiple formats (AI, EPS, PNG, JPG, SVG), and basic brand guidelines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does logo design take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Logo design typically takes 1-2 weeks from brief to final delivery, including concept development, client feedback, revisions, and final file preparation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many revisions do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We include 3 rounds of revisions in our standard package. Additional revisions can be requested if needed, with a focus on achieving your perfect logo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What file formats do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You receive high-resolution files in AI, EPS, PDF, PNG, JPG, and SVG formats, suitable for print, web, social media, and various applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will I own the rights to my logo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, upon final payment, you receive full ownership and copyright of your logo design. We provide a certificate of ownership with all deliverables."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -689,6 +769,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our logo design and brand identity services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-palette"></i>
+                        <h3>What's included in your logo design service?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our logo design includes 3-5 initial concepts, 3 rounds of revisions, final files in multiple formats (AI, EPS, PNG, JPG, SVG), and basic brand guidelines.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does logo design take?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Logo design typically takes 1-2 weeks from brief to final delivery, including concept development, client feedback, revisions, and final file preparation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>How many revisions do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We include 3 rounds of revisions in our standard package. Additional revisions can be requested if needed, with a focus on achieving your perfect logo.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>What file formats do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You receive high-resolution files in AI, EPS, PDF, PNG, JPG, and SVG formats, suitable for print, web, social media, and various applications.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-copyright"></i>
+                        <h3>Will I own the rights to my logo?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, upon final payment, you receive full ownership and copyright of your logo design. We provide a certificate of ownership with all deliverables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -723,7 +865,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ Logo Design page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Technology Consulting -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Technology Consulting",
+      "description": "Expert technology consulting and digital transformation services across India. IT strategy and technical advisory for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/consulting.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Technology Consulting Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What technology consulting services do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide strategic technology planning, digital transformation guidance, architecture design, technology stack selection, process optimization, and implementation roadmaps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you assess our current technology infrastructure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We conduct comprehensive audits including system analysis, performance evaluation, security assessment, scalability review, and cost-benefit analysis to identify improvement opportunities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with our existing IT team?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we collaborate closely with your internal teams, providing guidance, training, and support to ensure successful technology initiatives and knowledge transfer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a typical consulting engagement last?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Consulting engagements vary from 4-week assessments to 6-month transformation projects, depending on scope and complexity of your technology challenges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the ROI of technology consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our clients typically see 20-40% improvement in operational efficiency, 15-30% cost reduction, and accelerated time-to-market for new initiatives through strategic technology optimization."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -684,6 +764,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our technology consulting services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>What technology consulting services do you offer?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide strategic technology planning, digital transformation guidance, architecture design, technology stack selection, process optimization, and implementation roadmaps.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>How do you assess our current technology infrastructure?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We conduct comprehensive audits including system analysis, performance evaluation, security assessment, scalability review, and cost-benefit analysis to identify improvement opportunities.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>Do you work with our existing IT team?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we collaborate closely with your internal teams, providing guidance, training, and support to ensure successful technology initiatives and knowledge transfer.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does a typical consulting engagement last?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Consulting engagements vary from 4-week assessments to 6-month transformation projects, depending on scope and complexity of your technology challenges.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>What's the ROI of technology consulting?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our clients typically see 20-40% improvement in operational efficiency, 15-30% cost reduction, and accelerated time-to-market for new initiatives through strategic technology optimization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -718,7 +860,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ Technology Consulting page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

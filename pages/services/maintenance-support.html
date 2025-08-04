@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Maintenance Support -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Maintenance & Support Services",
+      "description": "Professional maintenance and support services across India. 24/7 technical support for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/maintenance-support.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Maintenance Support Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's included in maintenance and support services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our services include security updates, bug fixes, performance optimization, backup management, monitoring, content updates, and 24/7 technical support for your applications."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are your support response times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Critical issues: 1-2 hours, High priority: 4-8 hours, Medium priority: 24-48 hours, Low priority: 3-5 business days. Emergency support available 24/7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle security updates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We proactively monitor security vulnerabilities, apply patches immediately, conduct regular security audits, and maintain backup and recovery systems for maximum protection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide performance monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer continuous performance monitoring, server health checks, uptime monitoring, speed optimization, and detailed monthly performance reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are maintenance services priced?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer flexible pricing including monthly retainers, hourly rates, and custom support packages based on your specific needs and application complexity."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -687,6 +767,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our maintenance and support services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-tools"></i>
+                        <h3>What's included in maintenance and support services?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our services include security updates, bug fixes, performance optimization, backup management, monitoring, content updates, and 24/7 technical support for your applications.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>What are your support response times?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Critical issues: 1-2 hours, High priority: 4-8 hours, Medium priority: 24-48 hours, Low priority: 3-5 business days. Emergency support available 24/7.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>How do you handle security updates?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We proactively monitor security vulnerabilities, apply patches immediately, conduct regular security audits, and maintain backup and recovery systems for maximum protection.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Do you provide performance monitoring?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer continuous performance monitoring, server health checks, uptime monitoring, speed optimization, and detailed monthly performance reports.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>How are maintenance services priced?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible pricing including monthly retainers, hourly rates, and custom support packages based on your specific needs and application complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -721,7 +863,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ Maintenance & Support page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

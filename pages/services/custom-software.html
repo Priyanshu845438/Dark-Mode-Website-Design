@@ -114,6 +114,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Custom Software -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Custom Software Development",
+      "description": "Custom software development services across India. Enterprise solutions and bespoke applications for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/custom-software.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Custom Software Development Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What technologies do you use for custom software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use modern technologies including Python, Java, .NET, React, Angular, Node.js, cloud platforms (AWS, Azure), and databases (PostgreSQL, MongoDB) based on project requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does custom software development take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Development time varies by complexity: simple applications take 3-6 months, medium complexity 6-12 months, and enterprise solutions 12-24 months with iterative delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure software security and quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We implement secure coding practices, regular security audits, automated testing, code reviews, and follow industry standards like OWASP for robust, secure software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide ongoing software maintenance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we offer comprehensive maintenance including bug fixes, feature updates, performance optimization, security patches, and technical support post-deployment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you integrate with our existing systems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We specialize in API integration, data migration, and seamless connectivity with existing CRMs, ERPs, databases, and third-party services."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -610,6 +690,68 @@
     </section>
 
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our custom software development services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-cogs"></i>
+                        <h3>What technologies do you use for custom software?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use modern technologies including Python, Java, .NET, React, Angular, Node.js, cloud platforms (AWS, Azure), and databases (PostgreSQL, MongoDB) based on project requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does custom software development take?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Development time varies by complexity: simple applications take 3-6 months, medium complexity 6-12 months, and enterprise solutions 12-24 months with iterative delivery.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>How do you ensure software security and quality?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement secure coding practices, regular security audits, automated testing, code reviews, and follow industry standards like OWASP for robust, secure software.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Do you provide ongoing software maintenance?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive maintenance including bug fixes, feature updates, performance optimization, security patches, and technical support post-deployment.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>Can you integrate with our existing systems?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We specialize in API integration, data migration, and seamless connectivity with existing CRMs, ERPs, databases, and third-party services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -641,7 +783,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

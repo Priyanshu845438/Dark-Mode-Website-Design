@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India WhatsApp Marketing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - WhatsApp Marketing",
+      "description": "Professional WhatsApp marketing and automation services across India. WhatsApp Business solutions for companies in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/whatsapp-marketing.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "WhatsApp Marketing Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What WhatsApp marketing services do you offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide WhatsApp Business setup, automated messaging, broadcast campaigns, chatbot development, customer support integration, and analytics for effective WhatsApp marketing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you create WhatsApp chatbots?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we develop intelligent WhatsApp chatbots that can handle customer inquiries, process orders, provide support, and automate routine conversations 24/7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you build WhatsApp contact lists?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use compliant methods including opt-in forms, QR codes, click-to-WhatsApp ads, website integration, and existing customer databases while respecting privacy regulations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What metrics do you track for WhatsApp campaigns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We monitor message delivery rates, read rates, response rates, click-through rates, conversion rates, and customer engagement to optimize campaign performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is WhatsApp marketing compliant with regulations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we ensure full compliance with WhatsApp policies, GDPR, and other privacy regulations by implementing proper consent mechanisms and opt-out options."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -378,6 +458,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our WhatsApp marketing services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>What WhatsApp marketing services do you offer?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide WhatsApp Business setup, automated messaging, broadcast campaigns, chatbot development, customer support integration, and analytics for effective WhatsApp marketing.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-robot"></i>
+                        <h3>Do you create WhatsApp chatbots?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we develop intelligent WhatsApp chatbots that can handle customer inquiries, process orders, provide support, and automate routine conversations 24/7.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>How do you build WhatsApp contact lists?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use compliant methods including opt-in forms, QR codes, click-to-WhatsApp ads, website integration, and existing customer databases while respecting privacy regulations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>What metrics do you track for WhatsApp campaigns?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We monitor message delivery rates, read rates, response rates, click-through rates, conversion rates, and customer engagement to optimize campaign performance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Is WhatsApp marketing compliant with regulations?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we ensure full compliance with WhatsApp policies, GDPR, and other privacy regulations by implementing proper consent mechanisms and opt-out options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -409,7 +551,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

@@ -120,6 +120,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Data Analytics -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Data Analytics Services",
+      "description": "Advanced data analytics and business intelligence services across India. Data visualization and insights for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/data-analytics.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Data Analytics Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of data analytics do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide descriptive, predictive, and prescriptive analytics including business intelligence dashboards, data visualization, statistical analysis, and machine learning-powered insights."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with our existing data sources?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we integrate with various data sources including databases, CRMs, ERPs, APIs, spreadsheets, and cloud storage to create comprehensive analytics solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data visualization tools do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use industry-leading tools like Tableau, Power BI, D3.js, and custom dashboards to create interactive, real-time visualizations that make data insights accessible and actionable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can we see analytics results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Initial dashboards can be delivered in 2-4 weeks. Complex predictive models and advanced analytics typically take 6-12 weeks depending on data complexity and requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure data privacy and security?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We implement strict data governance, encryption, access controls, and comply with privacy regulations. All data handling follows industry best practices and security standards."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -728,6 +808,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our data analytics and business intelligence services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>What types of data analytics do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide descriptive, predictive, and prescriptive analytics including business intelligence dashboards, data visualization, statistical analysis, and machine learning-powered insights.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-database"></i>
+                        <h3>Can you work with our existing data sources?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we integrate with various data sources including databases, CRMs, ERPs, APIs, spreadsheets, and cloud storage to create comprehensive analytics solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-eye"></i>
+                        <h3>What data visualization tools do you use?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use industry-leading tools like Tableau, Power BI, D3.js, and custom dashboards to create interactive, real-time visualizations that make data insights accessible and actionable.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How quickly can we see analytics results?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Initial dashboards can be delivered in 2-4 weeks. Complex predictive models and advanced analytics typically take 6-12 weeks depending on data complexity and requirements.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-lock"></i>
+                        <h3>How do you ensure data privacy and security?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement strict data governance, encryption, access controls, and comply with privacy regulations. All data handling follows industry best practices and security standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -762,7 +904,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ Data Analytics page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

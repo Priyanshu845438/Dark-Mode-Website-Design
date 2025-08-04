@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Social Media Marketing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Social Media Marketing",
+      "description": "Professional social media marketing services across India. SMM and social engagement for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/smm.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Social Media Marketing Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which social media platforms do you manage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We manage all major platforms including Facebook, Instagram, Twitter, LinkedIn, YouTube, TikTok, Pinterest, and emerging platforms based on your target audience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often do you post on social media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Posting frequency varies by platform and strategy: Facebook/Instagram 3-5 times per week, Twitter daily, LinkedIn 2-3 times per week. We customize based on your goals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure social media success?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We track engagement rates, reach, impressions, follower growth, website traffic, lead generation, conversions, and brand sentiment to measure ROI and performance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you create visual content and graphics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we create custom graphics, videos, stories, reels, and other visual content that aligns with your brand identity and engages your target audience effectively."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle community management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We provide complete community management including responding to comments, messages, reviews, and engaging with your audience to build strong relationships."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -590,6 +670,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our social media marketing services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Which social media platforms do you manage?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We manage all major platforms including Facebook, Instagram, Twitter, LinkedIn, YouTube, TikTok, Pinterest, and emerging platforms based on your target audience.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>How often do you post on social media?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Posting frequency varies by platform and strategy: Facebook/Instagram 3-5 times per week, Twitter daily, LinkedIn 2-3 times per week. We customize based on your goals.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>How do you measure social media success?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We track engagement rates, reach, impressions, follower growth, website traffic, lead generation, conversions, and brand sentiment to measure ROI and performance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-camera"></i>
+                        <h3>Do you create visual content and graphics?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we create custom graphics, videos, stories, reels, and other visual content that aligns with your brand identity and engages your target audience effectively.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-comments"></i>
+                        <h3>Do you handle community management?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We provide complete community management including responding to comments, messages, reviews, and engaging with your audience to build strong relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -621,7 +763,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

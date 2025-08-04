@@ -142,6 +142,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India SEO Services -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - SEO Services",
+      "description": "Professional SEO services across India. Search engine optimization for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/seo.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "SEO Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What SEO services do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide comprehensive SEO including keyword research, on-page optimization, technical SEO, content strategy, link building, local SEO, and performance monitoring."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to see SEO results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO is a long-term strategy. Initial improvements may be visible in 3-6 months, with significant ranking improvements typically occurring within 6-12 months of consistent optimization."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you track SEO performance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use tools like Google Analytics, Search Console, SEMrush, and Ahrefs to track rankings, organic traffic, conversions, and provide detailed monthly reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you use white-hat SEO practices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we strictly follow Google's guidelines and use only white-hat SEO techniques to ensure sustainable, long-term rankings without risk of penalties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer local SEO services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide local SEO optimization including Google My Business setup, local citations, review management, and location-based keyword targeting for local businesses."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -572,6 +652,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our SEO services and optimization strategies</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-search"></i>
+                        <h3>What SEO services do you provide?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide comprehensive SEO including keyword research, on-page optimization, technical SEO, content strategy, link building, local SEO, and performance monitoring.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does it take to see SEO results?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SEO is a long-term strategy. Initial improvements may be visible in 3-6 months, with significant ranking improvements typically occurring within 6-12 months of consistent optimization.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>How do you track SEO performance?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use tools like Google Analytics, Search Console, SEMrush, and Ahrefs to track rankings, organic traffic, conversions, and provide detailed monthly reports.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Do you use white-hat SEO practices?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we strictly follow Google's guidelines and use only white-hat SEO techniques to ensure sustainable, long-term rankings without risk of penalties.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Do you offer local SEO services?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we provide local SEO optimization including Google My Business setup, local citations, review management, and location-based keyword targeting for local businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -603,7 +745,31 @@
             if (typeof NewNavbarComponent !== 'undefined') {
                 new NewNavbarComponent();
             }
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

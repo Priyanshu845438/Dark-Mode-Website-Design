@@ -104,6 +104,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India Brand Strategy -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - Brand Strategy Services",
+      "description": "Professional brand strategy and development services across India. Brand positioning and marketing strategy for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/brand-strategy.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "Brand Strategy Services Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's included in brand strategy development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our brand strategy includes market research, competitor analysis, brand positioning, messaging framework, visual identity, brand guidelines, and go-to-market strategy development."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does brand strategy development take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brand strategy projects typically take 6-12 weeks depending on scope. This includes research, strategy development, visual identity creation, and brand guideline documentation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you involve our team in the brand development process?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! We conduct stakeholder interviews, workshops, and regular feedback sessions to ensure the brand strategy aligns with your vision and business objectives."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you rebrand our existing business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we specialize in rebranding including brand audit, strategy refresh, visual identity redesign, and implementation across all touchpoints while maintaining brand equity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What deliverables do we receive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You receive comprehensive brand guidelines, logo files, color palettes, typography, messaging framework, brand voice guidelines, and marketing material templates."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -702,6 +782,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our brand strategy and identity development services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>What's included in brand strategy development?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our brand strategy includes market research, competitor analysis, brand positioning, messaging framework, visual identity, brand guidelines, and go-to-market strategy development.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does brand strategy development take?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Brand strategy projects typically take 6-12 weeks depending on scope. This includes research, strategy development, visual identity creation, and brand guideline documentation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-users"></i>
+                        <h3>Do you involve our team in the brand development process?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We conduct stakeholder interviews, workshops, and regular feedback sessions to ensure the brand strategy aligns with your vision and business objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-palette"></i>
+                        <h3>Can you rebrand our existing business?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in rebranding including brand audit, strategy refresh, visual identity redesign, and implementation across all touchpoints while maintaining brand equity.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>What deliverables do we receive?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You receive comprehensive brand guidelines, logo files, color palettes, typography, messaging framework, brand voice guidelines, and marketing material templates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -736,7 +878,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ Brand Strategy page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>

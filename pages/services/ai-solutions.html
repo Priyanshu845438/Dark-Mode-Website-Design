@@ -149,6 +149,86 @@
     }
     </script>
     
+    <!-- Structured Data - LocalBusiness Schema for India AI Solutions -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Acadify Solution - AI Solutions",
+      "description": "Advanced AI and machine learning solutions across India. Custom AI development for businesses in Gujarat, Bihar, Uttar Pradesh, Delhi, Maharashtra, and all Indian states.",
+      "url": "https://acadifysolution.com/pages/services/ai-solutions.html",
+      "telephone": "+91-98765-43210",
+      "email": "contact@acadifysolution.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN",
+        "addressRegion": "India",
+        "addressLocality": "All Indian Cities",
+        "streetAddress": "AI Solutions Across India"
+      },
+      "areaServed": ["Gujarat", "Bihar", "Uttar Pradesh", "Delhi", "Maharashtra", "Madhya Pradesh", "Assam", "West Bengal", "Tripura", "Andhra Pradesh", "Haryana", "Punjab", "Odisha"],
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "20.5937",
+        "longitude": "78.9629"
+      },
+      "serviceArea": {
+        "@type": "Country",
+        "name": "India"
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What types of AI solutions do you develop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We develop machine learning models, natural language processing systems, computer vision applications, chatbots, predictive analytics, and custom AI algorithms for various business needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you require our data for AI model training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We can work with your data for custom models or use pre-trained models and public datasets. We ensure complete data privacy and security throughout the development process."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does AI solution development take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI projects typically take 8-24 weeks depending on complexity. Simple automation takes 8-12 weeks, while complex ML models require 16-24 weeks for development and training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure AI solution success?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use metrics like accuracy, precision, recall, ROI improvement, processing time reduction, and user adoption rates to measure the effectiveness of AI implementations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure AI solution reliability and ethics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We implement rigorous testing, bias detection, explainable AI principles, and ethical guidelines to ensure our AI solutions are reliable, fair, and transparent in their decision-making."
+          }
+        }
+      ]
+    }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
@@ -721,6 +801,68 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="service-faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Common questions about our AI solutions and implementation services</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-brain"></i>
+                        <h3>What types of AI solutions do you develop?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We develop machine learning models, natural language processing systems, computer vision applications, chatbots, predictive analytics, and custom AI algorithms for various business needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-database"></i>
+                        <h3>Do you require our data for AI model training?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We can work with your data for custom models or use pre-trained models and public datasets. We ensure complete data privacy and security throughout the development process.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-clock"></i>
+                        <h3>How long does AI solution development take?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AI projects typically take 8-24 weeks depending on complexity. Simple automation takes 8-12 weeks, while complex ML models require 16-24 weeks for development and training.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>How do you measure AI solution success?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use metrics like accuracy, precision, recall, ROI improvement, processing time reduction, and user adoption rates to measure the effectiveness of AI implementations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>How do you ensure AI solution reliability and ethics?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We implement rigorous testing, bias detection, explainable AI principles, and ethical guidelines to ensure our AI solutions are reliable, fair, and transparent in their decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
 
@@ -755,7 +897,31 @@
             
             console.log('✅ All components loaded successfully');
             console.log('✓ AI Solutions page loaded - dropdowns handled by header component');
+            
+            // Initialize FAQ functionality
+            initializeFAQ();
         });
+        
+        // FAQ Toggle functionality
+        function initializeFAQ() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                const question = card.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>
