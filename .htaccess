@@ -1,0 +1,57 @@
+# Content Security Policy Headers for Acadify Solution
+# Enhanced security through CSP directives
+
+# Main Content Security Policy
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.google.com https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https: blob:; media-src 'self' https:; object-src 'none'; frame-src 'self' https://www.google.com https://www.youtube.com; connect-src 'self' https: wss:; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests; block-all-mixed-content"
+
+# CSP Report-Only header for testing (can be removed in production)
+Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; report-uri /csp-report"
+
+# X-Content-Type-Options
+Header always set X-Content-Type-Options nosniff
+
+# X-Frame-Options
+Header always set X-Frame-Options SAMEORIGIN
+
+# X-XSS-Protection
+Header always set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Permissions Policy (formerly Feature Policy)
+Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), speaker=(self), vibrate=(self), fullscreen=(self)"
+
+# Strict Transport Security (HSTS) - only enable if using HTTPS
+# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# Additional security headers
+Header always set X-Permitted-Cross-Domain-Policies none
+Header always set Cross-Origin-Embedder-Policy require-corp
+Header always set Cross-Origin-Opener-Policy same-origin
+Header always set Cross-Origin-Resource-Policy cross-origin
+
+# Remove server information
+Header always unset Server
+Header always unset X-Powered-By
+
+# Cache control for security files
+<Files "security.txt">
+    Header set Cache-Control "public, max-age=86400"
+</Files>
+
+<Files ".well-known/security.txt">
+    Header set Cache-Control "public, max-age=86400"
+</Files>
+
+# Security for sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|conf)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to backup files
+<FilesMatch "(\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)|~)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

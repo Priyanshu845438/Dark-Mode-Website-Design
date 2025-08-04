@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Policy - Acadify Solution</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Acadify Solution's security policy and vulnerability disclosure guidelines. Learn how to report security issues responsibly.">
+    <meta name="keywords" content="security policy, vulnerability disclosure, responsible disclosure, security reporting, Acadify Solution">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Security Policy - Acadify Solution">
+    <meta property="og:description" content="Acadify Solution's security policy and vulnerability disclosure guidelines.">
+    <meta property="og:type" content="webpage">
+    <meta property="og:url" content="https://acadifysolution.com/pages/security-policy.html">
+    <meta property="og:image" content="https://acadifysolution.com/assets/logos/logo.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Security Policy - Acadify Solution">
+    <meta name="twitter:description" content="Acadify Solution's security policy and vulnerability disclosure guidelines.">
+    <meta name="twitter:image" content="https://acadifysolution.com/assets/logos/logo.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/icons/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-component"></div>
+    <div id="mobile-nav-component"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="security-policy-content">
+                <div class="security-header">
+                    <h1>Security Policy</h1>
+                    <p class="security-subtitle">Responsible Vulnerability Disclosure</p>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-shield-alt"></i> Our Commitment to Security</h2>
+                    <p>At Acadify Solution, we take the security of our systems and our clients' data seriously. We appreciate the efforts of security researchers and the broader community in helping us maintain the highest security standards.</p>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-bug"></i> Reporting Security Vulnerabilities</h2>
+                    <div class="reporting-info">
+                        <h3>How to Report</h3>
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:security@acadifysolution.com">security@acadifysolution.com</a></li>
+                            <li><strong>Contact Form:</strong> <a href="../pages/contact.html">Contact Us</a> (mark as "Security Issue")</li>
+                            <li><strong>Encryption:</strong> PGP key available at <a href="/pgp-key.txt">acadifysolution.com/pgp-key.txt</a></li>
+                        </ul>
+                        
+                        <h3>What to Include</h3>
+                        <ul>
+                            <li>Detailed description of the vulnerability</li>
+                            <li>Steps to reproduce the issue</li>
+                            <li>Potential impact assessment</li>
+                            <li>Your contact information for follow-up</li>
+                            <li>Any proof-of-concept code (if applicable)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-clock"></i> Our Response Process</h2>
+                    <div class="response-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon">24h</div>
+                            <div class="timeline-content">
+                                <h3>Acknowledgment</h3>
+                                <p>We will acknowledge receipt of your report within 24 hours.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">72h</div>
+                            <div class="timeline-content">
+                                <h3>Initial Assessment</h3>
+                                <p>We will provide an initial assessment within 72 hours.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">7d</div>
+                            <div class="timeline-content">
+                                <h3>Regular Updates</h3>
+                                <p>We will provide regular updates on our investigation progress.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon">30d</div>
+                            <div class="timeline-content">
+                                <h3>Resolution</h3>
+                                <p>We aim to resolve critical issues within 30 days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-award"></i> Recognition Program</h2>
+                    <p>We believe in recognizing security researchers who help us improve our security posture:</p>
+                    <ul>
+                        <li><strong>Hall of Fame:</strong> Public acknowledgment on our security acknowledgments page</li>
+                        <li><strong>Coordinated Disclosure:</strong> We work with researchers on responsible disclosure timelines</li>
+                        <li><strong>Credit:</strong> Proper attribution for valid vulnerability reports</li>
+                    </ul>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Scope and Guidelines</h2>
+                    <div class="scope-content">
+                        <h3>In Scope</h3>
+                        <ul>
+                            <li>acadifysolution.com and all subdomains</li>
+                            <li>Web applications and APIs</li>
+                            <li>Client-side vulnerabilities (XSS, CSRF, etc.)</li>
+                            <li>Server-side vulnerabilities (SQL injection, RCE, etc.)</li>
+                            <li>Authentication and authorization flaws</li>
+                        </ul>
+                        
+                        <h3>Out of Scope</h3>
+                        <ul>
+                            <li>Third-party services we don't control</li>
+                            <li>Social engineering attacks</li>
+                            <li>Physical security issues</li>
+                            <li>Denial of service attacks</li>
+                            <li>Spam or phishing attacks</li>
+                        </ul>
+                        
+                        <h3>Responsible Disclosure Guidelines</h3>
+                        <ul>
+                            <li>Do not access, modify, or delete data belonging to others</li>
+                            <li>Do not perform attacks that could harm the availability of our services</li>
+                            <li>Do not disclose the vulnerability publicly until we've had a chance to fix it</li>
+                            <li>Make a good faith effort to avoid privacy violations and data destruction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="security-section">
+                    <h2><i class="fas fa-file-alt"></i> Security Standards</h2>
+                    <p>We maintain security through:</p>
+                    <ul>
+                        <li>Regular security audits and penetration testing</li>
+                        <li>Secure coding practices and code reviews</li>
+                        <li>Employee security training and awareness</li>
+                        <li>Incident response procedures</li>
+                        <li>Data encryption in transit and at rest</li>
+                        <li>Regular security updates and patches</li>
+                    </ul>
+                </div>
+
+                <div class="security-contact">
+                    <h2><i class="fas fa-envelope"></i> Contact Information</h2>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Security Team</strong>
+                                <p>security@acadifysolution.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-key"></i>
+                            <div>
+                                <strong>PGP Encryption</strong>
+                                <p><a href="/pgp-key.txt">Download PGP Key</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Response Time</strong>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer-component"></div>
+    
+    <!-- Scripts -->
+    <script src="../src/components/header/header-new.js?v=15"></script>
+    <script src="../src/components/footer/footer.js"></script>
+    <script src="../src/scripts/main.js"></script>
+    
+    <style>
+    .security-policy-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 2rem 4rem;
+        color: white;
+    }
+    
+    .security-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    .security-header h1 {
+        font-size: 3rem;
+        color: #00BFFF;
+        margin-bottom: 1rem;
+    }
+    
+    .security-subtitle {
+        font-size: 1.2rem;
+        color: #39FF14;
+        opacity: 0.9;
+    }
+    
+    .security-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 12px;
+        border: 1px solid rgba(0, 191, 255, 0.2);
+        backdrop-filter: blur(10px);
+    }
+    
+    .security-section h2 {
+        color: #00BFFF;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .security-section h3 {
+        color: #39FF14;
+        font-size: 1.3rem;
+        margin: 1.5rem 0 1rem;
+    }
+    
+    .security-section ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .security-section li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+    
+    .security-section li::before {
+        content: '▶';
+        color: #00BFFF;
+        position: absolute;
+        left: 0;
+    }
+    
+    .response-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .timeline-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(0, 191, 255, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(0, 191, 255, 0.3);
+    }
+    
+    .timeline-icon {
+        background: #00BFFF;
+        color: black;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+    
+    .timeline-content h3 {
+        color: #00BFFF;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: rgba(57, 255, 20, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(57, 255, 20, 0.3);
+    }
+    
+    .contact-item i {
+        color: #39FF14;
+        font-size: 2rem;
+        min-width: 40px;
+    }
+    
+    .contact-item strong {
+        color: #39FF14;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .scope-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+    
+    a {
+        color: #00BFFF;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    a:hover {
+        color: #39FF14;
+    }
+    
+    @media (max-width: 768px) {
+        .security-policy-content {
+            padding: 4rem 1rem 2rem;
+        }
+        
+        .security-header h1 {
+            font-size: 2rem;
+        }
+        
+        .response-timeline {
+            grid-template-columns: 1fr;
+        }
+        
+        .scope-content {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</body>
+</html>

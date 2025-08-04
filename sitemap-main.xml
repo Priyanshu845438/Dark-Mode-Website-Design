@@ -94,4 +94,18 @@
   <changefreq>yearly</changefreq>
 </url>
 
+<url>
+  <loc>https://acadifysolution.com/pages/security-policy.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/security.txt</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
 </urlset>

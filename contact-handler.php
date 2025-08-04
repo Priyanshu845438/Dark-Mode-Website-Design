@@ -1,4 +1,7 @@
 <?php
+// Include security headers
+require_once 'src/php/security-headers.php';
+
 // Prevent direct access
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('HTTP/1.1 405 Method Not Allowed');

@@ -1,53 +1,67 @@
-# Acadify Solution Website
+# Overview
 
-## Overview
-Acadify Solution is a professional technology services company website showcasing comprehensive technology services including web development, mobile app development, UI/UX design, cloud services, AI solutions, and data analytics. The project aims to present these services through an elegant black-themed interface with electric blue, neon green, and orange accent colors, demonstrating a modern, responsive multi-page application. The business vision is to provide a robust online presence that clearly communicates service offerings and establishes market leadership in technology solutions.
+Acadify Solution is a professional technology services company website built as a Multi-Page Application (MPA) showcasing comprehensive digital solutions. The website serves as a business platform offering web development, mobile applications, AI solutions, cloud services, and digital marketing services across 14 specialized industries. Built with vanilla HTML, CSS, and JavaScript, the project emphasizes performance, SEO optimization, and security as core architectural principles.
 
-## User Preferences
+# User Preferences
+
 Preferred communication style: Simple, everyday language.
-Navigation preference: Responsive mega menu for desktop only, mobile sidebar navigation with Schedule Meeting button included.
-Mobile navigation structure: Must exactly match desktop menu format with organized sections and working dropdowns.
-Content overlap: Mobile navigation must not overlap with page content (resolved with z-index: 99999).
-Navigation consistency: All pages must use consistent navigation system with correct path references to avoid 404 errors.
-Cache-busting approach: Mobile navigation embedded directly in JavaScript to eliminate browser cache conflicts.
-Technologies section: Dynamic responsive table layout preferred over grid layout, with row-wise technology organization and smaller icons (24px size).
-Footer design: Ultra-modern professional footer with dark black background, advanced animations including floating particles, gradient waves, animated statistics, 3D hover effects, and comprehensive responsive design. Features animated stats counter, magnetic social links, quick contact CTA buttons, and back-to-top functionality. Complete unique CSS isolation system with 'acadify-footer-unique-container' namespace prevents style conflicts across all pages.
-Component design preference: Blog component design should be used for testimonials component, with both components fetching 3 blog posts from the blog page data using the same design system.
 
-## System Architecture
+# System Architecture
 
-### Frontend Architecture
-The website is a Multi-Page Application (MPA) built with vanilla HTML, CSS, and JavaScript, optimized for SEO and navigation. It utilizes a component-based structure with reusable elements like the navbar and footer, dynamically loaded. A mobile-first responsive design approach is implemented with breakpoints at 768px (mobile), 1024px (tablet), and desktop.
+## Frontend Architecture
+- **Technology Stack**: Vanilla HTML5, CSS3, and ES6+ JavaScript with no frontend frameworks
+- **Component System**: Modular component-based architecture with isolated CSS classes and reusable UI components
+- **Design System**: Pure black (#000000) background with electric blue (#00BFFF), neon green (#39FF14), and orange (#FFA500) accent colors
+- **Typography**: Poppins font family throughout with consistent sizing scale
+- **Responsive Design**: Mobile-first approach with breakpoints at 768px and 1024px
+- **Performance Optimization**: Critical CSS preloading, lazy loading for images, and hardware-accelerated transforms
 
-### Design System
-The visual design is based on a pure black background theme (#000000) accented with electric blue (#00BFFF), neon green (#39FF14), and orange (#FFA500). Typography uses the Poppins font family. A consistent component system dictates spacing, shadows, borders, and animation patterns. UI/UX decisions prioritize a sleek, modern aesthetic with animated elements and glassmorphism effects to enhance user engagement.
+## Backend Architecture
+- **Server Technology**: PHP 8.2+ for form processing and email functionality
+- **Email System**: PHPMailer integration with SMTP support for professional email handling
+- **Contact System**: PHP-powered contact forms with JSON-based submission storage
+- **Meeting Scheduler**: Automated booking system for client consultations
+- **Security Implementation**: Content Security Policy headers, input validation, and vulnerability disclosure system
 
-### JavaScript Architecture
-JavaScript is organized modularly with separate files for components and main functionality. It follows a class-based ES6 organization for logic and component management. Performance is optimized using Intersection Observers, throttled events, and optimized animations within an event-driven architecture. Key interactive features include dynamic form validation, search functionality in FAQs, and scroll-triggered animations.
+## Content Management
+- **Static Site Generation**: No CMS - direct HTML file management for optimal performance
+- **Blog System**: Static HTML blog pages with manual content management
+- **SEO Structure**: Comprehensive meta optimization, structured data (JSON-LD), and XML sitemaps
+- **Multi-page Structure**: 40+ pages including services (18), industries (14), and products (6)
 
-### Navigation System
-The navigation features a mega menu for Services and Industries, providing organized dropdown panels. It supports multi-page navigation with dynamic component loading. A mobile-responsive hamburger menu with smooth animations is included, along with active states for dynamic page highlighting. All navigation elements, including product dropdowns, are implemented using clickable anchor links.
+## Security Architecture
+- **Content Security Policy**: Comprehensive CSP headers with violation reporting
+- **Input Validation**: Server-side validation and sanitization for all forms
+- **Security Headers**: X-Frame-Options, X-Content-Type-Options, and Referrer-Policy implementation
+- **Vulnerability Disclosure**: RFC 9116 compliant security.txt file and response procedures
 
-### Page Structure
-The website includes key pages such as Home, About, Services, Portfolio, Blog, Contact, Schedule Meeting, Careers, Privacy Policy, Terms & Conditions, and Sitemap. It also features dedicated sub-pages for 18 specific services, 14 industry-specific pages, and 6 product pages. Each service, industry, and product page adheres to a consistent, professional section-based template.
+## Performance Architecture
+- **Resource Optimization**: Preload/prefetch strategies for critical resources
+- **Font Loading**: Google Fonts with display:swap for optimal loading
+- **Image Optimization**: SVG-first approach with optimized raster fallbacks
+- **Core Web Vitals**: Optimized for LCP, FID, and CLS metrics
 
-### Performance Considerations
-Performance is addressed through dynamic HTML component injection (navbar/footer), modular CSS with design system variables, optimized Poppins web font loading with display swap, and hardware-accelerated transforms and Intersection Observer for animations. Advanced lazy loading, resource hints, and CSS performance enhancements are implemented across all pages.
+# External Dependencies
 
-### Technical Implementations
-The contact form uses a PHP backend with PHPMailer for email sending, ensuring secure and reliable communication. Frontend validation is handled via JavaScript. The blog system features dynamic content management, category filtering, and social sharing. Custom CSS classes (`acadify-`) are used for strong isolation. All 18 service pages, 14 industry pages, and 6 product pages are fully functional and follow consistent design. Comprehensive SEO, including LocalBusiness and FAQ schema, breadcrumb markup, and sitemaps, is implemented across all pages for the Indian market. All product pages have been redesigned with enhanced dashboard previews and benefits sections.
+## Third-party Services
+- **Google Fonts**: Poppins font family for typography consistency
+- **Font Awesome 6.4.0**: Icon library for UI elements and visual enhancement
+- **CDN Integration**: Cloudflare for external resource delivery optimization
 
-## External Dependencies
+## Development Tools
+- **PHPMailer**: Email functionality library for contact forms and notifications
+- **JSON Storage**: Local JSON files for contact form submissions and data persistence
 
-### CDN Resources
-- **Font Awesome 6.4.0**: Used for various UI icons.
-- **Google Fonts**: Specifically, the Poppins font family.
+## SEO and Analytics
+- **Structured Data**: Schema.org implementation for rich snippets and search enhancement
+- **Social Media Integration**: Open Graph and Twitter Cards for social sharing optimization
+- **Sitemap Generation**: XML sitemaps for search engine crawling and indexing
 
-### Browser APIs
-- **Intersection Observer API**: Utilized for scroll-triggered animations and lazy loading effects.
-- **RequestAnimationFrame API**: Employed for smooth and performant animations.
-- **CSS Custom Properties**: Used for a comprehensive design token system.
+## Security Dependencies
+- **Content Security Policy**: Browser-native security framework implementation
+- **Security Headers**: HTTP security headers for enhanced protection
+- **Input Sanitization**: PHP native functions for data validation and cleaning
 
-### Backend/Third-party Integrations
-- **PHP Mailer**: Integrated for server-side email functionality within the contact form system.
-- **Hostinger SMTP**: Configured for email sending.
+## Email Templates
+- **Professional Templates**: Custom HTML email templates for admin notifications and user confirmations
+- **SMTP Configuration**: External SMTP service integration capability for production environments

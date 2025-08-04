@@ -1,0 +1,27 @@
+Contact: mailto:security@acadifysolution.com
+Contact: https://acadifysolution.com/contact
+Expires: 2026-08-04T23:59:59.000Z
+Encryption: https://acadifysolution.com/pgp-key.txt
+Acknowledgments: https://acadifysolution.com/security-acknowledgments
+Preferred-Languages: en, hi
+Canonical: https://acadifysolution.com/security.txt
+Policy: https://acadifysolution.com/security-policy
+
+# Security Contact Information for Acadify Solution
+# 
+# We take security seriously. If you discover a security vulnerability,
+# please report it responsibly through one of the contact methods above.
+#
+# Please include:
+# - Description of the vulnerability
+# - Steps to reproduce the issue
+# - Potential impact assessment
+# - Your contact information for follow-up
+#
+# We commit to:
+# - Acknowledge receipt within 24 hours
+# - Provide regular updates on our investigation
+# - Credit researchers who report valid vulnerabilities
+# - Work with you to understand and resolve the issue
+#
+# Thank you for helping keep Acadify Solution secure.
