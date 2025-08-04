@@ -112,22 +112,61 @@
     }
     </script>
     
-    <!-- Fonts -->
+    <!-- Enhanced Resource Hints for Performance -->
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to establish early connections -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Preload Critical Resources -->
+    <!-- Critical CSS files (above-the-fold) -->
+    <link rel="preload" href="../src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../src/styles/utilities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../src/components/header/header-new.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../src/styles/pages/portfolio.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
-    <!-- CSS Files -->
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="../assets/logos/logo.png" as="image" type="image/png">
+    
+    <!-- Load critical CSS immediately -->
     <link rel="stylesheet" href="../src/styles/global.css">
     <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/styles/components/lazy-loading.css">
     <link rel="stylesheet" href="../src/components/header/header-new.css">
-    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
-    <link rel="stylesheet" href="../src/components/footer/footer.css">
-    <link rel="stylesheet" href="../src/components/testimonials/testimonials.css">
     <link rel="stylesheet" href="../src/styles/pages/portfolio.css">
+    
+    <!-- Load non-critical CSS with lower priority -->
+    <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="../src/components/footer/footer.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="../src/components/testimonials/testimonials.css" media="print" onload="this.media='all'; this.onload=null;">
+    
+    <!-- Google Fonts with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome with deferred loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'; this.onload=null;">
+    
+    <!-- Prefetch likely next page resources -->
+    <link rel="prefetch" href="../index.html">
+    <link rel="prefetch" href="services.html">
+    <link rel="prefetch" href="about.html">
+    <link rel="prefetch" href="contact.html">
+    
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css">
+        <link rel="stylesheet" href="../src/components/footer/footer.css">
+        <link rel="stylesheet" href="../src/components/testimonials/testimonials.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </noscript>
 </head>
 <body>
     <!-- Header Component -->
@@ -393,6 +432,10 @@
     <!-- Footer Component -->
     <div id="footer-container"></div>
 
+    <!-- Performance Scripts -->
+    <script src="../src/scripts/lazy-loading.js" defer></script>
+    <script src="../src/scripts/resource-hints.js" defer></script>
+    
     <!-- JavaScript Files -->
     <script src="../src/components/header/header-new.js"></script>
     <script src="../src/components/footer/footer.js"></script>

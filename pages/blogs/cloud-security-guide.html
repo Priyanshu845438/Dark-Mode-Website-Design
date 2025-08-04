@@ -79,6 +79,9 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../src/styles/global.css">
     <link rel="stylesheet" href="../../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/styles/components/lazy-loading.css">
+    <link rel="stylesheet" href="../../src/styles/components/topic-clusters.css">
+    <link rel="stylesheet" href="../../src/styles/components/contextual-links.css">
     <link rel="stylesheet" href="../../src/components/header/header-new.css?v=10">
     <link rel="stylesheet" href="../../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../../src/components/footer/footer.css?v=6">
@@ -823,10 +826,39 @@ class ComplianceMonitor:
         </div>
     </section>
 
+    <!-- Related Posts Section -->
+    <!-- Contextual Links Section -->
+    <section class="contextual-links-wrapper">
+        <div class="container">
+            <div id="contextual-links-container">
+                <!-- Contextual links will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="related-posts-wrapper">
+        <div class="container">
+            <div id="related-posts-container">
+                <!-- Related posts will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer Component -->
     <div id="footer-component"></div>
     
     <!-- Scripts -->
+    <!-- Performance Scripts -->
+    <script src="../src/scripts/lazy-loading.js" defer></script>
+    <script src="../src/scripts/resource-hints.js" defer></script>
+    
+    <!-- Blog Scripts -->
+    <script src="../../src/components/blog/blog-data.js"></script>
+    <script src="../../src/components/blog/topic-clusters.js"></script>
+    <script src="../../src/components/internal-linking/contextual-links.js"></script>
+
+    <!-- Component Scripts -->
+    
     <script src="../../src/components/header/header-new.js?v=16"></script>
     <script src="../../src/components/footer/footer.js"></script>
     <script src="../../src/scripts/blog-post.js"></script>

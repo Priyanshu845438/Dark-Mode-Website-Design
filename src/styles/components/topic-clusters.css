@@ -1,0 +1,559 @@
+/**
+ * Topic Clusters Styling
+ * Modern design for blog content organization and discovery
+ */
+
+/* Cluster Overview Section */
+.topic-clusters-overview {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    margin: 40px 0;
+}
+
+.cluster-stats {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.cluster-stats h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cluster-stats p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Clusters Grid */
+.clusters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cluster-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.cluster-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cluster-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.cluster-card:hover::before {
+    opacity: 1;
+}
+
+.cluster-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.cluster-header i {
+    font-size: 2rem;
+    padding: 12px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.cluster-card:hover .cluster-header i {
+    transform: scale(1.1);
+    background: rgba(102, 126, 234, 0.15);
+}
+
+.cluster-header h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.cluster-count {
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.cluster-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cluster-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.cluster-btn:hover::before {
+    left: 100%;
+}
+
+.cluster-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Related Posts Section */
+.related-posts-section {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 50px 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.related-posts-section h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.related-posts-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.related-post-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+.related-post-card:hover {
+    background: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+}
+
+.related-post-category {
+    color: #667eea;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.related-post-title {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.related-post-title a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.related-post-title a:hover {
+    color: #667eea;
+}
+
+.related-post-strength {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+.related-post-strength.high {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.related-post-strength.medium {
+    background: rgba(255, 193, 7, 0.1);
+    color: #ffc107;
+}
+
+.related-post-strength.low {
+    background: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+/* Topic Cluster Tags */
+.topic-clusters-tags {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.topic-clusters-tags > span:first-child {
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.cluster-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #667eea;
+    transition: all 0.3s ease;
+}
+
+.cluster-tag:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+.cluster-tag i {
+    font-size: 0.9rem;
+}
+
+/* Cluster Modal */
+.cluster-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.cluster-modal-content {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.cluster-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.cluster-modal-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+.cluster-modal-header i {
+    font-size: 2rem;
+    padding: 10px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    background: #f8f9fa;
+    color: #dc3545;
+}
+
+.cluster-description {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cluster-posts h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.cluster-post-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.cluster-post-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.cluster-post-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.cluster-post-item h4 a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cluster-post-item h4 a:hover {
+    color: #667eea;
+}
+
+.cluster-post-item p {
+    color: #6c757d;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #adb5bd;
+}
+
+/* Related Clusters */
+.related-clusters {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #e9ecef;
+}
+
+.related-clusters h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.related-clusters-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.related-cluster-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.related-cluster-btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topic-clusters-overview {
+        padding: 40px 0;
+        margin: 20px 0;
+    }
+    
+    .cluster-stats h2 {
+        font-size: 2rem;
+    }
+    
+    .clusters-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .cluster-card {
+        padding: 25px;
+    }
+    
+    .related-posts-section {
+        padding: 30px 20px;
+        margin: 30px 0;
+    }
+    
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cluster-modal-content {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+    
+    .cluster-modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .topic-clusters-tags {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .related-clusters-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .topic-clusters-overview {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    }
+    
+    .cluster-stats h2 {
+        color: #ecf0f1;
+    }
+    
+    .cluster-stats p {
+        color: #bdc3c7;
+    }
+    
+    .cluster-card {
+        background: #34495e;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .cluster-header h3 {
+        color: #ecf0f1;
+    }
+    
+    .related-posts-section {
+        background: #34495e;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .related-posts-section h3 {
+        color: #ecf0f1;
+    }
+    
+    .related-post-card {
+        background: #2c3e50;
+    }
+    
+    .related-post-title a {
+        color: #ecf0f1;
+    }
+    
+    .cluster-modal-content {
+        background: #34495e;
+    }
+    
+    .cluster-modal-header h2 {
+        color: #ecf0f1;
+    }
+}

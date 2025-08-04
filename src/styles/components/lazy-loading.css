@@ -1,0 +1,283 @@
+/**
+ * Lazy Loading Styles for Acadify Solution
+ * Provides visual feedback during image loading
+ */
+
+/* Base lazy loading styles */
+.lazy-loading {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        90deg,
+        #0a0a0a 25%,
+        #1a1a1a 50%,
+        #0a0a0a 75%
+    );
+    background-size: 200% 100%;
+    animation: lazy-shimmer 1.5s infinite;
+    transition: all 0.3s ease;
+}
+
+.lazy-loaded {
+    animation: lazy-fade-in 0.5s ease-out;
+}
+
+.lazy-error {
+    background: #1a1a1a;
+    border: 1px dashed #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 12px;
+    position: relative;
+}
+
+.lazy-error::before {
+    content: "⚠️ Image unavailable";
+    position: absolute;
+    z-index: 1;
+}
+
+/* Shimmer animation for loading state */
+@keyframes lazy-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Fade in animation for loaded images */
+@keyframes lazy-fade-in {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Specific image lazy loading styles */
+img.lazy-loading {
+    filter: blur(2px);
+    transform: scale(1.02);
+}
+
+img.lazy-loaded {
+    filter: none;
+    transform: scale(1);
+    transition: all 0.4s ease-out;
+}
+
+/* Background image lazy loading styles */
+.bg-lazy-loading {
+    background-image: none !important;
+    position: relative;
+}
+
+.bg-lazy-loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, 0.8) 25%,
+        rgba(26, 26, 26, 0.8) 50%,
+        rgba(10, 10, 10, 0.8) 75%
+    );
+    background-size: 200% 100%;
+    animation: lazy-shimmer 1.5s infinite;
+    z-index: 1;
+}
+
+.bg-lazy-loaded::before {
+    animation: lazy-fade-out 0.5s ease-out forwards;
+}
+
+@keyframes lazy-fade-out {
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Progressive image enhancement */
+.progressive-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.progressive-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.progressive-image .placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.progressive-image .full-image {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+}
+
+.progressive-image .full-image.loaded {
+    opacity: 1;
+}
+
+/* Performance optimizations for different screen sizes */
+@media (max-width: 768px) {
+    .lazy-loading {
+        animation-duration: 1s;
+    }
+    
+    .lazy-fade-in {
+        animation-duration: 0.3s;
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .lazy-loading {
+        animation: none;
+        background: #1a1a1a;
+    }
+    
+    .lazy-loaded {
+        animation: none;
+        transition: opacity 0.2s ease;
+    }
+    
+    img.lazy-loading {
+        filter: none;
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .lazy-loading {
+        background: #000;
+        border: 1px solid #fff;
+    }
+    
+    .lazy-error {
+        background: #000;
+        border: 2px dashed #fff;
+        color: #fff;
+    }
+}
+
+/* Custom loading indicators for different content types */
+.lazy-loading.avatar {
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+}
+
+.lazy-loading.card-image {
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.lazy-loading.hero-image {
+    min-height: 400px;
+}
+
+.lazy-loading.thumbnail {
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 4px;
+}
+
+/* Loading spinner for critical images */
+.lazy-loading.critical::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #333;
+    border-top: 2px solid #00bfff;
+    border-radius: 50%;
+    animation: lazy-spin 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes lazy-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Intersection observer fallback styles */
+.no-intersection-observer .lazy-loading {
+    animation: none;
+    background: #1a1a1a;
+}
+
+/* Print styles */
+@media print {
+    .lazy-loading,
+    .lazy-loaded,
+    .lazy-error {
+        animation: none;
+        background: transparent;
+        filter: none;
+        transform: none;
+    }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+    .lazy-loading {
+        background: linear-gradient(
+            90deg,
+            #0a0a0a 25%,
+            #1a1a1a 50%,
+            #0a0a0a 75%
+        );
+    }
+    
+    .lazy-error {
+        background: #0a0a0a;
+        border-color: #333;
+        color: #888;
+    }
+}
+
+/* Light mode specific adjustments */
+@media (prefers-color-scheme: light) {
+    .lazy-loading {
+        background: linear-gradient(
+            90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%
+        );
+    }
+    
+    .lazy-error {
+        background: #f5f5f5;
+        border-color: #ddd;
+        color: #999;
+    }
+}

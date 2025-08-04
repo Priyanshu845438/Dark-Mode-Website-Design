@@ -83,6 +83,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../src/styles/global.css">
     <link rel="stylesheet" href="../src/styles/utilities.css">
+    <link rel="stylesheet" href="../src/styles/components/lazy-loading.css">
+    <link rel="stylesheet" href="../src/styles/components/topic-clusters.css">
     <link rel="stylesheet" href="../src/components/header/header-new.css?v=10">
     <link rel="stylesheet" href="../src/components/navigation/mobile-nav/mobile-nav.css?v=5">
     <link rel="stylesheet" href="../src/components/footer/footer.css?v=6">
@@ -163,6 +165,15 @@
                 <button class="category-btn" data-category="ui-ux">UI/UX Design</button>
                 <button class="category-btn" data-category="cloud-services">Cloud Services</button>
                 <button class="category-btn" data-category="digital-marketing">Digital Marketing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topic Clusters Section -->
+    <section class="topic-clusters-section">
+        <div class="container">
+            <div id="topic-clusters-container">
+                <!-- Topic clusters will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -620,6 +631,15 @@
     <div id="footer-component"></div>
     
     <!-- Scripts -->
+    <!-- Performance Scripts -->
+    <script src="../src/scripts/lazy-loading.js" defer></script>
+    <script src="../src/scripts/resource-hints.js" defer></script>
+    
+    <!-- Blog Scripts -->
+    <script src="../src/components/blog/blog-data.js"></script>
+    <script src="../src/components/blog/topic-clusters.js"></script>
+    
+    <!-- Component Scripts -->
     <script src="../src/components/header/header-new.js?v=15"></script>
     <script src="../src/components/footer/footer.js"></script>
     <script src="../src/scripts/blog.js"></script>

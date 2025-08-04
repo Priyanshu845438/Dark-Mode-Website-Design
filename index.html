@@ -25,30 +25,76 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/favicon.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <!-- Preconnect for performance -->
+    <!-- Enhanced Resource Hints for Performance -->
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to establish early connections -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    
+    <!-- Preload Critical Resources -->
+    <!-- Critical CSS files (above-the-fold) -->
+    <link rel="preload" href="src/styles/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="src/styles/utilities.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="src/components/header/header-new.css?v=10" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="src/components/hero/hero.css?v=6" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Preload critical JavaScript -->
+    <link rel="preload" href="src/components/header/header-new.js?v=15" as="script">
+    <link rel="preload" href="src/scripts/main.js" as="script">
+    
+    <!-- Preload critical images -->
+    <link rel="preload" href="assets/logos/logo.png" as="image" type="image/png">
+    <link rel="preload" href="assets/logos/logo.svg" as="image" type="image/svg+xml">
+    
+    <!-- Load critical CSS immediately -->
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/utilities.css">
+    <link rel="stylesheet" href="src/styles/components/lazy-loading.css">
+    <link rel="stylesheet" href="src/components/header/header-new.css?v=10">
+    <link rel="stylesheet" href="src/components/hero/hero.css?v=6">
+    
+    <!-- Load non-critical CSS with lower priority -->
+    <link rel="stylesheet" href="src/styles/pages/home.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/footer/footer.css?v=6" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/services/services.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/about/about.css?v=12" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=5" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/testimonials/testimonials.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="src/components/blog/blog.css" media="print" onload="this.media='all'; this.onload=null;">
     
     <!-- Google Fonts with optimized loading -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome with deferred loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
     
-    <!-- Minified Stylesheets -->
-    <link rel="stylesheet" href="src/styles/global.css">
-    <link rel="stylesheet" href="src/styles/utilities.css">
-    <link rel="stylesheet" href="src/styles/pages/home.css">
-    <link rel="stylesheet" href="src/components/header/header-new.css?v=10">
-    <link rel="stylesheet" href="src/components/footer/footer.css?v=6">
-    <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5">
-    <link rel="stylesheet" href="src/components/hero/hero.css?v=6">
-    <link rel="stylesheet" href="src/components/services/services.css">
-    <link rel="stylesheet" href="src/components/about/about.css?v=12">
-    <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=5">
-    <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
-    <link rel="stylesheet" href="src/components/blog/blog.css">
+    <!-- Prefetch likely next page resources -->
+    <link rel="prefetch" href="pages/services.html">
+    <link rel="prefetch" href="pages/about.html">
+    <link rel="prefetch" href="pages/contact.html">
+    <link rel="prefetch" href="pages/portfolio.html">
+    
+    <!-- Fallback for browsers that don't support preload -->
+    <noscript>
+        <link rel="stylesheet" href="src/styles/pages/home.css">
+        <link rel="stylesheet" href="src/components/footer/footer.css?v=6">
+        <link rel="stylesheet" href="src/components/navigation/mobile-nav/mobile-nav.css?v=5">
+        <link rel="stylesheet" href="src/components/services/services.css">
+        <link rel="stylesheet" href="src/components/about/about.css?v=12">
+        <link rel="stylesheet" href="src/components/tech-stack/tech-stack.css?v=5">
+        <link rel="stylesheet" href="src/components/testimonials/testimonials.css">
+        <link rel="stylesheet" href="src/components/blog/blog.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
     
     <!-- Enhanced Open Graph Meta Tags -->
     <meta property="og:title" content="Acadify Solution - Leading Technology Services Company">
@@ -392,7 +438,11 @@
     <!-- Footer Component with proper spacing -->
     <div id="footer-component" style="margin-top: 100px; clear: both; position: relative; z-index: 1;"></div>
     
-    <!-- Scripts -->
+    <!-- Performance Scripts -->
+    <script src="src/scripts/lazy-loading.js" defer></script>
+    <script src="src/scripts/resource-hints.js" defer></script>
+    
+    <!-- Component Scripts -->
     <script src="src/components/header/header-new.js?v=15"></script>
     <script src="src/components/about/about.js"></script>
     <script src="src/components/tech-stack/tech-stack.js"></script>
