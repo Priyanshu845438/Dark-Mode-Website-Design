@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all pages
+Allow: /pages/
+Allow: /assets/
+Allow: /src/
+
+# Disallow private directories
+Disallow: /PHPMailer/
+Disallow: /submissions/
+Disallow: /email-templates/
+Disallow: /docs/
+Disallow: /.local/
+
+# Allow specific important files
+Allow: /sitemap.xml
+Allow: /favicon.ico
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://acadifysolution.com/sitemap.xml

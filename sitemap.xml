@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Main Pages -->
+<url>
+  <loc>https://acadifysolution.com/</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>1.0</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/about.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/portfolio.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.9</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blog.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/contact.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/schedule-meeting.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/careers.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Service Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/services/web-development.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/mobile-development.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/ui-ux-design.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/cloud-services.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/ai-solutions.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/data-analytics.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/digital-marketing.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/seo.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/smm.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/email-marketing.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/google-ads.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/whatsapp-marketing.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/qa-testing.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/consulting.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/maintenance-support.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/logo-design.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/brand-strategy.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/services/custom-software.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Industry Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/industries/healthcare.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/education.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/finance.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/retail.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/wellness-beauty.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/fintech.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/real-estate.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/travel.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/it-tech.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/logistics.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/media.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/industries/ngos.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.7</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Product Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-erp.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-crm.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-inventory.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-lms.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-pos.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/products/acadify-task.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.8</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Blog Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/ai-chatbots-business.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/cloud-security-guide.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/design-systems-guide.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/flutter-vs-react-native.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/microservices-architecture.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/ml-model-deployment.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/progressive-web-apps.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/react-development-2025.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/blogs/seo-strategies-2025.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Portfolio Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/portfolio/edutech-learning-platform.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/portfolio/healthtracker-pro.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/portfolio/multi-vendor-marketplace.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.6</priority>
+  <changefreq>monthly</changefreq>
+</url>
+
+<!-- Legal Pages -->
+<url>
+  <loc>https://acadifysolution.com/pages/privacy-policy.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+<url>
+  <loc>https://acadifysolution.com/pages/terms-conditions.html</loc>
+  <lastmod>2025-08-04T00:00:00+00:00</lastmod>
+  <priority>0.3</priority>
+  <changefreq>yearly</changefreq>
+</url>
+
+</urlset>
