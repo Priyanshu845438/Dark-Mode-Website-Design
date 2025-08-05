@@ -692,7 +692,7 @@ class NewNavbarComponent {
                     </button>
                     <div class="mobile-dropdown" id="insights-dropdown">
                         <div class="mobile-dropdown-section">
-                            <a href="blog.html" class="mobile-dropdown-link">
+                            <a href="${basePath}pages/blog.html" class="mobile-dropdown-link">
                                 <i class="fas fa-blog"></i>
                                 Blog
                             </a>

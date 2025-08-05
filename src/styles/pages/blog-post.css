@@ -157,19 +157,41 @@
 }
 
 .content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Desktop Layout - Two columns for larger screens */
+@media (min-width: 1025px) {
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+        padding: 0 2rem;
+    }
 }
 
 .post-article {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 3rem;
+    border-radius: 15px;
+    padding: 1.5rem;
     backdrop-filter: blur(10px);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* Desktop article styling */
+@media (min-width: 1025px) {
+    .post-article {
+        border-radius: 20px;
+        padding: 3rem;
+    }
 }
 
 .article-content h2 {
@@ -355,14 +377,38 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    order: -1;
+}
+
+/* Desktop sidebar positioning */
+@media (min-width: 1025px) {
+    .post-sidebar {
+        order: 0;
+    }
 }
 
 .sidebar-widget {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 2rem;
+    border-radius: 12px;
+    padding: 1.2rem;
     backdrop-filter: blur(10px);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-widget:last-child {
+    margin-bottom: 0;
+}
+
+/* Desktop sidebar widget styling */
+@media (min-width: 1025px) {
+    .sidebar-widget {
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 0;
+    }
 }
 
 .sidebar-widget h3 {
@@ -649,423 +695,106 @@
     font-size: 0.75rem;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .content-wrapper {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .post-sidebar {
-        order: -1;
-    }
-    
-    .sidebar-widget {
-        margin-bottom: 1rem;
-    }
-}
+/* Mobile-First Responsive Design */
 
-@media (max-width: 768px) {
-    .post-title {
-        font-size: 2.2rem;
-    }
-    
-    .post-subtitle {
-        font-size: 1rem;
-    }
-    
-    .post-meta {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .post-stats {
-        justify-content: center;
-    }
-    
-    .post-article {
-        padding: 2rem;
-    }
-    
-    .article-content h2 {
-        font-size: 1.6rem;
-    }
-    
-    .article-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .share-buttons {
-        flex-wrap: wrap;
-    }
-    
-    .code-block {
-        font-size: 0.8rem;
-    }
-}
+/* Base mobile styles already applied above */
 
-@media (max-width: 480px) {
-    .breadcrumb-section {
-        padding: 1rem 0;
-    }
-    
-    .breadcrumb {
-        font-size: 0.8rem;
-        gap: 0.3rem;
-    }
-    
-    .blog-post-header {
-        padding: 2rem 0 1.5rem;
-    }
-    
-    .post-category {
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .post-title {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-    }
-    
-    .post-subtitle {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    .post-meta {
-        gap: 1rem;
-    }
-    
-    .author-info {
-        gap: 0.5rem;
-    }
-    
-    .author-avatar {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-    
-    .author-name {
-        font-size: 1rem;
-    }
-    
-    .author-title {
-        font-size: 0.8rem;
-    }
-    
-    .post-stats {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .stat-item {
-        font-size: 0.8rem;
-    }
-    
+/* Small tablets and large mobile (768px+) */
+@media (min-width: 768px) {
     .blog-post-content {
-        padding: 2rem 0;
+        padding: 3rem 0;
     }
     
     .content-wrapper {
-        gap: 1.5rem;
-    }
-    
-    .post-article {
-        padding: 1.5rem;
-        border-radius: 15px;
-    }
-    
-    .sidebar-widget {
-        padding: 1.5rem;
-        border-radius: 15px;
-    }
-    
-    .highlight-box {
-        padding: 1.5rem;
-        border-radius: 12px;
-    }
-    
-    .code-block {
-        padding: 1rem;
-        border-radius: 8px;
-        font-size: 0.8rem;
-    }
-    
-    .article-content h2 {
-        font-size: 1.4rem;
-        margin-top: 2rem;
-    }
-    
-    .article-content h3 {
-        font-size: 1.2rem;
-        margin-top: 1.5rem;
-    }
-    
-    .article-content h4 {
-        font-size: 1.1rem;
-    }
-    
-    .article-content p {
-        font-size: 1rem;
-        line-height: 1.7;
-    }
-    
-    .article-content ul,
-    .article-content ol {
-        padding-left: 1.5rem;
-    }
-    
-    .share-buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    .share-btn {
-        padding: 0.6rem 1rem;
-        font-size: 0.8rem;
-        text-align: center;
-        justify-content: center;
-    }
-    
-    .author-card {
-        padding: 1.5rem;
-    }
-    
-    .author-avatar-large {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .related-post {
-        padding: 0.8rem;
-        gap: 0.8rem;
-    }
-    
-    .related-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .related-content h5 {
-        font-size: 0.85rem;
-    }
-    
-    .related-content span {
-        font-size: 0.75rem;
-    }
-    
-    .sidebar-newsletter input,
-    .sidebar-newsletter button {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-    }
-}
-
-/* ============================================
-   ENHANCED RESPONSIVE DESIGN FOR ALL DEVICES
-   ============================================ */
-
-/* Extra Large Screens (1400px+) */
-@media screen and (min-width: 1400px) {
-    .container {
-        max-width: 1600px;
-        padding: 0 3rem;
-    }
-    
-    .post-title {
-        font-size: 4rem;
-    }
-    
-    .post-subtitle {
-        font-size: 1.3rem;
-    }
-    
-    .content-wrapper {
-        gap: 3rem;
-    }
-    
-    .post-article {
-        padding: 3rem;
-    }
-    
-    .sidebar-widget {
-        padding: 2.5rem;
-    }
-}
-
-/* Large Screens (1024px - 1399px) */
-@media screen and (max-width: 1399px) and (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-        padding: 0 2rem;
-    }
-    
-    .post-title {
-        font-size: 3.5rem;
-    }
-    
-    .content-wrapper {
+        padding: 0 1.5rem;
         gap: 2.5rem;
     }
     
     .post-article {
-        padding: 2.5rem;
-    }
-}
-
-/* Tablet Landscape (768px - 1023px) */
-@media screen and (max-width: 1023px) and (min-width: 768px) {
-    .breadcrumb-section {
-        padding: 1.25rem 0;
+        padding: 2rem;
+        border-radius: 18px;
     }
     
-    .blog-post-header {
-        padding: 3rem 0 2.5rem;
+    .sidebar-widget {
+        padding: 1.5rem;
+        border-radius: 15px;
     }
     
     .post-title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+    }
+    
+    .article-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Additional responsive styles for small screens */
+@media (max-width: 480px) {
+    .content-wrapper {
+        padding: 0 0.5rem;
+        gap: 1.5rem;
+    }
+    
+    .post-title {
+        font-size: 1.8rem;
         line-height: 1.2;
     }
     
-    .post-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .content-wrapper {
-        grid-template-columns: 1fr 300px;
-        gap: 2rem;
-    }
-    
     .post-article {
-        padding: 2rem;
+        padding: 1rem;
+        border-radius: 10px;
     }
     
     .sidebar-widget {
-        padding: 1.75rem;
+        padding: 1rem;
+        border-radius: 8px;
     }
     
     .article-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .article-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .article-content p {
-        font-size: 1.05rem;
-        line-height: 1.7;
-    }
-}
-
-/* Ultra Small Devices (320px and below) */
-@media screen and (max-width: 320px) {
-    .container {
-        padding: 0 0.75rem;
-    }
-    
-    .breadcrumb-section {
-        padding: 1rem 0;
-    }
-    
-    .blog-post-header {
-        padding: 2rem 0 1.5rem;
-    }
-    
-    .post-title {
-        font-size: 1.6rem;
-        line-height: 1.1;
-    }
-    
-    .post-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .post-meta {
-        flex-direction: column;
-        gap: 0.75rem;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .blog-post-content {
-        padding: 1.5rem 0;
-    }
-    
-    .post-article {
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .sidebar-widget {
-        padding: 1rem;
-        border-radius: 12px;
-    }
-    
-    .article-content h2 {
         font-size: 1.2rem;
-    }
-    
-    .article-content h3 {
-        font-size: 1.1rem;
+        margin-top: 1.2rem;
+        margin-bottom: 0.8rem;
     }
     
     .article-content p {
         font-size: 0.9rem;
         line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .code-block {
+        padding: 0.8rem;
+        font-size: 0.75rem;
+        border-radius: 6px;
     }
     
     .highlight-box {
         padding: 1rem;
         border-radius: 8px;
     }
-    
-    .code-block {
-        padding: 0.75rem;
-        border-radius: 6px;
-        font-size: 0.75rem;
-    }
 }
 
-/* Landscape Mobile Orientation */
-@media screen and (max-width: 767px) and (orientation: landscape) {
-    .blog-post-header {
-        padding: 2.5rem 0 2rem;
-    }
-    
-    .post-title {
-        font-size: 2.2rem;
-    }
-    
-    .content-wrapper {
-        gap: 1.5rem;
-    }
-    
-    .post-article {
-        padding: 1.5rem;
-    }
-    
-    .sidebar-widget {
-        padding: 1.25rem;
-    }
+/* Ensure all elements fit within viewport */
+* {
+    box-sizing: border-box;
 }
 
-/* High DPI/Retina Displays */
-@media screen and (-webkit-min-device-pixel-ratio: 2), 
-       screen and (min-resolution: 192dpi) {
-    .author-avatar,
-    .author-avatar-large,
-    .related-icon {
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: crisp-edges;
-    }
+.content-wrapper,
+.content-wrapper * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 /* Touch Device Enhancements */
